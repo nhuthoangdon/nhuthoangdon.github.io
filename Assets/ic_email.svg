@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="31px" viewBox="0 0 32 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_email</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_email" transform="translate(1.000000, 0.000000)" fill-rule="nonzero" stroke="#8C9BAF">
+            <polygon id="Path-2" points="0.335255674 16.9004687 19 0.763105761 30 14 12 30"></polygon>
+            <polyline id="Path-3" points="1.05968455 16.9004687 17.1896895 17 19 0.763105761"></polyline>
+            <path d="M12,17 L12,29.5" id="Path-4"></path>
+            <path d="M23.801011,7.44071691 L22.301011,18.9407169" id="Path-4-Copy" transform="translate(23.301011, 13.440717) rotate(88.000000) translate(-23.301011, -13.440717) "></path>
+        </g>
+    </g>
+</svg>

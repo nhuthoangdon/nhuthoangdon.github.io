@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ñütfolio - Schecker</title>
+
+  <meta charset="UTF-8">
+  <meta name="description" content="Nhut's Portfolio">
+  <meta name="keywords" content="Nhut Hoang-Don, Nhut Hoang, Nhut, Nhut H.Don, UI, UX, UI/UX Portfolio, Portfolio, Designer,
+                                 UI/UX Designer, Profile, Creative Portfolio, Creative Profile, Schecker">
+  <meta name="author" content="Nhut H. Don">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200,400,700,900" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="projectStyle.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@2/umd/TweenMax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/RoundPropsPlugin.min.js"></script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./Assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./Assets/favicon-16x16.png">
+  <link rel="manifest" href="./Assets/site.webmanifest">
+  <link rel="mask-icon" href="./Assets/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+
+</head>
+
+
+
+
+<body>
+
+<a class="back-to-home" href="./index.html">
+  <div class="simple-arrow"></div>
+  <h6 class="CTA-label">BACK</h6>
+</a>
+
+
+
+
+
+<div class="wrapper grey">
+    <div class="block intro">
+      <img class="logo" id="schecker-logo" alt="Schecker Logo" src="./Assets/schecker_logo_vertical.png" />
+      <h4>Check. Manage. Connect.</h4>
+    </div>
+
+    <div class="block">
+      <h5>CONCEPT</h5>
+      <p>
+        Schecker is my idea of a smart Health App that checks symptoms <strong>smartly</strong>, manages them,
+        and connects patients to their doctors & vice versa.
+      </p>
+    </div>
+
+    <div class="block">
+      <img class="mockup" alt="Schecker Screen Mockups" src="./Assets/screensMockups.png" />
+    </div>
+</div>
+
+<div class="wrapper" id="hiw-section">
+
+        <div class="block" id="hiw_text-check">
+          <h5>HOW IT WORKS</h5>
+          <h5 class="secondary-title">Check Symptom(s)</h5>
+          <p>
+            Schecker's algorithm works like a real doctor in which the system will ask
+            relevant questions considering <strong>all aspects</strong> of the possible causes to the user's condition(s),
+            and analyses the answers to provide a result as accurate as possible.
+          </p>
+        </div>
+
+          <div class="block" id="hiw_ani-check">
+            <div class="hiw input">
+              <i class="fas fa-search"></i>
+              <span class="text-field">Your symptom</span>
+            </div>
+          </div>
+
+
+          <div class="block" id="hiw_ani-result">
+            <div class="hiw result">
+              <h6>YOU MIGHT HAVE</h6>
+              <div class="progress-bar">
+                <div class="bar"></div>
+              </div>
+              <div class="result-text">Cyberchondria (<span id="counting">0</span>%)</div>
+            </div>
+          </div>
+
+        <div class="block" id="hiw_text-result">
+          <h5 class="secondary-title">Get Result</h5>
+          <p>
+            Result includes information about the user's symptom(s), prediction of the condition(s)/disease(s),
+            further assessments/medical tests needed, etc. All in a manner that everyone who doesn't speak
+            'medical terminology' can understand.
+          </p>
+        </div>
+
+
+
+        <div class="block" id="hiw_text-book">
+          <h5 class="secondary-title">Book Appointment</h5>
+          <p>
+            Book an appointment with Schecker's partnered Doctors/Clinics/Hospitals,
+            with a report of the result sent beforehand.
+          </p>
+        </div>
+
+        <div class="block" id="hiw_ani-book">
+          <div class="hiw book">
+            <svg width="150px" height="195px" viewBox="0 0 150 195" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <rect id="Rectangle" stroke="#8C9BAF" fill-rule="nonzero" x="0.5" y="45.5" width="149" height="149"></rect>
+                    <path d="M100,145 L50,145 L50,95 L1,95 L50,95 L50,145 L100,145 L100,95 L149,95 L100,95 L100,46 L100,95 L50,95 L50,46 L50,95 L100,95 L100,145 L149,145 L100,145 L100,194 L100,145 Z M50,145 L50,194 L50,145 L1,145 L50,145 Z" id="Combined-Shape" stroke="#8C9BAF" stroke-linecap="square" fill-rule="nonzero"></path>
+                    <path d="M107,102 L143,102 L143,138 L107,138 L107,102 Z M133.691082,111.385759 C133.162848,110.871414 132.306532,110.871414 131.778257,111.385759 L120.779318,122.09525 L118.221784,119.605205 C117.69355,119.09086 116.837276,119.09086 116.309001,119.605205 L114.396176,121.467694 C113.867941,121.982039
+                        113.867941,122.815798 114.396176,123.330183 L117.910142,126.751753 L119.822926,128.614241 C120.35116,129.128586 121.207723,129.128586 121.73571,128.614241 L123.648493,126.751753 L135.603824,115.110736 C136.132059,114.596391 136.132059,113.762592 135.603824,113.248247 L133.691082,111.385759 Z"
+                        id="checked-date" fill="#8C9BAF" fill-rule="nonzero"></path>
+                    <rect id="picked-date" fill="#8C9BAF" fill-rule="nonzero" x="107" y="102" width="36" height="36"></rect>
+                    <path d="M108,16 L108,0 L120,0 L120,16 L150,16 L150,45 L0,45 L0,16 L30,16 L30,0 L42,0 L42,16 L69,16 L69,0 L81,0 L81,16 L108,16 Z" id="Combined-Shape" fill="#8C9BAF" fill-rule="nonzero"></path>
+                </g>
+            </svg>
+          </div>
+        </div>
+
+
+        <div class="block" id="hiw_ani-watch">
+          <div class="hiw watch">
+            <svg id="watch-graph" width="450px" height="108px" viewBox="0 0 450 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <polyline id="Path-2" stroke="#8C9BAF" fill-rule="nonzero" points="0 107 85.1538462 63.0606061 119.076923 84.6515152 149.538462 7 184.153846 84.6515152 230.538462 63.0606061 254.769231 92.6060606 322.615385 74.4242424 450 107"></polyline>
+                    <circle id="Oval" fill="#C2F14F" fill-rule="nonzero" cx="85.5" cy="63.5" r="7.5"></circle>
+                    <circle id="Oval-2" fill="#C2F14F" fill-rule="nonzero" cx="118.5" cy="83.5" r="7.5"></circle>
+                    <circle id="Oval-3" fill="#C2F14F" fill-rule="nonzero" cx="149.5" cy="7.5" r="7.5"></circle>
+                    <circle id="Oval-4" fill="#C2F14F" fill-rule="nonzero" cx="183.5" cy="83.5" r="7.5"></circle>
+                    <circle id="Oval-5" fill="#C2F14F" fill-rule="nonzero" cx="230.5" cy="63.5" r="7.5"></circle>
+                    <circle id="Oval-6" fill="#C2F14F" fill-rule="nonzero" cx="254.5" cy="92.5" r="7.5"></circle>
+                    <circle id="Oval-7" fill="#C2F14F" fill-rule="nonzero" cx="322.5" cy="74.5" r="7.5"></circle>
+                </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="block" id="hiw_text-watch">
+          <h5 class="secondary-title">Watch Symptom(s)</h5>
+          <p>
+            Keep track of symptom(s). The system will remind user to update progress of his/her symptom(s), if a symptom occurs for
+            too long without improving, user will be urged to get checked by a healthcare professional asap.
+          </p>
+        </div>
+</div>
+
+
+
+
+<div class="wrapper grey">
+
+  <div class="only-text-blocks">
+    <div class="block">
+      <h5>VISION</h5>
+      <p>
+        Some more features I've thought of incorporating into the prototype
+      </p>
+      <h5 class="secondary-title">Results Matching</h5>
+      <p>
+        When user checks and books appointments via Schecker, a report of his/her questions & answers will
+        be sent to the doctor, the doctor will then have a look and make a judgement of his/her own, as well as notify/update
+        to the patient of any changes or additional advices prior to the appointments. Then, when an official diagnosis is made, it will be
+        automatically updated in the app together with the prescribed medication and treatments.
+        <br />
+        <br />
+        <i>Data will be used to improve Schecker's AI.</i>
+      </p>
+    </div>
+
+
+
+     <div class="block">
+       <h5 class="secondary-title">Progress Management</h5>
+       <p>
+         Tracks progress of symptoms (diagnosed & undiagnosed) and treatments.
+       </p>
+     </div>
+
+     <div class="block">
+       <h5 class="secondary-title">Medication management</h5>
+       <p>
+         This links with the Progress Management feature, it gives info of drugs and their interactions with each other and the body,
+         as well as reminding and making sure medication is taken on time.
+       </p>
+     </div>
+
+     <div class="block">
+       <h5 class="secondary-title">Pets Version</h5>
+       <p>
+         Schecker's version for pets.
+       </p>
+     </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="block">
+    <p>
+      <i>Please check out my interactive prototype with the basic flow. For this is only my concept idea, I have
+      yet to make a complete prototype with all of the aforementioned features.</i>
+    </p>
+  </div>
+
+  <div class="block">
+    <a class="cta-w-label" id="schecker-viewInvision" href="https://invis.io/B8RU1TAPZYV">
+      <h6 class="CTA-label">VIEW PROTOTYPE</h6>
+      <div class="CTAarrow arrow-next" id="scheckerCTA-next">
+        <div class="arrow-circles">
+            <svg class="svg-circle" width="52px" height="52px" viewBox="0 0 52 52" >
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Desktop-HD" transform="translate(-840.000000, -486.000000)" fill-rule="nonzero" stroke="#F3425E">
+                        <circle id="Oval" cx="866" cy="512" r="25"></circle>
+                    </g>
+                </g>
+            </svg>
+            <div class="arrow-circle"></div>
+        </div>
+        <div class="arrow"></div>
+      </div>
+    </a>
+
+    <a class="simple-CTAbtn" id="schecker-viewInvisionCTA" href="https://invis.io/B8RU1TAPZYV">
+      <h6 class="CTA-label">VIEW PROTOTYPE</h6>
+    </a>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="./Scripts/myScript.js"></script>
+  <script type="text/javascript" src="./Scripts/projectScript.js"></script>
+
+</body>
+
+</html>
