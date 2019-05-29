@@ -278,8 +278,24 @@ a.back-to-home {
                         text-decoration: none;
                       }
 
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
 
+  border-top: 1px solid #8C9BAF;
+}
 
+    small.copyright {
+      /* width: 90%; */
+      color: #8C9BAF;
+      letter-spacing: .1em;
+
+      /* margin-top: 10%;
+      border-top: 1px solid #8C9BAF;
+      padding-top: 25px; */
+    }
 
 /* -------------------- How it works block ------------------------ */
 
@@ -485,5 +501,5 @@ a.back-to-home {
     align-items: center;
     justify-content: center;
   }
-  
+
 }

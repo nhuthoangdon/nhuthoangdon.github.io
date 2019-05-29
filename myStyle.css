@@ -408,7 +408,7 @@ a#emailIcon {
         top: 25px;
         right: 25px;
         color: white;
-        font-weight: 100;
+        font-weight: 200;
         letter-spacing: .2em;
         font-size: .8em;
         font-style: normal;
@@ -814,11 +814,10 @@ section.aboutme .wrapper {
 
     .aboutme .content-column {
       width: 40%;
+      display: flex;
+      flex-flow: column nowrap;
     }
 
-        .aboutme .content-column p {
-          margin-top: 8%;
-        }
 
 .my-portrait {
   width: 35%;
@@ -837,7 +836,15 @@ section.aboutme .wrapper {
   line-height: 2em;
 }
 
-
+small.copyright {
+  width: 100%;
+  color: #8C9BAF;
+  letter-spacing: .1em;
+  align-self: center;
+  margin-top: 10%;
+  border-top: 1px solid #8C9BAF;
+  padding-top: 25px;
+}
 
 /* ------------------------------------------------------------------------------------------------------------- */
 
@@ -851,6 +858,15 @@ section.aboutme .wrapper {
   .overlay .menu-items ul li a {
     font-weight: 200;
     font-size: calc(1.2rem + .5vw);
+  }
+
+  .my-portrait {
+    margin-bottom: 80px;
+  }
+
+  small.copyright {
+    position: absolute;
+    bottom: 0;
   }
 }
 
@@ -920,7 +936,7 @@ body {-ms-touch-action: none; touch-action: none;}
         }
 
           .sidenav #verticalEmail {
-            font: normal 200 0.75rem 'Fira Sans', sans-serif;
+            font: normal 400 0.75rem 'Fira Sans', sans-serif;
             letter-spacing: 0.1rem;
             text-decoration: none;
             color: #8C9BAF;
