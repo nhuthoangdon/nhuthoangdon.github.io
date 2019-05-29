@@ -313,10 +313,10 @@ a#emailIcon {
 
 
             .section-bullet:first-child:before {
-              content: "Intro";
+              content: "Home";
             }
             .section-bullet:nth-child(2):before {
-              content: "Latest Concept";
+              content: "Schecker";
             }
             .section-bullet:nth-child(3):before {
               content: "Works";
