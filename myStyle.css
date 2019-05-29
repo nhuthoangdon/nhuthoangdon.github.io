@@ -301,8 +301,7 @@ a#emailIcon {
             .section-bullet:nth-child(3):before,
             .section-bullet:last-child:before {
               font-size: .8em;
-              font-weight: 200;
-              opacity: .2;
+              opacity: 0;
               position: absolute;
               left: 18px;
               top: -3px;
@@ -324,19 +323,10 @@ a#emailIcon {
 
 
 
-                .section-bullet:hover:before {
-                  opacity: 1;
-                  font-weight: 700;
-                }
-
-
+                .section-bullet:hover:before,
                 .section-bullet.mPS2id-highlight:before {
                   opacity: 1;
-                  font-weight: 700;
                 }
-                /* .section-bullet.mPS2id-highlight:nth-child(2):before {
-                  opacity: 1;
-                } */
 
 
 
