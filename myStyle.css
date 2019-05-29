@@ -81,7 +81,7 @@ h2 {
 width: 80px;
 height: 100vh;
 position: fixed;
-z-index: 10000;
+z-index: 10001;
 top: 0;
 left: 0;
 overflow-x: hidden;
@@ -272,7 +272,7 @@ a#emailIcon {
 			left: 36px;
       top: 42%;
 			height: auto;
-      z-index: 10001;
+      z-index: 9999;
       -webkit-transform: translateX(-100px);
           -ms-transform: translateX(-100px);
               transform: translateX(-100px);
@@ -296,6 +296,51 @@ a#emailIcon {
     		}
 
 
+            .section-bullet:first-child:before,
+            .section-bullet:nth-child(2):before,
+            .section-bullet:nth-child(3):before,
+            .section-bullet:last-child:before {
+              font-size: .8em;
+              font-weight: 200;
+              opacity: .2;
+              position: absolute;
+              left: 18px;
+              top: -3px;
+              white-space: nowrap;
+            }
+
+
+
+
+            .section-bullet:first-child:before {
+              content: "Intro";
+            }
+            .section-bullet:nth-child(2):before {
+              content: "Latest Concept";
+            }
+            .section-bullet:nth-child(3):before {
+              content: "Works";
+            }
+
+
+
+                .section-bullet:hover:before {
+                  opacity: 1;
+                  font-weight: 700;
+                }
+
+
+                .section-bullet.mPS2id-highlight:before {
+                  opacity: 1;
+                  font-weight: 700;
+                }
+                /* .section-bullet.mPS2id-highlight:nth-child(2):before {
+                  opacity: 1;
+                } */
+
+
+
+
 
 /* Overlay Menu Navigation */
 .overlay {
@@ -306,7 +351,7 @@ a#emailIcon {
           transform: scaleY(0);
   opacity: 0;
   position: fixed;
-  z-index: 900;
+  z-index: 10000;
   left: 0;
   right: 0;
   bottom: 0;
@@ -574,15 +619,6 @@ section.intro {
 
 
 /* Side Projects Section */
-section.side-projects h5.title {
-    font-weight: 100;
-    font-variant: small-caps;
-    position: absolute;
-    right: 30px;
-    letter-spacing: .3rem;
-    opacity: .5;
-  }
-
   .schecker-logo-mobile {
     display: none;
   }
