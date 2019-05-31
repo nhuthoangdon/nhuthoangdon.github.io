@@ -609,6 +609,11 @@ section.intro {
 
 
 /* Side Projects Section */
+section.side-projects {
+  display: flex;
+  flex-direction: column;
+}
+
   .schecker-logo-mobile {
     display: none;
   }
@@ -627,9 +632,9 @@ section.intro {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
   }
       .content-wrapper .content-column {
@@ -640,7 +645,7 @@ section.intro {
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        margin: auto 3%;
+        margin-right: 10%;
       }
 
 
@@ -661,6 +666,7 @@ section.intro {
               letter-spacing: .5rem;
               font-weight: 900;
               text-align: center;
+              line-height: 2em;
             }
 
             .side-projects .content-column h2 {
@@ -744,6 +750,45 @@ section.intro {
                 51% {-webkit-transform: scaleY(1);transform: scaleY(1); -webkit-transform-origin: bottom; transform-origin: bottom;}
                 100% {-webkit-transform: scaleY(0);transform: scaleY(0); opacity: 0; -webkit-transform-origin: bottom; transform-origin: bottom;}
               }
+
+
+
+/* Other concepts section */
+      .project-tile {
+        width: 30%;
+        height: 70%;
+        min-width: 300px;
+        min-height: 450px;
+        margin: auto 5%;
+        border-radius: 2%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+      }
+
+          #other-projects_label {
+            margin-top: 2%;
+            text-align: center;
+          }
+              #other-projects_label p {
+                margin-top: 2.5%;
+              }
+
+        #MPF-tile {
+          background: #FFFFFF;
+          border: 1px solid #4AC01D;
+          box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+        }
+        #wishUp-tile {
+          background: #FFFFFF;
+          border: 1px solid #D757FF;
+          box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+        }
+
+            .other-logos {
+              width: 70%;
+            }
 
 
 
@@ -1075,12 +1120,19 @@ body {-ms-touch-action: none; touch-action: none;}
                   }
 
                 .content-wrapper .content-column {
-                  margin-top: 3%;
+                  margin: 3% auto auto;
                 }
 
                 .side-projects .content-column div {
                   margin-top: 6%;
                 }
+
+                #other-concepts {
+                  height: auto;
+                }
+                    .project-tile {
+                      margin: 5% auto;
+                    }
 
                 section.myWorks {
                   padding-bottom: 10%;
