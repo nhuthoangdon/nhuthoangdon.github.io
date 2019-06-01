@@ -38,13 +38,7 @@ h2 {
 }
 
 
-.ease-in {
-  visibility: hidden;
-}
-.ease-in-w {
-  visibility: hidden;
-}
-.ease-in-a {
+.ease-in, .ease-in-w, .ease-in-a, .ease-in-o {
   visibility: hidden;
 }
 
@@ -299,6 +293,7 @@ a#emailIcon {
             .section-bullet:first-child:before,
             .section-bullet:nth-child(2):before,
             .section-bullet:nth-child(3):before,
+            .section-bullet:nth-child(4):before,
             .section-bullet:last-child:before {
               font-size: .8em;
               opacity: 0;
@@ -312,13 +307,19 @@ a#emailIcon {
 
 
             .section-bullet:first-child:before {
-              content: "Home";
+              content: "Intro";
             }
             .section-bullet:nth-child(2):before {
               content: "Schecker";
             }
             .section-bullet:nth-child(3):before {
+              content: "Others";
+            }
+            .section-bullet:nth-child(4):before {
               content: "Works";
+            }
+            .section-bullet:last-child:before {
+              content: "Me";
             }
 
 
@@ -754,37 +755,44 @@ section.side-projects {
 
 
 /* Other concepts section */
-      .project-tile {
-        width: 30%;
-        height: 70%;
-        min-width: 300px;
-        min-height: 450px;
-        margin: auto 5%;
-        border-radius: 2%;
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-content: center;
+.project-tile {
+  width: 30%;
+  height: 70%;
+  min-width: 300px;
+  min-height: 450px;
+  margin: auto 5%;
+  border-radius: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+      #other-concepts h5.small-label {
+        margin-top: 4%;
       }
 
-          #other-projects_label {
-            margin-top: 2%;
-            text-align: center;
-          }
-              #other-projects_label p {
-                margin-top: 2.5%;
-              }
-
-        #MPF-tile {
-          background: #FFFFFF;
-          border: 1px solid #4AC01D;
-          box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-        }
-        #wishUp-tile {
-          background: #FFFFFF;
-          border: 1px solid #D757FF;
-          box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-        }
+      #MPF-tile {
+        background: #FFFFFF;
+        border: 1px solid #4AC01D;
+        -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+                box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+      }
+      #wishUp-tile {
+        background: #FFFFFF;
+        border: 1px solid #D757FF;
+        -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+                box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+      }
 
             .other-logos {
               width: 70%;
@@ -976,7 +984,7 @@ body {-ms-touch-action: none; touch-action: none;}
     to {-webkit-transform: translateY(0);transform: translateY(0);}
   }
 
-  .ease-in, .ease-in-a, .ease-in-w {
+  .ease-in, .ease-in-a, .ease-in-w, .ease-in-o {
     visibility: visible;
   }
 

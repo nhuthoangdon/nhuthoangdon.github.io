@@ -342,7 +342,7 @@ function preloadingAnimation() {
 
 $(window).scroll(function(event) {
   if (window.matchMedia("(max-width: 874px)").matches || window.matchMedia("(max-height: 630px)").matches) {
-    $(".ease-in, .ease-in-w, .ease-in-a, .my-portrait svg").each(function(i, el) {
+    $(".ease-in, .ease-in-w, .ease-in-o, .ease-in-a, .my-portrait svg").each(function(i, el) {
       var el = $(el);
       if (el.visible(true)) {
         el.addClass("come-in");
@@ -381,6 +381,19 @@ var worksIn = (function(){
   };
 })();
 
+var othersIn = (function(){
+  var tl = new TimelineMax();
+  var executed = false;
+  return function() {
+    if (!executed) {
+      if ($('.ease-in-o').visible(true)) {
+           tl.staggerFrom(".ease-in-o", .7, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1);
+           executed = true;
+         }
+    }
+  };
+})();
+
 var aboutIn = (function(){
   var tl = new TimelineMax();
   var executed = false;
@@ -400,7 +413,7 @@ var aboutIn = (function(){
         var tl = new TimelineMax();
             tl.staggerFromTo(".st1, .st0", .3 ,{y: "-=200", autoAlpha: 0, scale: 8, immediateRender: false},
                                                {y: "+=200", scale: 1, autoAlpha: 1, stagger: 0.02});
-            return tl.timeScale(4);
+            return tl.timeScale(5);
       };
 
 
@@ -489,6 +502,7 @@ function fancyEyes() {
               onComplete: function () {
                 sideProjIn();
                 worksIn();
+                othersIn();
                 aboutIn();
                 }
             });
