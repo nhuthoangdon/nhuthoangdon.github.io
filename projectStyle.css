@@ -148,6 +148,12 @@ a.back-to-home {
   .grey {
     background-color: #EBEEF3;
   }
+  .black {
+    background-color: black;
+  }
+      .wrapper.black div {
+        color: white;
+      }
   .bg-img {
     position: absolute;
     width: 100vw;
@@ -308,14 +314,29 @@ a.back-to-home {
                       }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 25px 8%;
   border-top: 1px solid #8C9BAF;
 }
 
-    small.copyright {
+    .footer-links a {
+      font-weight: 400;
+      margin-right: 25px;
+    }
+
+    small.footer-text {
       color: #8C9BAF;
       letter-spacing: .1em;
     }
@@ -450,11 +471,6 @@ img.mpf-hiw-img {
 
 
 
-
-
-
-
-
 /* ----------------------------- scroll slide in ---------------------------------- */
 
 .come-in {
@@ -514,6 +530,25 @@ img.mpf-hiw-img {
 }
 
 /* ------------------------------------------------------------------------------------ */
+
+@media screen and (max-width: 610px) {
+
+  footer {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    padding: auto 25px;
+  }
+
+    #copyright {
+      margin-top: 25px;
+    }
+}
 
 
 
