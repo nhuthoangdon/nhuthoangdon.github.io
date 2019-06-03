@@ -17,12 +17,8 @@ $( document ).ready(function() {
     if (window.matchMedia("(max-width: 874px)").matches || window.matchMedia("(max-height: 630px)").matches) {
         TweenMax.set(".st0, .st1", {autoAlpha: 1});
     };
-
 });
 
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
 
 
 
@@ -186,6 +182,7 @@ function emailBtnHover() {
 
 // Loading animation
 function preloadingAnimation() {
+  window.scrollTo(0, 0);
   var $el1 = document.getElementById('ic-component-1'),
       $el2 = document.getElementById('ic-component-2'),
       $el3 = document.getElementById('ic-component-3'),
