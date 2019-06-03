@@ -20,6 +20,18 @@ a:hover {
   text-decoration: overline;
 }
 
+a.freepik-credits {
+  margin-top: 25px;
+  text-decoration: none;
+  font-weight: 200;
+  font-size: .7rem;
+  letter-spacing: .05rem;
+  color: #8C9BAF;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 p {
   font-size: 1rem;
   letter-spacing: .05rem;
@@ -136,6 +148,23 @@ a.back-to-home {
   .grey {
     background-color: #EBEEF3;
   }
+  .bg-img {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+      #mpf-bg {
+        background-image: url("./Assets/mpf-introBG.png");
+      }
+
+  .unfinished-notice {
+    align-items: center;
+    margin-bottom: 15%;
+  }
+
 
   .block {
     display: -webkit-box;
@@ -283,23 +312,15 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 25px;
-
   border-top: 1px solid #8C9BAF;
 }
 
     small.copyright {
-      /* width: 90%; */
       color: #8C9BAF;
       letter-spacing: .1em;
-
-      /* margin-top: 10%;
-      border-top: 1px solid #8C9BAF;
-      padding-top: 25px; */
     }
 
 /* -------------------- How it works block ------------------------ */
-
-
 
   .hiw.input {
     display: inline-block;
@@ -400,6 +421,40 @@ footer {
 
 
 
+
+
+
+/* ----------------------------------- my plastic footprint ------------------------------------- */
+
+.mpf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+img.mpf-hiw-img {
+  width: 90%;
+}
+
+    #mpf_home-illustration {
+      margin-top: 20%;
+    }
+
+    #mpf_goal-icons {
+      width: 30%;
+    }
+
+
+
+
+
+
+
+
+
+
 /* ----------------------------- scroll slide in ---------------------------------- */
 
 .come-in {
@@ -452,6 +507,10 @@ footer {
         margin-top: 0;
       }
 
+      #mpf-hiw-img-intro {
+        margin-top: 0;
+      }
+
 }
 
 /* ------------------------------------------------------------------------------------ */
@@ -501,5 +560,4 @@ footer {
     align-items: center;
     justify-content: center;
   }
-
 }

@@ -114,3 +114,17 @@ win.scroll(function(event) {
           return tlWatch;
 
   };
+
+
+// ----------------------------------- my Plastic Footprint stuff ---------------------------------
+
+//blur bg when scrolled
+$(window).on('scroll', function () {
+    var pixs = $(document).scrollTop()
+    pixs = pixs / 10;
+    $("#mpf-bg").css({"-webkit-filter": "blur("+pixs+"px)",
+                      "-moz-filter":    "blur("+pixs+"px)",
+                      "-ms-filter":     "blur("+pixs+"px)",
+                      "-o-filter":      "blur("+pixs+"px)",
+                      "-filter":        "blur("+pixs+"px)" })
+});
