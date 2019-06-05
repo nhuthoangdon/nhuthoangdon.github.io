@@ -127,6 +127,25 @@ a.back-to-home {
     width: 30px;
   }
 
+
+a.invision-CTA {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  display: inline;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+  img.invision-icon {
+    width: 70px;
+    transition: .5s;
+  }
+
+      a.invision-CTA:hover img.invision-icon {
+        transform: scale(1.15);
+      }
+
   .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -145,6 +164,7 @@ a.back-to-home {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
+
 
   .grey {
     background-color: #EBEEF3;
