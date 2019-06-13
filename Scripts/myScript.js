@@ -339,7 +339,7 @@ function preloadingAnimation() {
 
 $(window).scroll(function(event) {
   if (window.matchMedia("(max-width: 874px)").matches || window.matchMedia("(max-height: 630px)").matches) {
-    $(".ease-in, .ease-in-w, .ease-in-o, .ease-in-a, .my-portrait svg").each(function(i, el) {
+    $("section").each(function(i, el) {
       var el = $(el);
       if (el.visible(true)) {
         el.addClass("come-in");
@@ -350,7 +350,7 @@ $(window).scroll(function(event) {
 
 
 $(window).scroll(function(event) {
-  $("section").each(function(i, el) {
+  $(".ease-in, .ease-in-w, .ease-in-o, .ease-in-a, .my-portrait svg").each(function(i, el) {
     var el = $(el);
     if (el.visible(true)) {
       sideProjIn();
