@@ -349,6 +349,17 @@ $(window).scroll(function(event) {
 });
 
 
+$(window).scroll(function(event) {
+  $("section").each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      sideProjIn();
+      worksIn();
+      othersIn();
+      aboutIn();
+    }
+  });
+});
 
 
 var sideProjIn = (function(){
@@ -410,7 +421,7 @@ var aboutIn = (function(){
         var tl = new TimelineMax();
             tl.staggerFromTo(".st1, .st0", .3 ,{y: "-=200", autoAlpha: 0, scale: 8, immediateRender: false},
                                                {y: "+=200", scale: 1, autoAlpha: 1, stagger: 0.02});
-            return tl.timeScale(5);
+            return tl.timeScale(6);
       };
 
 
@@ -531,10 +542,6 @@ function fancyEyes() {
             if(!i) i=d.currentSelector.call(sel);
             if(!(i===0 && dlt>0) && !(i===sel.length-1 && dlt<0)) sel.eq(i-dlt).trigger("click.mPS2id");
           }
-        }).on("mousewheel DOMMouseScroll",function(e){ //mousewheel
-          if(window.matchMedia("(max-width: 874px), (max-height: 630px)").matches) return; //disable on mobile
-          if($($(this).data("mPS2idExtend").selector).length) e.preventDefault();
-          $(this).trigger("scrollSection",((e.originalEvent.detail<0 || e.originalEvent.wheelDelta>0) ? 1 : -1));
         }).on("keydown",function(e){ //keyboard
           var code=e.keyCode ? e.keyCode : e.which,
             keys=$(this).data("mPS2id").layout==="horizontal" ? [37,39] : [38,40];
