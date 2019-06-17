@@ -5,7 +5,7 @@ $( document ).ready(function() {
     toggleMenu();
     hamburgerHover();
     emailBtnHover();
-    shrinkNav();
+    projectTileHover();
     CTAarrowHover();
     CTAbuttonHover();
     preloadingAnimation();
@@ -14,9 +14,7 @@ $( document ).ready(function() {
      }, 5000);
 
     TweenMax.set(".st0, .st1", {autoAlpha: 0});
-    if (window.matchMedia("(max-width: 874px)").matches || window.matchMedia("(max-height: 630px)").matches) {
-        TweenMax.set(".st0, .st1", {autoAlpha: 1});
-    };
+
 });
 
 
@@ -26,21 +24,12 @@ $( document ).ready(function() {
 // Initial Home Animation
 function homeload() {
   var homeTimeline = new TimelineMax({onStart: preloadingOut});
-  var navTween = TweenMax.from('#navBar', 1, {x:-30, autoAlpha: 0, delay: 1, immediateRender: false});
-  TweenMax.from('#emailMe', 1, {xPercent: 30, autoAlpha: 0, delay: .5});
-      homeTimeline.from('#intro_text h1', 0.7, {yPercent: -50, autoAlpha: 0})
-                  .from('#intro_text h5', 0.7, {yPercent: -50, autoAlpha: 0}, "-=.3")
-                  .from('#intro_text p', 0.7, {yPercent: -50, autoAlpha: 0}, "-=.5")
-                  .from('a.arrow-down', 0.7, {yPercent: -50, autoAlpha: 0}, "-=.8")
-                  .from('#hamburger', 1, {className: "+=hamburgerState"});
-
-      if (window.matchMedia("(max-width: 874px)").matches || window.matchMedia("(max-height: 630px)").matches) {
-          navTween.updateTo({x: 0, y: -100}, false);
-          TweenMax.killTweensOf('#hamburger');
-      }
+  TweenMax.from('a#emailIcon', 1, {x: 100, autoAlpha: 0, delay: 1});
+      homeTimeline.staggerFrom("#intro_text h1, #intro_text h5, #intro_text p, a.arrow-down, #hamburger", 1,
+                              {y: 50, autoAlpha: 0}, .2);
 };
             function bulletsSlideIn() {
-              TweenLite.to('#sections-bullets', 1.5, {x: 0, delay: 5.5});
+              TweenLite.fromTo('#sections-bullets', 1.5, {x: 100}, {x: 0, delay: 4});
             };
 
 
@@ -76,8 +65,8 @@ function CTAbuttonHover() {
   $('.CTA-button').hover (
     function() {
       TweenMax.to('.CTA-button svg', .5, {strokeDashoffset: 0, strokeDasharray: 480});
-      TweenMax.to('.CTA-button h6.CTA-label', .2, {color: '#C2F14F', delay: .4});
-      TweenMax.to('#cta-btn-stroke', .7, {stroke: "#C2F14F"});
+      TweenMax.to('.CTA-button h6.CTA-label', .2, {color: '#2A2F36', delay: .4});
+      TweenMax.to('#cta-btn-stroke', .7, {stroke: "#2A2F36"});
     },
     function() {
       TweenMax.to('.CTA-button svg', .4, {strokeDashoffset: 95, strokeDasharray: '50 200'});
@@ -88,19 +77,56 @@ function CTAbuttonHover() {
 };
 
 
-
-
-
-// Shrink Navbar on smaller screens Function
-function shrinkNav() {
-  $(window).on("load scroll", function() {
-    if ($(document).scrollTop() > 50) {
-      TweenLite.to($('.sidenav'), 0.8, {className:"+=shrink"});
-    } else {
-      TweenLite.to($('.sidenav'), 0.5, {className:"-=shrink"});
+function projectTileHover() {
+  $('#plasticFootprint-tile').hover(
+    function() {
+      TweenMax.fromTo('#plasticFootprint-overlay', .5, {scale: .7}, {scale: 1, autoAlpha: 1, ease: Back.easeOut.config(3)});
+      $("#mpf-video")[0].pause();
+    },
+    function() {
+      TweenMax.to('#plasticFootprint-overlay', .3, {autoAlpha: 0});
+      $("#mpf-video")[0].play();
     }
-  });
+  );
+
+  $('#wishUp-tile').hover(
+    function() {
+      TweenMax.fromTo('#wishUp-overlay', .5, {scale: .7}, {scale: 1, autoAlpha: 1, ease: Back.easeOut.config(3)});
+      tl_levitatingIphone.pause();
+    },
+    function() {
+      TweenMax.to('#wishUp-overlay', .3, {autoAlpha: 0});
+      tl_levitatingIphone.resume();
+    }
+  );
+
+  $('#bardot-tile').hover(
+    function() {
+      TweenMax.fromTo('#bardot-overlay', .5, {scale: .7}, {scale: 1, autoAlpha: 1, ease: Back.easeOut.config(3)});
+      TweenMax.to("#bardot-tile-bg", 1, {scale: 1.2, ease: Power2.easeOut});
+    },
+    function() {
+      TweenMax.to('#bardot-overlay', .3, {autoAlpha: 0});
+      TweenMax.to("#bardot-tile-bg", 1, {scale: 1, ease: Power2.easeOut});
+    }
+  );
+
+  $('#sa-tile').hover(
+    function() {
+      TweenMax.fromTo('#sa-overlay', .5, {scale: .7}, {scale: 1, autoAlpha: 1, ease: Back.easeOut.config(3)});
+      TweenMax.to("#sa-tile-bg", 1, {scale: 1.2, ease: Power2.easeOut});
+    },
+    function() {
+      TweenMax.to('#sa-overlay', .3, {autoAlpha: 0});
+      TweenMax.to("#sa-tile-bg", 1, {scale: 1, ease: Power2.easeOut});
+    }
+  );
 };
+
+
+
+
+
 
 
 
@@ -111,7 +137,7 @@ function hamburgerHover() {
       TweenLite.to($(this), 0.2, {rotation: -90, transformOrigin: "center"});
       TweenLite.to(".menu .bar2", 0.2, {height: 30, rotation: 0, x: 12, transformOrigin: "center center"});
       TweenLite.to(".menu .bar3", 0.2, {y: 0});
-      TweenLite.to(".menu .bar1, .menu .bar2, .menu .bar3", 0.05, {backgroundColor: "#C2F14F"});
+      TweenLite.to(".menu .bar1, .menu .bar2, .menu .bar3", 0.05, {backgroundColor: "#F3425E"});
     },
     function() {
       TweenLite.to($(this), 0.1, {rotation: 0});
@@ -148,9 +174,6 @@ function toggleMenu() {
                                                                                        transformOrigin: ["bottom left", "bottom right"]}},
                                                              {scaleY: 1, y: 0, autoAlpha: 1, rotation: 0, ease: Back.easeOut.config(2)}, 0.2, "-=.3");
 
-      if ($('.sidenav').hasClass("shrink")) {
-        TweenLite.to($('.sidenav'), 0.2, {className:"-=shrink"});
-      }
     } else {
       closeMenu();
     }
@@ -306,6 +329,16 @@ function preloadingAnimation() {
 
 
 
+
+
+
+
+
+
+
+
+
+
 (function($) {
 
   /**
@@ -338,28 +371,18 @@ function preloadingAnimation() {
 
 
 $(window).scroll(function(event) {
-  if (window.matchMedia("(max-width: 874px)").matches || window.matchMedia("(max-height: 630px)").matches) {
-    $("section").each(function(i, el) {
-      var el = $(el);
-      if (el.visible(true)) {
-        el.addClass("come-in");
-      }
-    });
-  }
-});
-
-
-$(window).scroll(function(event) {
   $(".ease-in, .ease-in-w, .ease-in-o, .ease-in-a, .my-portrait svg").each(function(i, el) {
     var el = $(el);
     if (el.visible(true)) {
       sideProjIn();
-      worksIn();
       othersIn();
+      worksIn();
       aboutIn();
     }
   });
 });
+
+
 
 
 var sideProjIn = (function(){
@@ -368,8 +391,8 @@ var sideProjIn = (function(){
   return function() {
     if (!executed) {
       if ($('.ease-in').visible(true)) {
-           tl.fromTo(".device-wrapper", 1, {x: -50}, {x: 0, autoAlpha: 1})
-           tl.staggerFrom(".content-column .ease-in", .6, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1, "-=0.7");
+           tl.fromTo(".device-wrapper", 2, {x: -100}, {x: 0, autoAlpha: 1})
+           tl.staggerFrom(".content-column .ease-in", .8, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1, "-=1.3");
            executed = true;
          }
     }
@@ -382,20 +405,23 @@ var worksIn = (function(){
   return function() {
     if (!executed) {
       if ($('.ease-in-w').visible(true)) {
-           tl.staggerFrom(".ease-in-w", .7, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1);
+           tl.staggerFrom(".ease-in-w", 1, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1);
            executed = true;
          }
     }
   };
 })();
 
+var tl_levitatingIphone = new TimelineMax({yoyo: true, repeat: -1, paused: true});
+    tl_levitatingIphone.fromTo("#wishUp-mockup-ip", 2, {y: -10}, {y: 10, ease: Power0.easeNone});
 var othersIn = (function(){
   var tl = new TimelineMax();
   var executed = false;
   return function() {
     if (!executed) {
       if ($('.ease-in-o').visible(true)) {
-           tl.staggerFrom(".ease-in-o", .7, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1);
+           tl.staggerFrom(".ease-in-o", 1, {y: 200, autoAlpha: 0, immediateRender: false}, 0.1);
+           tl_levitatingIphone.play();
            executed = true;
          }
     }
@@ -452,14 +478,6 @@ function fancyEyes() {
       TweenLite.to("#leftEye, #rightEye", .1, {x: 0});
     }
   );
-  $('#sections-bullets').hover (
-    function() {
-      TweenLite.to("#leftEye, #rightEye", .2, {x: -6, transformOrigin: "center"});
-    },
-    function() {
-      TweenLite.to("#leftEye, #rightEye", .1, {x: 0});
-    }
-  );
   $('#about p a').hover (
     function() {
       TweenLite.to("#leftEye", .2, {x: -6, y: 2, rotation: -15, transformOrigin: "center"});
@@ -469,10 +487,10 @@ function fancyEyes() {
       TweenLite.to("#leftEye, #rightEye", .1, {x: 0, y: 0, rotation: 0});
     }
   );
-  $('#emailMe').hover (
+  $('a#emailIcon').hover (
     function() {
       TweenLite.to("#leftEye", .2, {x: 5, y: 2, rotation: 15, transformOrigin: "center"});
-      TweenLite.to("#rightEye", .2, {x: 6, y: -1, rotation: 10, transformOrigin: "center"});
+      TweenLite.to("#rightEye", .2, {x: 5, rotation: 10, transformOrigin: "center"});
     },
     function() {
       TweenLite.to("#leftEye, #rightEye", .1, {x: 0, y: 0, rotation: 0});
@@ -504,17 +522,15 @@ function fancyEyes() {
 
 (function($){
         $(window).on("load",function(){
-          if (window.matchMedia("(min-width: 874px)").matches || window.matchMedia("(min-height: 630px)").matches) {
             $("a[rel='m_PageScroll2id']").mPageScroll2id({
               liveSelector:"a[rel='m_PageScroll2id']",
-              onComplete: function () {
-                sideProjIn();
-                worksIn();
-                othersIn();
-                aboutIn();
-                }
+              // onComplete: function () {
+              //   sideProjIn();
+              //   othersIn();
+              //   worksIn();
+              //   aboutIn();
+              //   }
             });
-          };
         });
     })(jQuery);
 

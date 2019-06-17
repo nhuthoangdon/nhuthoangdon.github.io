@@ -68,7 +68,7 @@
 
 
 
-<div class="sidenav" id="navBar">
+<!-- <div class="sidenav" id="navBar"> -->
     <!-- Hamburger Menu Icon -->
     <div class="menu" id="hamburger">
       <div class="bar1"></div>
@@ -76,9 +76,6 @@
       <div class="bar3"></div>
     </div>
 
-    <!-- Email -->
-    <a id="verticalEmail" href="mailto:nhuthoangdon@gmail.com" rel="m_PageScroll2id">nhuthoangdon@gmail.com</a>
-</div>
 
 
 
@@ -86,10 +83,10 @@
 <div class ="overlay" id="menu-overlay">
   <div class="menu-items" id="menu-links">
     <ul>
-      <li><a href="#home-intro" rel="m_PageScroll2id" onclick="closeMenu()">Intro</a></li>
-      <li><a href="#projects" rel="m_PageScroll2id" onclick="closeMenu()">Latest Concept</a></li>
-      <li><a href="#other-concepts" rel="m_PageScroll2id" onclick="closeMenu()">Other Ideas</a></li>
-      <li><a href="#works" rel="m_PageScroll2id" onclick="closeMenu()">Past Works</a></li>
+      <li><a href="#home-intro" rel="m_PageScroll2id" onclick="closeMenu()">Home</a></li>
+      <li><a href="#projects" rel="m_PageScroll2id" onclick="closeMenu()">Schecker</a></li>
+      <li><a href="#other-concepts" rel="m_PageScroll2id" onclick="closeMenu()">In incubation</a></li>
+      <li><a href="#works" rel="m_PageScroll2id" onclick="closeMenu()">Past experience</a></li>
       <li><a href="#about" rel="m_PageScroll2id" onclick="closeMenu()">Me</a></li>
     </ul>
   </div>
@@ -101,12 +98,9 @@
 
 
 <!-- Vertical Contact Me -->
-  <div id="emailMe">
-    <small>Interested? Give me a shout!</small>
     <a id="emailIcon" href="mailto:nhuthoangdon@gmail.com">
         <img alt="Email" src="./Assets/ic_email.svg" />
     </a>
-  </div>
 
 
 
@@ -153,31 +147,26 @@
   <div class="content-wrapper">
         <!-- Iphone mockup -->
         <div class="device-wrapper ease-in">
-          <img class="device-mockup" alt="Screen" src="./Assets/device_mockup.png"  />
+          <img class="mockup-screens" id="schecker-mockups" alt="Screen mockups" src="./Assets/home-schecker-mockups.png" />
         </div>
 
    <!-- Project Description -->
-    <div class="content-column">
-      <h5 class="small-label ease-in">MY LATEST CONCEPT</h5>
-      <img class="schecker-logo-mobile ease-in" alt="Schecker Logo" src="./Assets/schecker_logo_vertical.png" />
-      <div>
+    <div class="content-column" id="latest-concept">
+      <h5 class="small-label ease-in">SCHECKER</h5>
         <p class="ease-in">
-          A Symptom Checker Platform that
+          A health app that does a little more than providing info <i>(and&nbsp;Cyberchondria)</i>.
         </p>
-        <h2 class="ease-in">Doesn't give you Cyberchondria</h2>
-      </div>
-
       <!-- CTA -->
-      <a class="CTA-button ease-in" id="schecker-CTA" href="./scheckerIntro.html">
-        <svg class="button-outline" width="188px" height="52px" viewBox="0 0 188 52">
-            <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="cta-btn-stroke" transform="translate(-780.000000, -669.000000)" fill-rule="nonzero" stroke="#F3425E">
-                    <rect id="Rectangle" x="780.5" y="669.5" width="187" height="51"></rect>
-                </g>
-            </g>
-            <foreignObject width="188" height="52" y="14"><h6 class="CTA-label">CHECK IT OUT</h6></foreignObject>
-        </svg>
-      </a>
+        <a class="CTA-button ease-in" id="schecker-CTA" href="./scheckerIntro.html">
+          <svg class="button-outline" width="188px" height="52px" viewBox="0 0 188 52">
+              <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="cta-btn-stroke" transform="translate(-780.000000, -669.000000)" fill-rule="nonzero" stroke="#F3425E">
+                      <rect id="Rectangle" x="780.5" y="669.5" width="187" height="51"></rect>
+                  </g>
+              </g>
+              <foreignObject width="188" height="52" y="14"><h6 class="CTA-label">CHECK IT OUT</h6></foreignObject>
+          </svg>
+        </a>
     </div>
   </div>
 </section>
@@ -188,27 +177,30 @@
 
 <section class="side-projects" id="other-concepts">
 
-    <h5 class="small-label ease-in-o">IDEAS IN DEVELOPMENT</h5>
+    <h2 class="ease-in-o">ideas in incubation</h2>
 
-  <div class="content-wrapper">
+    <div class="content-wrapper">
 
-    <a class="project-tile ease-in-o" id="MPF-tile" href="./myPlasticFootprint.html">
-      <img class="other-logos" alt="My Plastic Footprint logo" src="./Assets/myPlasticFootprint_logo.png" />
-    </a>
+      <div class="project-tile ease-in-o" id="plasticFootprint-tile">
+        <a class="video-overlay" id="plasticFootprint-overlay" href="#">
+          <img class="other-logo" alt="My Plastic Footprint Logo" src="./Assets/myPlasticFootprint_logo.png" />
+        </a>
+        <video autoplay loop muted id="mpf-video">
+          <source src="./Assets/hd1575.mov" type="video/mp4" />
+          Sorry it's a really nice video your browser failed to load.
+        </video>
+      </div>
 
-    <a class="project-tile ease-in-o" id="wishUp-tile" href="./WishUp.html">
-      <img class="other-logos" alt="WishUp logo" src="./Assets/wishUp_logo.png" />
-    </a>
+      <div class="project-tile ease-in-o" id="wishUp-tile">
+        <a class="video-overlay" id="wishUp-overlay" href="#">
+          <img class="other-logo" alt="WishUp Logo" src="./Assets/wishUp_logo.png" />
+        </a>
+        <img id="wishUp-mockup-ip" alt="WishUp Screen" src="./Assets/wishUp-mockup-ip.png" />
+      </div>
 
-
-  </div>
+    </div>
 
 </section>
-
-
-
-
-
 
 
 
@@ -217,25 +209,26 @@
 
 
 <!-- Work Showcase Section -->
-<section class="myWorks" id="works">
-  <div class="works-wrapper">
+<section class="side-projects" id="works">
 
-    <div id="works-intro">
-      <h5 class="small-label ease-in-w">PAST WORKS</h5>
-      <p class="ease-in-w">
-        Some projects I've worked on as part of an UI/UX team at my former company.
-      </p>
+  <h2 class="ease-in-w">past experience</h2>
+
+  <div class="content-wrapper">
+
+    <div class="project-tile ease-in-w" id="bardot-tile">
+      <a class="video-overlay" id="bardot-overlay" href="#">
+        <img class="other-logo" alt="Bardot" src="./Assets/logo_bardot.png" />
+      </a>
+      <div class="tile-bg" id="bardot-tile-bg"></div>
     </div>
 
-    <div class="logos">
-      <a href="https://www.bardot.com/" class="ease-in-w"><img alt="Bardot" src="./Assets/logo_bardot.png" /></a>
-      <a href="https://www.standards.org.au/" class="ease-in-w"><img alt="Standards Australia" src="./Assets/logo_sa.png" /></a>
-      <a href="https://www.radiorentals.com.au/" class="ease-in-w"><img alt="Radio Rentals" src="./Assets/logo_rr.png" /></a>
-      <a href="https://www.shavershop.com.au/" class="ease-in-w"><img alt="Shaver Shop" src="./Assets/logo_ss.png" /></a>
-      <a href="#" class="ease-in-w"><img alt="FreshFromCo." src="./Assets/logo_ffc.png" /></a>
-      <a href="https://my7christmas.com.au" class="ease-in-w"><img alt="My7Christmas" src="./Assets/logo_my7.png" /></a>
-      <a href="https://www.mjbale.com/" class="ease-in-w"><img alt="M.J. Bale" src="./Assets/logo_mjbale.png" /></a>
+    <div class="project-tile ease-in-w" id="sa-tile">
+      <a class="video-overlay" id="sa-overlay" href="#">
+        <img class="other-logo" alt="Standards Australia" src="./Assets/logo_sa.png" />
+      </a>
+      <div class="tile-bg" id="sa-tile-bg"></div>
     </div>
+
   </div>
 
 </section>
@@ -249,8 +242,8 @@
 
 
 
-<section class="aboutme" id="about">
-  <div class="wrapper">
+<section class="side-projects" id="about">
+  <div class="content-wrapper">
     <div class="content-column">
       <h5 class="small-label ease-in-a">SO...</h5>
       <p class="ease-in-a">
@@ -262,12 +255,10 @@
         <i class="ease-in-a">Social media isn't my cup of coffee, but I'm very reachable at
                              <a href="mailto:nhuthoangdon@gmail.com">nhuthoangdon@gmail.com</a>.</i>
         </p>
-        <small class="copyright ease-in-a">	&#169; 2019 NHUT H. DON</small>
     </div>
 
   <!-- Portrait -->
     <div class="my-portrait">
-
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         	 viewBox="0 0 473.6 610.7" style="enable-background:new 0 0 473.6 610.7;" xml:space="preserve">
           <style type="text/css">
@@ -4155,14 +4146,12 @@
               	</g>
               </g>
         </svg>
-
-
     </div>
   </div>
 </section>
 
 
-
+<small class="copyright">	&#169; 2019 NHUT H. DON</small>
 
 
 
