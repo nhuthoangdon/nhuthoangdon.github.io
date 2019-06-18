@@ -233,9 +233,6 @@ a#emailIcon {
       top: 25px;
 			height: auto;
       z-index: 9999;
-      -webkit-transform: translateX(-100px);
-          -ms-transform: translateX(-100px);
-              transform: translateX(-100px);
 		}
 
     .section-bullet {
@@ -814,15 +811,18 @@ section.side-projects {
   line-height: 2em;
 }
 
-small.copyright {
+footer {
   position: fixed;
   z-index: 1000;
-  left: 25px;
-  bottom: 25px;
-  color: #8C9BAF;
-  letter-spacing: .1em;
-  font-size: .7em;
+  left: 0;
+  bottom: 0;
+  padding: 25px;
 }
+    .copyright {
+      color: #8C9BAF;
+      letter-spacing: .1em;
+      font-size: .7em;
+    }
 
 
 
@@ -833,6 +833,9 @@ small.copyright {
   section.side-projects {
     padding-top: 5%;
     padding-bottom: 20%;
+  }
+  footer {
+    position: relative;
   }
 }
 

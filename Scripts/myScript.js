@@ -29,7 +29,7 @@ function homeload() {
                               {y: 50, autoAlpha: 0}, .2);
 };
             function bulletsSlideIn() {
-              TweenLite.fromTo('#sections-bullets', 1.5, {x: 100}, {x: 0, delay: 4});
+              TweenLite.fromTo('#sections-bullets', 1.5, {x: 200}, {x: 0});
             };
 
 
@@ -496,12 +496,10 @@ function fancyEyes() {
       TweenLite.to("#leftEye, #rightEye", .1, {x: 0, y: 0, rotation: 0});
     }
   );
-  $('.social_icons').hover (
+  $('.my-portrait').hover (
     function() {
-      var tl = new TimelineMax();
-          tl.to("#leftEye, #rightEye", .7, {y: -3, rotation: 20})
-          tl.to("#leftEye", .1, {y: 2, x: -6, rotation: -20})
-          tl.to("#rightEye", .1, {y: -1, x: -5, rotation: -10}, "-=.1");
+      TweenLite.to("#leftEye", 1.5, {x: 6, rotation: 5, transformOrigin: "center"});
+      TweenLite.to("#rightEye", 1.5, {x: -4, rotation: -5, transformOrigin: "center"});
     },
     function() {
       TweenMax.to("#leftEye, #rightEye", .1, {x: 0, y: 0, rotation: 0});
@@ -565,40 +563,7 @@ function fancyEyes() {
             if($($(this).data("mPS2idExtend").selector).length) e.preventDefault();
             $(this).trigger("scrollSection",(code===keys[0] ? 1 : -1));
           }
-        }).on("pointerdown touchstart",function(e){ //touch (optional)
-      var o=e.originalEvent,
-        d=$(this).data("mPS2idExtend");
-      if(o.pointerType==="touch" || e.type==="touchstart"){
-        var y=o.screenY || o.changedTouches[0].screenY;
-        d.input.y=y;
-        if($(this).data("mPS2id").layout==="horizontal"){
-          var x=o.screenX || o.changedTouches[0].screenX;
-          d.input.x=x;
-        }
-        d.time=o.timeStamp;
-        d.i=d.currentSelector.call($(d.selector));
-      }
-    }).on("touchmove",function(e){
-      if($("html,body").is(":animated")) e.preventDefault();
-    }).on("pointerup touchend",function(e){
-      var o=e.originalEvent;
-      if(o.pointerType==="touch" || e.type==="touchend"){
-        var y=o.screenY || o.changedTouches[0].screenY,
-          d=$(this).data("mPS2idExtend"),
-          diff=d.input.y-y,
-          time=o.timeStamp-d.time,
-          i=d.currentSelector.call($(d.selector));
-        if($(this).data("mPS2id").layout==="horizontal"){
-          var x=o.screenX || o.changedTouches[0].screenX,
-            diff=d.input.x-x;
-        }
-        if(Math.abs(diff)<2) return;
-        var _switch=function(){
-            return time<200 && i===d.i;
-          };
-        $(this).trigger("scrollSection",[(diff>0 && _switch() ? -1 : diff<0 && _switch() ? 1 : 0),(_switch() ? d.i : i)]);
-      }
-    });
+        });
 
     $("body").append("<div id='sections-bullets' />").find($(document).data("mPS2idExtend").selector).each(function(){
  $("#sections-bullets").append("<a href='"+$(this).attr("href")+"' class='section-bullet' rel='m_PageScroll2id'></a>");
