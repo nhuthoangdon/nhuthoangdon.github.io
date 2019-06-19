@@ -62,29 +62,29 @@ function CTAarrowHover() {
 
 //CTA buttons Animation
 function CTAbuttonHover() {
-  $('.CTA-button').hover (
-    function() {
-      TweenMax.to('.CTA-button svg', .5, {strokeDashoffset: 0, strokeDasharray: 480});
-      TweenMax.to('.CTA-button h6.CTA-label', .2, {color: '#2A2F36', delay: .4});
-      TweenMax.to('#cta-btn-stroke', .7, {stroke: "#2A2F36"});
-    },
-    function() {
-      TweenMax.to('.CTA-button svg', .4, {strokeDashoffset: 95, strokeDasharray: '50 200'});
-      TweenMax.to('.CTA-button h6.CTA-label', .2, {color: '#F3425E'});
-      TweenMax.to('#cta-btn-stroke', .4, {stroke: "#F3425E"});
-    }
-  )
+  $('.CTA-button').each(function (i, el) {
+    $(this).hover (
+      function() {
+        TweenMax.to($(".button-outline", this), .5, {strokeDashoffset: 0, strokeDasharray: 480});
+        TweenMax.to($("h6.CTA-label", this), .2, {color: '#8C9BAF', delay: .4});
+        TweenMax.to($(".cta-btn-stroke", this), .7, {stroke: "#8C9BAF"});
+      },
+      function() {
+        TweenMax.to($(".button-outline", this), .4, {strokeDashoffset: 95, strokeDasharray: '50 200'});
+        TweenMax.to($("h6.CTA-label", this), .2, {color: '#F3425E'});
+        TweenMax.to($(".cta-btn-stroke", this), .4, {stroke: "#F3425E"});
+      }
+    );
+  })
 };
 
 
 function projectTileHover() {
   $('#plasticFootprint-tile').hover(
     function() {
-      TweenMax.fromTo('#plasticFootprint-overlay', .5, {scale: .7}, {scale: 1, autoAlpha: 1, ease: Back.easeOut.config(3)});
       $("#mpf-video")[0].pause();
     },
     function() {
-      TweenMax.to('#plasticFootprint-overlay', .3, {autoAlpha: 0});
       $("#mpf-video")[0].play();
     }
   );
@@ -413,7 +413,7 @@ var worksIn = (function(){
 })();
 
 var tl_levitatingIphone = new TimelineMax({yoyo: true, repeat: -1, paused: true});
-    tl_levitatingIphone.fromTo("#wishUp-mockup-ip", 2, {y: -10}, {y: 10, ease: Power0.easeNone});
+    tl_levitatingIphone.fromTo("#wishUp-mockup-ip", 2, {y: -5}, {y: 20, ease: Power0.easeNone});
 var othersIn = (function(){
   var tl = new TimelineMax();
   var executed = false;
@@ -498,15 +498,6 @@ function fancyEyes() {
     },
     function() {
       TweenLite.to("#leftEye, #rightEye", .1, {x: 0, y: 0, rotation: 0});
-    }
-  );
-  $('.my-portrait').hover (
-    function() {
-      TweenLite.to("#leftEye", 1.5, {x: 6, rotation: 5, transformOrigin: "center"});
-      TweenLite.to("#rightEye", 1.5, {x: -4, rotation: -5, transformOrigin: "center"});
-    },
-    function() {
-      TweenMax.to("#leftEye, #rightEye", .1, {x: 0, y: 0, rotation: 0});
     }
   );
 };
