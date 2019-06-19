@@ -437,10 +437,10 @@ var aboutIn = (function(){
            tl.staggerFrom(".content-column .ease-in-a", .6, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1)
            if (window.matchMedia("(min-width: 696px)").matches) {
              tl.add(myPic(), "-=.6");
+             fancyEyes();
            } else {
              TweenMax.to(".st0, .st1", 1, {autoAlpha: 1});
            }
-           fancyEyes();
            executed = true;
          }
     }
