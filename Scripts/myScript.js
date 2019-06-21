@@ -433,13 +433,13 @@ var aboutIn = (function(){
   var executed = false;
   return function() {
     if (!executed) {
-      if ($('.ease-in-a, .st1, .st0').visible(true)) {
+      if ($('.ease-in-a, .my-portrait').visible(true)) {
            tl.staggerFrom(".content-column .ease-in-a", .6, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1)
            if (window.matchMedia("(min-width: 696px)").matches) {
              tl.add(myPic(), "-=.6");
              fancyEyes();
            } else {
-             TweenMax.to(".st0, .st1", 1, {autoAlpha: 1});
+             TweenMax.set(".st0, .st1", {autoAlpha: 1});
            }
            executed = true;
          }
