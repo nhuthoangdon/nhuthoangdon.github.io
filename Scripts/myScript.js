@@ -405,7 +405,7 @@ var worksIn = (function(){
   return function() {
     if (!executed) {
       if ($('.ease-in-w').visible(true)) {
-           tl.staggerFrom(".ease-in-w", 1, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1);
+           tl.staggerFrom(".project-tile, .ease-in-w", 1, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1);
            executed = true;
          }
     }
@@ -420,7 +420,7 @@ var othersIn = (function(){
   return function() {
     if (!executed) {
       if ($('.ease-in-o').visible(true)) {
-           tl.staggerFrom(".ease-in-o", 1, {y: 200, autoAlpha: 0, immediateRender: false}, 0.1);
+           tl.staggerFrom(".incubation-tile, .ease-in-o", 1, {y: 200, autoAlpha: 0, immediateRender: false}, 0.1);
            tl_levitatingIphone.play();
            executed = true;
          }
