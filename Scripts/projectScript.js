@@ -1,5 +1,6 @@
 $( document ).ready(function() {
   hiwAnimation();
+  scheckerUserFlowDrag();
 });
 
 
@@ -80,7 +81,7 @@ win.scroll(function(event) {
   function hiwAnimation() {
 
       var tlText = new TimelineMax({repeat: -1, repeatDelay: .5, delay: 3, yoyo: true});
-          tlText.to(".hiw.input span", 2, {text:{value:"health anxiety", oldClass:"text-field", newClass:"hiw-text-animation"}, delay: .5})
+          tlText.to(".hiw.input span", 2, {text:{value:"itchy dry skin", oldClass:"text-field", newClass:"hiw-text-animation"}, delay: .5})
                 .set(".hiw.input span", {opacity: 1}, "-=2");
 
       var percent = {number:0},
@@ -114,6 +115,15 @@ win.scroll(function(event) {
           return tlWatch;
 
   };
+
+
+
+// ------------------------------------------------- Schecker stuff ---------------------------------------------
+function scheckerUserFlowDrag() {
+  Draggable.create("#schecker-userFlow", {type:"x,y", edgeResistance:0.65, bounds:"#schecker-draggable-flow"});
+};
+
+
 
 
 // ----------------------------------- my Plastic Footprint stuff ---------------------------------

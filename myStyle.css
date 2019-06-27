@@ -870,8 +870,8 @@ footer {
 
 @media screen and (max-width: 696px) {
   section.side-projects {
-    padding-top: 5%;
-    padding-bottom: 20%;
+    padding-top: calc(25px + 5%);
+    padding-bottom: calc( 25px + 10%);
   }
 
   footer {
