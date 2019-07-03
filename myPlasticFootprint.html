@@ -20,6 +20,7 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/RoundPropsPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/utils/Draggable.min.js"></script>
 
   <link rel="apple-touch-icon" sizes="180x180" href="./Assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon-32x32.png">
@@ -36,124 +37,195 @@
 
 
 <body>
-<div class="bg-img" id="mpf-bg">
+
+  <!-- Hamburger Menu Icon -->
+  <div class="menu" id="hamburger">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+
+
+<!-- Overlay Menu Navigation -->
+<div class ="overlay" id="menu-overlay">
+  <div class="menu-items" id="menu-links">
+    <ul>
+      <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+      <li><a href="scheckerIntro.html" onclick="closeMenu()">Schecker</a></li>
+      <li><a href="myPlasticFootprint.html" class="highlight" onclick="closeMenu()">MyPlasticFootprint</a></li>
+      <li><a href="WishUp.html" onclick="closeMenu()">WishUp</a></li>
+      <li><a href="bardot.html" onclick="closeMenu()">Bardot</a></li>
+      <li><a href="sa.html" onclick="closeMenu()">Standards Australia</a></li>
+    </ul>
+  </div>
+  <i>nhuthoangdon@gmail.com</i>
 </div>
 
 
 
-<a class="back-to-home" href="./index.html">
-  <div class="simple-arrow"></div>
-  <h6 class="CTA-label">HOME</h6>
-</a>
 
 
 
+<section class="project-intro" id="mpf-intro">
 
-
-<div class="wrapper">
-    <div class="block intro">
-        <img class="logo" id="myPlasticFootprint-logo" alt="My Plastic Footprint Logo"
-             src="./Assets/myPlasticFootprint_logo.png" />
-      <h4>An app to track your plastic usage.</h4>
-    </div>
-
+  <div class="wrapper">
     <div class="block">
-      <h5>CONCEPT</h5>
+      <h2>Concept</h2>
       <p>
-        As the environmental issues associating with plastic are increasing, it seems one of the most possible
-        solutions that everyone can do at the moment is to reduce/reuse/recycle their plastic usage, and to
-        do that effectively, I think a tool to track our plastic usage would help.
-        <br />
-        <br />
-        The concept is rather simple, so is the app's interface. For each and every item that contains plastic bought
-        and/or thrown away, users mark their (negative) impacts; and vice versa, for each and every plastic item recycled,
-        users mark their (positive) impacts.
-        The goal is to either balance out the impacts (neutral), or better yet - to create positive ones.
+        MyPlasticFootprint is my idea of an app that tracks our daily usage and recycling of plastic products.
+        The concept is very simple, for every piece of plastic purchased OR thrown away, users mark one negative footprint;
+        for every piece recycled, a positive footprint will be marked. At the end of the day, users will be
+        able to see their impacts, thus are encouraged to make more positive ones.
       </p>
     </div>
+      <div class="block">
+      <img alt="MPF cover image" id="mpf-cover" src="./Assets/mpf-cover.svg" />
+      </div>
+  </div>
 
-    <div class="block">
-      <img class="mockup" alt="Intro Image" src="./Assets/MPF-introImg.png" />
-      <a href="http://www.freepik.com" class="freepik-credits" id="plastic-img-credit">
-         Illustration designed by macrovector / Freepik</a>
+</section>
+
+
+
+<section class="not-fullscreen">
+
+  <h3>USERS & USE CASES</h3>
+
+  <div class="wrapper rachel">
+
+    <div class="block no-text-block">
+      <img alt="User 1" class="user-example" src="./Assets/mpf-rachel.svg" />
     </div>
-</div>
 
-<div class="wrapper hiw-section">
+      <div class="block">
+        <h5>RACHEL</h5>
+        <p>
+          23, freshly graduated, millennial, trendy, vegan, not into 9-5 jobs, currently traveling the world,
+          loves Yoga poses, loves everything organic, loves hastags, has high environmental concerns, has 3 (very)
+          active social media accounts, dream occupation: travel blogger/influencer.
+        </p>
+      </div>
+
+      <div class="block">
+        <h5 class="secondary-title">RACHEL GOES GREEN</h5>
+        <p>
+          Rachel saw the app from an ad on Facebook. Being well aware of human's excessive use of plastic
+          through social media, Rachel immediately downloaded the app. Rachel started by adding all plastic
+          and recycled/environmental friendly products she was having and realised she's still made more of a negative
+          impact. <br /><br />
+          Since then, Rachel's been determined to reduce her plastic footprint by not buying any single-use plastic
+          product, and trying to use only eco-friendly ones. <br /> <br />
+          For every goal met, Rachel shares her progress on social media and soon influenced many of her friends and
+          followers to download and use the app.
+        </p>
+      </div>
+
+      <div class="block no-text-block">
+          <img alt="use case" class="screenshots" src="./Assets/mpf-rachel-insta.png" />
+      </div>
+
+    </div>
+
+
+
+    <div class="wrapper dad">
+
+      <div class="block no-text-block">
+        <img alt="User 2" class="user-example" id="rachels-dad" src="./Assets/mpf-rachelsDad.svg" />
+      </div>
 
         <div class="block">
-          <h5>HOW IT WORKS</h5>
-          <h5 class="secondary-title">Mark Impacts</h5>
+          <h5>RACHEL'S DAD</h5>
           <p>
-            Tap on the red foot if you just bought and/or threw away a new piece of plastic,
-            green foot if you just recycled or reused. Buying a new piece of plastic creates 1 negative impact,
-            throwing it away doubles the impact, so if you buy, for instance, a plastic water bottle and then
-            throw it away, you must mark your negative impacts two times.
+            58, homemaker, former accountant, nerdy, loves gardening, has one social media account with 14 friends
+            (12 of which are family members & relatives, 2 unknowns from random friend requests),
+            interested in world news & politics.
           </p>
+        </div>
+
+        <div class="block">
+          <h5 class="secondary-title">DAD GOES GREEN</h5>
+          <p>
+            Rachel made Rachel's dad install the app. Rachel's dad is aware of
+            the environmental issues from TV and newspapers but believed that the problem must be
+            solved by the top people (i.e. governments and large corps).
+            <br /><br />
+            Rachel's dad used the app reluctantly. App sends notifications of recycling facts and reminders
+            frequently (not too frequent though, otherwise, dad'd be annoyed). Eventually, Rachel's dad has
+            subconsciously felt obliged to use the app.
+            <br /><br />
+            Rachel's dad does not always remember to track every item used/recycled. But is motivated enough
+            to change some habits (cycling instead of driving, less plastic wrap, etc.).
+          </p>
+        </div>
+
+        <div class="block no-text-block">
+            <img alt="use case" src="./Assets/mpf-dadgoesgreen.svg" />
+        </div>
+
+      </div>
+
+
+      <div class="wrapper granny">
+
+        <div class="block no-text-block">
+          <img alt="User 2" id="rachels-granny" src="./Assets/mpf-rachelsGranny.png" />
         </div>
 
           <div class="block">
-            <div class="hiw mpf" id="mpf-hiw-img-intro">
-              <img alt="MPF intro Illustration" class="mpf-hiw-img" id="mpf_home-illustration"
-                   src="./Assets/mpf_home-illustration.png" />
-            </div>
+            <h5>RACHEL'S GRANNY</h5>
+            <p>
+              81, widowed, friendly, loving, caring, easy-going, talks to Siri sometimes, enjoys houseworks,
+              been through hard times, (almost) never throws away stuff, loves the 'old days'.
+            </p>
           </div>
-
 
           <div class="block">
-            <div class="hiw mpf">
-              <img alt="MPF Plastic Symbol" class="mpf-hiw-img" id="mpf_plastic-icons"
-                   src="./Assets/recycle-symbols.png"/>
-              <a href="http://www.freepik.com" class="freepik-credits">
-                Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY</a>
-            </div>
+            <h5 class="secondary-title">GRANNY GOES GREEN(ER)</h5>
+            <p>
+              Rachel's granny has already been recycling just about everything. Rachel told granny that the app
+              would reward her recycling efforts.<br /><br />
+              App's interface is intuitive, granny quickly learned to use it. Granny loves to do stuff,
+              and takes it seriously. <br /> <br />
+              Granny tracks every single item recycled, and soon get on top of the leaderboard with unbeatable
+              records.
+            </p>
           </div>
 
-        <div class="block">
-          <h5 class="secondary-title">Acknowledge the plastic</h5>
-          <p>
-            You can also put in the plastic numbers/abbreviations/names to get an estimation on how much of an impact
-            you just made, as well as recycling info and suggestions.
-          </p>
-        </div>
-
-
-        <div class="block">
-          <h5 class="secondary-title">Set goal & Compete</h5>
-          <p>
-            Set goals and motivate yourself by competing with others.
-          </p>
-        </div>
-
-        <div class="block" id="hiw_ani-book">
-          <div class="hiw mpf">
-            <img alt="MPF Goal Symbol" class="mpf-hiw-img" id="mpf_goal-icons"
-                 src="./Assets/bullseye.svg"/>
-            <a href="http://www.freepik.com" class="freepik-credits">
-             Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY</a>
+          <div class="block no-text-block">
+              <img alt="use case" class="screenshots" src="./Assets/mpf-grannygoesgreen.png" />
           </div>
+
         </div>
 
-</div>
+</section>
 
 
 
 
-<div class="wrapper grey unfinished-notice">
-    <p>
-      This idea is still in development, a prototype has yet to be made.
-    </p>
-</div>
+
+
+
+
+
 
 
 <footer>
+  <small class="copyright">	&#169; 2019 NHUT H. DON</small>
   <div class="footer-links">
-    <a href="./index.html"><small class="footer-text">Home</small></a>
-    <a href="./scheckerIntro.html"><small class="footer-text">Schecker</small></a>
-    <a href="./WishUp.html"><small class="footer-text">WishUp</small></a>
+    <a href="#">Home</a>
+    <a href="#">MyPlasticFootprint</a>
+    <a href="#">WishUp</a>
+    <a href="#">Bardot</a>
+    <a href="#">Standards&nbsp;Australia</a>
   </div>
-  <small class="footer-text" id="copyright">	&#169; 2019 NHUT H. DON</small>
 </footer>
+
+
+
+
+
+
 
 
 

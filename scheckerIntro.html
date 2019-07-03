@@ -38,10 +38,31 @@
 
 <body>
 
-<a class="back-to-home" href="./index.html">
-  <div class="simple-arrow"></div>
-  <h6 class="CTA-label">HOME</h6>
-</a>
+  <!-- Hamburger Menu Icon -->
+  <div class="menu" id="hamburger">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+
+
+<!-- Overlay Menu Navigation -->
+<div class ="overlay" id="menu-overlay">
+  <div class="menu-items" id="menu-links">
+    <ul>
+      <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+      <li><a href="scheckerIntro.html" class="highlight" onclick="closeMenu()">Schecker</a></li>
+      <li><a href="myPlasticFootprint.html" onclick="closeMenu()">MyPlasticFootprint</a></li>
+      <li><a href="WishUp.html" onclick="closeMenu()">WishUp</a></li>
+      <li><a href="bardot.html" onclick="closeMenu()">Bardot</a></li>
+      <li><a href="sa.html" onclick="closeMenu()">Standards Australia</a></li>
+    </ul>
+  </div>
+  <i>nhuthoangdon@gmail.com</i>
+</div>
+
+
+
 
 
 
@@ -182,6 +203,17 @@
   <h3>SIMPLIFIED FLOW</h3>
   <img alt="user flow" id="schecker-userFlow" src="./Assets/schecker-simplifiedFlow.png" />
 </section>
+
+
+<section class="fullscreen-screenshots not-fullscreen">
+  <h3>INITIAL WIREFRAME</h3>
+  <img alt="wireframe" class="light-bg-f9f9f9" src="./Assets/schecker-wireframe.png" />
+  <h3>UI COMPONENTS</h3>
+  <img alt="UI Components" class="light-bg-f9f9f9" src="./Assets/schecker-uiComponents.png" />
+</section>
+
+
+
 
 
 <section>
