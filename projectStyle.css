@@ -45,7 +45,7 @@ p strong {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: calc(2.5rem + 2.5vw);
 }
 
 h2 {
@@ -320,6 +320,16 @@ i {
 section {
   width: 100vw;
   margin-bottom: calc(40px + 5%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
 }
 
 section.not-fullscreen {
@@ -327,15 +337,15 @@ section.not-fullscreen {
   margin-left: 4%;
 }
 
+  img.fullscreen-img {
+    width: 100%;
+    height: auto;
+  }
+
   section h3 {
     margin: 5% auto;
   }
 
-    section.fullscreen-screenshots img {
-      width: 100%;
-      height: auto;
-      max-width: 1440px;
-    }
 
   .wrapper {
     width: 100%;
@@ -383,13 +393,18 @@ section.not-fullscreen {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 40%;
-    min-width: 320px;
     height: auto;
     margin: 5% auto;
   }
+
+      .block video {
+        width: 300px;
+      }
+
   .no-text-block {
     -webkit-box-align: center;-ms-flex-align: center;align-items: center;
   }
+
     .no-text-block img {
       width: 100%;
     }
@@ -726,8 +741,8 @@ section#mpf-intro {
       img#rachels-dad {
         width: 30%;
       }
-      img.screenshots {
-        width: 70%;
+      img.appScreen {
+        width: 300px;
         height: auto;
       }
 
