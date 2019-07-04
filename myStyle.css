@@ -919,6 +919,11 @@ footer {
 
 
 @media screen and (max-width: 768px) {
+
+  section {
+    padding-top: calc(25px + 5%);
+    padding-bottom: calc( 25px + 10%);
+  }
   .content-wrapper .content-column {
     width: 100%;
   }
@@ -929,20 +934,12 @@ footer {
     display: none;
   }
   .my-portrait {
-    width: 90%;
+    width: 70%;
   }
-}
-
-
-@media screen and (max-width: 696px) {
-  section.side-projects {
-    padding-top: calc(25px + 5%);
-    padding-bottom: calc( 25px + 10%);
-  }
-
   footer {
     position: relative;
   }
+
 }
 
 
@@ -962,6 +959,9 @@ footer {
     .section-bullet:nth-child(4):before,
     .section-bullet:last-child:before {
       display: none;
+    }
+    .my-portrait {
+      width: 90%;
     }
   }
 
