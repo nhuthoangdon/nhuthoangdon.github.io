@@ -20,6 +20,7 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/RoundPropsPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/utils/Draggable.min.js"></script>
 
   <link rel="apple-touch-icon" sizes="180x180" href="./Assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon-32x32.png">
@@ -29,7 +30,6 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-
 </head>
 
 
@@ -37,93 +37,98 @@
 
 <body>
 
-
-
-<a class="back-to-home" href="./index.html">
-  <div class="simple-arrow"></div>
-  <h6 class="CTA-label">HOME</h6>
-</a>
-
-
-
-
-
-<div class="wrapper black">
-  <div class="block intro">
-      <img class="logo" id="wishUp-logo" alt="WishUp Logo"
-           src="./Assets/wishUp_logo.png" />
-    <h4>A social network for those in special circumstances to make a wish.</h4>
+  <!-- Hamburger Menu Icon -->
+  <div class="menu" id="hamburger">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
   </div>
+
+
+<!-- Overlay Menu Navigation -->
+<div class ="overlay" id="menu-overlay">
+  <div class="menu-items" id="menu-links">
+    <ul>
+      <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+      <li><a href="scheckerIntro.html" onclick="closeMenu()">Schecker</a></li>
+      <li><a href="myPlasticFootprint.html" class="highlight" onclick="closeMenu()">MyPlasticFootprint</a></li>
+      <li><a href="WishUp.html" onclick="closeMenu()">WishUp</a></li>
+      <li><a href="bardot.html" onclick="closeMenu()">Bardot</a></li>
+      <li><a href="sa.html" onclick="closeMenu()">Standards Australia</a></li>
+    </ul>
+  </div>
+  <i>nhuthoangdon@gmail.com</i>
 </div>
 
 
-<div class="wrapper division-line">
-    <div class="block">
-      <h5>CONCEPT</h5>
-      <p>
-        Growing up close to my grandparents, I have developed a deep empathy and much respect to the elderly.
-        And after many conversations with different elders (plus that cute movie "Up"), I realised that while
-        everyone seems to have at least a lifetime wish, not all are lucky enough to fulfil it during their younger
-        years, and some wishes might sound surprisingly simple and easy to some people, yet impossible to others.
-        So I came up with this idea to give those over 70, or anyone under a special circumstance
-        (e.g. a deadly disease) in which they are unable to fulfil their lifetime wishes while their life clock
-        is ticking another chance.
-        <br />
-        <br />
-        The concept is that, everyone can join the network, but only those that meet the requirements
-        (there will be a verification process) can post a wish (others will also be able to nominate
-        and post in behalf of a qualified person too). Then the community of all users would 'like',
-        donate or offer help to the one(s) whose stories touches them the most, donated funds will be used
-        to help those people accomplishing their lifetime wishes.
-      </p>
-    </div>
 
+
+
+
+<section class="project-intro">
+
+  <div class="project-hero-img" id="wishup-hero-img">
+  </div>
+
+  <div class="wrapper">
     <div class="block">
-      <div class="hiw mpf">
-        <img alt="WishUp intro Illustration" class="mpf-hiw-img" id="wishUp_hiw-introImg"
-             src="./Assets/wishUp-hiw-intro.png" />
+      <h2>Concept</h2>
+    </div>
+      <div class="block">
+        <p>
+          A social network for the community to help fulfiling lifetime wishes of the elderly,
+          and those in special circumtances.
+
+        </p>
       </div>
+  </div>
+
+</section>
+
+
+
+<section>
+
+  <h3>THE IDEA</h3>
+
+  <div class="wrapper">
+
+
     </div>
-</div>
-
-<div class="wrapper hiw-section">
-
-        <div class="block">
-          <h5>HOW IT WORKS</h5>
-          <h5 class="secondary-title">Wish luck - Donate - Sponsor</h5>
-          <p>
-            The app works similar to other social networks, but users will be swiping through wishes (unfulfilled & fulfilled).
-            Once a 'wisher' gets enough funding and/or 'likes', we will help him/her to use it for his/her wish.
-          </p>
-        </div>
-
-          <div class="block">
-            <div class="hiw mpf" id="wishUp-hiw-img-intro">
-              <img alt="WishUp intro Illustration" class="mpf-hiw-img" id="wishUp_hiw-introImg"
-                   src="./Assets/wishUp-sponsor-img.png" />
-            </div>
-          </div>
-
-</div>
 
 
 
 
-<div class="wrapper grey unfinished-notice">
-    <p>
-      This idea is still in development, a prototype has yet to be made.
-    </p>
-</div>
+</section>
+
+
+<section>
+  <h1>More's coming</h1>
+</section>
+
+
+
+
+
+
 
 
 <footer>
+  <small class="copyright">	&#169; 2019 NHUT H. DON</small>
   <div class="footer-links">
-    <a href="./index.html"><small class="footer-text">Home</small></a>
-    <a href="./scheckerIntro.html"><small class="footer-text">Schecker</small></a>
-    <a href="./myPlasticFootprint.html"><small class="footer-text">My Plastic Footprint</small></a>
+    <a href="./index.html">Home</a>
+    <a href="./scheckerIntro.html">Schecker</a>
+    <a href="#">WishUp</a>
+    <a href="#">Bardot</a>
+    <a href="#">Standards&nbsp;Australia</a>
   </div>
-  <small class="footer-text" id="copyright">	&#169; 2019 NHUT H. DON</small>
 </footer>
+
+
+
+
+
+
 
 
 
