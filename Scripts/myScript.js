@@ -25,7 +25,7 @@ $( document ).ready(function() {
 function homeload() {
   var homeTimeline = new TimelineMax({onStart: preloadingOut});
   TweenMax.from('a#emailIcon', 1, {x: 100, autoAlpha: 0, delay: 1});
-      homeTimeline.staggerFrom("#intro_text h1, #intro_text h5, #intro_text p, a.arrow-down, #hamburger", 1,
+      homeTimeline.staggerFrom("#intro_text h1, #intro_text h5, #intro_text p, a.arrow-down, .menu", 1,
                               {y: 50, autoAlpha: 0}, .2);
 };
             function bulletsSlideIn() {
@@ -132,53 +132,54 @@ function projectTileHover() {
 
 // Hamburger menu
 function hamburgerHover() {
-  $('.menu').hover (
-    function() {
-      TweenLite.to($(this), 0.2, {rotation: -90, transformOrigin: "center"});
-      TweenLite.to(".menu .bar2", 0.2, {height: 30, rotation: 0, x: 12, transformOrigin: "center center"});
-      TweenLite.to(".menu .bar3", 0.2, {y: 0});
-      TweenLite.to(".menu .bar1, .menu .bar2, .menu .bar3", 0.05, {backgroundColor: "#F3425E"});
-    },
-    function() {
-      TweenLite.to($(this), 0.1, {rotation: 0});
-      TweenLite.to(".menu .bar2", 0.1, {height: 37, rotation: -40, x: 0, transformOrigin: "top right"});
-      TweenLite.to(".menu .bar3", 0.1, {y: 10});
-      TweenLite.to(".menu .bar1, .menu .bar2, .menu .bar3", 0.05, {backgroundColor: "#8C9BAF"});
-    }
-  );
+  $('.menu').each(function (i, el) {
+    $(this).hover (
+      function() {
+        TweenLite.to($(this), 0.2, {rotation: -90, transformOrigin: "center"});
+        TweenLite.to($(".bar2", this), 0.2, {height: 30, rotation: 0, x: 12, transformOrigin: "center center"});
+        TweenLite.to($(".bar3", this), 0.2, {y: 0});
+        TweenLite.to($(".bar1, .bar2, .bar3", this), 0.05, {backgroundColor: "#F3425E"});
+      },
+      function() {
+        TweenLite.to($(this), 0.1, {rotation: 0});
+        TweenLite.to($(".bar2", this), 0.1, {height: 37, rotation: -40, x: 0, transformOrigin: "top right"});
+        TweenLite.to($(".bar3", this), 0.1, {y: 10});
+        TweenLite.to($(".bar1, .bar2, .bar3", this), 0.05, {backgroundColor: "#8C9BAF"});
+      }
+    );
+  });
 };
 
-
-
-
-
-
-function closeMenu() {
-  var tl = new TimelineMax();
-      tl.to($('#hamburger'), 0.4, {className:"-=open"})
-      tl.staggerTo(".overlay .menu-items ul li", .5, {scaleY: 0, y: 100, ease: Back.easeIn.config(3), autoAlpha: 0,
-                                                      cycle: { rotation:[-30, 0], transformOrigin: ["bottom left", "bottom right"] },
-                                                      stagger: 0.1})
-      tl.to($('.overlay'), 0.4, {scaleY: 0, autoAlpha: 0, transformOrigin: "bottom left"}, "-=.1");
-};
 
 
 function toggleMenu() {
-  $( "#hamburger" ).click(function() {
-    $(".menu").toggleClass("open");
-    if ($( ".menu" ).hasClass("open")) {
-      var tl = new TimelineMax();
-          tl.to($('.overlay'), .5, {scaleY: 1, autoAlpha: .96, transformOrigin: "top left", ease: Power4.easeOut})
-          tl.staggerFromTo(".overlay .menu-items ul li", .7, {scaleY: 0, y: 50, autoAlpha: 0, cycle:
-                                                                                      {rotation:[30, -30],
-                                                                                       transformOrigin: ["bottom left", "bottom right"]}},
-                                                             {scaleY: 1, y: 0, autoAlpha: 1, rotation: 0, ease: Back.easeOut.config(2)}, 0.2, "-=.3");
+  var openOverlay = new TimelineMax();
+      openOverlay.to('.menu', .4, {className: "+=open"})
+                 .to($('.overlay'), .5, {scaleY: 1, autoAlpha: .96, transformOrigin: "top left", ease: Power4.easeOut}, "-=.4")
+                 .staggerFromTo(".overlay .menu-items ul li", .7, {scaleY: 0, y: 50, autoAlpha: 0,
+                                                                   cycle: {rotation:[30, -30],
+                                                                   transformOrigin: ["bottom left", "bottom right"]}},
+                                                                  {scaleY: 1, y: 0, autoAlpha: 1, rotation: 0,
+                                                                   ease: Back.easeOut.config(2)}, 0.2, "-=.3");
+      openOverlay.reverse();
 
-    } else {
-      closeMenu();
-    }
+  $(".menu").each(function(i, el) {
+    $(this).click(function() {
+      if (openOverlay.reversed()) {
+        openOverlay.play();
+      } else {
+        openOverlay.reverse();
+      }
+    });
+  });
+  $(".overlay .menu-items ul li a").each(function(i, el) {
+    $(this).click(function() {
+      openOverlay.reverse();
+    });
   });
 };
+
+
 
 
 
