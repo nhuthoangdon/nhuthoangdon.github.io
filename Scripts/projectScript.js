@@ -1,70 +1,72 @@
-$( document ).ready(function() {
-  hiwAnimation();
-  scheckerUserFlowDrag();
+jQuery.noConflict();
+(function($) {
+  $(document).ready(functio﻿n() {
+    hiwAnimation();
+    scheckerUserFlowDrag();
 
 
-  (function($) {
+    (function($) {
 
-    /**
-     * Copyright 2012, Digital Fusion
-     * Licensed under the MIT license.
-     * http://teamdf.com/jquery-plugins/license/
-     *
-     * @author Sam Sehnert
-     * @desc A small plugin that checks whether elements are within
-     *     the user visible viewport of a web browser.
-     *     only accounts for vertical position, not horizontal.
-     */
+      /**
+       * Copyright 2012, Digital Fusion
+       * Licensed under the MIT license.
+       * http://teamdf.com/jquery-plugins/license/
+       *
+       * @author Sam Sehnert
+       * @desc A small plugin that checks whether elements are within
+       *     the user visible viewport of a web browser.
+       *     only accounts for vertical position, not horizontal.
+       */
 
-    $.fn.visible = function(partial) {
+      $.fn.visible = function(partial) {
 
-        var $t            = $(this),
-            $w            = $(window),
-            viewTop       = $w.scrollTop(),
-            viewBottom    = viewTop + $w.height(),
-            _top          = $t.offset().top,
-            _bottom       = _top + $t.height(),
-            compareTop    = partial === true ? _bottom : _top,
-            compareBottom = partial === true ? _top : _bottom;
+          var $t            = $(this),
+              $w            = $(window),
+              viewTop       = $w.scrollTop(),
+              viewBottom    = viewTop + $w.height(),
+              _top          = $t.offset().top,
+              _bottom       = _top + $t.height(),
+              compareTop    = partial === true ? _bottom : _top,
+              compareBottom = partial === true ? _top : _bottom;
 
-      return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+        return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
 
-    };
+      };
 
-  })(jQuery);
+    })(jQuery);
 
 
-  $(window).scroll(function(event) {
+    $(window).scroll(function(event) {
 
-    $(".block").each(function(i, el) {
-      var el = $(el);
-      if (el.visible(true)) {
-        el.addClass("come-in");
-      }
+      $(".block").each(function(i, el) {
+        var el = $(el);
+        if (el.visible(true)) {
+          el.addClass("come-in");
+        }
+      });
     });
-  });
 
-  var win = $(window);
-  var allMods = $(".block");
+    var win = $(window);
+    var allMods = $(".block");
 
-  // Already visible modules
-  allMods.each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("already-visible");
-    }
-  });
-
-  win.scroll(function(event) {
+    // Already visible modules
     allMods.each(function(i, el) {
       var el = $(el);
       if (el.visible(true)) {
-        el.addClass("come-in");
+        el.addClass("already-visible");
       }
     });
-  });
 
-});
+    win.scroll(function(event) {
+      allMods.each(function(i, el) {
+        var el = $(el);
+        if (el.visible(true)) {
+          el.addClass("come-in");
+        }
+      });
+    });
+  });
+})(jQuery);
 
 
 
@@ -81,7 +83,7 @@ $( document ).ready(function() {
       var percent = {number:0},
           percentDisplay = document.getElementById("counting"),
           tlBar = new TimelineMax({repeat: -1, repeatDelay: .5, delay: 3, yoyo: true});
-          tlBar.from (".progress-bar .bar", 2, {width: 0})
+          tlBar.from ("#schecker-progress-bar .bar", 2, {width: 0})
                .from(".hiw.result .result-text", .5, {opacity: 0}, "-=2")
                .to(percent, 2, {number:"91", roundProps:"number", onUpdate:updateHandler, ease:Linear.easeNone}, "-=2");
 

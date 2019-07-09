@@ -627,17 +627,17 @@ footer {
         color: #8C9BAF;
       }
 
-      .hiw.result .progress-bar {
+      #schecker-progress-bar {
         margin: 40px 0 20px;
       }
-          .hiw.result .progress-bar .bar {
+          #schecker-progress-bar .bar {
             height: 2px;
             width: 280px;
             background-color: #F3425E;
             position: relative;
           }
-              .hiw.result .progress-bar .bar:before,
-              .hiw.result .progress-bar .bar:after {
+              #schecker-progress-bar .bar:before,
+              #schecker-progress-bar .bar:after {
                 content: "";
                 width: 9px;
                 height: 9px;
@@ -646,10 +646,10 @@ footer {
                 position: absolute;
                 top: -150%;
               }
-              .hiw.result .progress-bar .bar:before {
+              #schecker-progress-bar .bar:before {
                 left: 0;
               }
-              .hiw.result .progress-bar .bar:after {
+              #schecker-progress-bar .bar:after {
                 left: 100%;
               }
 

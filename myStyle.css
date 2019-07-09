@@ -748,8 +748,8 @@ section.side-projects {
 }
 .incubation-tile {
   width: 300px;
-  height: 400px;
-  border-radius: 50%/60% 60% 40% 40%;
+  height: 300px;
+  border-radius: 50%;
   overflow: hidden;
   margin: 25px;
   display: -webkit-box;
