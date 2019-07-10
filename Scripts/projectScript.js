@@ -1,9 +1,48 @@
-jQuery.noConflict();
-(function($) {
-  $(document).ready(functio﻿n() {
-    hiwAnimation();
-    scheckerUserFlowDrag();
+$(document).ready(function() {
+  hiwAnimation();
+  scheckerUserFlowDrag();
+  scheckerProgress();
 
+  $(window).on('scroll', function () {
+      var pixs = $(document).scrollTop()
+      pixs = pixs / 150;
+      $("#wishup-hero-img").css({"-webkit-filter": "blur("+pixs+"px)",
+                        "-moz-filter":    "blur("+pixs+"px)",
+                        "-ms-filter":     "blur("+pixs+"px)",
+                        "-o-filter":      "blur("+pixs+"px)",
+                        "-filter":        "blur("+pixs+"px)" })
+  });
+
+  $(window).scroll(function(event) {
+    $(".block, .block-in").each(function(i, el) {
+      var el = $(el);
+      if (el.visible(true)) {
+        el.addClass("come-in");
+      }
+    });
+  });
+
+  var win = $(window);
+  var allMods = $(".block, .block-in");
+
+  // Already visible modules
+  allMods.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("already-visible");
+    }
+  });
+
+  win.scroll(function(event) {
+    allMods.each(function(i, el) {
+      var el = $(el);
+      if (el.visible(true)) {
+        el.addClass("come-in");
+      }
+    });
+  });
+
+});
 
     (function($) {
 
@@ -36,37 +75,6 @@ jQuery.noConflict();
     })(jQuery);
 
 
-    $(window).scroll(function(event) {
-
-      $(".block").each(function(i, el) {
-        var el = $(el);
-        if (el.visible(true)) {
-          el.addClass("come-in");
-        }
-      });
-    });
-
-    var win = $(window);
-    var allMods = $(".block");
-
-    // Already visible modules
-    allMods.each(function(i, el) {
-      var el = $(el);
-      if (el.visible(true)) {
-        el.addClass("already-visible");
-      }
-    });
-
-    win.scroll(function(event) {
-      allMods.each(function(i, el) {
-        var el = $(el);
-        if (el.visible(true)) {
-          el.addClass("come-in");
-        }
-      });
-    });
-  });
-})(jQuery);
 
 
 
@@ -74,43 +82,7 @@ jQuery.noConflict();
 
 
 
-  function hiwAnimation() {
 
-      var tlText = new TimelineMax({repeat: -1, repeatDelay: .5, delay: 3, yoyo: true});
-          tlText.to(".hiw.input span", 2, {text:{value:"itchy dry skin", oldClass:"text-field", newClass:"hiw-text-animation"}, delay: .5})
-                .set(".hiw.input span", {opacity: 1}, "-=2");
-
-      var percent = {number:0},
-          percentDisplay = document.getElementById("counting"),
-          tlBar = new TimelineMax({repeat: -1, repeatDelay: .5, delay: 3, yoyo: true});
-          tlBar.from ("#schecker-progress-bar .bar", 2, {width: 0})
-               .from(".hiw.result .result-text", .5, {opacity: 0}, "-=2")
-               .to(percent, 2, {number:"91", roundProps:"number", onUpdate:updateHandler, ease:Linear.easeNone}, "-=2");
-
-         function updateHandler() {
-           percentDisplay.innerHTML = percent.number;
-         };
-
-      var tlBook = new TimelineMax({repeat: -1, repeatDelay: 1, yoyo: true});
-          tlBook.set("#picked-date", {autoAlpha: 0})
-                .set("#checked-date", {scaleY: 0})
-                .to("#picked-date", .1, {autoAlpha: 1})
-                .to("#picked-date", .4, {scaleY: 0, delay: .5})
-                .to("#checked-date", .4, {scaleY: 1}, "-=.4");
-
-      var tlWatch = new TimelineMax({repeat: -1, yoyo: true});
-          tlWatch.staggerFrom("#watch-graph circle", 2, {scale: .7,
-                                                          transformOrigin: "center",
-                                                          opacity: .5,
-                                                          ease:Elastic.easeInOut.config(1.75, 0.3)},
-                                                          0.15);
-
-          return tlText;
-          return tlBar;
-          return tlBook;
-          return tlWatch;
-
-  };
 
 
 
@@ -119,18 +91,24 @@ function scheckerUserFlowDrag() {
   Draggable.create("#schecker-userFlow", {type:"x,y", edgeResistance:0.65, bounds:"#schecker-draggable-flow"});
 };
 
+function hiwAnimation() {
+      var tlText = new TimelineMax({repeat: -1, repeatDelay: .5, delay: 3, yoyo: true});
+          tlText.to(".hiw.input span", 2, {text:{value:"itchy dry skin", oldClass:"text-field", newClass:"hiw-text-animation"}, delay: .5})
+                .set(".hiw.input span", {opacity: 1}, "-=2");
+  };
 
 
+function scheckerProgress() {
+    var percent = {number:0},
+        percentDisplay = document.getElementById("counting"),
+        tlBar = new TimelineMax({repeat: -1, repeatDelay: .5, delay: 3, yoyo: true});
+        tlBar.from ("#schecker-progress-bar .bar", 2, {width: 0})
+             .from(".hiw.result .result-text", .5, {opacity: 0}, "-=2")
+             .to(percent, 2, {number:"91", roundProps:"number", onUpdate:updateHandler, ease:Linear.easeNone}, "-=2");
 
-// ----------------------------------- my Plastic Footprint stuff ---------------------------------
-
-//blur bg when scrolled
-$(window).on('scroll', function () {
-    var pixs = $(document).scrollTop()
-    pixs = pixs / 150;
-    $("#wishup-hero-img").css({"-webkit-filter": "blur("+pixs+"px)",
-                      "-moz-filter":    "blur("+pixs+"px)",
-                      "-ms-filter":     "blur("+pixs+"px)",
-                      "-o-filter":      "blur("+pixs+"px)",
-                      "-filter":        "blur("+pixs+"px)" })
-});
+             function updateHandler() {
+               $(function () {
+                   percentDisplay.innerHTML = percent.number;
+               });
+             };
+  };
