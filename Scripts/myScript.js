@@ -155,12 +155,12 @@ function hamburgerHover() {
 function toggleMenu() {
   var openOverlay = new TimelineMax();
       openOverlay.to('.menu', .4, {className: "+=open"})
-                 .to($('.overlay'), .4, {scaleY: 1, autoAlpha: .96, transformOrigin: "top left", ease: Power4.easeOut}, "-=.4")
-                 .staggerFromTo(".overlay .menu-items ul li", .5, {scaleY: 0, y: 20, autoAlpha: 0,
-                                                                   cycle: {rotation:[30, -30],
+                 .to($('.overlay'), .3, {scaleY: 1, autoAlpha: .96, transformOrigin: "top left", ease: Power4.easeOut}, "-=.4")
+                 .staggerFromTo(".overlay .menu-items ul li", .5, {scaleY: 0, y: 10, autoAlpha: 0,
+                                                                   cycle: {rotation:[20, -20],
                                                                    transformOrigin: ["bottom left", "bottom right"]}},
                                                                   {scaleY: 1, y: 0, autoAlpha: 1, rotation: 0,
-                                                                   ease: Back.easeOut.config(2)}, 0.2, "-=.2");
+                                                                   ease: Back.easeOut.config(2)}, 0.1, "-=.2");
       openOverlay.reverse();
 
   $(".menu").each(function(i, el) {
