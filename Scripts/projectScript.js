@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   $(window).on('scroll', function () {
       var pixs = $(document).scrollTop()
-      pixs = pixs / 150;
+      pixs = pixs / 100;
       $("#wishup-hero-img").css({"-webkit-filter": "blur("+pixs+"px)",
                         "-moz-filter":    "blur("+pixs+"px)",
                         "-ms-filter":     "blur("+pixs+"px)",

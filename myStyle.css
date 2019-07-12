@@ -927,6 +927,9 @@ footer {
   .content-wrapper .content-column {
     width: 100%;
   }
+  .device-wrapper {
+    width: 100%;
+  }
   .project-tile {
     width: 100%;
   }
