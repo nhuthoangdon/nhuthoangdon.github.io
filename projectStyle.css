@@ -775,7 +775,7 @@ section#mpf-intro {
 
 #wishup-hero-img {
   background-image: url("./Assets/camper-campsite-car-753603.jpg");
-  background-position: bottom;
+  /* background-position: bottom; */
 }
 
 section#wishup-why {
