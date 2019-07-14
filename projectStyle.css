@@ -771,16 +771,12 @@ section#mpf-intro {
 
 #wishup-hero-img {
   background-image: url("./Assets/camper-campsite-car-753603.jpg");
-  background-position: 62% bottom;
+  background-position: bottom;
 }
 
 section#wishup-why {
-  padding-top: 5%;
-  padding-bottom: 5%;
   background-image: url("./Assets/up-wallpaper.jpg");
   background-color: #e6edf6;
-  background-position: center;
-  background-attachment: fixed;
 }
 section#wishup-why h3 {
   color: black;
