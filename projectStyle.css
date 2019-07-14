@@ -50,6 +50,7 @@ p strong {
 
 h1 {
   font-size: calc(2.5rem + 2.5vw);
+  letter-spacing: .2rem;
 }
 
 h2 {
