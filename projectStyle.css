@@ -835,6 +835,7 @@ section#wishup-why h3 {
 .intro-fullscreen-bg {
   padding-top: calc(60px + 5%);
   padding-bottom: 5%;
+  background-attachment: scroll;
 }
 
 .hero-img {
@@ -845,9 +846,8 @@ section#wishup-why h3 {
     width: 100%;
   }
     p.centered-text {
-      max-width: 90%;
+      max-width: 80%;
     }
-
 
 
 footer {
