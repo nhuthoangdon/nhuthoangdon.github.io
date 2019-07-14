@@ -345,6 +345,8 @@ section {
 .project-hero {
   width: 100vw;
   height: 75vh;
+  min-width: 100vw;
+  min-height: 75vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
