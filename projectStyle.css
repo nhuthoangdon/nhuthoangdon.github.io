@@ -342,7 +342,7 @@ section {
           justify-content: center;
 }
 
-.project-hero-img {
+.project-hero {
   width: 100%;
   height: 75vh;
   display: -webkit-box;
@@ -354,15 +354,20 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-size: cover;
-  resize: both;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* -o-object-fit: cover;
-     object-fit: cover; */
-  background-attachment: fixed;
   margin-bottom: 4%;
 }
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      resize: both;
+      background-repeat: no-repeat;
+      background-position: center;
+      -o-object-fit: cover;
+         object-fit: cover;
+      background-attachment: fixed;
+    }
+
 
 
 .intro-fullscreen-bg {
@@ -778,6 +783,8 @@ section#mpf-intro {
 section#wishup-why {
   background-image: url("./Assets/up-wallpaper.jpg");
   background-color: #e6edf6;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 section#wishup-why h3 {
   color: black;
