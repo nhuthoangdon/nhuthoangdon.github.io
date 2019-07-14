@@ -343,7 +343,7 @@ section {
 }
 
 .project-hero {
-  width: 100%;
+  width: 100vw;
   height: 75vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -355,22 +355,18 @@ section {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 4%;
+  overflow: hidden;
 }
     .hero-img {
       width: 100%;
       height: 100%;
-      min-width: 100vw;
-      min-height: 75vh;
       background-size: cover;
-      resize: both;
       background-repeat: no-repeat;
       background-position: center center;
       -o-object-fit: cover;
          object-fit: cover;
       background-attachment: fixed;
     }
-
-
 
 .intro-fullscreen-bg {
   width: 100%;
