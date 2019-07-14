@@ -837,6 +837,10 @@ section#wishup-why h3 {
   padding-bottom: 5%;
 }
 
+.hero-img {
+  background-attachment: scroll;
+}
+
   .block {
     width: 100%;
   }
