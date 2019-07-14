@@ -78,6 +78,10 @@ h5 {
     letter-spacing: .5rem;
     font-weight: 900;
     line-height: 2rem;
+    text-align: center;
+  }
+  .block h5 {
+    text-align: left;
   }
 
 h6 {
@@ -836,6 +840,9 @@ section#wishup-why h3 {
   .block {
     width: 100%;
   }
+    p.centered-text {
+      max-width: 95%;
+    }
 
 
 
