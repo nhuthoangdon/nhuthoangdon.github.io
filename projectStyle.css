@@ -439,6 +439,10 @@ section {
 
       .block video {
         width: 300px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
+      }
+      img.appScreen {
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
       }
 
   .no-text-block {
@@ -715,6 +719,10 @@ footer {
       padding-bottom: 5%;
     }
 
+#schecker-hiw-section video {
+  box-shadow: none;
+}
+
 #schecker-draggable-flow {
   background-color: #e0dfdf;
   width: 100%;
@@ -781,12 +789,17 @@ section#mpf-intro {
 section#wishup-why {
   background-image: url("./Assets/up-wallpaper.jpg");
   background-color: #e6edf6;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  margin-bottom: 9%;
 }
 section#wishup-why h3 {
   color: black;
 }
+
+    /* #wishup-intro-video {
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
+    } */
 
 
 
