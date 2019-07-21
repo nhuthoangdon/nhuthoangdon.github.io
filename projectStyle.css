@@ -78,6 +78,11 @@ h5 {
     line-height: 2rem;
     text-align: center;
   }
+  h5 small {
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    font-weight: 200;
+  }
   .block h5 {
     text-align: left;
   }
@@ -586,6 +591,7 @@ section {
                       }
 
 
+
 footer {
   width: 100%;
   height: auto;
@@ -594,23 +600,55 @@ footer {
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 25px;
   box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-color: #EBEEF3;
+  -webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;
 }
+  .footer-top {
+    width: 100%;
+    height: auto;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    /* background-color: #2A2F36; */
+    background-color: #D2DBE9;
+  }
+    .footer-top-links {
+      display: flex;
+      flex-flow: row wrap;
+      text-align: center;
+      justify-content: center;
+    }
+      .footer-top-links a {
+        margin: 20px;
+        font-size: 2em;
+        font-weight: 100;
+        color: #8C9BAF;
+      }
+  .footer-bottom {
+    width: 100%;
+    height: auto;
+    padding: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: #EBEEF3;
+    box-sizing: border-box;
+  }
     .copyright {
       color: #8C9BAF;
       letter-spacing: .1em;
@@ -629,6 +667,12 @@ footer {
       text-align: right;
       margin-left: 13px;
       margin-right: 13px;
+    }
+    .footer-links a:last-child {
+      margin-right: 0;
+    }
+    .footer-links a:first-child {
+      margin-left: 0;
     }
       .footer-links a:hover {
         color: #F3425E;
@@ -949,7 +993,7 @@ section#bardot-learnings h3 {
 }
 
 
-footer {
+.footer-bottom {
   flex-direction: column-reverse;
   align-items: center;
   -webkit-box-pack: center;
