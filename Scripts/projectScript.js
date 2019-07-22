@@ -22,24 +22,13 @@ $(document).ready(function() {
     });
   });
 
-  var win = $(window);
-  var allMods = $(".block, .block-in");
-
   // Already visible modules
+  var allMods = $(".block, .block-in");
   allMods.each(function(i, el) {
     var el = $(el);
     if (el.visible(true)) {
       el.addClass("already-visible");
     }
-  });
-
-  win.scroll(function(event) {
-    allMods.each(function(i, el) {
-      var el = $(el);
-      if (el.visible(true)) {
-        el.addClass("come-in");
-      }
-    });
   });
 
 });

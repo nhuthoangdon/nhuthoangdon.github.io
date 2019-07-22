@@ -293,7 +293,7 @@ i {
       .overlay .menu-items ul li a.highlight {
         color: #F3425E;
         opacity: 1;
-        font-weight: 700;
+        font-weight: 900;
         cursor: default;
       }
 
@@ -301,7 +301,7 @@ i {
         color: #F3425E;
         opacity: 1;
         letter-spacing: .9rem;
-        font-weight: 700;
+        font-weight: 900;
       }
       .overlay .menu-items ul li a:hover:after,
       .overlay .menu-items ul li a:hover:before {
@@ -614,7 +614,6 @@ footer {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    /* background-color: #2A2F36; */
     background-color: #D2DBE9;
   }
     .footer-top-links {
@@ -627,7 +626,10 @@ footer {
         margin: 20px;
         font-size: 2em;
         font-weight: 100;
-        color: #8C9BAF;
+        color: black;
+      }
+      .footer-top-links a:hover {
+        font-weight: 900;
       }
   .footer-bottom {
     width: 100%;

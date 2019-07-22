@@ -206,7 +206,6 @@ function emailBtnHover() {
 
 // Loading animation
 function preloadingAnimation() {
-  window.scrollTo(0, 0);
   var $el1 = document.getElementById('ic-component-1'),
       $el2 = document.getElementById('ic-component-2'),
       $el3 = document.getElementById('ic-component-3'),
@@ -406,7 +405,7 @@ var worksIn = (function(){
   return function() {
     if (!executed) {
       if ($('.ease-in-w').visible(true)) {
-           tl.staggerFrom(".project-tile, .ease-in-w", 1, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1);
+           tl.staggerFrom(".ease-in-w", 1, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1);
            executed = true;
          }
     }
@@ -421,7 +420,7 @@ var othersIn = (function(){
   return function() {
     if (!executed) {
       if ($('.ease-in-o').visible(true)) {
-           tl.staggerFrom(".incubation-tile, .ease-in-o", 1, {y: 200, autoAlpha: 0, immediateRender: false}, 0.1);
+           tl.staggerFrom(".ease-in-o", 1, {y: 200, autoAlpha: 0, immediateRender: false}, 0.1);
            tl_levitatingIphone.play();
            executed = true;
          }
@@ -451,8 +450,8 @@ var aboutIn = (function(){
       function myPic() {
         var tl = new TimelineMax();
             tl.staggerFromTo(".st1, .st0", .3 ,{y: "-=200", autoAlpha: 0, scale: 8, immediateRender: false},
-                                               {y: "+=200", scale: 1, autoAlpha: 1, stagger: 0.02});
-            return tl.timeScale(6);
+                                               {y: "+=200", scale: 1, autoAlpha: 1, stagger: 0.007});
+            return tl.timeScale(5);
       };
 
 
@@ -517,13 +516,7 @@ function fancyEyes() {
 (function($){
         $(window).on("load",function(){
             $("a[rel='m_PageScroll2id']").mPageScroll2id({
-              liveSelector:"a[rel='m_PageScroll2id']",
-              // onComplete: function () {
-              //   sideProjIn();
-              //   othersIn();
-              //   worksIn();
-              //   aboutIn();
-              //   }
+              liveSelector:"a[rel='m_PageScroll2id']"
             });
         });
     })(jQuery);

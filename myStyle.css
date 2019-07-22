@@ -401,7 +401,7 @@ a#emailIcon {
       #menu-links a.mPS2id-highlight {
         color: #F3425E;
         opacity: 1;
-        font-weight: 700;
+        font-weight: 900;
         cursor: default;
       }
 
@@ -409,7 +409,7 @@ a#emailIcon {
         color: #F3425E;
         opacity: 1;
         letter-spacing: .9rem;
-        font-weight: 700;
+        font-weight: 900;
       }
       .overlay .menu-items ul li a:hover:after,
       .overlay .menu-items ul li a:hover:before {
