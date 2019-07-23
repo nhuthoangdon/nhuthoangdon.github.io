@@ -399,6 +399,7 @@ section {
   .wrapper {
     width: 100%;
     height: auto;
+    margin: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -429,10 +430,11 @@ section {
 
   .light-bg-f9f9f9 {
     background-color: #F9F9F9;
+    width: 100%;
   }
 
       .wrapper h5 {
-        margin-bottom: 3%;
+        margin: 3% 0;
       }
 
   .block {
@@ -900,8 +902,6 @@ section#bardot-screenCollage img {
 section#bardot-learnings h3 {
   margin-bottom: 0;
 }
-
-
 
 
 
