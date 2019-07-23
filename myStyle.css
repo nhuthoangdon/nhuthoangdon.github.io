@@ -296,10 +296,10 @@ a#emailIcon {
               content: "Schecker";
             }
             .section-bullet:nth-child(3):before {
-              content: "Others";
+              content: "Exp.";
             }
             .section-bullet:nth-child(4):before {
-              content: "Exp.";
+              content: "Ideas";
             }
             .section-bullet:last-child:before {
               content: "Me";
