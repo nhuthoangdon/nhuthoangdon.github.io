@@ -422,6 +422,7 @@ section {
   .big-col {
     flex-direction: column;
     width: 80%;
+    margin-bottom: 5%;
   }
 
   .not-fullscreen {
@@ -486,7 +487,9 @@ section {
       height: auto;
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
     }
-
+    .noShadow-img {
+      width: 100%;
+    }
 
           a.cta-w-label {
             display: -webkit-box;
@@ -886,9 +889,6 @@ section#bardot-challenge {
     color: #8C9BAF;
   }
 
-section#bardot-home .big-col {
-  margin-bottom: 5%;
-}
 
     img#bardot-findStore-img {
       box-shadow: none;
@@ -902,6 +902,23 @@ section#bardot-screenCollage img {
 section#bardot-learnings h3 {
   margin-bottom: 0;
 }
+
+
+
+/* ------------------------------------------- Standards Australia --------------------------------------------- */
+
+#sa-hero-img {
+  background-image: url("./Assets/australia-2910680_1920.jpg");
+}
+
+section#sa-challenge {
+  padding-top: 5%;
+  background-color: #FFB500;
+}
+    #sa-challenge h3, #sa-challenge p {color: black;}
+    #sa-challenge h3 {margin-bottom: 0;}
+
+
 
 
 
