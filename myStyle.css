@@ -945,7 +945,7 @@ footer {
 }
 
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     section.intro {
       -webkit-box-pack: start;
           -ms-flex-pack: start;

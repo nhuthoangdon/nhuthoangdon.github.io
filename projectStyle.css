@@ -1031,7 +1031,7 @@ section#sa-challenge {
 
 
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
   #schecker-viewInvision {
     display: none;
   }
@@ -1050,6 +1050,10 @@ section#sa-challenge {
         -ms-flex-pack: center;
             justify-content: center;
     align-self: center;
+  }
+
+  .block {
+    margin: 10% auto;
   }
 
 }
