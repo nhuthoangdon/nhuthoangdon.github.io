@@ -25,18 +25,6 @@ a:hover {
   text-decoration: overline;
 }
 
-a.freepik-credits {
-  margin-top: 30px;
-  text-decoration: none;
-  font-weight: 200;
-  font-size: .7rem;
-  letter-spacing: .05rem;
-  color: #8C9BAF;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
 p {
   font-size: 1rem;
   letter-spacing: .05rem;
@@ -928,6 +916,18 @@ section#sa-challenge {
     #sa-info-m-img-block {
       margin-bottom: 0;
     }
+
+
+/* ---------------------------------------------- credits ------------------------------------------------ */
+
+section#credits p {
+  text-align: center;
+}
+
+section#credits a {
+  margin: 10px;
+}
+
 
 
 
