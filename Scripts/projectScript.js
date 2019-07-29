@@ -2,6 +2,7 @@ $(document).ready(function() {
   hiwAnimation();
   scheckerUserFlowDrag();
   scheckerProgress();
+  scheckerUserFlowZoom();
 
   $(window).on('scroll', function () {
       var pixs = $(document).scrollTop()
@@ -79,6 +80,29 @@ $(document).ready(function() {
 function scheckerUserFlowDrag() {
   Draggable.create("#schecker-userFlow", {type:"x,y", edgeResistance:0.65, bounds:"#schecker-draggable-flow"});
 };
+
+function scheckerUserFlowZoom() {
+
+  TweenLite.set("#schecker-userFlow", {scale: .4, transformOrigin: "top center"});
+
+  var flowZoomTL = new TimelineMax();
+      flowZoomTL.to("#schecker-zoom-btn", 1, {scale: .3, top: 25, right: 25})
+                .to("#schecker-userFlow", 1.5, {scale: 1});
+      flowZoomTL.reverse();
+
+        $("#schecker-zoom-btn").click(function() {
+          if (flowZoomTL.reversed()) {
+            flowZoomTL.play();
+            zoomBtn.pause();
+          } else {
+            flowZoomTL.reverse();
+          }
+        });
+};
+
+
+
+
 
 function hiwAnimation() {
       var tlText = new TimelineMax({repeat: -1, repeatDelay: .5, delay: 3, yoyo: true});
