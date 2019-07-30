@@ -844,7 +844,6 @@ footer {
       position: absolute;
       top: 30%;
       z-index: 9000;
-      transition: .5s;
       cursor: pointer;
     }
 
