@@ -32,6 +32,8 @@ $(document).ready(function() {
     }
   });
 
+
+
 });
 
     (function($) {
@@ -86,8 +88,8 @@ function scheckerUserFlowZoom() {
   TweenLite.set("#schecker-userFlow", {scale: .4, transformOrigin: "top center"});
 
   var flowZoomTL = new TimelineMax();
-      flowZoomTL.to("#schecker-zoom-btn", 1, {scale: .3, top: 25, right: 25})
-                .to("#schecker-userFlow", 1.5, {scale: 1});
+      flowZoomTL.to("#schecker-zoom-btn", .5, {scale: .3, top: 25, right: 25})
+                .to("#schecker-userFlow", 1.5, {scale: 1, transformOrigin: "center"}, "-=.2");
       flowZoomTL.reverse();
 
         $("#schecker-zoom-btn").click(function() {

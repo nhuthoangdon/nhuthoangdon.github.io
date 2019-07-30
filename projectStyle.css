@@ -842,13 +842,10 @@ footer {
 }
     #schecker-zoom-btn {
       position: absolute;
-      top: 35%;
+      top: 30%;
       z-index: 9000;
       transition: .5s;
       cursor: pointer;
-    }
-    #schecker-zoom-btn:hover {
-      transform: scale(.9);
     }
 
 
