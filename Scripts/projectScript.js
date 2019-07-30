@@ -88,7 +88,7 @@ function scheckerUserFlowZoom() {
   TweenLite.set("#schecker-userFlow", {scale: .4, transformOrigin: "top center"});
 
   var flowZoomTL = new TimelineMax();
-      flowZoomTL.to("#schecker-zoom-btn", .5, {scale: .3, top: 0, right: 0, ease: Back.easeIn.config(4)})
+      flowZoomTL.to("#schecker-zoom-btn", .5, {scale: .3, top: "-20%", right: "-45%", ease: Back.easeIn.config(4)})
                 .to("#schecker-userFlow", 1.5, {scale: 1, transformOrigin: "center"}, "-=.2");
       flowZoomTL.reverse();
 
