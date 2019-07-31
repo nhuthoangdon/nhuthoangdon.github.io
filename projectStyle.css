@@ -839,10 +839,11 @@ footer {
   -webkit-box-align: center;
   -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
     #schecker-zoom-btn {
-      position: relative;
-      top: 10%;
+      position: absolute;
+      top: 30%;
       z-index: 9000;
       cursor: pointer;
     }
@@ -1064,6 +1065,10 @@ section#credits a {
     }
 
 }
+
+        #schecker-draggable-flow {
+          height: 80vh;
+        }
 
         section#wishup-why {
           background-position: 7% 10%;
