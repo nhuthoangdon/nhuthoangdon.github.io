@@ -601,6 +601,12 @@ section {
                         text-decoration: none;
                       }
 
+.horizontal-divider {
+  width: 60%;
+  height: 1px;
+  background-color: #D2DBE9;
+  margin: 5% auto;
+}
 
 
 footer {
@@ -850,6 +856,9 @@ footer {
       top: 35%;
       z-index: 9000;
       cursor: pointer;
+    }
+    #schecker-userFlow {
+      min-width: 100%;
     }
 
 
