@@ -490,7 +490,6 @@ section {
       -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
     }
     .desktop-screen {
-      width: 80%;
       height: auto;
       -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
     }
@@ -1049,6 +1048,10 @@ section#credits a {
 .big-col {
   width: 100%;
 }
+  .big-col img,
+  .big-col video {
+    width: 100%;
+  }
 
 
 .footer-bottom {
