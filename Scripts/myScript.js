@@ -451,7 +451,7 @@ var aboutIn = (function(){
         var tl = new TimelineMax();
             tl.staggerFromTo(".st1, .st0", .3 ,{y: "-=200", autoAlpha: 0, scale: 8, immediateRender: false},
                                                {y: "+=200", scale: 1, autoAlpha: 1, stagger: 0.007});
-            return tl.timeScale(5);
+            return tl.timeScale(2);
       };
 
 
