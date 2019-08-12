@@ -744,6 +744,11 @@ section.side-projects {
     color: #8C9BAF;
   }
 
+    .tagline-text {
+      text-align: center;
+      width: 60%;
+    }
+
 .wrapper-incubation {
   margin: 3% auto;
 }
@@ -830,11 +835,6 @@ section#works {
   padding-top: 7%;
   padding-bottom: 7%;
 }
-
-  #works p {
-    width: 60%;
-    text-align: center;
-  }
 
 .project-tile {
   width: 42vw;
@@ -990,7 +990,7 @@ footer {
   .device-wrapper {
     width: 100%;
   }
-  #works p {
+  .tagline-text {
     width: 90%;
   }
     .logos a {
