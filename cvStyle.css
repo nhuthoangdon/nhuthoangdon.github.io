@@ -1,0 +1,307 @@
+html, body {
+  font-size: 100%;
+  font-family: 'Fira Sans', 'Trebuchet MS', Helvetica, sans-serif;
+  color: white;
+  color: #2A2F36;
+  width: 100vw;
+  margin: 0;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-box-sizing: border-box;  box-sizing: border-box;
+}
+
+p {
+  font-size: 1rem;
+  letter-spacing: .05rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+p strong {
+  font-size: .95rem;
+  line-height: 2.5rem;
+}
+
+h1 {
+  font-size: calc(2.3rem + 2.5vw);
+  letter-spacing: .1rem;
+}
+
+h2 {
+  font-size: calc(1.5rem + 1.5vw);
+  letter-spacing: .15rem;
+  line-height: 2.5rem;
+}
+
+h3 {
+  font-size: calc(1rem + .7vw);
+  letter-spacing: .1rem;
+  line-height: 2.5rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+  letter-spacing: .1rem;
+  line-height: 2.5rem;
+}
+
+
+h6 {
+  font-size: .78rem;
+  letter-spacing: .04rem;
+}
+
+
+a {
+  font-weight: 700;
+  color: rgb(243, 66, 94);
+  letter-spacing: .12rem;
+  transition: .5s;
+}
+  a:hover {
+    letter-spacing: .3rem;
+    text-decoration: none;
+  }
+
+
+/* ----------------------------------------- */
+
+
+.timeline {
+  margin: 25px;
+  width: auto;
+  height: auto;
+  display: none;
+}
+
+  .event {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+  }
+    .time-mark {
+      width: 10px;
+      height: 10px;
+      min-width: 10px;
+      min-height: 10px;
+      border-radius: 50%;
+      background-color: rgb(243, 66, 94);
+      position: relative;
+      margin: 1px 10px 0;
+    }
+      #tl-1st:after {
+        content: "";
+        width: 1px;
+        height: 100vh;
+        background-color: rgb(92, 172, 211);
+        position: absolute;
+        left: 45%;
+        z-index: -1;
+      }
+
+    .achievemnents {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+      .achievemnents h6 {
+        margin: 0;
+        font-size: .9rem;
+        letter-spacing: .07rem;
+      }
+      .achievemnents ul {
+        padding-left: 20px;
+        list-style-type: circle;
+        line-height: 1.5rem;
+      }
+        .achievemnents ul li, .year {
+          font-size: .85rem;
+          letter-spacing: .05rem;
+          font-weight: 400;
+        }
+
+      .achievemnents div, .achievemnents {
+        margin-bottom: 12px;
+      }
+
+
+
+/* --------------------------------------------------------------- */
+
+
+
+.playback-control {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  visibility: hidden;
+}
+
+    .playback-control span {
+      font-size: .65rem;
+      font-weight: 900;
+      letter-spacing: .2rem;
+      cursor: pointer;
+    }
+    .replay {
+      margin-left: 16px;
+    }
+
+/* ----------------------------------------------------------- */
+
+
+#wc-stuff {
+  margin-top: 18vh;
+  text-align: center;
+}
+
+
+          /* ----------------  svg welcome animation -------------- */
+          #Rectangle-1 {
+            stroke-dasharray: 340;
+            stroke-dashoffset: 340;
+          }
+          #Rectangle-2 {
+            stroke-dasharray: 80;
+            stroke-dashoffset: 80;
+          }
+          #cv-Oval-1, #cv-Oval-2, #Line-1, #Line-2, #Line-3 {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+          }
+          #Line-4 {
+            stroke-dasharray: 150;
+            stroke-dashoffset: 150;
+          }
+
+          #CTA-btn-stroke {
+            stroke-dasharray: 55;
+            stroke-dashoffset: 98;
+          }
+          #CTA-play {
+            cursor: pointer;
+          }
+
+
+/* ----------------------------- cv navigating -------------------------------  */
+
+.cv-navigating {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2%;
+  text-align: center;
+}
+    .story {
+      margin: 30vh 25px auto;
+      text-align: center;
+    }
+    .cv-navigating h4 {
+      display: none;
+      text-align: center;
+    }
+
+    .uniSkills-wrapper, .workSkills-wrapper, .wireframes {
+      width: 100%;
+      height: auto;
+      padding: 25px;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+    }
+      .uniSkills-wrapper .uniSkill {
+        width: calc(80px + 15vw);
+        height: calc(80px + 15vw);
+        margin: 1%;
+        position: relative;
+        display: none;
+      }
+      .uniSkill#graphic {
+        background-image: url('./Assets/graphic-childlabour.png');
+        background-size: cover;
+      }
+        .uniSkill video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: black;
+        }
+
+     .wireframes {
+       width: calc(60px + 14vw);
+       min-width: 200px;
+       max-width: 295px;
+       height: auto;
+       margin: 2%;
+       display: none;
+     }
+     .mockup {
+       width: 80vw;
+       height: auto;
+       min-width: 300px;
+       max-width: 1000px;
+       display: none;
+     }
+     .proto {
+       width: 100%;
+       height: auto;
+       max-width: 524px;
+       display: none;
+     }
+     .multiple-devices, .design-amends, .liaison, .mentor, .frontend {
+       width: 100%;
+       height: auto;
+       max-width: 800px;
+       display: none;
+     }
+     .ab-testing {
+       max-width: 262px;
+       width: auto;
+       height: auto;
+       display: none;
+       margin: 10% 2%;
+     }
+     .styleguide {
+       width: 80%;
+       max-width: 1230px;
+       height: auto;
+       display: none;
+     }
+     .tools {
+       width: 60%;
+       height: auto;
+       display: flex;
+       flex-flow: row wrap;
+       align-items: center;
+       justify-content: space-evenly;
+       display: none;
+     }
+       .tool {
+         width: 60px;
+         height: auto;
+         margin: 12% 2%;
+         display: none;
+       }
+
+
+/* --------------------------------------------------- */
+
+.ending h3, .ending p {
+  text-align: center;
+  display: none;
+}
