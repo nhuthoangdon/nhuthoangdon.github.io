@@ -87,9 +87,16 @@ a {
 }
 
   .event {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row nowrap;
-    align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+            align-items: flex-start;
   }
     .time-mark {
       width: 10px;
@@ -112,9 +119,16 @@ a {
       }
 
     .achievemnents {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+              align-items: flex-start;
     }
       .achievemnents h6 {
         margin: 0;
@@ -200,9 +214,16 @@ a {
 .cv-navigating {
   width: 100%;
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
   padding-top: 2%;
   text-align: center;
 }
@@ -219,10 +240,19 @@ a {
       width: 100%;
       height: auto;
       padding: 25px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-      justify-content: center;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+              flex-flow: row wrap;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+              justify-content: center;
     }
       .uniSkills-wrapper .uniSkill {
         width: calc(80px + 15vw);
@@ -236,10 +266,11 @@ a {
         background-size: cover;
       }
         .uniSkill video {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background-color: black;
+          width: 100%;
+          height: 100%;
+          -o-object-fit: contain;
+             object-fit: contain;
+          background-color: black;
         }
 
      .wireframes {
@@ -285,10 +316,19 @@ a {
      .tools {
        width: 60%;
        height: auto;
+       display: -webkit-box;
+       display: -ms-flexbox;
        display: flex;
-       flex-flow: row wrap;
-       align-items: center;
-       justify-content: space-evenly;
+       -webkit-box-orient: horizontal;
+       -webkit-box-direction: normal;
+       -ms-flex-flow: row wrap;
+               flex-flow: row wrap;
+       -webkit-box-align: center;
+       -ms-flex-align: center;
+               align-items: center;
+       -webkit-box-pack: space-evenly;
+       -ms-flex-pack: space-evenly;
+               justify-content: space-evenly;
        display: none;
      }
        .tool {
