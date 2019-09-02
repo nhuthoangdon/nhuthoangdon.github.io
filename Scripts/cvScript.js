@@ -4,8 +4,8 @@ $(document).ready(function() {
   var initialTL = new TimelineMax({delay: .3});
       initialTL.staggerTo('#Rectangle-1, #Rectangle-2, #cv-Oval-1, #cv-Oval-2, #Line-1, #Line-2, #Line-3, #Line-4',
                            .4, {strokeDashoffset: 0}, 0.1)
-               .from("#wc-text_1", .3, {scaleY: 0, autoAlpha: 0, rotation: 20, transformOrigin: "bottom left"}, "-=.6")
-               .from('#CTA-play', .3, {y: "+=10", autoAlpha: 0}, "-=.2")
+               .fromTo("#wc-text_1", .3, {scaleY: 0, y: "+=40"}, {scaleY: 1, y: 0, autoAlpha: 1, transformOrigin: "bottom left"}, "-=.6")
+               .fromTo('#CTA-play', .3, {y: "+=10"}, {autoAlpha: 1, y: 0}, "-=.2")
                .from('#CTA-btn-stroke', .5, {strokeDashoffset: 0, strokeDasharray: 0, ease: Back.easeOut.config(4)});
 
 

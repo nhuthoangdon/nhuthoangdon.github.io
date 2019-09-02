@@ -206,6 +206,10 @@ a {
           }
           #CTA-play {
             cursor: pointer;
+            visibility: hidden;
+          }
+          #wc-text_1 {
+            visibility: hidden;
           }
 
 
