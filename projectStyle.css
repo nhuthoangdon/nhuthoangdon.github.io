@@ -872,6 +872,7 @@ footer {
 
 
 section#mpf-intro {
+    background-image: url("./Assets/mpf-bg.svg");
     background-color: #778899;
   }
 
