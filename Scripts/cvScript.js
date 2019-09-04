@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 
   var cvTL = new TimelineMax({paused: true});
-      cvTL.to(".story", 1.8, {text:{value:"I <b>graduated</b> in <b>2014</b> with a Bachelor Degree in <b>Multimedia Design</b>"}}, 'label-start')
+      cvTL.to(".story", 2, {text:{value:"I <b>graduated</b> in <b>2014</b> with a Bachelor Degree in <b>Multimedia Design</b>"}}, 'label-start')
           .to(".story", .2, {text:{value:""}, delay: 2})
           .to(".story", 1.5, {text:{value:"where I gained <b>multidisciplinary skills</b>"}, delay: .3})
           .to(".story", .2, {text:{value:""}, delay: 1.4})
@@ -106,11 +106,15 @@ $(document).ready(function() {
           .to(".story", .2, {text:{value:""}, delay: .8})
           .to('.story', 1.6, {text:{value: "to focus on learning <b>HTML/CSS/JS</b>"}})
           .to(".story", .2, {text:{value:""}, delay: 1.5})
-          .to('.story', 1.2, {text:{value: "and develop my product ideas"}})
+          .to('.story', 1.2, {text:{value: "and develop my <b>side projects</b>"}})
           .to(".story", .2, {text:{value:""}, delay: 1.2})
-          .to('.story', 1, {text:{value: "As for the <b>tools</b>"}, delay: 1})
+          .to('.story', 1.2, {text:{value: "as I find myself doing best at"}})
+          .to(".story", .2, {text:{value:""}, delay: 1.2})
+          .to('.story', 2.8, {text:{value: "conceptualising and brainstorming <b>ideas</b>"}})
+          .to(".story", .2, {text:{value:""}, delay: 1.8})
+          .to('.story', 1, {text:{value: "About the <b>tools</b>"}, delay: 1})
           .to(".story", .2, {text:{value:""}, delay: 1})
-          .to('.story', 1.5, {text:{value: "I am <b>proficient</b> in"}})
+          .to('.story', 1, {text:{value: "I am <b>proficient</b> in"}})
           .to(".story", 1, {letterSpacing: '1.8rem', autoAlpha: 0, delay: 1})
           .set('.story', {display: 'none', text:{value:""}})
           .set('.title', {text: "Industry standard tools"})
@@ -129,11 +133,11 @@ $(document).ready(function() {
           .staggerTo('.frontend, .title', .3, {y: '+=30', autoAlpha: 0, delay: 1.8}, .1)
           .set('.frontend', {display: 'none'})
           .set('.story', {letterSpacing: ".05rem", display: 'block', autoAlpha: 1})
-          .to(".story", .8, {text:{value:"I also have basic knowledge of"}, delay: 1})
+          .to(".story", 1, {text:{value:"I have basic knowledge of"}, delay: 1})
           .to(".story", .2, {text:{value:""}, delay: .6})
           .to('.story', 1, {text:{value: "<b>User Research Methodologies</b>"}})
           .to(".story", .2, {text:{value:""}, delay: 1})
-          .to('.story', 1.5, {text:{value: "with an eager to learn more"}})
+          .to('.story', 1.6, {text:{value: "but I am eager to learn more"}})
           .to(".story", .2, {text:{value:""}, delay: 1.5})
           .to('.story', 1, {text:{value: "I am seeking an opportunity"}, delay: 1.6})
           .to(".story", .2, {text:{value:""}, delay: 1})
@@ -150,7 +154,7 @@ $(document).ready(function() {
           .set('.story', {display: 'none', text:{value:""}})
           .set('.cv-navigating, #wc-stuff', {display: "none"})
           .set('.ending h3, .ending p, .timeline', {display: "block", autoAlpha: 0, y: "+=30"})
-          .staggerTo('.ending h3, .ending p, .timeline', .8, {autoAlpha: 1, y: 0, delay: .5}, .2)
+          .staggerTo('.ending h3, .ending p, .timeline', .8, {autoAlpha: 1, y: 0, delay: .5}, .2, 'label-cvEnds');
 
 
 
@@ -183,6 +187,11 @@ function initialPlayInit() {
 
           $('.replay').click(function() {
             tl.play('label-cvStart');
+            TweenLite.to('#skip', .5, {autoAlpha: 1});
+          });
+
+          $('#skip').click(function() {
+            tl.seek(-1.7);
           });
 
   });
