@@ -79,7 +79,7 @@ $(document).ready(function() {
           .staggerTo('.ab-testing, .title', .5, {y: 0, autoAlpha: 1}, .1)
           .staggerTo('.ab-testing, .title', .3, {y: '+=30', autoAlpha: 0, delay: 1.8}, .1)
           .set('.ab-testing', {display: 'none'})
-          .set('.title', {text: "UX/UI updates as per feedback"})
+          .set('.title', {text: "UX/UI design & amend"})
           .set('.design-amends', {display: 'block', autoAlpha: 0, y: "+=30"})
           .staggerTo('.design-amends, .title', .5, {y: 0, autoAlpha: 1}, .1)
           .staggerTo('.design-amends, .title', .3, {y: '+=30', autoAlpha: 0, delay: 1.8}, .1)
