@@ -108,13 +108,16 @@ a {
       position: relative;
       margin: 1px 10px 0;
     }
-      #tl-1st:after {
+        #tm-skills {background-color: #24E199;}
+
+      .timeline:after {
         content: "";
         width: 1px;
-        height: 100vh;
+        height: 100%;
         background-color: rgb(92, 172, 211);
         position: absolute;
-        left: 45%;
+        left: 65px;
+        top: 5px;
         z-index: -1;
       }
 
@@ -137,7 +140,7 @@ a {
       }
       .achievemnents ul {
         padding-left: 20px;
-        list-style-type: circle;
+        list-style-type: disc;
         line-height: 1.5rem;
       }
         .achievemnents ul li, .year {
@@ -145,6 +148,10 @@ a {
           letter-spacing: .05rem;
           font-weight: 400;
         }
+          .year {
+            min-width: 50px;
+            text-align: right;
+          }
 
       .achievemnents div, .achievemnents {
         margin-bottom: 12px;
