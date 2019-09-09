@@ -100,18 +100,6 @@ $(document).ready(function() {
           .staggerTo('.mentor, .title', .3, {y: '+=30', autoAlpha: 0, delay: 1.8}, .1)
           .set('.mentor', {display: 'none'})
           .set('.story', {letterSpacing: ".05rem", display: 'block', autoAlpha: 1})
-          .to(".story", .6, {text:{value:"Last year"}, delay: 1})
-          .to(".story", .2, {text:{value:""}, delay: 1})
-          .to('.story', 1.2, {text:{value: "I decided to quit my former job"}})
-          .to(".story", .2, {text:{value:""}, delay: .8})
-          .to('.story', 1.6, {text:{value: "to focus on learning <b>HTML/CSS/JS</b>"}})
-          .to(".story", .2, {text:{value:""}, delay: 1.5})
-          .to('.story', 1.5, {text:{value: "and develop my <b>side projects</b>"}})
-          .to(".story", .2, {text:{value:""}, delay: 1.2})
-          .to('.story', 1.2, {text:{value: "as I find myself doing best at"}})
-          .to(".story", .2, {text:{value:""}, delay: 1.2})
-          .to('.story', 2.8, {text:{value: "conceptualising and brainstorming <b>ideas</b>"}})
-          .to(".story", .2, {text:{value:""}, delay: 1.8})
           .to('.story', 1, {text:{value: "About the <b>tools</b>"}, delay: 1})
           .to(".story", .2, {text:{value:""}, delay: 1})
           .to('.story', 1, {text:{value: "I am <b>proficient</b> in"}})
@@ -133,12 +121,18 @@ $(document).ready(function() {
           .staggerTo('.frontend, .title', .3, {y: '+=30', autoAlpha: 0, delay: 1.8}, .1)
           .set('.frontend', {display: 'none'})
           .set('.story', {letterSpacing: ".05rem", display: 'block', autoAlpha: 1})
-          .to(".story", 1, {text:{value:"I have basic knowledge of"}, delay: 1})
-          .to(".story", .2, {text:{value:""}, delay: .6})
-          .to('.story', 1, {text:{value: "<b>User Research Methodologies</b>"}})
+          .to(".story", .6, {text:{value:"Last year"}, delay: 1.5})
           .to(".story", .2, {text:{value:""}, delay: 1})
-          .to('.story', 1.6, {text:{value: "but I am eager to learn more"}})
+          .to('.story', 1.2, {text:{value: "I decided to quit my former job"}})
+          .to(".story", .2, {text:{value:""}, delay: .8})
+          .to('.story', 1.6, {text:{value: "to focus on learning <b>HTML/CSS/JS</b>"}})
           .to(".story", .2, {text:{value:""}, delay: 1.5})
+          .to('.story', 1.5, {text:{value: "and develop my <b>side projects</b>"}})
+          .to(".story", .2, {text:{value:""}, delay: 1.2})
+          .to('.story', 1.2, {text:{value: "as I find myself doing best at"}})
+          .to(".story", .2, {text:{value:""}, delay: 1.2})
+          .to('.story', 2.8, {text:{value: "conceptualising and brainstorming <b>ideas</b>"}})
+          .to(".story", .2, {text:{value:""}, delay: 1.8})
           .to('.story', 1, {text:{value: "I am seeking an opportunity"}, delay: 1.6})
           .to(".story", .2, {text:{value:""}, delay: 1})
           .to('.story', 1.5, {text:{value: "to thrive and expand my expertise"}})
@@ -155,6 +149,7 @@ $(document).ready(function() {
           .set('.cv-navigating, #wc-stuff', {display: "none"})
           .set('.ending h3, .ending p, .timeline', {display: "block", autoAlpha: 0, y: "+=30"})
           .staggerTo('.ending h3, .ending p, .timeline', .8, {autoAlpha: 1, y: 0, delay: .5}, .2, 'label-cvEnds');
+
 
 
 
@@ -204,6 +199,8 @@ initialPlayInit();
 
 CTAplayHover();
 
+hands();
+
 });
 
 
@@ -216,4 +213,18 @@ function CTAplayHover() {
       TweenMax.to('#CTA-btn-stroke', 1, {strokeDashoffset: 98, strokeDasharray: 55});
     }
   );
+};
+
+function hands() {
+  var tl = new TimelineMax({repeat: -1});
+      tl.set('#hand-waving', {transformOrigin: "bottom center", rotation: -30, display: "inline"})
+        .set('#hand-pointing', {display: "none"})
+        .set('#hand-ok', {display: "none", transformOrigin: "bottom center"})
+        .to('#hand-waving', .1, {rotation: 30, ease: Expo.easeInOut, repeat: 6, yoyo: true})
+        .set('#hand-waving', {display: "none"})
+        .to('#hand-pointing', .2, {x: "+=10", ease: Expo.easeInOut, yoyo: true, repeat: 5, display: "inline"})
+        .set('#hand-pointing', {display: "none"})
+        .to('#hand-ok', 3, {display: "inline", rotation: 20, ease: Elastic.easeOut.config(1, 0.1)})
+        .set('#hand-ok', {display: "none"});
+return hands;
 };

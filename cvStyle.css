@@ -367,3 +367,28 @@ a {
   text-align: center;
   display: none;
 }
+
+
+/* -------------------------------------------------- */
+
+img#hand-waving {
+  width: 24px;
+  height: auto;
+  margin-left: 20px;
+
+}
+
+img#hand-pointing {
+  height: 24px;
+  width: auto;
+  display: none;
+  margin-top: 6px;
+}
+
+img#hand-ok {
+  width: 18px;
+  height: auto;
+  display: none;
+  margin-left: 10px;
+  margin-top: 2px;
+}
