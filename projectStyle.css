@@ -877,13 +877,25 @@ footer {
 .oldStuff-proj-wrapper {
   width: 100vw;
   padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .oldStuff-proj-wrapper.reversed {
-  flex-flow: row wrap-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap-reverse;
+          flex-flow: row wrap-reverse;
 }
     .oldStuff-proj {
       width: 40%;
@@ -899,7 +911,9 @@ footer {
     }
 
     .flex-grow {
-      flex-grow: 2;
+      -webkit-box-flex: 2;
+          -ms-flex-positive: 2;
+              flex-grow: 2;
     }
 
 
