@@ -867,6 +867,48 @@ footer {
 }
 
 
+/* ----------------------------------- old stuff --------------------------------- */
+
+#old-proj {
+  padding: 7% 0;
+}
+
+.oldStuff-proj-wrapper {
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+.oldStuff-proj-wrapper.reversed {
+  flex-flow: row wrap-reverse;
+}
+    .oldStuff-proj {
+      width: 40%;
+      height: auto;
+      min-width: 300px;
+      margin: 10px 30px;
+    }
+    .oldStuff-proj video {
+      width: 100%;
+      min-width: 300px;
+      height: auto;
+      background-color: black;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ----------------------------------- my plastic footprint Intro------------------------------------- */
 

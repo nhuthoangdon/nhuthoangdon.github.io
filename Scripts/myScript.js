@@ -371,12 +371,13 @@ function preloadingAnimation() {
 
 
 $(window).scroll(function(event) {
-  $(".ease-in, .ease-in-w, .ease-in-o, .ease-in-a, .my-portrait svg").each(function(i, el) {
+  $(".ease-in, .ease-in-w, .ease-in-o, .ease-in-os, .ease-in-a, .my-portrait svg").each(function(i, el) {
     var el = $(el);
     if (el.visible(true)) {
       sideProjIn();
       othersIn();
       worksIn();
+      oldStuffIn();
       aboutIn();
     }
   });
@@ -422,6 +423,19 @@ var othersIn = (function(){
       if ($('.ease-in-o').visible(true)) {
            tl.staggerFrom(".ease-in-o", 1, {y: 200, autoAlpha: 0, immediateRender: false}, 0.1);
            tl_levitatingIphone.play();
+           executed = true;
+         }
+    }
+  };
+})();
+
+var oldStuffIn = (function(){
+  var tl = new TimelineMax();
+  var executed = false;
+  return function() {
+    if (!executed) {
+      if ($('.ease-in-os').visible(true)) {
+           tl.staggerFrom(".ease-in-os", 1.3, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1);
            executed = true;
          }
     }

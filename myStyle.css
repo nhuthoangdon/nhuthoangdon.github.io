@@ -275,6 +275,7 @@ a#emailIcon {
         .section-bullet:nth-child(2):before,
         .section-bullet:nth-child(3):before,
         .section-bullet:nth-child(4):before,
+        .section-bullet:nth-child(5):before,
         .section-bullet:last-child:before {
           font-size: .8em;
           opacity: 0;
@@ -300,6 +301,9 @@ a#emailIcon {
             }
             .section-bullet:nth-child(4):before {
               content: "Ideas";
+            }
+            .section-bullet:nth-child(5):before {
+              content: "Oldies";
             }
             .section-bullet:last-child:before {
               content: "Me";
@@ -927,9 +931,27 @@ section#works {
 
 
 
+/* ----------------------- old stuff ----------------------------- */
+
+section#old-stuff {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  padding: 7% 25px;
+  background-color: #f5fffa;
+}
+
+    #oldStuff-CTA {
+      margin-top: 30px;
+    }
 
 
 
+
+
+
+/* ---------------------------------------------------- */
 
 /* About me */
 #about .content-wrapper {
