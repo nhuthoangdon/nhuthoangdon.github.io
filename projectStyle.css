@@ -873,8 +873,9 @@ footer {
   padding: 7% 0;
 }
 
+
 .oldStuff-proj-wrapper {
-  width: 100%;
+  width: 100vw;
   padding: 25px;
   display: flex;
   flex-flow: row wrap;
@@ -890,11 +891,15 @@ footer {
       min-width: 300px;
       margin: 10px 30px;
     }
-    .oldStuff-proj video {
+    .oldStuff-proj video,
+    .oldStuff-proj img {
       width: 100%;
       min-width: 300px;
       height: auto;
-      background-color: black;
+    }
+
+    .flex-grow {
+      flex-grow: 2;
     }
 
 
@@ -1159,6 +1164,12 @@ section#credits a {
 section#wishup-why {
   background-position: 7% 10%;
 }
+
+    .oldStuff-proj {
+      width: 100%;
+      height: auto;
+      min-width: 300px;
+    }
 
 }
 
