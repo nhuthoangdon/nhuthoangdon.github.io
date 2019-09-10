@@ -984,7 +984,31 @@ section#credits a {
 }
 
 
+#thanks {
+  padding: 0 25px;
+  margin: 6% auto;
+}
 
+    #dogs {
+      display: flex;
+      flex-flow: row wrap;
+      width: 90vw;
+      height: auto;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-top: 5%;
+    }
+      #dogs img {
+        width: 200px;
+        height: 200px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+
+  #thank-dogs {
+    margin-top: 6%;
+    width: 60%;
+  }
 
 
 /* ----------------------------- scroll slide in ---------------------------------- */
@@ -1082,15 +1106,24 @@ section#credits a {
       margin-bottom: 25px;
     }
 
+#thank-dogs {
+  width: 95%;
 }
 
-        #schecker-draggable-flow {
-          height: 80vh;
-        }
+#schecker-draggable-flow {
+  height: 80vh;
+}
 
-        section#wishup-why {
-          background-position: 7% 10%;
-        }
+section#wishup-why {
+  background-position: 7% 10%;
+}
+
+}
+
+
+
+
+
 
 /* ------------------------------------------------------------------------------------ */
 

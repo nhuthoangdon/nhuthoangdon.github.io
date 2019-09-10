@@ -69,10 +69,11 @@ a {
   color: rgb(243, 66, 94);
   letter-spacing: .12rem;
   transition: .5s;
+  text-decoration: none;
 }
   a:hover {
     letter-spacing: .3rem;
-    text-decoration: none;
+    text-decoration: overline;
   }
 
 
