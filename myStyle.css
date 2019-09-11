@@ -835,7 +835,7 @@ section.side-projects {
 
   /* Works Showcase */
 section#works {
-  background-color: #EBEEF3;
+  background-color: white;
   padding-top: 7%;
   padding-bottom: 7%;
 }
@@ -939,7 +939,7 @@ section#old-stuff {
   align-items: center;
   width: 100%;
   padding: 7% 25px;
-  background-color: #f5fffa;
+  background-color: #EBEEF3;
 }
 
     #oldStuff-CTA {
