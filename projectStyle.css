@@ -873,6 +873,9 @@ footer {
   padding: 7% 0;
 }
 
+.eachStuff {
+  margin-bottom: calc(30px + 5%);
+}
 
 .oldStuff-proj-wrapper {
   width: 100vw;
@@ -901,7 +904,7 @@ footer {
       width: 40%;
       height: auto;
       min-width: 300px;
-      margin: 10px 30px;
+      margin: 0 30px;
     }
     .oldStuff-proj video,
     .oldStuff-proj img {
