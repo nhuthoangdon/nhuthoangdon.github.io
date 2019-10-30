@@ -414,7 +414,7 @@ var worksIn = (function(){
 })();
 
 var tl_levitatingIphone = new TimelineMax({yoyo: true, repeat: -1, paused: true});
-    tl_levitatingIphone.fromTo("#wishUp-mockup-ip", 2, {y: -5}, {y: 20, ease: Power0.easeNone});
+    tl_levitatingIphone.fromTo("#wishUp-mockup-ip", 2, {y: -5, scale: .98}, {y: 10, scale: 1, ease: Power0.easeNone});
 var othersIn = (function(){
   var tl = new TimelineMax();
   var executed = false;

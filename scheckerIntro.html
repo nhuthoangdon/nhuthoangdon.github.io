@@ -62,11 +62,20 @@
 
 
 <section class="project-intro">
-
   <div class="project-hero" id="schecker-hero">
     <img alt="Hero Image" src="./Assets/schecker-cover.png" />
   </div>
 
+  <div class="mouse_scroll">
+
+		<div class="mouse">
+			<div class="wheel"></div>
+		</div>
+</div>
+
+</section>
+
+<section>
   <div class="wrapper" id="schecker-intro">
     <div class="block">
       <h2>The idea</h2>
@@ -79,93 +88,64 @@
         </p>
       </div>
   </div>
-
 </section>
+
+
+
 
 
 
 <section id="schecker-hiw-section">
 
-  <h3>WHY IT'LL WORK</h3>
+  <h3>FEATURES</h3>
+  <div class="leading-line"></div>
 
-  <div class="wrapper">
-
-      <div class="block">
-        <h5>CYBERCHRONDRIA</h5>
-        <p>
-          Many people search their symptoms online and either get paranoid about having a deadly disease, or
-          take it for granted (which can be dangerous if it's the sign of a serious condition), as searching
-          for symptoms online gives general results that people have to put all the information together and
-          make their own judgements. Moreover, although it is mandatory to consult with a healthcare professional
-          upon any abnormal sign, I think it is helpful for everyone to acknowledge and be aware of their
-          symptoms and diseases, especially those in less developed countries where the healthcare system is not
-          very reliable.
-        </p>
-      </div>
-
-        <div class="block no-text-block">
-          <div class="hiw input">
-            <i class="fas fa-search"></i>
-            <span class="text-field">search</span>
-          </div>
-        </div>
+  <div class="wrapper" id="schecker-features">
+    <div class="ic_schecker-feature" id="ic_check">
+      <img alt="" src="./Assets/disease-symbol.svg" />
     </div>
-
-
-    <div class="wrapper odd">
-
-        <div class="block no-text-block">
-          <div class="hiw result">
-            <h6>YOU MIGHT HAVE</h6>
-            <div id="schecker-progress-bar">
-              <div class="bar"></div>
-            </div>
-            <div class="result-text">Diabetes (<span id="counting">0</span>%)</div>
-          </div>
-        </div>
-
-        <div class="block">
-          <h5 class="secondary-title">WHAT THIS APP DOES</h5>
-          <p>
-            Schecker's database contains reliable firsthand medical information. It will use a smart algorithm
-            to ask the user questions then analyses the answers to ask the next questions until there is enough
-            information for it to make an assessment.
-            Results will be transparent, most matched condition will be shown together with less likely causes.
-            If there are any other medical tests or additional methods needed, info will be indicated.
-          </p>
-        </div>
-
+    <div class="ic_schecker-feature" id="ic_book">
+      <img alt="" src="./Assets/stethoscope.svg" />
     </div>
-
-
+    <div class="ic_schecker-feature" id="ic_manage">
+      <img alt="" src="./Assets/medical-chart.svg" />
+    </div>
+  </div>
 </section>
 
-<section>
+<section id="concept-development">
   <h3 class="block-in">CONCEPT DEVELOPMENT</h3>
+  <div class="leading-line" id="s_leading-line-1"></div>
 
-  <div class="big-img-wrapper light-bg-f9f9f9">
-    <h5 class="block-in">INITIAL CONCEPT FLOW</h5>
-    <img alt="user flow" class="block-in noShadow-img" src="./Assets/schecker-simplifiedFlow.png" />
-
-    <h5 class="block-in">LOW FIDELITY WIREFRAME</h5>
-    <img alt="wireframe" class="block-in noShadow-img" src="./Assets/schecker-wireframe.png" />
+  <div class="big-img-wrapper" id="s_concept-flow">
+    <h5 class="block-in" id="s_concept-flow-h5">INITIAL CONCEPT FLOW</h5>
+    <img id="s_concept-flow-img" alt="concept flow" class="block-in noShadow-img" src="./Assets/schecker-simplifiedFlow.png" />
   </div>
 
+  <div class="leading-line" id="s_leading-line-2"></div>
+
+  <div class="big-img-wrapper" id="s_wireframe">
+    <h5 class="block-in" id="s_wireframe-h5">LOW FIDELITY WIREFRAME</h5>
+    <img id="s_wireframe-img" alt="wireframe" class="block-in noShadow-img" src="./Assets/schecker-wireframe.png" />
+  </div>
+
+  <div class="leading-line" id="s_leading-line-3"></div>
+
   <div id="schecker-draggable-flow" class="block-in">
-    <h5 class="secondary-title">USER FLOW<br /><small>(zoom &amp; drag)</small></h5>
-    <img id="schecker-zoom-btn" alt="Zoom" src="./Assets/schecker-zoomBtn.svg" />
+    <h5 class="secondary-title">USER FLOW<br /><small>(drag to view)</small></h5>
     <img alt="user flow" id="schecker-userFlow" src="./Assets/schecker-userflow.png" />
   </div>
 
-  <div class="big-img-wrapper light-bg-f9f9f9">
+  <div class="leading-line" id="s_leading-line-4"></div>
+
+  <div class="big-img-wrapper" id="s_ui">
     <h5 class="block-in">UI COMPONENTS</h5>
     <img alt="UI Components" class="noShadow-img block-in" src="./Assets/schecker-uiComponents.png" />
   </div>
 
-  <img alt="Completed screens" class="block-in noShadow-img" src="./Assets/schecker-screens.png" />
+  <div class="leading-line" id="s_leading-line-5"></div>
 
-
-
+  <img id="s_collage" alt="Completed screens" class="block-in noShadow-img" src="./Assets/schecker-screens.png" />
 
 </section>
 
@@ -174,176 +154,8 @@
 
 
 
-<section>
+<section id="s_prototypeCTA">
 
-  <h3 class="block-in">UX/UI EXPLAINED</h3>
-
-  <div class="wrapper">
-
-    <div class="block">
-      <h5>PROFILE</h5>
-      <p>
-        Easy switching between Medical & Personal info. Completion of Profile is not compulsory;
-        however encouraged as the datas might enhance the assessment's accuracy.
-        Relevant info will be prefilled if users choose to fill in the Patient Form online when booking a doctor
-        appointment.
-      </p>
-    </div>
-    <div class="block no-text-block">
-      <video playsinline autoplay loop muted class="appScreen">
-        <source src="./Assets/scheckerUX-profile.mov" type="video/mp4" />
-        Sorry it's a really nice video your browser failed to load.
-      </video>
-    </div>
-
-  </div>
-
-  <div class="wrapper odd">
-
-    <div class="block no-text-block">
-      <video playsinline autoplay loop muted class="appScreen">
-        <source src="./Assets/scheckerUX-symptoms.mov" type="video/mp4" />
-        Sorry it's a really nice video your browser failed to load.
-      </video>
-    </div>
-
-    <div class="block">
-      <h5>HOME - INPUT SYMPTOMS</h5>
-      <p>
-        <strong>Options to check for someone else</strong> <br />
-        Default: self checking. If check for someone else, user will be prompted to fill in some basic info of the person
-        being checked for.
-        <br />
-        <br />
-        <strong>2 ways of inputing symptoms</strong> <br />
-        Traditional input via text field (with search suggestions) for intuitiveness &
-        Visualised Human body for optimised user experience when picking on the troubled body part(s) - User testings needed.
-      </p>
-    </div>
-
-  </div>
-
-  <div class="wrapper">
-
-    <div class="block">
-      <h5>RESULT</h5>
-      <p>
-        Result shows possibilities of the conditions, medical advice, disease info & options to book Doctor appointment /
-        add symptom(s) to watch list for tracking.
-      </p>
-    </div>
-    <div class="block no-text-block">
-      <video playsinline autoplay loop muted class="appScreen">
-        <source src="./Assets/scheckerUX-result.mov" type="video/mp4" />
-        Sorry it's a really nice video your browser failed to load.
-      </video>
-    </div>
-
-  </div>
-
-  <div class="wrapper odd">
-
-    <div class="block no-text-block">
-      <video playsinline autoplay loop muted class="appScreen">
-        <source src="./Assets/scheckerUX-book.mov" type="video/mp4" />
-        Sorry it's a really nice video your browser failed to load.
-      </video>
-    </div>
-
-    <div class="block">
-      <h5>BOOK APPOINTMENT</h5>
-      <p>
-        <strong>Doctors listing with availability</strong> <br />
-        Doctors listing with key info and pickable date/time enable users to quickly schedule an appointment without going
-        through too many steps. <br /><br />
-        <strong>Refined booking process</strong><br />
-        Booking can be done right away for users who have completed all the relevant fields in their profile. Those haven't
-        will be asked to quickly provide necessary info (e.g. Insurance) and choose whether they want to complete the
-        patient form online, or at the doctor's office. <br /><br />
-        <strong>Filter</strong> <br />
-        If user book from the assessment result, the system will automatically filtered the Doctor listing base on
-        Expertise - Distance - Rating - Availability accordingly. Filter criterias will be displayed as words
-        with 2 key criterias (e.g. 'Nearest Primary Care Doctors', 'Best Dermatologists',
-        'Flexible schedule Eye Doctors', etc.) as it is friendlier for users to pickup how the Doctor listing works.
-      </p>
-    </div>
-
-  </div>
-
-  <div class="wrapper">
-
-    <div class="block">
-      <h5>APPOINTMENTS LISTING</h5>
-      <p>
-        <strong>Expandable blocks</strong> <br />
-        Each appointment is displayed in a separate default collapsed block with key info visible. Confirmed upcoming
-        appointments will be on top. <br /><br />
-        <strong>Status & Doctor's note</strong> <br />
-        An appointment is officially confirmed after the doctor has reviewed and confirmed it. If the doctor
-        has any note for the patient, it will be showed half visible in the collapsed block (doctor's note is
-        also considered as key info - half visible display for real estate saving). <br /><br />
-        <strong>Reschedule & cancel</strong> <br />
-        Appointments canceling is possible, however not encouraged. Thus, the option to cancel will be visible
-        inside the 'Reschedule' option.
-      </p>
-    </div>
-    <div class="block no-text-block">
-      <video playsinline autoplay loop muted class="appScreen">
-        <source src="./Assets/scheckerUX-appointments.mov" type="video/mp4" />
-        Sorry it's a really nice video your browser failed to load.
-      </video>
-    </div>
-
-  </div>
-
-  <div class="wrapper odd">
-
-    <div class="block no-text-block">
-      <video playsinline autoplay loop muted class="appScreen">
-        <source src="./Assets/scheckerUX-track.mov" type="video/mp4" />
-        Sorry it's a really nice video your browser failed to load.
-      </video>
-    </div>
-
-    <div class="block">
-      <h5>SYMPTOMS TRACKING</h5>
-      <p>
-        <strong>Categorised symptoms</strong> <br />
-        Symptoms are grouped within their causes: diseases that have been diagnosed by doctors, diseases from
-        assessment results, unknown (symptoms that have not been diagnosed or checked).
-        <br /><br />
-        <strong>Medications info</strong> <br />
-        Users can add medications to each group of symptoms for better management. <br /><br />
-        <strong>Colour-visualised progression</strong><br />
-        Each symptom has its own status of progression. Status of progression is visualised with colours
-        indicating 3 states: Red for getting worse, Neutral for progressing, Green for getting better.
-        Overall progression of all symptoms within one group will be reflected by the group's outline colour.<br /><br />
-        <strong>Symptom tracking & detail</strong><br />
-        Symptom detail screen allows users to add progress, see medication info (if any) and tracking history.
-        Users are able to track the symptom progress daily. Progression is visualised with a graphic chart.
-      </p>
-    </div>
-
-  </div>
-
-  <div class="wrapper odd">
-    <div class="block">
-      <p>
-        <i>
-          <strong>DISCLAIMER</strong><br />
-          This project is my own idea and creation (for experimental purposes) hence should be under my copyright.
-          All contents regarding info, advices or statistics are for demonstration purposes only.
-          Other materials such as images &amp; icons used in the project and/or this website are under CC license
-          (see <a href="./credits.html">Credits</a>).
-        </i>
-      </p>
-    </div>
-
-    <div class="block">
-      <p>
-        This is the first draft of a semi-complete prototype.
-        I am looking to make a UX/UI revision soon.
-      </p>
       <a class="cta-w-label" id="schecker-viewInvision" href="https://invis.io/B8RU1TAPZYV">
         <h6 class="CTA-label">VIEW PROTOTYPE</h6>
         <div class="CTAarrow arrow-next" id="scheckerCTA-next">
@@ -363,8 +175,6 @@
       <a class="simple-CTAbtn" id="schecker-viewInvisionCTA" href="https://invis.io/B8RU1TAPZYV">
         <h6 class="CTA-label">VIEW PROTOTYPE</h6>
       </a>
-    </div>
-  </div>
 
 </section>
 

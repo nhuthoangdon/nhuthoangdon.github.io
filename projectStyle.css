@@ -60,6 +60,14 @@ h3 {
   letter-spacing: .8em;
   text-align: center;
   line-height: 2em;
+  text-transform: uppercase;
+}
+
+.leading-line {
+  width: 1px;
+  height: 90vh;
+  background-color: black;
+  margin: 5% auto;
 }
 
 h4 {
@@ -72,6 +80,7 @@ h5 {
     font-weight: 900;
     line-height: 2rem;
     text-align: center;
+    text-transform: uppercase;
   }
   h5 small {
     font-size: .8rem;
@@ -329,6 +338,7 @@ i {
 section {
   width: 100%;
   margin-bottom: calc(40px + 5%);
+  margin-top: calc(40px + 5%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -344,9 +354,15 @@ section {
           justify-content: center;
 }
 
+.project-intro {
+  width: 100%;
+  height: 100vh;
+  margin-top: 0;
+}
+
 .project-hero {
   width: 100vw;
-  height: 75vh;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -384,10 +400,6 @@ section {
   img.not-fullscreen-img {
     width: 92%;
     height: auto;
-  }
-
-  section h3 {
-    margin-bottom: 5%;
   }
 
 
@@ -717,85 +729,115 @@ footer {
         color: #F3425E;
       }
 
-/* -------------------- Schecker How it works block ------------------------ */
 
-  .hiw.input {
-    display: inline-block;
-    border-bottom: solid 1px #E2E2E2;
-    padding: 10px 0;
-    width: 90%;
-    text-align: center;
-    margin-top: 10%;
-    color: #8C9BAF;
+/* ----------------------------------------------mouse scroll-------------------------------------------- */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+
+.mouse_scroll {
+	display: block;
+	margin: 0 auto;
+	width: 24px;
+	height: 100px;
+  z-index: 9000;
+}
+
+.mouse {
+  height: 42px;
+  width: 26px;
+  border-radius: 18px;
+  transform: none;
+  border: 2px solid #8C9BAF;
+  box-sizing: border-box;
+}
+
+.wheel {
+  height: 5px;
+  width: 2px;
+  display: block;
+  margin: 5px auto;
+  background: white;
+  position: relative;
+
+  height: 4px;
+  width: 4px;
+  border: 2px solid black;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+}
+
+.wheel {
+  -webkit-animation: mouse-wheel 0.6s linear infinite;
+  -moz-animation: mouse-wheel 0.6s linear infinite;
+  animation: mouse-wheel 0.6s linear infinite;
+}
+
+@-webkit-keyframes mouse-wheel{
+   0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
 
-      .hiw.input i.fas.fa-search {
-        font-size: 1.5em;
-        margin-right: 5px;
-      }
-      .hiw.input span.text-field {
-        font-size: 1.5em;
-        font-weight: 100;
-        opacity: .4;
-      }
-      .hiw-text-animation {
-        font-size: 1.5em;
-        font-weight: 400;
-        opacity: 1;
-      }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+@-moz-keyframes mouse-wheel {
+  0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+@-o-keyframes mouse-wheel {
 
-      .hiw.result {
-        -ms-flex-item-align: start;
-            align-self: flex-start;
-        color: #8C9BAF;
-      }
+   0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+@keyframes mouse-wheel {
 
-      #schecker-progress-bar {
-        margin: 40px 0 20px;
-      }
-          #schecker-progress-bar .bar {
-            height: 2px;
-            width: 280px;
-            background-color: #F3425E;
-            position: relative;
-          }
-              #schecker-progress-bar .bar:before,
-              #schecker-progress-bar .bar:after {
-                content: "";
-                width: 9px;
-                height: 9px;
-                border-radius: 50%;
-                background-color: #F3425E;
-                position: absolute;
-                top: -150%;
-              }
-              #schecker-progress-bar .bar:before {
-                left: 0;
-              }
-              #schecker-progress-bar .bar:after {
-                left: 100%;
-              }
+   0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
 
-        .hiw.result .result-text {
-          font-size: 1.2em;
-          font-weight: 700;
-          letter-spacing: .1em;
-        }
+@-webkit-keyframes mouse-scroll {
 
-    .hiw.book {
-      -ms-flex-item-align: center;
-          -ms-grid-row-align: center;
-          align-self: center;
-    }
+  0%   { opacity: 0;}
+  50%  { opacity: .5;}
+  100% { opacity: 1;}
+}
+@-moz-keyframes mouse-scroll {
 
-        .hiw.book svg {
-          width: 100px;
-        }
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@-o-keyframes mouse-scroll {
 
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@keyframes mouse-scroll {
 
-    .hiw.watch svg{
-      width: 100%;
-    }
+  0%   { opacity: 0; transform: translateY(0); }
+  50%  { opacity: .5; transform: translateY(3px); }
+  100% { opacity: 1; transform: translateY(6px); }
+}
 
 
 
@@ -811,28 +853,54 @@ footer {
       width: 55%;
       min-width: 290px;
       height: auto;
-      margin-top: 8%;
+      margin-top: -3%;
     }
 
-    #schecker-hero:before {
-      content: "";
-      width: 100%;
-      height: 250px;
-      background-color: #EFF3F4;
-      position: absolute;
-      bottom: 0;
-      z-index: -1000;
-    }
 
     #schecker-intro {
       background-color: #EFF3F4;
-      padding-top: 7%;
-      padding-bottom: 5%;
+      padding-top: 4%;
+      padding-bottom: 4%;
     }
 
-#schecker-hiw-section video {
-  -webkit-box-shadow: none;box-shadow: none;
+#schecker-features {
+  width: 80%;
+  margin-top: calc(-40px - 5%);
 }
+  #schecker-hiw-section h3 {
+    margin-bottom: 0;
+  }
+  .ic_schecker-feature {
+    margin: calc(40px + 5%);
+    position: relative;
+  }
+    .ic_schecker-feature img {
+      height: 80px;
+    }
+      .ic_schecker-feature:after {
+        content: "";
+        position: absolute;
+        text-align: center;
+        top: calc(100% + 30px);
+        left: -100%;
+        width: 300%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: .75rem;
+        font-weight: 700;
+        letter-spacing: .15rem;
+        line-height: 1.5rem;
+      }
+      #ic_check:after {
+        content: "Symptom Assessment";
+      }
+      #ic_book:after {
+        content: "Appointment Booking";
+      }
+      #ic_manage:after {
+        content: "Symptoms & Medication tracking";
+      }
+
 
 #schecker-draggable-flow {
   width: 100%;
@@ -851,23 +919,18 @@ footer {
           align-items: center;
   position: relative;
 }
-    #schecker-zoom-btn {
-      position: absolute;
-      top: 35%;
-      z-index: 9000;
-      cursor: pointer;
-    }
-    #schecker-userFlow {
-      min-width: 100%;
-    }
 
+
+#schecker-viewInvision {
+  margin-bottom: calc(60px + 5%);
+}
 
 #schecker-viewInvisionCTA {
   display: none;
 }
 
 
-/* ----------------------------------- old stuff --------------------------------- */
+/* ----------------------------------- courseworks stuff --------------------------------- */
 
 #old-proj {
   padding: 7% 0;
@@ -1122,7 +1185,6 @@ section#credits a {
   }
 
       #schecker-hero {
-        margin-top: 15%;
         height: auto;
       }
 
@@ -1151,6 +1213,7 @@ section#credits a {
     width: 100%;
   }
 
+.mouse_scroll { margin-top: 20%; }
 
 .footer-bottom {
   flex-direction: column-reverse;
