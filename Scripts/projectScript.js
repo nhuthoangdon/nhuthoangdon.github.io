@@ -22,7 +22,7 @@ $(document).ready(function() {
     	if ((scrollHeight - scrollPosition) === 0) {
           tl.to("footer", .8, {opacity: 1, scaleY: 1, ease: Back.easeOut.config(1.7)});
     	} else {
-          tl.to("footer", .6, {opacity: 0, scaleY: 0, ease: Back.easeIn.config(1.7)});
+          tl.to("footer", .6, {opacity: 0, scaleY: 0});
       }
 
 
@@ -88,22 +88,22 @@ var tl = new TimelineMax({ paused: true })
     .from("#schecker-intro", duration, { scale: 0, transformOrigin: "center" }, scene_1)
     .staggerTo("#schecker-intro .block", duration - 100, { autoAlpha: 1, scaleX: 1 }, 100, scene_1)
     .from("#schecker-hiw-section h3", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_2)
-    .from("#schecker-hiw-section .leading-line", duration, { scaleY: 0, transformOrigin: "top left" }, scene_2a)
+    .from("#schecker-hiw-section .leading-line", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_2a)
     .staggerFrom(".ic_schecker-feature", 300, {autoAlpha: 0, scale: 0, rotation: -90}, 50, scene_2b)
     .from("#concept-development h3", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3a)
-    .from("#s_leading-line-1", duration, { scaleY: 0, transformOrigin: "top left" }, scene_3a + 300)
+    .from("#s_leading-line-1", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3a + 300)
     .from("#s_concept-flow-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3b)
     .from("#s_concept-flow-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3b)
-    .from("#s_leading-line-2", duration, { scaleY: 0, transformOrigin: "top left" }, scene_3c)
+    .from("#s_leading-line-2", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3c)
     .from("#s_wireframe-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3d)
     .from("#s_wireframe-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3d)
-    .from("#s_leading-line-3", duration, { scaleY: 0, transformOrigin: "top left" }, scene_3e)
+    .from("#s_leading-line-3", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3e)
     .from("#schecker-draggable-flow h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3f)
     .from("#schecker-userFlow", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3f)
-    .from("#s_leading-line-4", duration, { scaleY: 0, transformOrigin: "top left" }, scene_3g + 200)
+    .from("#s_leading-line-4", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3g + 200)
     .from("#s_ui h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3h)
     .from("#s_ui img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3h)
-    .from("#s_leading-line-5", duration, { scaleY: 0, transformOrigin: "top left" }, scene_3i + 100)
+    .from("#s_leading-line-5", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3i + 100)
     .from("#s_collage", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3j)
     .from("#schecker-viewInvision, #schecker-viewInvisionCTA", duration, { x: "-=500", autoAlpha: 0 }, scene_4);
 
