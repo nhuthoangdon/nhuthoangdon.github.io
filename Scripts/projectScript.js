@@ -7,13 +7,12 @@ $(document).ready(function() {
   $(window).on('scroll', function () {
 
       var pixs = $(document).scrollTop()
-          pixs = pixs / 100;
+          pixs = pixs/500;
 
-      $("#wishup-hero-img").css({"-webkit-filter": "blur("+pixs+"px)",
-                        "-moz-filter":    "blur("+pixs+"px)",
-                        "-ms-filter":     "blur("+pixs+"px)",
-                        "-o-filter":      "blur("+pixs+"px)",
-                        "-filter":        "blur("+pixs+"px)" })
+        for (i=0; i <= 1; i++) {
+          $("#wishup-hero-img, section#mpf-intro, #sa-hero-img, #bardot-hero-img").css({"opacity": 1-pixs});
+        }
+
 
       var scrollHeight = $(document).height(),
     	    scrollPosition = $(window).height() + $(window).scrollTop();

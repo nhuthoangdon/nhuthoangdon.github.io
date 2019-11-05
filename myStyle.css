@@ -268,7 +268,13 @@ a#emailIcon {
           width: 10px;
           height: 10px;
     			background: #F3425E;
+          animation: bullet-ani 1s;
     		}
+
+                @keyframes bullet-ani {
+                  0% {transform: rotate(-360deg);background-color: #8C9BAF; opacity: .7;}
+                  50% {opacity: 1;background-color: #F3425E;}
+                }
 
 
         .section-bullet:first-child:before,
@@ -817,13 +823,13 @@ section.side-projects {
         height: auto;
       }
 
-      #wishUp-tile {
+      /* #wishUp-tile {
         background-image: -webkit-gradient(linear, left bottom, left top, color-stop(17%, #000000), to(#390B48));
         background-image: -webkit-linear-gradient(bottom, #000000 17%, #390B48 100%);
         background-image: -o-linear-gradient(bottom, #000000 17%, #390B48 100%);
         background-image: linear-gradient(0deg, #000000 17%, #390B48 100%);
         background-color: black;
-      }
+      } */
 
           img#wishUp-mockup-ip {
             width: 90%;
