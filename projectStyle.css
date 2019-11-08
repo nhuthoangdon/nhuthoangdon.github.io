@@ -476,10 +476,8 @@ section {
   .small-block {
     width: 20%;
   }
-    .small-block h5,
-    .small-block p {
-      text-align: center;
-    }
+    .small-block h5 { text-align: center; }
+    .small-block p { text-align: left; }
 
   .project-intro .block {
     margin: 0 auto;
