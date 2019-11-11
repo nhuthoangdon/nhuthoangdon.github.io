@@ -18,7 +18,7 @@ $(document).ready(function() {
     	    scrollPosition = $(window).height() + $(window).scrollTop();
       var tl = new TimelineMax();
 
-    	if ((scrollHeight - scrollPosition) === 0) {
+    	if ((scrollHeight - scrollPosition) <= 50) {
           tl.to("footer", .8, {opacity: 1, scaleY: 1, ease: Back.easeOut.config(1.7)});
     	} else {
           tl.to("footer", .6, {opacity: 0, scaleY: 0});
