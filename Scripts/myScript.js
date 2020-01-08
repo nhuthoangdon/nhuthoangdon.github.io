@@ -13,9 +13,99 @@ $( document ).ready(function() {
         homeload();
      }, 5000);
 
-    TweenMax.set(".st0, .st1", {autoAlpha: 0});
+    TweenMax.set(".my-portrait .st0, .my-portrait .st1", {autoAlpha: 0});
 
 });
+
+
+
+
+
+function animatedBg() {
+    // animated background stuff
+  var lionTl = anime.timeline({loop: true, direction: 'alternate'}),
+      lionEl = document.querySelectorAll('#my-lion .st0'),
+      vh = window.innerHeight,
+      vw = window.innerWidth;
+
+      lionTl
+      .add ({
+        targets: lionEl,
+          translateX: [function(el, i) {
+            return 30 + (-10 / i);
+          }, 0],
+          translateY: [function(el, i) {
+            return 30 + (-10 / i);
+          }, 0],
+          opacity: [0,1],
+          easing: 'spring(30, 30, 60, 5)',
+          delay: anime.stagger(100, {direction: 'reverse'})
+      }, '+=1000')
+      .add ({
+        targets: lionEl,
+        opacity: [1, anime.random(0.3,0.7)],
+        easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
+        delay: anime.stagger(80),
+      })
+      .add ({
+        targets: lionEl,
+        opacity: 1,
+        easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
+        delay: anime.stagger(80, {from: 'center'})
+      }, '-=200')
+      .add ({
+        targets: lionEl,
+        translateX: function(el, i) {
+          return anime.random(0,vw) + (-20 * i);
+        },
+        translateY: function(el, i) {
+          return anime.random(0,vh) + (-10 * i);
+        },
+        rotate: anime.random(30, 90),
+        easing: 'cubicBezier(1.000, -0.050, 0.000, 1.070)',
+        duration: 5000
+      }, '+=2000')
+      .add ({
+        targets: lionEl,
+        translateY: vh,
+        opacity: 0,
+        fill: '#FFFFFF',
+        easing: 'cubicBezier(0.645, -0.005, 0.000, 0.860)',
+        duration: 2000
+      }, '+=500')
+      .add ({
+        targets: lionEl,
+        translateY: 0,
+        rotate: anime.random(-10, 90),
+
+        opacity: 1,
+        duration: 200
+      })
+      .add ({
+        targets: lionEl,
+        stroke: '#ff358c',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 1000,
+        delay: function(el, i) { return i * 250 }
+      })
+      .add ({
+        targets: lionEl,
+        translateX: 0,
+        translateY: 0,
+        rotate: 0,
+        easing: 'cubicBezier(1.000, -0.050, 0.000, 1.070)',
+        duration: 5000
+      })
+      .add ({
+        targets: lionEl,
+        stroke: '#ff358c',
+        strokeDashoffset: [0, anime.setDashoffset],
+        easing: 'easeInOutSine',
+        duration: 500,
+        delay: function(el, i) { return i * 250 }
+      }, '+=2000')
+};
 
 
 
@@ -26,7 +116,8 @@ function homeload() {
   var homeTimeline = new TimelineMax({onStart: preloadingOut});
   TweenMax.from('a#emailIcon', 1, {x: 100, autoAlpha: 0, delay: 1});
       homeTimeline.staggerFrom("#intro_text h1, #intro_text h5, #intro_text p, a.arrow-down, .menu", 1,
-                              {y: 50, autoAlpha: 0}, .2);
+                              {y: 50, autoAlpha: 0}, .2)
+                 .add(animatedBg(), "+=1");
 };
             function bulletsSlideIn() {
               TweenLite.fromTo('#sections-bullets', 1.5, {x: 200}, {x: 0});
@@ -453,7 +544,7 @@ var aboutIn = (function(){
              tl.add(myPic(), "-=.6");
              fancyEyes();
            } else {
-             TweenMax.set(".st0, .st1", {autoAlpha: 1});
+             TweenMax.set(".my-portrait .st0, .my-portrait .st1", {autoAlpha: 1});
            }
            executed = true;
          }
@@ -463,7 +554,7 @@ var aboutIn = (function(){
 
       function myPic() {
         var tl = new TimelineMax();
-            tl.staggerFromTo(".st1, .st0", .3 ,{y: "-=200", autoAlpha: 0, scale: 8, immediateRender: false},
+            tl.staggerFromTo(".my-portrait .st1, .my-portrait .st0", .3 ,{y: "-=200", autoAlpha: 0, scale: 8, immediateRender: false},
                                                {y: "+=200", scale: 1, autoAlpha: 1, stagger: 0.007});
             return tl.timeScale(2);
       };
