@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Ñütfolio - Schecker</title>
 
@@ -10,7 +10,7 @@
   <meta name="author" content="Nhut H. Don">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200,400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800|Lilita+One&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="projectStyle.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -30,8 +30,7 @@
 
 
 
-<body>
-
+<body id="schecker">
   <!-- Hamburger Menu Icon -->
   <div class="menu">
     <div class="bar1"></div>
@@ -40,22 +39,23 @@
   </div>
 
 
+
+
 <!-- Overlay Menu Navigation -->
 <div class ="overlay">
-  <div class="menu-items">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="scheckerIntro.html" class="highlight">Schecker</a></li>
-      <li><a href="bardot.html">Bardot</a></li>
-      <li><a href="sa.html">Standards Australia</a></li>
-      <li><a href="myPlasticFootprint.html">MyPlasticFootprint</a></li>
-      <li><a href="WishUp.html">WishUp</a></li>
-      <li><a href="oldStuff.html" onclick="closeMenu()">Old Projects</a></li>
-    </ul>
-  </div>
-  <i>nhuthoangdon@gmail.com</i>
+<div class="closeMenu">
+  <div class="closeBar1"></div>
+  <div class="closeBar2"></div>
 </div>
-
+<div class="menu-items" id="menu-links">
+  <ul>
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./works.html">Works</a></li>
+    <li><a href="mailto:nhuthoangdon@gmail.com?Subject=Offer%20for%20Nhut">Contact</a></li>
+  </ul>
+</div>
+</div>
 
 
 
@@ -82,9 +82,11 @@
     </div>
       <div class="block">
         <p>
-          Schecker is a smart Health App that makes it easier when you have a symptom.
-          An all-in-one process of checking symptoms, smartly - booking doctor appointments - managing symptoms &
-          medication.
+          Ever had <span><a target="_blank" href="https://www.google.com/search?q=cyberchondria">Cyberchondria</a></span>
+            while googling your symptoms? <br />
+          The App uses AI to accurately assess your symptom(s) and provide possible causes, then allows you to book appointments
+          with a relevant physician for official diagnosis and treatments. Then, it helps keeping track of those
+          symptoms, as well as your medication.
         </p>
       </div>
   </div>
@@ -97,7 +99,7 @@
 
 <section id="schecker-hiw-section">
 
-  <h3>FEATURES</h3>
+  <h3>MAIN FEATURES</h3>
   <div class="leading-line"></div>
 
   <div class="wrapper" id="schecker-features">
@@ -114,39 +116,36 @@
 </section>
 
 <section id="concept-development">
-  <h3 class="block-in">CONCEPT DEVELOPMENT</h3>
+  <h3>CONCEPT DEVELOPMENT</h3>
   <div class="leading-line" id="s_leading-line-1"></div>
 
   <div class="big-img-wrapper" id="s_concept-flow">
-    <h5 class="block-in" id="s_concept-flow-h5">INITIAL CONCEPT FLOW</h5>
+    <h5 id="s_concept-flow-h5">Initial Concept Flow</h5>
     <img id="s_concept-flow-img" alt="concept flow" class="block-in noShadow-img" src="./Assets/schecker-simplifiedFlow.png" />
   </div>
 
   <div class="leading-line" id="s_leading-line-2"></div>
 
   <div class="big-img-wrapper" id="s_wireframe">
-    <h5 class="block-in" id="s_wireframe-h5">LOW FIDELITY WIREFRAME</h5>
+    <h5 id="s_wireframe-h5">Low-fi Wireframe</h5>
     <img id="s_wireframe-img" alt="wireframe" class="block-in noShadow-img" src="./Assets/schecker-wireframe.png" />
   </div>
 
   <div class="leading-line" id="s_leading-line-3"></div>
 
-  <div id="schecker-draggable-flow" class="block-in">
-    <h5 class="secondary-title">USER FLOW<br /><small>(drag to view)</small></h5>
+  <div id="schecker-draggable-flow" >
+    <h5 class="secondary-title">User Flow<br /><small>(drag to view)</small></h5>
     <img alt="user flow" id="schecker-userFlow" src="./Assets/schecker-userflow.png" />
   </div>
 
   <div class="leading-line" id="s_leading-line-4"></div>
 
   <div class="big-img-wrapper" id="s_ui">
-    <h5 class="block-in">UI COMPONENTS</h5>
+    <h5 >UI Components</h5>
     <img alt="UI Components" class="noShadow-img block-in" src="./Assets/schecker-uiComponents.png" />
   </div>
 
   <div class="leading-line" id="s_leading-line-5"></div>
-
-  <img id="s_collage" alt="Completed screens" class="block-in noShadow-img" src="./Assets/schecker-screens.png" />
-
 </section>
 
 
@@ -156,12 +155,15 @@
 
 <section id="s_prototypeCTA">
 
+
+  <img id="s_collage" alt="Completed screens" class=" noShadow-img" src="./Assets/schecker-screens.png" />
+
       <a class="cta-w-label" id="schecker-viewInvision" href="https://invis.io/B8RU1TAPZYV">
-        <h6 class="CTA-label">VIEW PROTOTYPE</h6>
+        <h5 class="CTA-label">VIEW PROTOTYPE</h5>
         <div class="CTAarrow arrow-next" id="scheckerCTA-next">
           <div class="arrow-circles">
               <svg class="svg-circle" width="52px" height="52px" viewBox="0 0 52 52" >
-                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd">
                       <g id="Desktop-HD" transform="translate(-840.000000, -486.000000)" fill-rule="nonzero" stroke="#F3425E">
                           <circle id="Oval" cx="866" cy="512" r="25"></circle>
                       </g>
@@ -181,26 +183,45 @@
 
 
 
+<section class="other-works">
+  <h2 class="block-in">Other Works</h2>
+  <div class="work-tiles">
+
+    <div class="work-tile block-in come-in" >
+      <div id="tile_bardot"></div>
+      <a href="./bardot.html" class="tile-CTA">
+        <img alt="Bardot Logo" src="./Assets/logo_bardot.png" />
+      </a>
+    </div>
+
+    <div class="work-tile block-in come-in">
+      <div id="tile_sa"></div>
+      <a href="./sa.html" class="tile-CTA">
+        <img alt="SA Logo" src="./Assets/logo_sa.png" />
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+<div class="back-to-top">
+  <div class="btt-arrow"></div>
+  <h5 class="CTA-label"><small>Back to Top</small></h5>
+</div>
+
+
 
 
 <footer>
-  <div class="footer-top">
-    <h5>MY OTHER WORKS</h5>
-    <div class="footer-top-links">
-      <a href="./bardot.html">Bardot</a>
-      <a href="./sa.html">Standards&nbsp;Australia</a>
-      <a href="./myPlasticFootprint.html">MyPlasticFootprint</a>
-      <a href="./WishUp.html">WishUp</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <small class="copyright">	&#169; 2019 NHUT H. DON</small>
-    <div class="footer-links">
-      <a href="./index.html">Home</a>
-      <a href="./index.html#about" rel="m_PageScroll2id">About</a>
-      <a href="./credits.html">Credits</a>
-      <a href="./oldStuff.html">Oldies</a>
-    </div>
+  <small class="copyright">	&#169; 2019 NHUT H. DON</small>
+  <div class="footer-links">
+    <a href="./index.html">Home</a>
+    <a href="./index.html">About</a>
+    <a href="./works.html">Works</a>
+    <a href="mailto:nhuthoangdon@gmail.com?Subject=Offer%20for%20Nhut">Contact</a>
+    <a href="./credits.html">Credits</a>
   </div>
 </footer>
 
@@ -211,16 +232,15 @@
 
 
 
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@2/umd/TweenMax.min.js"></script>
-  <script src="./Scripts/TweenMax.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="./Scripts/jquery.gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/RoundPropsPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/utils/Draggable.min.js"></script>
-  <script type="text/javascript" src="./Scripts/myScript.js"></script>
-  <script type="text/javascript" src="./Scripts/projectScript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@2/umd/TweenMax.min.js"></script>
+<script src="./Scripts/TweenMax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="./Scripts/jquery.gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/RoundPropsPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/utils/Draggable.min.js"></script>
+<script type="text/javascript" src="./Scripts/projectScript.js"></script>
 
 </body>
 

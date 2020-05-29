@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Ñütfolio - Bardot</title>
 
@@ -10,7 +10,7 @@
   <meta name="author" content="Nhut H. Don">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200,400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800|Lilita+One&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="projectStyle.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -39,20 +39,22 @@
   </div>
 
 
+
+
 <!-- Overlay Menu Navigation -->
 <div class ="overlay">
-  <div class="menu-items">
-    <ul>
-      <li><a href="index.html" onclick="closeMenu()">Home</a></li>
-      <li><a href="scheckerIntro.html" onclick="closeMenu()">Schecker</a></li>
-      <li><a href="bardot.html" class="highlight" onclick="closeMenu()">Bardot</a></li>
-      <li><a href="sa.html" onclick="closeMenu()">Standards Australia</a></li>
-      <li><a href="myPlasticFootprint.html" onclick="closeMenu()">MyPlasticFootprint</a></li>
-      <li><a href="WishUp.html" onclick="closeMenu()">WishUp</a></li>
-      <li><a href="oldStuff.html" onclick="closeMenu()">Old Projects</a></li>
-    </ul>
-  </div>
-  <i>nhuthoangdon@gmail.com</i>
+<div class="closeMenu">
+  <div class="closeBar1"></div>
+  <div class="closeBar2"></div>
+</div>
+<div class="menu-items" id="menu-links">
+  <ul>
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./works.html">Works</a></li>
+    <li><a href="mailto:nhuthoangdon@gmail.com?Subject=Offer%20for%20Nhut">Contact</a></li>
+  </ul>
+</div>
 </div>
 
 
@@ -62,41 +64,41 @@
 
 <section class="project-intro">
 
-  <div class="project-hero">
+  <div class="project-hero block-in">
     <div class="hero-img" id="bardot-hero-img"></div>
   </div>
 
   <div class="wrapper">
-    <div class="block">
+    <div class="block block-in">
       <h2>Bardot</h2>
       <p>
-        Bardot is one of the most iconic Australia's high fashion brands for women and juniors.
+        Being one of the most iconic Australia's high fashion brands, Bardot's website had a lot to take into consideration.
         I was in a UX/UI team to deliver a refreshed eCommerce website as part of their re-platform process.
       </p>
     </div>
-      <div class="block">
+      <div class="block block-in">
         <p>
           <strong>Project type</strong> <br />
           Website re-design. <br /><br />
           <strong>My Role</strong> <br />
-          UX/UI design. Created for S60.
+          UX/UI design.
         </p>
       </div>
   </div>
 
 </section>
 
-<section class="challenge" id="bardot-challenge">
-  <h3 class="block-in">THE CHALLENGE</h3>
+<section class="challenge block-in" id="bardot-challenge">
+  <h3>THE CHALLENGE</h3>
   <div class="wrapper">
     <div class="block">
       <p>
         As a dedicated eCommerce website,
-        the project required a lot of micro interactions and functionalities together with heavy mobile optimisation.
-        My role was to take over the project after the initial concept round from the UX/UI practise lead, gather insights
-        from user research team and roll out the designs within an allocated timeframe and budget.
-        I also collaborated with a cross-functional team of developers, project managers, and testers
-        to ensure the consistency between the live site and the design.
+        the project required many micro interactions, functionalities and heavy mobile optimisation.
+        My role was to work alongside with the UX/UI practise lead to gather insights
+        from the user research team and roll out wireframes and interactive prototype.
+        The project required lots of collaboration between different teams and stakeholders to ensure it would meet client's
+        expectations and the allocated timeframe and budget at the same time.
       </p>
     </div>
   </div>
@@ -104,32 +106,34 @@
 
 <section id="bardot-home">
   <div class="wrapper">
-    <div class="block small-block">
-      <h5>SEARCH</h5>
+    <div class="block small-block block-in">
+      <h4>SEARCH</h4>
       <p>
-        Search panel featured trending items as 'hints' for customers as we wanted to prioritise introducing and
-        selling those.
+        'Search' function is one important part of an eCommerce website.
+        In this case, trending items were always the focus so we took any opportunity to introduce them.
+        Psychologically speaking, we thought incorporating these items even before customers type anything would serve as 'hints'
+        to draw their attention and would probably alter what they want to search for.
       </p>
     </div>
-    <div class="block big-block no-text-block">
+    <div class="block big-block no-text-block block-in">
       <img alt="Search" class="desktop-screen" src="./Assets/bardot-search.jpg" />
     </div>
   </div>
   <div class="wrapper odd">
-    <div class="block big-block no-text-block">
+    <div class="block big-block no-text-block block-in">
       <img alt="Search Suggestions" class="desktop-screen" src="./Assets/bardot-searchSuggestion.jpg" />
     </div>
-    <div class="block small-block">
-      <h5>SEARCH SUGGESTION</h5>
+    <div class="block small-block block-in">
+      <h4>SEARCH SUGGESTIONS</h4>
       <p>
-        Search suggestions were subjected to keywords and items' availability/popularity, displayed base on the Categories
-        taxonomy.
+        Taking into account the scenarios and keywords customers likely to search for when shopping for clothes online,
+        we decided to display the suggestions not only base on the keywords but were also subject to popularity/availability.
       </p>
     </div>
   </div>
 
   <div class="wrapper">
-    <div class="block no-text-block">
+    <div class="block no-text-block block-in">
       <img alt="Mobile Search" src="./Assets/bardot-m-search.png" />
     </div>
   </div>
@@ -137,13 +141,13 @@
 
 
   <div class="wrapper big-col light-bg-f9f9f9">
-    <h5 class="block-in">MINI LOGIN - CART - WISHLIST</h5>
-    <div class="block no-margin-top">
+    <h4 class="block-in">MINI LOGIN - CART - WISHLIST</h4>
+    <div class="block no-margin-top block-in">
       <p>
         Base on results and heatmaps from user research team, the majority of user interactions were within the top.
-        Login, Wishlish and Bag were one of the most-clicked items.
-        Thus header interactions were very important. We wanted to provide customers a hassle-free shopping experience, thus
-        we decluttered their current header by removing unnecessary items and designed a new streamlined one with only
+        Login, Wishlish and Bag were the most clicked.
+        The old website's header were crowded and confusing, so
+        we decluttered it by removing unnecessary items and designed a new streamlined one with only
         mandatory items easily accessible.
       </p>
     </div>
@@ -156,8 +160,8 @@
 
 
   <div class="wrapper big-col">
-    <h5 class="block-in">MEGA DROPDOWN MENU</h5>
-    <div class="block no-margin-top">
+    <h4 class="block-in">MEGA DROPDOWN MENU</h4>
+    <div class="block no-margin-top block-in">
       <p>
         Dropdown navigation menu with integrated CTA banners suggesting trending items, promotions, collections, etc.
         that were relevant to each category. We made use of the header's real estate as much as possible for
@@ -173,21 +177,21 @@
 
 
   <div class="wrapper light-bg-f9f9f9">
-    <div class="block small-block">
-      <h5>LOCATE IN-STORE</h5>
+    <div class="block small-block block-in">
+      <h4>LOCATE IN-STORE</h4>
       <p>
-        Client wanted to integrate a function to show which stores the item is currently available at for
-        customers who decided to purchase the item in-store. We agreed that this should come up as a popup for a quick
+        Client wanted to integrate a function to show which stores the item is currently available at.
+        We agreed that this should come up as a popup for a quick
         check-and-close action before moving on with the shopping.
       </p>
     </div>
-    <div class="block big-block no-text-block">
+    <div class="block big-block no-text-block block-in">
       <img alt="Search" class="desktop-screen" src="./Assets/bardot-locateInStore_result.jpg" />
     </div>
   </div>
   <div class="wrapper big-col">
-    <h5 class="block-in">STORE FINDER</h5>
-    <div class="block no-margin-top">
+    <h4 class="block-in">STORE FINDER</h4>
+    <div class="block no-margin-top block-in">
       <p>
         Not to be confused with "Locate in-store". Store finder was basically a stores listing page.
       </p>
@@ -204,14 +208,14 @@
 
 
   <div class="wrapper">
-    <div class="block small-block">
-      <h5>PRODUCT BADGES</h5>
+    <div class="block small-block block-in">
+      <h4>PRODUCT BADGES</h4>
       <p>
         5 types of badges required. Each had to be visually distinguished from one another and fit well together within
         each product tile (maximum of 4 badges per product).
       </p>
     </div>
-    <div class="block no-text-block big-block">
+    <div class="block no-text-block big-block block-in">
       <img alt="Mobile Search" src="./Assets/bardot-badges.jpg" />
     </div>
   </div>
@@ -228,15 +232,13 @@
 <section id="bardot-learnings">
   <h3 class="block-in">LEARNINGS</h3>
   <div class="wrapper">
-    <div class="block">
+    <div class="block block-in">
       <p>
-        The project involved many stakeholders. There were quite an amount of change requests and out-of-scope
-        additional features.
+        The project involved many stakeholders. There were quite an amount of change requests and out-of-scope features.
         Therefore, the communication had to be smooth, otherwise, the outcomes could be disastrous.
         Having been through similar projects facing the same problems, we had created a uniform communication process
-        in which we made sure everyone was on track of even the slightest changes.
-        Additionally, I gained more experience on compromising between involved parties to provide users with the best
-        experience possible.
+        in which we made sure everyone was on track of even a slight change. Lots of compromise was also made between different
+        teams and stakeholders.
       </p>
     </div>
   </div>
@@ -245,47 +247,48 @@
 
 
 
+<section class="other-works">
+  <h2 class="block-in">Other Works</h2>
+  <div class="work-tiles">
+
+    <div class="work-tile block-in come-in" >
+      <div id="tile_schecker"></div>
+      <a href="./scheckerIntro.html" class="tile-CTA">
+        <img alt="Bardot Logo" src="./Assets/Schecker_logo.png" />
+      </a>
+    </div>
+
+    <div class="work-tile block-in come-in">
+      <div id="tile_sa"></div>
+      <a href="./sa.html" class="tile-CTA">
+        <img alt="SA Logo" src="./Assets/logo_sa.png" />
+      </a>
+    </div>
+
+  </div>
+</section>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="back-to-top">
+  <div class="btt-arrow"></div>
+  <h5 class="CTA-label"><small>Back to Top</small></h5>
+</div>
 
 
 
 <footer>
-  <div class="footer-top">
-    <h5>MY OTHER WORKS</h5>
-    <div class="footer-top-links">
-      <a href="./sa.html">Standards&nbsp;Australia</a>
-      <a href="./myPlasticFootprint.html">MyPlasticFootprint</a>
-      <a href="./WishUp.html">WishUp</a>
-      <a href="./scheckerIntro.html">Schecker</a>
-    </div>
+
+  <small class="copyright">	&#169; 2019 NHUT H. DON</small>
+  <div class="footer-links">
+    <a href="./index.html">Home</a>
+    <a href="./index.html">About</a>
+    <a href="./works.html">Works</a>
+    <a href="mailto:nhuthoangdon@gmail.com?Subject=Offer%20for%20Nhut">Contact</a>
+    <a href="./credits.html">Credits</a>
   </div>
-  <div class="footer-bottom">
-    <small class="copyright">	&#169; 2019 NHUT H. DON</small>
-    <div class="footer-links">
-      <a href="./index.html">Home</a>
-      <a href="./index.html#about" rel="m_PageScroll2id">About</a>
-      <a href="./credits.html">Credits</a>
-      <a href="./oldStuff.html">Oldies</a>
-    </div>
-  </div>
+
 </footer>
 
 
@@ -295,17 +298,15 @@
 
 
 
-
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@2/umd/TweenMax.min.js"></script>
-  <script src="./Scripts/TweenMax.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="./Scripts/jquery.gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/RoundPropsPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/utils/Draggable.min.js"></script>
-  <script type="text/javascript" src="./Scripts/myScript.js"></script>
-  <script type="text/javascript" src="./Scripts/projectScript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@2/umd/TweenMax.min.js"></script>
+<script src="./Scripts/TweenMax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="./Scripts/jquery.gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/RoundPropsPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/utils/Draggable.min.js"></script>
+<script type="text/javascript" src="./Scripts/projectScript.js"></script>
 
 </body>
 

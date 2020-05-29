@@ -1,19 +1,64 @@
-$( document ).ready(function() {
-    TweenLite.set(".menu .bar2", {rotation: -40, transformOrigin: "top right"});
-    TweenLite.set(".menu .bar3", {x: 24, y: 10});
+var vh = window.innerHeight,
+    vw = window.innerWidth;
 
-    toggleMenu();
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
+function getRandom(min, max) {
+ return Math.floor(Math.random() * (max - min)) + min;
+};
+
+
+$( document ).ready(function() {
+
+
+
+  TweenMax.staggerFromTo(".about, .portrait-cover", .8, {y: 100}, {autoAlpha: 1, y: 0}, .2);
+
+
+  TweenMax.staggerFrom("#leftEye, #rightEye, #mouth", .25, {scaleY: 0, immediateRender: false}, .3);
+  TweenLite.set(lionEl, {strokeDashOffset: strokeDashOffset});
+
+
     hamburgerHover();
-    emailBtnHover();
-    projectTileHover();
+    toggleMenu();
     CTAarrowHover();
     CTAbuttonHover();
-    preloadingAnimation();
-    setTimeout(function() {
-        homeload();
-     }, 5000);
+    customisedCTAHover();
+    homeload();
+    smileyFace();
+    revealMe();
 
-    TweenMax.set(".my-portrait .st0, .my-portrait .st1", {autoAlpha: 0});
+
+    var menuAssembleTL = new TimelineMax();
+        menuAssembleTL.to(".menu .bar1", .2, {rotation: 0, transformOrigin: "top left"})
+                      .to(".menu .bar3", .2, {rotation: 0, x: 24, transformOrigin: "bottom right"})
+                      .to(".menu .bar3", .2, {rotation: 0, y: 10})
+                      .to(".menu .bar2", .2, {rotation: -40, transformOrigin: "top left"});
+
+    TweenLite.set(".closeMenu .closeBar1", {rotation: 45, transformOrigin: "center", y: 15, x: 4});
+    TweenLite.set(".closeMenu .closeBar2", {rotation: -45, transformOrigin: "center", y: 15, x: 4});
+
+
+  var scheckerPos = $("#prj-schecker").offset().top;
+  $(window).scroll(function() {
+    var currentScroll = $(window).scrollTop();
+    if (currentScroll < scheckerPos) {
+      $(".background").css ({
+        position: 'fixed'
+      });
+        lionTl.play();
+    } else {
+      $(".background").css ({
+        position: 'absolute'
+      });
+      lionTl.pause();
+    }
+  });
+
+
+
 
 });
 
@@ -21,115 +66,192 @@ $( document ).ready(function() {
 
 
 
-function animatedBg() {
-    // animated background stuff
-  var lionTl = anime.timeline({loop: true, direction: 'alternate'}),
-      lionEl = document.querySelectorAll('#my-lion .st0'),
-      vh = window.innerHeight,
-      vw = window.innerWidth;
 
-      lionTl
-      .add ({
-        targets: lionEl,
-          translateX: [function(el, i) {
-            return 30 + (-10 / i);
-          }, 0],
-          translateY: [function(el, i) {
-            return 30 + (-10 / i);
-          }, 0],
-          opacity: [0,1],
-          easing: 'spring(30, 30, 60, 5)',
-          delay: anime.stagger(100, {direction: 'reverse'})
-      }, '+=1000')
-      .add ({
-        targets: lionEl,
-        opacity: [1, anime.random(0.3,0.7)],
-        easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
-        delay: anime.stagger(80),
-      })
-      .add ({
-        targets: lionEl,
-        opacity: 1,
-        easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
-        delay: anime.stagger(80, {from: 'center'})
-      }, '-=200')
-      .add ({
-        targets: lionEl,
-        translateX: function(el, i) {
-          return anime.random(0,vw) + (-20 * i);
-        },
-        translateY: function(el, i) {
-          return anime.random(0,vh) + (-10 * i);
-        },
-        rotate: anime.random(30, 90),
-        easing: 'cubicBezier(1.000, -0.050, 0.000, 1.070)',
-        duration: 5000
-      }, '+=2000')
-      .add ({
-        targets: lionEl,
-        translateY: vh,
-        opacity: 0,
-        fill: '#FFFFFF',
-        easing: 'cubicBezier(0.645, -0.005, 0.000, 0.860)',
-        duration: 2000
-      }, '+=500')
-      .add ({
-        targets: lionEl,
-        translateY: 0,
-        rotate: anime.random(-10, 90),
-
-        opacity: 1,
-        duration: 200
-      })
-      .add ({
-        targets: lionEl,
-        stroke: '#ff358c',
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeInOutSine',
-        duration: 1000,
-        delay: function(el, i) { return i * 250 }
-      })
-      .add ({
-        targets: lionEl,
-        translateX: 0,
-        translateY: 0,
-        rotate: 0,
-        easing: 'cubicBezier(1.000, -0.050, 0.000, 1.070)',
-        duration: 5000
-      })
-      .add ({
-        targets: lionEl,
-        stroke: '#ff358c',
-        strokeDashoffset: [0, anime.setDashoffset],
-        easing: 'easeInOutSine',
-        duration: 500,
-        delay: function(el, i) { return i * 250 }
-      }, '+=2000')
+function revealMe() {
+  $('#reveal-me-btn').on("click", function() {
+    var tl = new TimelineMax();
+        tl.to('#reveal-me-btn', .3, {autoAlpha: 0})
+          .to('.portrait-cover', .4, {scaleY: 0, autoAlpha: 0, transformOrigin: 'top'})
+          .set('.portrait-cover', {display: 'none'})
+          .add(myPic)
+          .add(myFancyEyes())
+          .add(meBlink());
+    return tl;
+  });
 };
 
 
+
+
+function myPic() {
+      var tl = new TimelineMax();
+          tl.set('#svg-portrait', {autoAlpha: 1})
+          tl.staggerFromTo("#svg-portrait .st0", .3 ,{ autoAlpha: 0, scale: 8},
+                                       {scale: 1, autoAlpha: 1, stagger: 0.007});
+          return tl.timeScale(2);
+    };
+
+
+function myFancyEyes() {
+  $("#about-me").mousemove(function(event) {
+    var eye = $(".myEye");
+    var x = (eye.offset().left) + (eye.width() / 2);
+    var y = (eye.offset().top) + (eye.height() / 2);
+    var rad = Math.atan2(event.pageX - x, event.pageY - y);
+    var rot = (rad * (180 / Math.PI) * -1) + 180;
+    var eyeBound = $(".eyeBound");
+
+    eye.css({
+      left: event.pageX / (x * 1/4),
+      top: event.pageY / (y * 2),
+      '-webkit-transform': 'rotate(' + rot + 'deg)',
+      '-moz-transform': 'rotate(' + rot + 'deg)',
+      '-ms-transform': 'rotate(' + rot + 'deg)',
+      'transform': 'rotate(' + rot + 'deg)',
+    });
+  });
+}
+
+
+function meBlink() {
+  var meBlinkTL = new TimelineMax(),
+      delay = getRandom(0.5, 4);
+      meBlinkTL.from('.eyeLid', .15, {scaleY: 0, transformOrigin: "top", yoyo: true, delay: delay, onComplete: meBlink});
+};
+
+
+
+
+
+
+
+var lionTl = anime.timeline({loop: true, direction: 'alternate'}),
+    lionEl = document.querySelectorAll('#my-lion .st0'),
+    strokeDashOffset = anime.strokeDashoffset;
+
+  function animatedBg() {
+    // animated background stuff
+        lionTl
+        .add ({
+          targets: lionEl,
+            translateX: [function(el, i) {
+              return 30 + (-10 / i);
+            }, 0],
+            translateY: [function(el, i) {
+              return 30 + (-10 / i);
+            }, 0],
+            fill: '#e2e9ed',
+            opacity: [0,1],
+            easing: 'spring(30, 30, 60, 5)',
+            delay: anime.stagger(100, {direction: 'reverse'})
+        }, '+=300')
+        //blink
+        .add ({
+          targets: lionEl,
+          opacity: [1, 0.4],
+          easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
+          delay: anime.stagger(80, {from: 'center'})
+        })
+        //blink back
+        .add ({
+          targets: lionEl,
+          opacity: 1,
+          easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
+          delay: anime.stagger(80, {from: 'center'})
+        }, '-=200')
+        //repeat blink
+        .add ({
+          targets: lionEl,
+          opacity: [1, 0.4],
+          easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
+          delay: anime.stagger(50, {from: 'center'})
+        }, '-=200')
+        //repeat blink back
+        .add ({
+          targets: lionEl,
+          opacity: 1,
+          easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
+          delay: anime.stagger(50, {from: 'center'}),
+        }, '-=200')
+        //scatter
+        .add ({
+          targets: lionEl,
+          translateX: function(el, i) {
+            return anime.random(0,vw) + (-20 * i);
+          },
+          translateY: function(el, i) {
+            return anime.random(0,vh) + (-10 * i);
+          },
+          rotate: function() { return anime.random(-360, 360); },
+          easing: 'easeInOutBack',
+          delay: function() { return anime.random(0, 400); },
+          duration: 5000
+        }, '+=2000')
+        //disappear & pseudo disappearance with 0 alpha
+        .add ({
+          targets: lionEl,
+          opacity: 0,
+          fill: 'rgba(0,0,0,0)',
+          easing: 'cubicBezier(0.645, -0.005, 0.000, 0.860)',
+          delay: anime.stagger(50),
+          duration: 2000
+        }, '+=500')
+        //background change of position and opacity
+        .add ({
+          targets: lionEl,
+          rotate: anime.random(-10, 90),
+          opacity: 1,
+          duration: 200
+        })
+        //draw lines
+        .add ({
+          targets: lionEl,
+          strokeDashoffset: [anime.setDashoffset, 0],
+          stroke: ['#f907d9','#c3cfe2'],
+          easing: 'easeInOutSine',
+          duration: 600,
+          delay: function(el, i) { return i * 250 }
+        })
+        //reasemble
+        .add ({
+          targets: lionEl,
+          translateX: 0,
+          translateY: 0,
+          rotate: 0,
+          easing: 'cubicBezier(1.000, -0.050, 0.000, 1.070)',
+          duration: 5000
+        })
+        //erase
+        .add ({
+          targets: lionEl,
+          stroke: '#0760f9',
+          strokeDashoffset: [0, anime.setDashoffset],
+          easing: 'easeInOutSine',
+          duration: 500,
+          delay: function(el, i) { return i * 250 }
+        }, '+=2000')
+  };
 
 
 
 // Initial Home Animation
 function homeload() {
-  var homeTimeline = new TimelineMax({onStart: preloadingOut});
-  TweenMax.from('a#emailIcon', 1, {x: 100, autoAlpha: 0, delay: 1});
-      homeTimeline.staggerFrom("#intro_text h1, #intro_text h5, #intro_text p, a.arrow-down, .menu", 1,
-                              {y: 50, autoAlpha: 0}, .2)
-                 .add(animatedBg(), "+=1");
+  var homeTimeline = new TimelineMax({onComplete:animatedBg});
+      homeTimeline
+        // .add(preloadingAnimation())
+                  .call(preloadingAnimation())
+                  .to('.loading-wrapper', .3, {scaleY: 0, autoAlpha: 0, transformOrigin: 'top', delay: 5.8})
+                  .set('.loading-wrapper', {display: 'none'})
+                  .staggerFrom("#intro_text, #home-CTAarrow, #bullets", .8,
+                              {y: 100, autoAlpha: 0}, .3)
+                  // .call(animatedBg());
+
 };
-            function bulletsSlideIn() {
-              TweenLite.fromTo('#sections-bullets', 1.5, {x: 200}, {x: 0});
-            };
 
 
-        // Preloading animation fadeout
-        function preloadingOut() {
-          var preloadOutTL = new TimelineMax();
-              preloadOutTL.to('.loading-wrapper', .7, {yPercent: -100, autoAlpha: 0})
-              return preloadingOut;
-        };
+
+
+
 
 
 
@@ -157,65 +279,96 @@ function CTAbuttonHover() {
     $(this).hover (
       function() {
         TweenMax.to($(".button-outline", this), .5, {strokeDashoffset: 0, strokeDasharray: 480});
-        TweenMax.to($("h6.CTA-label", this), .2, {color: '#8C9BAF', delay: .4});
-        TweenMax.to($(".cta-btn-stroke", this), .7, {stroke: "#8C9BAF"});
+        TweenMax.to($("h6.CTA-label", this), .2, {color: '#f90760', delay: .4});
+        TweenMax.to($(".cta-btn-stroke", this), .7, {stroke: "#f90760"});
       },
       function() {
         TweenMax.to($(".button-outline", this), .4, {strokeDashoffset: 95, strokeDasharray: '50 200'});
-        TweenMax.to($("h6.CTA-label", this), .2, {color: '#F3425E'});
-        TweenMax.to($(".cta-btn-stroke", this), .4, {stroke: "#F3425E"});
+        TweenMax.to($("h6.CTA-label", this), .2, {color: '#0e83ea'});
+        TweenMax.to($(".cta-btn-stroke", this), .4, {stroke: "#0e83ea"});
       }
     );
   })
 };
 
 
-function projectTileHover() {
-  $('#plasticFootprint-tile').hover(
-    function() {
-      $("#mpf-video")[0].pause();
-    },
-    function() {
-      $("#mpf-video")[0].play();
+
+
+
+
+   function customisedCTAHover() {
+     $("#schecker-CTA").hover (
+       function() {
+         TweenMax.to("#hero-overlay_schecker", .5, {height: "100%", backgroundColor: "white", autoAlpha: .7, delay: .4});
+         TweenMax.to("#prj-des_schecker", .6, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
+       },
+       function () {
+         TweenMax.to("#hero-overlay_schecker", .5, {height: 0, autoAlpha: 0});
+         TweenMax.to("#prj-des_schecker", .5, {backgroundColor: "rgba(255,255,255,1)"});
+       }
+     );
+     $("#sa-CTA").hover (
+       function() {
+         TweenMax.to("#hero-overlay_sa", .5, {height: "100%", backgroundColor: "black", autoAlpha: .3, delay: .4});
+         TweenMax.to("#prj-des_sa", .6, {backgroundColor: "rgba(0,0,0,0)", delay: .5});
+         TweenMax.to("#prj-des-contents_sa", .5, {color: "white", delay: .5});
+       },
+       function () {
+         TweenMax.to("#hero-overlay_sa", .5, {height: 0, autoAlpha: 0});
+         TweenMax.to("#prj-des_sa", .5, {backgroundColor: "rgba(255,255,255,1)"});
+         TweenMax.to("#prj-des-contents_sa", .5, {color: "#0C1826"});
+       }
+     );
+     $("#bardot-CTA").hover (
+       function() {
+         TweenMax.to("#hero-overlay_bardot", .5, {height: "100%", backgroundColor: "white", autoAlpha: .7, delay: .4});
+         TweenMax.to("#prj-des_bardot", .6, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
+       },
+       function () {
+         TweenMax.to("#hero-overlay_bardot", .5, {height: 0, autoAlpha: 0});
+         TweenMax.to("#prj-des_bardot", .5, {backgroundColor: "rgba(255,255,255,1)"});
+       }
+     );
+   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+function smileyFace() {
+  var smileyTL = new TimelineMax({repeat: -1});
+      smileyTL.add(smileySmile())
+              .add(smileyBlink(), "-=2")
+              .add(smileyWink(), "+=1");
+
+    function smileyWink() {
+      var winkTL = new TimelineMax();
+          winkTL.to("#rightEye", .1, {scaleY: .2, y: 6})
+                .to("#mouth", .2, {rotation: -14, y: -3, x: 8, scaleX: .8}, "-=.1")
+                .to("#rightEye", .2, {scaleY: 1, y: 0}, "+=.3")
+                .to("#mouth", .3, {rotation: 0, y: 0, x: 0, scaleX: 1}, "-=.1")
+      return winkTL;
     }
-  );
-
-  $('#wishUp-tile').hover(
-    function() {
-      TweenMax.fromTo('#wishUp-overlay', .5, {scale: .7}, {scale: 1, autoAlpha: 1, ease: Back.easeOut.config(3)});
-      tl_levitatingIphone.pause();
-    },
-    function() {
-      TweenMax.to('#wishUp-overlay', .3, {autoAlpha: 0});
-      tl_levitatingIphone.resume();
+    function smileyBlink() {
+      var blinkTL = new TimelineMax({repeat: 1, repeatDelay: 2});
+          blinkTL.to("#rightEye, #leftEye", .05, {scaleY: .1, y: 6})
+                 .to("#rightEye, #leftEye", .05, {scaleY: 1, y: 0});
+      return blinkTL;
     }
-  );
-
-  $('#bardot-tile').hover(
-    function() {
-      TweenMax.fromTo('#bardot-overlay', .5, {scale: .7}, {scale: 1, autoAlpha: 1, ease: Back.easeOut.config(3)});
-      TweenMax.to("#bardot-tile-bg", 1, {scale: 1.2, ease: Power2.easeOut});
-    },
-    function() {
-      TweenMax.to('#bardot-overlay', .3, {autoAlpha: 0});
-      TweenMax.to("#bardot-tile-bg", 1, {scale: 1, ease: Power2.easeOut});
+    function smileySmile() {
+      var smileTL = new TimelineMax({repeat: 2, yoyo: true});
+          smileTL.to("#mouth", 1.5, {scaleX: .8, transformOrigin: "center"});
+      return smileTL;
     }
-  );
-
-  $('#sa-tile').hover(
-    function() {
-      TweenMax.fromTo('#sa-overlay', .5, {scale: .7}, {scale: 1, autoAlpha: 1, ease: Back.easeOut.config(3)});
-      TweenMax.to("#sa-tile-bg", 1, {scale: 1.2, ease: Power2.easeOut});
-    },
-    function() {
-      TweenMax.to('#sa-overlay', .3, {autoAlpha: 0});
-      TweenMax.to("#sa-tile-bg", 1, {scale: 1, ease: Power2.easeOut});
-    }
-  );
-};
-
-
-
+}
 
 
 
@@ -224,18 +377,20 @@ function projectTileHover() {
 // Hamburger menu
 function hamburgerHover() {
   $('.menu').each(function (i, el) {
+    var hamburgerTL = new TimelineMax();
     $(this).hover (
       function() {
-        TweenLite.to($(this), 0.2, {rotation: -90, transformOrigin: "center"});
-        TweenLite.to($(".bar2", this), 0.2, {height: 30, rotation: 0, x: 12, transformOrigin: "center center"});
-        TweenLite.to($(".bar3", this), 0.2, {y: 0});
-        TweenLite.to($(".bar1, .bar2, .bar3", this), 0.05, {backgroundColor: "#F3425E"});
+        hamburgerTL
+                  .to($(".bar1", this), .08, {rotation: -90, backgroundColor: "#F3425E", transformOrigin: "top left"})
+                   .to($(".bar3", this), 0.08, {rotation: 90})
+                   .to($(".bar3", this), 0.08, {x: 0, backgroundColor: "#F3425E"})
+                   .to($(".bar2", this), .08, {rotation: -90, x: 0, yPercent: 40, backgroundColor: "#F3425E"});
       },
       function() {
-        TweenLite.to($(this), 0.1, {rotation: 0});
-        TweenLite.to($(".bar2", this), 0.1, {height: 37, rotation: -40, x: 0, transformOrigin: "top right"});
-        TweenLite.to($(".bar3", this), 0.1, {y: 10});
-        TweenLite.to($(".bar1, .bar2, .bar3", this), 0.05, {backgroundColor: "#8C9BAF"});
+        hamburgerTL
+                   .to($(".bar2", this), 0.3, {rotation: -40, x: 0, yPercent: 0, backgroundColor: "#0e83ea"})
+                   .to($(".bar1", this), 0.2, {rotation: 0, backgroundColor: "#0e83ea"}, "-=.2")
+                   .to($(".bar3", this), 0.1, {y: 10, x: 24, rotation: 0, backgroundColor: "#0e83ea"});
       }
     );
   });
@@ -243,26 +398,43 @@ function hamburgerHover() {
 
 
 
+
 function toggleMenu() {
+  var hamburgerState = new TimelineMax();
+      hamburgerState.from(".closeMenu", .6, {height: 0})
+                    .from(".closeBar1, .closeBar2", .3, {width: 0, rotation: 0})
+                    .to(".closeBar1", .2, {rotation: 45})
+                    .to(".closeBar2", .2, {rotation: -45}, "-=.2");
+      hamburgerState.reverse();
+
   var openOverlay = new TimelineMax();
-      openOverlay.to('.menu', .4, {className: "+=open"})
-                 .to($('.overlay'), .3, {scaleY: 1, autoAlpha: .96, transformOrigin: "top left", ease: Power4.easeOut}, "-=.4")
-                 .staggerFromTo(".overlay .menu-items ul li", .5, {scaleY: 0, y: 10, autoAlpha: 0,
-                                                                   cycle: {rotation:[20, -20],
-                                                                   transformOrigin: ["bottom left", "bottom right"]}},
+      openOverlay
+                 .to($('.overlay'), .5, {scaleY: 1, autoAlpha: .98, transformOrigin: "bottom center",
+                                         ease: Power4.easeOut})
+                 .to('.overlay', .7, {borderRadius: 0}, "-=.3")
+                 .staggerFromTo(".overlay .menu-items ul li", .5, {scaleY: 0, y: 50, autoAlpha: 0,
+                                                                   },
                                                                   {scaleY: 1, y: 0, autoAlpha: 1, rotation: 0,
-                                                                   ease: Back.easeOut.config(2)}, 0.1, "-=.2");
+                                                                   ease: Power4.easeOut}, 0.1, "-=.2");
       openOverlay.reverse();
 
-  $(".menu").each(function(i, el) {
+  let menus = [$(".menu"), $(".closeMenu")];
+   $.each(menus, function(i, el) {
     $(this).click(function() {
-      if (openOverlay.reversed()) {
-        openOverlay.play();
+      if (openOverlay.reversed() ) {
+          openOverlay.play();
+          hamburgerState.play();
+          lionTl.pause();
       } else {
         openOverlay.reverse();
+        lionTl.play();
+        hamburgerState.reverse();
       }
     });
   });
+
+
+
   $(".overlay .menu-items ul li a").each(function(i, el) {
     $(this).click(function() {
       openOverlay.reverse();
@@ -270,24 +442,6 @@ function toggleMenu() {
   });
 };
 
-
-
-
-
-
-
-
-// Email-me button hover effect
-function emailBtnHover() {
-  $('#emailIcon').hover (
-    function() {
-      TweenLite.to($(this), 1, {scale: 1.4, rotation: 42, ease: Elastic.easeOut});
-    },
-    function() {
-      TweenLite.to($(this), 0.1, {scale: 1, rotation: 0});
-    }
-  );
-};
 
 
 
@@ -305,7 +459,7 @@ function preloadingAnimation() {
       $el6 = document.getElementById('ic-component-6'),
       $el7 = document.getElementById('ic-component-7'),
 
-      loadingTL = anime.timeline({
+      loadingTL = anime.timeline ({
         direction: 'reverse', easing: 'easeInOutSine', duration: 700,
         update: function(scale) {
           anime({
@@ -421,15 +575,6 @@ function preloadingAnimation() {
 
 
 
-
-
-
-
-
-
-
-
-
 (function($) {
 
   /**
@@ -444,7 +589,6 @@ function preloadingAnimation() {
    */
 
   $.fn.visible = function(partial) {
-
       var $t            = $(this),
           $w            = $(window),
           viewTop       = $w.scrollTop(),
@@ -455,160 +599,97 @@ function preloadingAnimation() {
           compareBottom = partial === true ? _top : _bottom;
 
     return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-
   };
-
 })(jQuery);
 
 
-$(window).scroll(function(event) {
-  $(".ease-in, .ease-in-w, .ease-in-o, .ease-in-os, .ease-in-a, .my-portrait svg").each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      sideProjIn();
-      othersIn();
-      worksIn();
-      oldStuffIn();
-      aboutIn();
-    }
-  });
-});
 
 
 
 
-var sideProjIn = (function(){
+function homeElOut() {
   var tl = new TimelineMax();
-  var executed = false;
-  return function() {
-    if (!executed) {
-      if ($('.ease-in').visible(true)) {
-           tl.fromTo(".device-wrapper", 2, {x: -100}, {x: 0, autoAlpha: 1})
-           tl.staggerFrom(".content-column .ease-in", .8, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1, "-=1.3");
-           executed = true;
-         }
-    }
-  };
-})();
-
-var worksIn = (function(){
-  var tl = new TimelineMax();
-  var executed = false;
-  return function() {
-    if (!executed) {
-      if ($('.ease-in-w').visible(true)) {
-           tl.staggerFrom(".ease-in-w", 1, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1);
-           executed = true;
-         }
-    }
-  };
-})();
-
-var tl_levitatingIphone = new TimelineMax({yoyo: true, repeat: -1, paused: true});
-    tl_levitatingIphone.fromTo("#wishUp-mockup-ip", 2, {y: -5, scale: .98}, {y: 10, scale: 1, ease: Power0.easeNone});
-var othersIn = (function(){
-  var tl = new TimelineMax();
-  var executed = false;
-  return function() {
-    if (!executed) {
-      if ($('.ease-in-o').visible(true)) {
-           tl.staggerFrom(".ease-in-o", 1, {y: 200, autoAlpha: 0, immediateRender: false}, 0.1);
-           tl_levitatingIphone.play();
-           executed = true;
-         }
-    }
-  };
-})();
-
-var oldStuffIn = (function(){
-  var tl = new TimelineMax();
-  var executed = false;
-  return function() {
-    if (!executed) {
-      if ($('.ease-in-os').visible(true)) {
-           tl.staggerFrom(".ease-in-os", 1.3, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1);
-           executed = true;
-         }
-    }
-  };
-})();
-
-var aboutIn = (function(){
-  var tl = new TimelineMax();
-  var executed = false;
-  return function() {
-    if (!executed) {
-      if ($('.ease-in-a, .my-portrait').visible(true)) {
-           tl.staggerFrom(".content-column .ease-in-a", .6, {y: 100, autoAlpha: 0, immediateRender: false}, 0.1)
-           if (window.matchMedia("(min-width: 696px)").matches) {
-             tl.add(myPic(), "-=.6");
-             fancyEyes();
-           } else {
-             TweenMax.set(".my-portrait .st0, .my-portrait .st1", {autoAlpha: 1});
-           }
-           executed = true;
-         }
-    }
-  };
-})();
-
-      function myPic() {
-        var tl = new TimelineMax();
-            tl.staggerFromTo(".my-portrait .st1, .my-portrait .st0", .3 ,{y: "-=200", autoAlpha: 0, scale: 8, immediateRender: false},
-                                               {y: "+=200", scale: 1, autoAlpha: 1, stagger: 0.007});
-            return tl.timeScale(2);
-      };
-
-
-function fancyEyes() {
-  $('.menu').hover (
-    function() {
-      TweenLite.to("#leftEye", .4, {x: -7, y: -2, rotation: -30, transformOrigin: "center"});
-      TweenLite.to("#rightEye", .4, {x: -4, y: -1, rotation: -30, transformOrigin: "center"});
-    },
-    function() {
-      TweenLite.to("#leftEye, #rightEye", .2, {x: 0, y: 0, rotation: 0});
-    }
-  );
-  $('#about h5').hover (
-    function() {
-      TweenLite.to("#leftEye", .2, {x: -5, y: -1, rotation: -10, transformOrigin: "center"});
-      TweenLite.to("#rightEye", .2, {x: -3, rotation: -10, transformOrigin: "center"});
-    },
-    function() {
-      TweenLite.to("#leftEye, #rightEye", .1, {x: 0, y: 0, rotation: 0});
-    }
-  );
-  $('#about p').hover (
-    function() {
-      TweenLite.to("#leftEye, #rightEye", .2, {x: -5, transformOrigin: "center"});
-    },
-    function() {
-      TweenLite.to("#leftEye, #rightEye", .1, {x: 0});
-    }
-  );
-  $('#about p a').hover (
-    function() {
-      TweenLite.to("#leftEye", .2, {x: -6, y: 2, rotation: -15, transformOrigin: "center"});
-      TweenLite.to("#rightEye", .2, {x: -6, y: 1, rotation: -5, transformOrigin: "center"});
-    },
-    function() {
-      TweenLite.to("#leftEye, #rightEye", .1, {x: 0, y: 0, rotation: 0});
-    }
-  );
-  $('a#emailIcon').hover (
-    function() {
-      TweenLite.to("#leftEye", .2, {x: 5, y: 2, rotation: 15, transformOrigin: "center"});
-      TweenLite.to("#rightEye", .2, {x: 5, rotation: 10, transformOrigin: "center"});
-    },
-    function() {
-      TweenLite.to("#leftEye, #rightEye", .1, {x: 0, y: 0, rotation: 0});
-    }
-  );
+      tl.staggerTo("#intro_text, #home-CTAarrow", .2, {y: -100, autoAlpha: 0}, .1)
+        // .to(".background", .1, {autoAlpha: 1});
+  return tl;
 };
 
+function homeElIn() {
+  var tl = new TimelineMax();
+      tl.staggerTo("#intro_text, #home-CTAarrow", .5, {y: 0, autoAlpha: 1}, .1)
+        .to(".background", .1, {autoAlpha: 1});
+  return tl;
+};
+
+function intro2In() {
+  var tl = new TimelineMax();
+      tl.staggerFromTo(".intro2-in-out", .5, {y: 100}, {autoAlpha: 1, y: 0}, .1)
+        .to(".background", .1, {autoAlpha: 1});
+  return tl;
+}
+
+function intro2Out() {
+  var tl = new TimelineMax();
+      tl.staggerTo(".intro2-in-out", .2, {y: -100, autoAlpha: 0}, .1)
+        .to(".background", .1, {autoAlpha: 0});
+  return tl;
+}
+
+function scheckerIn() {
+  var tl = new TimelineMax();
+      tl.to("#prj-schecker", .6, {autoAlpha: 1})
+        .staggerFromTo(".schecker-in-out", .4, {y: 100}, {autoAlpha: 1, y: 0}, .1, "-=.1");
+  return tl;
+}
+
+function scheckerOut() {
+  var tl = new TimelineMax();
+      tl.staggerTo(".schecker-in-out", .1, {y: -100, autoAlpha: 0}, .1)
+        .to("#prj-schecker", .2, {autoAlpha: 0});
+  return tl;
+}
 
 
+function bardotIn() {
+  var tl = new TimelineMax();
+      tl.to("#prj-bardot", .6, {autoAlpha: 1})
+        .staggerFromTo(".bardot-in-out", .4, {y: 100}, {autoAlpha: 1, y: 0}, .1, "-=.1");
+  return tl;
+}
+
+function bardotOut() {
+  var tl = new TimelineMax();
+      tl.staggerTo(".bardot-in-out", .1, {y: -100, autoAlpha: 0}, .1)
+        .to("#prj-bardot", .2, {autoAlpha: 0});
+  return tl;
+}
+
+
+function saIn() {
+  var tl = new TimelineMax();
+      tl.to("#prj-sa", .6, {autoAlpha: 1})
+        .staggerFromTo(".sa-in-out", .4, {y: 100}, {autoAlpha: 1, y: 0}, .1, "-=.1");
+  return tl;
+}
+
+function saOut() {
+  var tl = new TimelineMax();
+      tl.staggerTo(".sa-in-out", .1, {y: -100, autoAlpha: 0}, .1)
+        .to("#prj-sa", .2, {autoAlpha: 0});
+  return tl;
+}
+
+function contactIn() {
+  var tl = new TimelineMax();
+      tl.staggerFromTo(".contact-in-out", .4, {y: 100}, {autoAlpha: 1, y: 0}, .1, "-=.1");
+  return tl;
+}
+
+function contactOut() {
+  var tl = new TimelineMax();
+      tl.staggerTo(".contact-in-out", .1, {y: -100, autoAlpha: 0}, .1);
+  return tl;
+}
 
 
 
@@ -616,53 +697,207 @@ function fancyEyes() {
 // ------------------------------- Malihu's PageScrolltoId Full page scroll sniplet -------------------------------------
 
 
-
-
 (function($){
-        $(window).on("load",function(){
-            $("a[rel='m_PageScroll2id']").mPageScroll2id({
-              liveSelector:"a[rel='m_PageScroll2id']"
-            });
-        });
-    })(jQuery);
-
-
-    (function($){
       $(window).on("load",function(){
+          $("a[rel='m_PageScroll2id']").mPageScroll2id({
+              highlightSelector: "#bullets a",
+              keepHighlightUntilNext: true,
+              appendHash: true,
+              scrollEasing:"easeInOutQuint",
+              scrollSpeed:1000,
+              onStart: function() {
+                if ($("#home-intro").visible(false)) {
+                  homeElOut();
+                };
+                if ($(".intro2-in-out").visible(false)) {
+                  intro2Out();
+                };
+                if ($(".schecker-in-out").visible(false)) {
+                  scheckerOut();
+                };
+                if ($(".bardot-in-out").visible(false)) {
+                  bardotOut();
+                };
+                if ($(".sa-in-out").visible(false)) {
+                  saOut();
+                };
+                if ($(".contact-in-out").visible(false)) {
+                  contactOut();
+                };
+              },
+              onComplete: function() {
+                if ($("#home-intro").visible(true)) {
+                  homeElIn();
+                };
+                if ($(".intro2-in-out").visible(true)) {
+                  intro2In();
+                };
+                if ($(".schecker-in-out").visible(true)) {
+                  scheckerIn();
+                };
+                if ($(".bardot-in-out").visible(true)) {
+                  bardotIn();
+                };
+                if ($(".sa-in-out").visible(true)) {
+                  saIn();
+                };
+                if ($(".contact-in-out").visible(true)) {
+                  contactIn();
+                };
+              }
+          });
+      });
+  })(jQuery);
 
-        if(!$(document).data("mPS2id")){
-          console.log("Error: 'Page scroll to id' plugin not present or activated. Please run the code after plugin is loaded.");
-          return;
+
+
+// ------------------- scroll with mousewheel -----------------------
+
+
+
+  (function($){
+    $(window).on("load",function(){
+
+      var doc=$(document),
+        mPS2idData=doc.data("mPS2id"),
+        mPS2idExt;
+
+      if(!mPS2idData){
+        console.log("Error: 'Page scroll to id' plugin not present or activated. Please run the code after plugin is loaded.");
+        return;
+      }
+
+      if(!$("._mPS2id-t").length) return;
+
+      doc.data("mPS2idExtend",{
+        selector: "._mPS2id-h",
+        currentSelector: function(){
+          return this.index($(".mPS2id-highlight-first").length ? $(".mPS2id-highlight-first") : $(".mPS2id-highlight").length ? $(".mPS2id-highlight") : $(".mPS2id-wheel-init"));
+        },
+        target: function(){
+          var curr=$(".mPS2id-target-first").length ? $(".mPS2id-target-first") : $(".mPS2id-target").length ? $(".mPS2id-target") : $(".mPS2id-clicked").length ? $("#"+$(".mPS2id-clicked").attr("href").split("#")[1]) : false;
+          if(!curr.length){
+            //if no current target exists, get the next and previous closest sections
+            var max=999999999,
+              min=-999999999;
+            $("._mPS2id-t").each(function(){
+              var pos=mPS2idData.layout==="horizontal" ? this.getBoundingClientRect().left : this.getBoundingClientRect().top;
+              if(pos < 0 && pos > min){
+                min=pos;
+                curr=$("._mPS2id-t[data-psid-wheel-section='"+($(this).data("psid-wheel-section")+1)+"']");
+              }else if(pos > 0 && pos < max){
+                max=pos;
+                curr=$("._mPS2id-t[data-psid-wheel-section='"+($(this).data("psid-wheel-section")-1)+"']");
+              }
+            });
+            $("._mPS2id-h[data-psid-wheel-link='"+curr.data("psid-wheel-section")+"']").addClass("mPS2id-wheel-init");
+          }
+          return [
+            $("._mPS2id-t[data-psid-wheel-section='"+(curr.data("psid-wheel-section")-1)+"']"), //previous target
+            curr, //current target
+            $("._mPS2id-t[data-psid-wheel-section='"+(curr.data("psid-wheel-section")+1)+"']"), //next target
+          ];
+        },
+        needScroll: function(dir){
+          if($("html,body").is(":animated")) return;
+          if(dir > 0){ //scrolled fw
+            var el=mPS2idExt.target.call()[2][0]; //next adjacent target
+            if(mPS2idData.layout==="horizontal"){
+              return el ? el.getBoundingClientRect().left > (window.innerWidth || document.documentElement.clientWidth) : true; //next target is after viewport
+            }else{
+              return el ? el.getBoundingClientRect().top > (window.innerHeight || document.documentElement.clientHeight) : true; //next target is below viewport
+            }
+          }else if(dir < 0){ //scrolled bw
+            var el=mPS2idExt.target.call()[0][0]; //previous adjacent target
+            if(mPS2idData.layout==="horizontal"){
+              return el ? el.getBoundingClientRect().right < 0 : true; //previous target is before viewport
+            }else{
+              return el ? el.getBoundingClientRect().bottom < 0 : true; //previous target is above viewport
+            }
+          }
+        },
+        input:{
+          y: null,
+          x: null},
+        i: null,
+        time: null,
+        support:{
+          wheel: false
         }
-
-        $(document).data("mPS2idExtend",{
-          selector:"#menu-links ._mPS2id-h",
-          currentSelector:function(){
-            return this.index($(".mPS2id-highlight-first").length ? $(".mPS2id-highlight-first") : $(".mPS2id-highlight"));
-          },
-          input:{y:null,x:null},
-          i:null,
-          time:null
-        }).on("scrollSection",function(e,dlt,i){
-          var d=$(this).data("mPS2idExtend"),
-            sel=$(d.selector);
-          if(!$("html,body").is(":animated")){
-            if(!i) i=d.currentSelector.call(sel);
-            if(!(i===0 && dlt>0) && !(i===sel.length-1 && dlt<0)) sel.eq(i-dlt).trigger("click.mPS2id");
+      }).on("ps2id-scrollSection",function(e,dlt,i){
+        var sel=$(mPS2idExt.selector);
+        if(!$("html,body").is(":animated")){
+          if(!i) i=mPS2idExt.currentSelector.call(sel);
+          if(!(i===0 && dlt>0) && !(i===sel.length-1 && dlt<0)) sel.eq(i-dlt).trigger("click.mPS2id");
+        }
+      }).on("keydown",function(e){ //keyboard
+        var code=e.keyCode ? e.keyCode : e.which,
+          keys=$(this).data("mPS2id").layout==="horizontal" ? [37,39] : [38,40];
+        if(code===keys[0] || code===keys[1]){
+          if(!mPS2idExt.needScroll((code > 38 ? 1 : -1))){ //check if normal scrolling is needed to reach adjacent targets
+            if($(mPS2idExt.selector).length) e.preventDefault();
+            $(this).trigger("ps2id-scrollSection",(code===keys[0] ? 1 : -1));
           }
-        }).on("keydown",function(e){ //keyboard
-          var code=e.keyCode ? e.keyCode : e.which,
-            keys=$(this).data("mPS2id").layout==="horizontal" ? [37,39] : [38,40];
-          if(code===keys[0] || code===keys[1]){
-            if($($(this).data("mPS2idExtend").selector).length) e.preventDefault();
-            $(this).trigger("scrollSection",(code===keys[0] ? 1 : -1));
+        }
+      })
+      //touch events (remove the following code if you don't want to apply the touch functionality)
+      .on("pointerdown touchstart",function(e){ //touch (optional)
+        var o=e.originalEvent;
+        if(o.pointerType==="touch" || e.type==="touchstart"){
+          var y=o.screenY || o.changedTouches[0].screenY;
+          mPS2idExt.input.y=y;
+          if($(this).data("mPS2id").layout==="horizontal"){
+            var x=o.screenX || o.changedTouches[0].screenX;
+            mPS2idExt.input.x=x;
           }
+          mPS2idExt.time=o.timeStamp;
+          mPS2idExt.i=mPS2idExt.currentSelector.call($(mPS2idExt.selector));
+        }
+      }).on("pointerup touchend",function(e){
+        var o=e.originalEvent;
+        if(o.pointerType==="touch" || e.type==="touchend"){
+          var y=o.screenY || o.changedTouches[0].screenY,
+            diff=mPS2idExt.input.y-y,
+            time=o.timeStamp-mPS2idExt.time,
+            i=mPS2idExt.currentSelector.call($(mPS2idExt.selector));
+          if($(this).data("mPS2id").layout==="horizontal"){
+            var x=o.screenX || o.changedTouches[0].screenX,
+              diff=mPS2idExt.input.x-x;
+          }
+          if(Math.abs(diff)<2) return;
+          var _switch=function(){
+            return time<200 && i===mPS2idExt.i;
+          };
+          var dir=diff > 0 ? 1 : -1;
+          if(time < 500 && Math.abs(diff) > 50) $(this).trigger("ps2id-scrollSection",[(diff>0 && _switch() ? -1 : diff<0 && _switch() ? 1 : 0),(_switch() ? mPS2idExt.i : i)]);
+        }
+      })
+      // -----
+      .on("ps2id-wheel-init",function(){
+        //script initialization
+        mPS2idExt=$(this).data("mPS2idExtend");
+        $("._mPS2id-t").each(function(index){
+          $(this).attr("data-psid-wheel-section",index);
         });
+        $("._mPS2id-h").each(function(index){
+          $(this).attr("data-psid-wheel-link",index);
+        });
+        //vanilla js mousewheel event (https://github.com/jquery/jquery/issues/2871)
+        document.addEventListener('wheel', wheel, {passive: false}, false);
+        document.addEventListener('mousewheel', wheel, {passive: false}, false);
+        document.addEventListener('DOMMouseScroll', wheel, {passive: false}, false);
+        function wheel(e){
+          if(e.type == "wheel"){
+            mPS2idExt.support.wheel = true;
+          }else if(mPS2idExt.support.wheel){
+            return;
+          }
+          if(!mPS2idExt.needScroll((mPS2idData.layout==="horizontal" ? e.deltaX : e.deltaY))){ //check if normal scrolling is needed to reach adjacent targets
+            if($(mPS2idExt.selector).length) e.preventDefault();
+            doc.trigger("ps2id-scrollSection",((e.detail<0 || e.wheelDelta>0 || e.deltaY < 0 || e.deltaX < 0) ? 1 : -1));
+          }
+        };
+      }).trigger("ps2id-wheel-init");
+    });
 
-    $("body").append("<div id='sections-bullets' />").find($(document).data("mPS2idExtend").selector).each(function(){
- $("#sections-bullets").append("<a href='"+$(this).attr("href")+"' class='section-bullet' rel='m_PageScroll2id'></a>");
-bulletsSlideIn();
-});
-
-  });
-})(jQuery);
+  })(jQuery);

@@ -1,8 +1,57 @@
-$(document).ready(function() {
+
+var vh = window.innerHeight,
+    vw = window.innerWidth;
+
+
+
+
+
+$(window).ready(function() {
+
+//footer - Other works tiles
+  var workTiles = $(".work-tile");
+      workTiles.toArray();
+  var tileWidth = vw/workTiles.length;
+  workTiles.css("width", tileWidth);
+
+  TweenMax.staggerFromTo('#all-works h2, #all-works div', .8, {y: 100}, {y: 0, autoAlpha: 1, immediateRender: false}, .2);
+
   scheckerUserFlowDrag();
   floatingMockup();
+  tileHover();
+
+  TweenMax.from('.project-hero', 1.5, {autoAlpha: 0});
+  TweenMax.staggerFrom('.project-intro .wrapper div', 1, {y: 100, autoAlpha: 0}, .2);
+
+});
+
+
+$(document).ready(function() {
+
+  hamburgerHover();
+  toggleMenu();
+  CTAarrowHover();
+
+
+  var menuAssembleTL = new TimelineMax();
+      menuAssembleTL.to(".menu .bar1", .2, {rotation: 0, transformOrigin: "top left"})
+                    .to(".menu .bar3", .2, {rotation: 0, x: 24, transformOrigin: "bottom right"})
+                    .to(".menu .bar3", .2, {rotation: 0, y: 10})
+                    .to(".menu .bar2", .2, {rotation: -40, transformOrigin: "top left"});
+
+
+  TweenLite.set(".closeMenu .closeBar1", {rotation: 45, transformOrigin: "center", y: 15, x: 4});
+  TweenLite.set(".closeMenu .closeBar2", {rotation: -45, transformOrigin: "center", y: 15, x: 4});
 
   TweenLite.set("footer", {opacity: 0, scaleY: 0, transformOrigin: "bottom center"});
+
+
+  $('.back-to-top').each(function(i, el) {
+    $(this).click(function() {
+        window.scrollTo(0,0);
+    });
+  });
+
 
   $(window).on('scroll', function () {
 
@@ -10,9 +59,8 @@ $(document).ready(function() {
           pixs = pixs/500;
 
         for (i=0; i <= 1; i++) {
-          $("#wishup-hero-img, section#mpf-intro, #sa-hero-img, #bardot-hero-img").css({"opacity": 1-pixs});
+          $("#sa-hero-img, #bardot-hero-img").css({"opacity": 1-pixs});
         }
-
 
       var scrollHeight = $(document).height(),
     	    scrollPosition = $(window).height() + $(window).scrollTop();
@@ -24,30 +72,8 @@ $(document).ready(function() {
           tl.to("footer", .6, {opacity: 0, scaleY: 0});
       }
 
-
   });
 
-  // $(window).scroll(function(event) {
-  //   $(".block, .block-in").each(function(i, el) {
-  //     var el = $(el);
-  //     if (el.visible(true)) {
-  //       el.addClass("come-in");
-  //     }
-  //   });
-  // });
-
-  // Already visible modules
-  // var allMods = $(".block, .block-in");
-  // allMods.each(function(i, el) {
-  //   var el = $(el);
-  //   if (el.visible(true)) {
-  //     el.addClass("already-visible");
-  //   }
-  // });
-
-
-// scroll animation
-//         schecker scroll animation
 
 
 
@@ -69,7 +95,8 @@ var triggerOffset = document.documentElement.clientHeight / 1.2,
     scene_3h = $('#s_ui').offset().top,
     scene_3i = $('#s_leading-line-5').offset().top,
     scene_3j = $('#s_collage').offset().top,
-    scene_4 = $('#s_prototypeCTA').offset().top;
+    scene_4 = $('#s_prototypeCTA').offset().top,
+    scene_4a = $('#schecker-viewInvision').offset().top;
 
 
 
@@ -103,8 +130,10 @@ var tl = new TimelineMax({ paused: true })
     .from("#s_ui h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3h)
     .from("#s_ui img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3h)
     .from("#s_leading-line-5", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3i + 100)
-    .from("#s_collage", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3j)
-    .from("#schecker-viewInvision, #schecker-viewInvisionCTA", duration, { x: "-=500", autoAlpha: 0 }, scene_4);
+    .from("#s_collage", duration, { scale: 0, transformOrigin: "top right", rotation: -90}, scene_3j)
+    .from("#schecker-viewInvisionCTA", duration, { x: "-=500", autoAlpha: 0 }, scene_4)
+    .to("#s_collage", duration, { autoAlpha: .1 }, scene_4a)
+    .from("#schecker-viewInvision", duration, { x: "-=500", autoAlpha: 0 }, scene_4a);
 
 
 
@@ -127,6 +156,14 @@ function update() {
 
 
 
+$(window).scroll(function(event) {
+  $(".block-in").each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in");
+    }
+  });
+});
 
 
 
@@ -141,6 +178,78 @@ function update() {
 
 
 
+
+
+function hamburgerHover() {
+  $('.menu').each(function (i, el) {
+    var hamburgerTL = new TimelineMax();
+    $(this).hover (
+      function() {
+        hamburgerTL
+                  .to($(".bar1", this), .08, {rotation: -90, backgroundColor: "#F3425E", transformOrigin: "top left"})
+                   .to($(".bar3", this), 0.08, {rotation: 90})
+                   .to($(".bar3", this), 0.08, {x: 0, backgroundColor: "#F3425E"})
+                   .to($(".bar2", this), .08, {rotation: -90, x: 0, yPercent: 40, backgroundColor: "#F3425E"});
+      },
+      function() {
+        hamburgerTL
+                   .to($(".bar2", this), 0.3, {rotation: -40, x: 0, yPercent: 0, backgroundColor: "#0e83ea"})
+                   .to($(".bar1", this), 0.2, {rotation: 0, backgroundColor: "#0e83ea"}, "-=.2")
+                   .to($(".bar3", this), 0.1, {y: 10, x: 24, rotation: 0, backgroundColor: "#0e83ea"});
+      }
+    );
+  });
+};
+
+
+
+
+function toggleMenu() {
+  var hamburgerState = new TimelineMax();
+      hamburgerState.from(".closeMenu", .6, {height: 0})
+                    .from(".closeBar1, .closeBar2", .3, {width: 0, rotation: 0})
+                    .to(".closeBar1", .2, {rotation: 45})
+                    .to(".closeBar2", .2, {rotation: -45}, "-=.2");
+      hamburgerState.reverse();
+
+  var openOverlay = new TimelineMax();
+      openOverlay
+                 .to($('.overlay'), .5, {scaleY: 1, autoAlpha: .98, transformOrigin: "bottom center",
+                                         ease: Power4.easeOut})
+                 .to('.overlay', .7, {borderRadius: 0}, "-=.3")
+                 .staggerFromTo(".overlay .menu-items ul li", .5, {scaleY: 0, y: 50, autoAlpha: 0,
+                                                                   },
+                                                                  {scaleY: 1, y: 0, autoAlpha: 1, rotation: 0,
+                                                                   ease: Power4.easeOut}, 0.1, "-=.2");
+      openOverlay.reverse();
+
+  const menus = [$(".menu"), $(".closeMenu")];
+   $.each(menus, function(i, el) {
+    $(this).click(function() {
+      if (openOverlay.reversed() ) {
+          openOverlay.play();
+          hamburgerState.play();
+      } else {
+        openOverlay.reverse();
+        hamburgerState.reverse();
+      }
+    });
+  });
+
+
+
+  $(".overlay .menu-items ul li a").each(function(i, el) {
+    $(this).click(function() {
+      openOverlay.reverse();
+    });
+  });
+};
+
+
+
+
+
+
 function floatingMockup() {
   var tl = new TimelineMax({repeat: -1, yoyo: true});
       tl.set('#schecker-hero img', {y: -10})
@@ -148,51 +257,37 @@ function floatingMockup() {
 }
 
 
+function CTAarrowHover() {
+  $('.CTAarrow, a.cta-w-label').hover(
+    function() {
+      TweenMax.to('svg.svg-circle', .8, {strokeDashoffset: 0, rotation: 180});
+      TweenMax.to('.CTA-label', .3, {color: '#F3425E'});
+    },
+    function() {
+      TweenMax.to('svg.svg-circle', 1, {strokeDashoffset: 158, rotation: 0});
+      TweenMax.to('.CTA-label', .5, {color: '#0e83ea'});
+    }
+  );
+};
 
 
 
 
+function tileHover() {
+  $('.work-tile'). each(function(i, el) {
+    $(this).hover (
+     function() {
+       TweenMax.fromTo($('.tile-CTA', this), .5, {scale: 0}, {scale: 1, autoAlpha: 1, ease: "back.out(1.7)"});
+       TweenMax.to($('> div', this), .3, {scale: 1.05});
+    },
+     function() {
+       TweenMax.to($('.tile-CTA', this), .3, {scale: 0, autoAlpha: 0});
+       TweenMax.to($('> div', this), .2, {scale: 1, ease: "none"});
+      }
+    );
+  })
+};
 
-
-
-
-
-
-
-
-
-
-
-
-    // (function($) {
-    //
-    //   /**
-    //    * Copyright 2012, Digital Fusion
-    //    * Licensed under the MIT license.
-    //    * http://teamdf.com/jquery-plugins/license/
-    //    *
-    //    * @author Sam Sehnert
-    //    * @desc A small plugin that checks whether elements are within
-    //    *     the user visible viewport of a web browser.
-    //    *     only accounts for vertical position, not horizontal.
-    //    */
-    //
-    //   $.fn.visible = function(partial) {
-    //
-    //       var $t            = $(this),
-    //           $w            = $(window),
-    //           viewTop       = $w.scrollTop(),
-    //           viewBottom    = viewTop + $w.height(),
-    //           _top          = $t.offset().top,
-    //           _bottom       = _top + $t.height(),
-    //           compareTop    = partial === true ? _bottom : _top,
-    //           compareBottom = partial === true ? _top : _bottom;
-    //
-    //     return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-    //
-    //   };
-    //
-    // })(jQuery);
 
 
 
@@ -229,3 +324,59 @@ function scheckerUserFlowDrag() {
 //           }
 //         });
 // };
+
+
+
+
+
+
+
+(function($) {
+
+  /**
+   * Copyright 2012, Digital Fusion
+   * Licensed under the MIT license.
+   * http://teamdf.com/jquery-plugins/license/
+   *
+   * @author Sam Sehnert
+   * @desc A small plugin that checks whether elements are within
+   *     the user visible viewport of a web browser.
+   *     only accounts for vertical position, not horizontal.
+   */
+
+  $.fn.visible = function(partial) {
+      var $t            = $(this),
+          $w            = $(window),
+          viewTop       = $w.scrollTop(),
+          viewBottom    = viewTop + $w.height(),
+          _top          = $t.offset().top,
+          _bottom       = _top + $t.height(),
+          compareTop    = partial === true ? _bottom : _top,
+          compareBottom = partial === true ? _top : _bottom;
+
+    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+  };
+})(jQuery);
+
+
+var win = $(window);
+var allMods = $(".block-in");
+
+// Already visible modules
+allMods.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("already-visible");
+  }
+});
+
+win.scroll(function(event) {
+
+  allMods.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in");
+    }
+  });
+
+});
