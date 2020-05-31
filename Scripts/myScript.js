@@ -14,8 +14,6 @@ $( document ).ready(function() {
 
 
 
-  TweenMax.staggerFromTo(".about, .portrait-cover", .8, {y: 100}, {autoAlpha: 1, y: 0}, .2);
-
 
   TweenMax.staggerFrom("#leftEye, #rightEye, #mouth", .25, {scaleY: 0, immediateRender: false}, .3);
   TweenLite.set(lionEl, {strokeDashOffset: strokeDashOffset});
@@ -28,7 +26,6 @@ $( document ).ready(function() {
     customisedCTAHover();
     homeload();
     smileyFace();
-    revealMe();
 
 
     var menuAssembleTL = new TimelineMax();
@@ -67,57 +64,7 @@ $( document ).ready(function() {
 
 
 
-function revealMe() {
-  $('#reveal-me-btn').on("click", function() {
-    var tl = new TimelineMax();
-        tl.to('#reveal-me-btn', .3, {autoAlpha: 0})
-          .to('.portrait-cover', .4, {scaleY: 0, autoAlpha: 0, transformOrigin: 'top'})
-          .set('.portrait-cover', {display: 'none'})
-          .add(myPic)
-          .add(myFancyEyes())
-          .add(meBlink());
-    return tl;
-  });
-};
 
-
-
-
-function myPic() {
-      var tl = new TimelineMax();
-          tl.set('#svg-portrait', {autoAlpha: 1})
-          tl.staggerFromTo("#svg-portrait .st0", .3 ,{ autoAlpha: 0, scale: 8},
-                                       {scale: 1, autoAlpha: 1, stagger: 0.007});
-          return tl.timeScale(2);
-    };
-
-
-function myFancyEyes() {
-  $("#about-me").mousemove(function(event) {
-    var eye = $(".myEye");
-    var x = (eye.offset().left) + (eye.width() / 2);
-    var y = (eye.offset().top) + (eye.height() / 2);
-    var rad = Math.atan2(event.pageX - x, event.pageY - y);
-    var rot = (rad * (180 / Math.PI) * -1) + 180;
-    var eyeBound = $(".eyeBound");
-
-    eye.css({
-      left: event.pageX / (x * 1/4),
-      top: event.pageY / (y * 2),
-      '-webkit-transform': 'rotate(' + rot + 'deg)',
-      '-moz-transform': 'rotate(' + rot + 'deg)',
-      '-ms-transform': 'rotate(' + rot + 'deg)',
-      'transform': 'rotate(' + rot + 'deg)',
-    });
-  });
-}
-
-
-function meBlink() {
-  var meBlinkTL = new TimelineMax(),
-      delay = getRandom(0.5, 4);
-      meBlinkTL.from('.eyeLid', .15, {scaleY: 0, transformOrigin: "top", yoyo: true, delay: delay, onComplete: meBlink});
-};
 
 
 

@@ -3,6 +3,9 @@ var vh = window.innerHeight,
     vw = window.innerWidth;
 
 
+function getRandom(min, max) {
+ return Math.floor(Math.random() * (max - min)) + min;
+};
 
 
 
@@ -19,6 +22,7 @@ $(window).ready(function() {
   scheckerUserFlowDrag();
   floatingMockup();
   tileHover();
+  revealMe();
 
   TweenMax.from('.project-hero', 1.5, {autoAlpha: 0});
   TweenMax.staggerFrom('.project-intro .wrapper div', 1, {y: 100, autoAlpha: 0}, .2);
@@ -28,9 +32,14 @@ $(window).ready(function() {
 
 $(document).ready(function() {
 
+
+  TweenMax.staggerFromTo(".about, .portrait-cover", .8, {y: 100}, {autoAlpha: 1, y: 0}, .2);
+
+
   hamburgerHover();
   toggleMenu();
   CTAarrowHover();
+  CTAbuttonHover();
 
 
   var menuAssembleTL = new TimelineMax();
@@ -272,6 +281,25 @@ function CTAarrowHover() {
 
 
 
+//CTA buttons Animation
+function CTAbuttonHover() {
+  $('.CTA-button').each(function (i, el) {
+    $(this).hover (
+      function() {
+        TweenMax.to($(".button-outline", this), .5, {strokeDashoffset: 0, strokeDasharray: 480});
+        TweenMax.to($("h6.CTA-label", this), .2, {color: '#f90760', delay: .4});
+        TweenMax.to($(".cta-btn-stroke", this), .7, {stroke: "#f90760"});
+      },
+      function() {
+        TweenMax.to($(".button-outline", this), .4, {strokeDashoffset: 95, strokeDasharray: '50 200'});
+        TweenMax.to($("h6.CTA-label", this), .2, {color: '#0e83ea'});
+        TweenMax.to($(".cta-btn-stroke", this), .4, {stroke: "#0e83ea"});
+      }
+    );
+  })
+};
+
+
 
 function tileHover() {
   $('.work-tile'). each(function(i, el) {
@@ -290,7 +318,57 @@ function tileHover() {
 
 
 
+function revealMe() {
+  $('#reveal-me-btn').on("click", function() {
+    var tl = new TimelineMax();
+        tl.to('#reveal-me-btn', .3, {autoAlpha: 0})
+          .to('.portrait-cover', .4, {scaleY: 0, autoAlpha: 0, transformOrigin: 'top'})
+          .set('.portrait-cover', {display: 'none'})
+          .add(myPic)
+          .add(myFancyEyes())
+          .add(meBlink());
+    return tl;
+  });
+};
 
+
+
+
+function myPic() {
+      var tl = new TimelineMax();
+          tl.set('#svg-portrait', {autoAlpha: 1})
+          tl.staggerFromTo("#svg-portrait .st0", .3 ,{ autoAlpha: 0, scale: 8},
+                                       {scale: 1, autoAlpha: 1, stagger: 0.007});
+          return tl.timeScale(2);
+    };
+
+
+function myFancyEyes() {
+  $("#about-me").mousemove(function(event) {
+    var eye = $(".myEye");
+    var x = (eye.offset().left) + (eye.width() / 2);
+    var y = (eye.offset().top) + (eye.height() / 2);
+    var rad = Math.atan2(event.pageX - x, event.pageY - y);
+    var rot = (rad * (180 / Math.PI) * -1) + 180;
+    var eyeBound = $(".eyeBound");
+
+    eye.css({
+      left: event.pageX / (x * 1/4),
+      top: event.pageY / (y * 2),
+      '-webkit-transform': 'rotate(' + rot + 'deg)',
+      '-moz-transform': 'rotate(' + rot + 'deg)',
+      '-ms-transform': 'rotate(' + rot + 'deg)',
+      'transform': 'rotate(' + rot + 'deg)',
+    });
+  });
+}
+
+
+function meBlink() {
+  var meBlinkTL = new TimelineMax(),
+      delay = getRandom(0.5, 4);
+      meBlinkTL.from('.eyeLid', .15, {scaleY: 0, transformOrigin: "top", yoyo: true, delay: delay, onComplete: meBlink});
+};
 
 
 
