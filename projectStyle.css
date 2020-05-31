@@ -1291,9 +1291,8 @@ section#credits a {
 /* -------------------------------------------- media query ------------------------------------- */
 
 @media screen and (max-width: 1024px) {
-	/* .hero-img {
-		background-attachment: scroll;
-	} */
+
+
 	#schecker-hero {
 		height: auto;
 	}
@@ -1306,6 +1305,16 @@ section#credits a {
 }
 
 @media screen and (max-width: 768px) {
+
+	.project-intro {
+		height: auto;
+	}
+	.project-hero {
+		height: 40vh;
+	}
+	.hero-img {
+		background-attachment: scroll;
+	}
 	.block {
 		width: 100%;
 	}
