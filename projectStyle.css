@@ -347,23 +347,7 @@ section.challenge {
 	background-attachment: fixed;
 }
 
-.intro-fullscreen-bg {
-	width: 100%;
-	height: auto;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	-o-object-fit: cover;
-	object-fit: cover;
-	padding-top: calc(60px + 5%);
-	padding-bottom: 5%;
-}
 
-img.not-fullscreen-img {
-	width: 92%;
-	height: auto;
-}
 
 .wrapper {
 	width: 100%;
@@ -660,7 +644,6 @@ a.cta-w-label:hover {
 }
 
 .btt-arrow:after {
-	/* transform-origin: top; */
 	-webkit-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
@@ -1308,12 +1291,9 @@ section#credits a {
 /* -------------------------------------------- media query ------------------------------------- */
 
 @media screen and (max-width: 1024px) {
-	.intro-fullscreen-bg {
+	/* .hero-img {
 		background-attachment: scroll;
-	}
-	.hero-img {
-		background-attachment: scroll;
-	}
+	} */
 	#schecker-hero {
 		height: auto;
 	}
