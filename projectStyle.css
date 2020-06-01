@@ -1473,35 +1473,39 @@ section#credits a {
 
 #svg-portrait {
 	visibility: hidden;
+	overflow: visible;
 }
 
 
 
 .myEye {
-	position: relative;
+	position: fixed;
 	border-radius: 50%;
 	height: 22px;
 	width: 22px;
-	background-color: rgba(88, 46, 46, 1);
+	background-color: rgba(71, 45, 46, 1);
+	border: 2px solid rgba(53, 35, 36, .8);
+	z-index: -90000;
 }
 
 .myEye:after {
 	position: absolute;
-	top: 4px;
-	left: 7px;
+	top: 3px;
+	left: 6px;
 	width: 5px;
 	height: 5px;
-	background-color: rgba(255, 255, 255, .8);
+	background-color: rgba(255, 255, 255, .7);
 	border-radius: 50%;
 	content: " ";
 }
 
 .myEye:before {
 	position: absolute;
-	top: 6px;
-	left: 6px;
-	width: 10px;
-	height: 10px;
+	top: 4px;
+	left: 4px;
+	width: 11px;
+	height: 11px;
+	border: 1px solid rgba(255, 255, 255, .2);
 	background-color: rgba(0, 0, 0, .9);
 	border-radius: 50%;
 	content: " ";
