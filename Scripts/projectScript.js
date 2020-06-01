@@ -22,7 +22,7 @@ $(window).ready(function() {
   scheckerUserFlowDrag();
   floatingMockup();
   tileHover();
-  revealMe();
+  // revealMe();
 
   TweenMax.from('.project-hero', 1.5, {autoAlpha: 0});
   TweenMax.staggerFrom('.project-intro .wrapper div', 1, {y: 100, autoAlpha: 0}, .2);
