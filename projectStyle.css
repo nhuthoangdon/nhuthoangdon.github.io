@@ -1474,18 +1474,11 @@ section#credits a {
 }
 
 #svg-portrait {
+	position: relative;
 	visibility: hidden;
 }
 
-.myEyes {
-	display: -webkit-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-flow: row nowrap;
-	flex-flow: row nowrap;
-}
+
 
 .myEye {
 	position: relative;
