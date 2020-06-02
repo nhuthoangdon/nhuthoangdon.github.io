@@ -7,9 +7,19 @@ function getRandom(min, max) {
  return Math.floor(Math.random() * (max - min)) + min;
 };
 
+function is_touch_enabled() {
+  return ( 'ontouchstart' in window ) ||
+         ( navigator.maxTouchPoints > 0 ) ||
+         ( navigator.msMaxTouchPoints > 0 );
+};
 
 
 $(window).ready(function() {
+
+  $('.myEye').css({
+    left: 4,
+    top: 0
+  });
 
 //footer - Other works tiles
   var workTiles = $(".work-tile");
@@ -23,6 +33,9 @@ $(window).ready(function() {
   floatingMockup();
   tileHover();
   revealMe();
+
+
+
 
   TweenMax.from('.project-hero', 1.5, {autoAlpha: 0});
   TweenMax.staggerFrom('.project-intro .wrapper div', 1, {y: 100, autoAlpha: 0}, .2);
@@ -343,6 +356,9 @@ function myPic() {
     };
 
 
+
+
+
 function myFancyEyes() {
   $("#about-me").mousemove(function(event) {
     var eye = $(".myEye");
@@ -350,18 +366,17 @@ function myFancyEyes() {
     var y = (eye.offset().top) + (eye.height() / 2);
     var rad = Math.atan2(event.pageX - x, event.pageY - y);
     var rot = (rad * (180 / Math.PI) * -1) + 180;
-    var eyeBound = $(".eyeBound");
 
-    eye.css({
-      left: event.pageX / (x * 1/4),
-      top: event.pageY / (y * 2),
-      '-webkit-transform': 'rotate(' + rot + 'deg)',
-      '-moz-transform': 'rotate(' + rot + 'deg)',
-      '-ms-transform': 'rotate(' + rot + 'deg)',
-      'transform': 'rotate(' + rot + 'deg)',
-    });
+      eye.css({
+        left: event.pageX / (x * 1/4),
+        top: event.pageY / (y * 2),
+        '-webkit-transform': 'rotate(' + rot + 'deg)',
+        '-moz-transform': 'rotate(' + rot + 'deg)',
+        '-ms-transform': 'rotate(' + rot + 'deg)',
+        'transform': 'rotate(' + rot + 'deg)',
+      });
   });
-}
+};
 
 
 function meBlink() {
