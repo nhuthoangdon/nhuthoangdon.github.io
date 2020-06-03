@@ -76,7 +76,6 @@ $(document).ready(function() {
 
 
   $(window).on('scroll', function () {
-
       var pixs = $(document).scrollTop()
           pixs = pixs/500;
 
@@ -86,19 +85,18 @@ $(document).ready(function() {
 
       var scrollHeight = $(document).height(),
     	    scrollPosition = $(window).height() + $(window).scrollTop();
-      var tl = new TimelineMax();
+      var footerTL = new TimelineMax();
 
     	if ((scrollHeight - scrollPosition) <= 50) {
-          tl.to("footer", .8, {opacity: 1, scaleY: 1, ease: Back.easeOut.config(1.7)});
+          footerTL.to("footer", .8, {opacity: 1, scaleY: 1, ease: Back.easeOut.config(1.7)});
     	} else {
-          tl.to("footer", .6, {opacity: 0, scaleY: 0});
+          footerTL.to("footer", .6, {opacity: 0, scaleY: 0});
       }
-
   });
 
 
 
-
+//Schecker scroll animation
 var triggerOffset = document.documentElement.clientHeight / 1.2,
     duration = $( window ).height() / 2,
     requestId = null,
@@ -121,18 +119,14 @@ var triggerOffset = document.documentElement.clientHeight / 1.2,
     scene_4a = $('#schecker-viewInvision').offset().top;
 
 
-
-
 TweenLite.set('#schecker-intro .block', { autoAlpha: 0, scaleX: 0, transformOrigin: "top left" });
 
 
-
-
-
 // SCROLL MAGIC!!!
-var tl = new TimelineMax({ paused: true })
+var scheckerTL = new TimelineMax({ paused: true })
     .to(".mouse_scroll", 600, { y: "+=800", autoAlpha: 0 }, scene_1 - 100)
     .to("#schecker-hero", 300, { scale: 0, autoAlpha: 0 }, scene_1 - 100)
+    .add("scheckerHeroStarts", scene_1)
     .from("#schecker-intro", duration, { scale: 0, transformOrigin: "center" }, scene_1)
     .staggerTo("#schecker-intro .block", duration - 100, { autoAlpha: 1, scaleX: 1 }, 100, scene_1)
     .from("#schecker-hiw-section h3", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_2)
@@ -160,6 +154,7 @@ var tl = new TimelineMax({ paused: true })
 
 
 
+
 // Only update on animation frames
 window.addEventListener("scroll", function() {
   if (!requestId) {
@@ -171,7 +166,7 @@ update();
 
 // Set timeline time to scrollTop
 function update() {
-  tl.time(window.pageYOffset + triggerOffset);
+  scheckerTL.time(window.pageYOffset + triggerOffset);
   requestId = null;
 }
 

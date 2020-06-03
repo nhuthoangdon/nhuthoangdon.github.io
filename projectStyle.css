@@ -726,7 +726,7 @@ h6.CTA-label {
 	background-image: -o-linear-gradient(top left, #f90760, #0e83ea);
 	background-image: -webkit-gradient(linear, left top, right bottom, from(#f90760), to(#0e83ea));
 	background-image: linear-gradient(to bottom right, #f90760, #0e83ea);
-	z-index: -1;
+	z-index: 0;
 	-webkit-transition: all 1s;
 	-o-transition: all 1s;
 	transition: all 1s;
@@ -904,7 +904,6 @@ footer {
 	width: 100%;
 	height: auto;
 	position: relative;
-	z-index: 1000;
 	left: 0;
 	bottom: 0;
 	right: 0;
