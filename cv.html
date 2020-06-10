@@ -22,6 +22,8 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
+  <script src="./Scripts/smoothscroll.min.js"></script>
+  <script src="https://unpkg.com/smoothscroll-anchor-polyfill"></script>
 
 </head>
 
@@ -37,10 +39,10 @@
     <svg id="cv-icon" width="144px" height="97px" viewBox="0 0 144 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="Desktop-HD" transform="translate(-1058.000000, -396.000000)" fill-rule="nonzero">
-                <path d="M1090.5,490.5 L1169.5,490.5 L1169.5,404 C1169.5,400.410149 1166.58985,397.5 1163,397.5 L1097,397.5 C1093.41015,397.5 1090.5,400.410149 1090.5,404 L1090.5,490.5 Z" id="Rectangle-1" stroke="#5CACD3" stroke-width="3"></path>
-                <path d="M1146.5,399.523233 L1146.5,413 C1146.5,416.589851 1149.41015,419.5 1153,419.5 L1167.27584,419.5 L1146.5,399.523233 Z" id="Rectangle-2" stroke="#5CACD3" stroke-width="3"></path>
-                <path d="M1059.5,491 L1200.49023,491" id="Line-4" stroke="#5CACD3" stroke-width="3" stroke-linecap="round"></path>
-                <circle id="cv-Oval-1" stroke="#F66C38" stroke-width="3" cx="1119" cy="418" r="7"></circle>
+                <path d="M1090.5,490.5 L1169.5,490.5 L1169.5,404 C1169.5,400.410149 1166.58985,397.5 1163,397.5 L1097,397.5 C1093.41015,397.5 1090.5,400.410149 1090.5,404 L1090.5,490.5 Z" id="Rectangle-1" stroke="#a107f9" stroke-width="3"></path>
+                <path d="M1146.5,399.523233 L1146.5,413 C1146.5,416.589851 1149.41015,419.5 1153,419.5 L1167.27584,419.5 L1146.5,399.523233 Z" id="Rectangle-2" stroke="#a107f9" stroke-width="3"></path>
+                <path d="M1059.5,491 L1200.49023,491" id="Line-4" stroke="#a107f9" stroke-width="3" stroke-linecap="round"></path>
+                <circle id="cv-Oval-1" stroke="#f90760" stroke-width="3" cx="1119" cy="418" r="7"></circle>
                 <path d="M1134,447 C1134,438.715729 1127.28427,432 1119,432 C1110.71573,432 1104,438.715729 1104,447" id="cv-Oval-2" stroke="#F66C38" stroke-width="3"></path>
                 <path d="M1102.63333,458 L1158.71797,458" id="Line-1" stroke="#4B4747" stroke-width="2" stroke-linecap="square"></path>
                 <path d="M1102.63333,468 L1158.71797,468" id="Line-2" stroke="#4B4747" stroke-width="2" stroke-linecap="square"></path>
@@ -52,128 +54,184 @@
     <h5><small>NHUT H. DON</small></h5>
 
 
-  <div class="small-arrow-down">
-    <div class="btt-arrow"></div>
+  <a class="small-arrow-down" id="cv-arrow-down" href="#highlights">
+    <div class="small-arrow"></div>
+  </a>
+</section>
+
+
+<section class="cv-contents" id="highlights">
+  <h3>Highlights</h3>
+  <div class="blocks">
+    <div class="block">
+      <h4>Education</h4>
+      <h5>Bachelor of Design (Multimedia Systems)</h5>
+      <p>
+        Royal Melbourne Institute of Technology
+      </p>
+    </div>
+
+    <div class="block">
+      <h4>Work Experience</h4>
+      <h5>UX/UI Designer</h5>
+      <p>
+        2014 - current
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cv-contents">
+  <h3>Skills</h3>
+
+  <div class="blocks">
+
+    <div class="block">
+      <h4>The Essentials</h4>
+      <ul>
+        <li><p>Good knowledge of Design principles</p></li>
+        <li><p>Have great user empathy</p></li>
+        <li><p>Experience with user-centred design</p></li>
+        <li><p>Understandings of usability and user research/testing</p></li>
+        <li><p>Experience working on full product life cycle (concept/ideation stage to final product)</p></li>
+        <li><p>Experience working on interdisciplinary projects</p></li>
+        <li><p>Experience working with cross-functional teams & various stakeholders</p></li>
+        <li><p>Team-leading & mentoring experience</p></li>
+        <li><p>Work well independently and/or in a team </p></li>
+        <li><p>Highly familiar with international working environment</p></li>
+        <li><p>Strong problem-solving abilities & resilience</p></li>
+        <li><p>Quick adaptability & high flexibility</p></li>
+        <li><p>Eagerness to learn and willingness to get out of comfort zone</p></li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h4>The Technical</h4>
+      <ul>
+        <li><p>Proficient in Sketch, InVision, InVision Studio, Zeplin, Marvel</p></li>
+        <li><p>and relevant Software: Adobe Photoshop/Illustrator</p></li>
+        <li><p>Abilities to use other Multimedia Software (i.e. Audition, InDesign, Premiere, 3Ds Max)</p></li>
+        <li><p>Strong foundation to quickly pick up new tools</p></li>
+        <li><p>Knowledge of HTML5/CSS3/JS and some libraries (learning since 09-2018)</p></li>
+        <li><p>Experience designing for multiple platforms (responsive websites, mobile apps & other devices)</p></li>
+        <li><p>Familiar with Confluence & Jira</p></li>
+        <li><p>Multimedia background (knowledge of visual/interaction design, photography, animations,
+               video & sound editing, etc.)</p></li>
+      </ul>
+    </div>
+
+    <div class="block" id="languages">
+      <h4>The Languages</h4>
+      <ul>
+        <li><p>English - Full Professional</p></li>
+        <li><p>Spanish - Limited Working (learning at B2 level)</p></li>
+        <li><p>German - Elementary (learning)</p></li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
 
 
 
-
-  <!-- <div class="timeline">
-
+<section class="cv-contents" id="timeline">
+  <h3>Career Summary</h3>
+  <div class="timeline">
+    <span class="tl-line"></span>
     <div class="event">
-      <div class="year" id="tl-2014"><strong>2014</strong></div>
-      <div class="time-mark" id="tl-1st"></div>
+      <div class="year"><h6>2010 - 2014</h6></div>
+      <div class="time-mark"></div>
       <div class="achievemnents">
         <div>
-          <h6 id="tl-graduated">Graduated</h6>
-          <ul>
-            <li id="tl-BDes">
-              BDes (Multimedia Systems)
-            </li>
-          </ul>
+          <h6>Bachelor of Design <br />(Multimedia Systems)</h6>
+          <p><small>RMIT | Saigon, VN & Melbourne, AU</small></p>
         </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="year"><h6>09/2014 - 12/2014</h6></div>
+      <div class="time-mark"></div>
+      <div class="achievemnents">
         <div>
-          <h6 id="tl-designer">UX/UI Designer @ S60</h6>
+          <h6>UX/UI Intern</h6>
+          <p><small><a href="https://s60.co" target="_blank">Studio60</a> | VN Office</small></p>
           <ul>
-            <li id="tl-enhancements">Experience gained</li>
-            <li id="tl-uxui">Wireframes, mockups, prototypes</li>
-            <li id="tl-platforms">Multiple platforms</li>
-            <li id="tl-assisted_testings">Assisted with testings</li>
+            <li>Optimised/edited images & assets for web/app development</li>
+            <li>Assisted in visual-related tasks</li>
+            <li>Designed company's Intranet</li>
           </ul>
         </div>
       </div>
     </div>
 
     <div class="event">
-      <div class="year" id="tl-2016"><strong>2016</strong></div>
-      <div class="time-mark" id="tl-2nd"></div>
+      <div class="year"><h6>01/2015 - 09/2018</h6></div>
+      <div class="time-mark"></div>
       <div class="achievemnents">
         <div>
-          <h6 id="tl-senior">Senior UX/UI Designer @ S60</h6>
+          <h6>UX/UI Designer <br /> (Junior - Senior/Local Teamlead)</h6>
+          <p><small><a href="https://s60.co" target="_blank">Studio60</a> | VN Office</small></p>
           <ul>
-            <li id="tl-elements">Specs/guidelines</li>
-            <li id="tl-liaised">Cross-functional team liaisions & collaboration</li>
-            <li id="tl-mentored">Teamwork & team members mentoring</li>
-            <li id="tl-managed">Tasks management</li>
+            <li>Produced wireframes, mockups, prototypes for Web/App Products</li>
+            <li>Created UI specs, styleguides, assets for product development</li>
+            <li>Gathered insights from user research team & stakeholders to create/amend designs accordingly</li>
+            <li>Promoted UX/UI solutions</li>
+            <li>Liaised & collaborated with international stakeholders & teams</li>
+            <li>Managed local design team & mentored interns</li>
+            <li>Created visual-related materials (e.g. decks, banners, promotions)</li>
+            <li>Designed company's new office (floor plan, 3D design, interior)</li>
           </ul>
         </div>
       </div>
     </div>
 
     <div class="event">
-      <div class="year" id="tl-2018"><strong>2018</strong></div>
-      <div class="time-mark" id="tl-3rd"></div>
+      <div class="year"><h6>10/2018 - current</h6></div>
+      <div class="time-mark"></div>
       <div class="achievemnents">
         <div>
-          <h6 id="tl-self">Self improvement & side projects</h6>
+          <h6>Freelancer</h6>
           <ul>
-            <li id="tl-frondends">HTML/CSS/JS</li>
-            <li id="tl-side_projects"><a href = "./index.html">Product ideas & portfolio</a>
-              <img id="hand-waving" alt="" src="./Assets/hand-waving.png" />
-              <img id="hand-pointing" alt="" src="./Assets/hand-pointing.png" />
-              <img id="hand-ok" alt="" src="./Assets/hand-ok.png" />
-            </li>
+            <li>Working on self's projects</li>
+            <li>Learning Frontend</li>
+            <li>Freelancing as a UX/UI designer</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="event">
-      <div class="year" id="tl-skills"><strong>Skills</strong>
-      </div>
-      <div class="time-mark" id="tm-skills"></div>
-      <div class="achievemnents">
-        <div>
-          <h6 id="tl-tools">Tools</h6>
-          <ul>
-            <li id="tl-sketch">Sketch</li>
-            <li id="tl-invision">InVision & InVision Studio</li>
-            <li id="tl-zeplin">Zeplin</li>
-            <li id="tl-marvel">Marvel</li>
-            <li id="tl-photoshop">Photoshop</li>
-            <li id="tl-illustrator">Illustrator</li>
-            <li id="tl-more">More (if needed)</li>
-          </ul>
-        </div>
-        <div>
-          <h6>UX/UI</h6>
-          <ul>
-            <li>User-first engagement</li>
-            <li>Concept developing</li>
-            <li>UX/UI principles</li>
-            <li>Clean & intuitive approach</li>
-            <li>Willingness to learn more</li>
-          </ul>
-        </div>
-        <div>
-          <h6>Front-end</h6>
-          <ul>
-            <li>HTML/CSS/JS</li>
-          </ul>
-        </div>
-        <div>
-          <h6>Others</h6>
-          <ul>
-            <li>Teamwork & Leadership</li>
-            <li>Interpersonal skills</li>
-            <li>Ownership & commitment</li>
-            <li>A burning desire to learn, improve and make impacts.</li>
-          </ul>
-        </div>
-      </div>
+  </div>
+
+</section>
+
+
+
+
+<section class="cv-contents" id="contact">
+  <h3>Contact Information</h3>
+  <div class="blocks">
+    <div class="block">
+      <h4>Email</h4>
+      <p>
+        <a href="mailto:nhuthoangdon@gmail.com">nhuthoangdon@gmail.com</a>
+      </p>
+
+      <h4>Mobile</h4>
+      <p>
+        +84-93-401-3398
+      </p>
     </div>
 
-  </div> -->
-
-
-
-
-
-
-
+    <div class="block">
+      <h4>Website/Portfolio</h4>
+      <p>
+        <a href="https://nhuthoangdon.github.io">nhuthoangdon.github.io</a>
+      </p>
+    </div>
+  </div>
+</section>
 
 
 
@@ -195,6 +253,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/RoundPropsPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/utils/Draggable.min.js"></script>
+
   <script type="text/javascript" src="./Scripts/cvScript.js"></script>
 </body>
 
