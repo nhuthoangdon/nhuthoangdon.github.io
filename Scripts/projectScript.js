@@ -332,7 +332,7 @@ function revealMe() {
         tl.to('#reveal-me-btn', .3, {autoAlpha: 0})
           .to('.portrait-cover', .4, {scaleY: 0, autoAlpha: 0, transformOrigin: 'top'})
           .set('.portrait-cover', {display: 'none'})
-          .add(myPic)
+          .add(myPic())
           .add(myFancyEyes())
           .add(meBlink());
     return tl;
@@ -341,12 +341,11 @@ function revealMe() {
 
 
 
-
+TweenMax.set('#svg-portrait .st0', {autoAlpha: 0, scale: 5});
 function myPic() {
       var tl = new TimelineMax();
           tl.set('#svg-portrait', {autoAlpha: 1})
-          tl.staggerFromTo("#svg-portrait .st0", .3 ,{ autoAlpha: 0, scale: 8},
-                                       {scale: 1, autoAlpha: 1, stagger: 0.007});
+          tl.staggerTo("#svg-portrait .st0", .3, {scale: 1, autoAlpha: 1, stagger: 0.007});
           return tl.timeScale(2);
     };
 
