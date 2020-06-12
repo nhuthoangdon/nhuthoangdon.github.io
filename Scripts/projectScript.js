@@ -341,7 +341,7 @@ function revealMe() {
 
 
 
-TweenMax.set('#svg-portrait .st0', {autoAlpha: 0, scale: 5});
+TweenMax.set('#svg-portrait .st0', {autoAlpha: 0, scale: 8});
 function myPic() {
       var tl = new TimelineMax();
           tl.set('#svg-portrait', {autoAlpha: 1})
