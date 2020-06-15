@@ -14,6 +14,7 @@ function is_touch_enabled() {
 };
 
 
+
 $(window).ready(function() {
 
   $('.myEye').css({
@@ -393,24 +394,6 @@ function scheckerUserFlowDrag() {
   Draggable.create("#schecker-userFlow", {type:"x,y", edgeResistance:0.65, bounds:"#schecker-draggable-flow"});
 };
 
-// function scheckerUserFlowZoom() {
-//
-//   TweenLite.set("#schecker-userFlow", {scale: .4, transformOrigin: "top center"});
-//
-//   var flowZoomTL = new TimelineMax();
-//       flowZoomTL.to("#schecker-zoom-btn", .5, {scale: .3, right: 0, top: 0, force3D:true, ease: Back.easeIn.config(4)})
-//                 .to("#schecker-userFlow", 1.5, {scale: 1, transformOrigin: "center"}, "-=.2");
-//       flowZoomTL.reverse();
-//
-//         $("#schecker-zoom-btn").click(function() {
-//           if (flowZoomTL.reversed()) {
-//             flowZoomTL.play();
-//             zoomBtn.pause();
-//           } else {
-//             flowZoomTL.reverse();
-//           }
-//         });
-// };
 
 
 
