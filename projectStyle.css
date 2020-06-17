@@ -379,6 +379,10 @@ section.challenge {
 	flex-wrap: wrap-reverse;
 }
 
+					.project-intro .wrapper div {
+						visibility: hidden;
+					}
+
 .big-col {
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;

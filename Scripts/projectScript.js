@@ -39,14 +39,14 @@ $(window).ready(function() {
 
 
   TweenMax.from('.project-hero', 1.5, {autoAlpha: 0});
-  TweenMax.staggerFrom('.project-intro .wrapper div', 1, {y: 100, autoAlpha: 0}, .2);
+  TweenMax.staggerTo('.project-hero, .project-intro .wrapper div', 1, {y: 0, autoAlpha: 1}, .2);
 
 });
 
 
 $(document).ready(function() {
 
-
+  TweenMax.set('.project-hero, .project-intro .wrapper div', {y: 100, autoAlpha: 0});
   TweenMax.staggerFromTo(".about, .portrait-cover", .8, {y: 100}, {autoAlpha: 1, y: 0}, .2);
 
 
