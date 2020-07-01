@@ -708,7 +708,7 @@ section.project {
 /* Intro Section */
 
 #intro_text {
-	font-size: calc(3em + 3vw);
+	font-size: calc(3em + 4vw);
 	margin: 10px;
 	padding: 10px;
 	-ms-flex-item-align: end;

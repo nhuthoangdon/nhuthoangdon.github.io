@@ -26,14 +26,26 @@ $(window).ready(function() {
   var workTiles = $(".work-tile");
       workTiles.toArray();
   var tileWidth = vw/workTiles.length;
+  let tileMql1 = window.matchMedia('(max-width: 1124px)');
+  let tileMql2 = window.matchMedia('(max-width: 750px)');
+  if (workTiles.length > 3) {
+    tileWidth = vw / 3;
+  };
+  if (tileMql1.matches) {
+    tileWidth = vw / 2;
+  }
+  if (tileMql2.matches) {
+    tileWidth = vw;
+  }
   workTiles.css("width", tileWidth);
 
-  TweenMax.staggerFromTo('#all-works h2, #all-works div', .8, {y: 100}, {y: 0, autoAlpha: 1, immediateRender: false}, .2);
+
+  TweenMax.staggerFromTo('#all-works .work-tile', .8, {y: 100}, {y: 0, autoAlpha: 1, immediateRender: false}, .2);
 
   scheckerUserFlowDrag();
   floatingMockup();
-  tileHover();
   revealMe();
+  toggleVideo();
 
 
 
@@ -310,20 +322,6 @@ function CTAbuttonHover() {
 
 
 
-function tileHover() {
-  $('.work-tile'). each(function(i, el) {
-    $(this).hover (
-     function() {
-       TweenMax.fromTo($('.tile-CTA', this), .5, {scale: 0}, {scale: 1, autoAlpha: 1, ease: "back.out(1.7)"});
-       TweenMax.to($('> div', this), .3, {scale: 1.05});
-    },
-     function() {
-       TweenMax.to($('.tile-CTA', this), .3, {scale: 0, autoAlpha: 0});
-       TweenMax.to($('> div', this), .2, {scale: 1, ease: "none"});
-      }
-    );
-  })
-};
 
 
 
@@ -393,6 +391,38 @@ function meBlink() {
 function scheckerUserFlowDrag() {
   Draggable.create("#schecker-userFlow", {type:"x,y", edgeResistance:0.65, bounds:"#schecker-draggable-flow"});
 };
+
+
+
+// ------------------------------------------------- Other works ---------------------------------------------
+
+
+function toggleVideo() {
+
+  $('.work-tile').each(function(i, el) {
+    var video = $(this).find(".tile-video");
+    $(this).click(function() {
+      var videoPlayTl = new TimelineMax({onComplete: function() {video.play()}});
+          videoPlayTl.to($(".video-tile-CTA, .tile-desc", this), .3, {autoAlpha: 0})
+                     .set($(".video-lightbox", this), {display: "inline-flex", autoAlpha: 0})
+                     .to($(".video-lightbox", this), .5, {autoAlpha: 1});
+
+    });
+
+    $('.close-video').click(function() {
+      var tl = new TimelineMax({onStart: function() {video.pause()}});
+      tl.to($(this).parent(), .5, {autoAlpha: 0})
+        .set($(this).parent(), {display: "none"})
+        .to($(this).parent().siblings(), .3, {autoAlpha: 1});
+    });
+  });
+};
+
+
+
+
+
+
 
 
 

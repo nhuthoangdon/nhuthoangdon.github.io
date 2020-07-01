@@ -247,7 +247,7 @@ function CTAbuttonHover() {
      $("#schecker-CTA").hover (
        function() {
          TweenMax.to("#hero-overlay_schecker", .5, {height: "100%", backgroundColor: "white", autoAlpha: .7, delay: .4});
-         TweenMax.to("#prj-des_schecker", .6, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
+         TweenMax.to("#prj-des_schecker", .4, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
        },
        function () {
          TweenMax.to("#hero-overlay_schecker", .5, {height: 0, autoAlpha: 0});
@@ -257,7 +257,7 @@ function CTAbuttonHover() {
      $("#sa-CTA").hover (
        function() {
          TweenMax.to("#hero-overlay_sa", .5, {height: "100%", backgroundColor: "black", autoAlpha: .3, delay: .4});
-         TweenMax.to("#prj-des_sa", .6, {backgroundColor: "rgba(0,0,0,0)", delay: .5});
+         TweenMax.to("#prj-des_sa", .4, {backgroundColor: "rgba(0,0,0,0)", delay: .5});
          TweenMax.to("#prj-des-contents_sa", .5, {color: "white", delay: .5});
        },
        function () {
@@ -269,7 +269,7 @@ function CTAbuttonHover() {
      $("#bardot-CTA").hover (
        function() {
          TweenMax.to("#hero-overlay_bardot", .5, {height: "100%", backgroundColor: "white", autoAlpha: .7, delay: .4});
-         TweenMax.to("#prj-des_bardot", .6, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
+         TweenMax.to("#prj-des_bardot", .4, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
        },
        function () {
          TweenMax.to("#hero-overlay_bardot", .5, {height: 0, autoAlpha: 0});
