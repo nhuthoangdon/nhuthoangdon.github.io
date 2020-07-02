@@ -911,11 +911,11 @@ h6.CTA-label {
 						}
 
 #tile_bardot {
-	background-image: url("./Assets/BardotCampaign(5).jpg");
+	background-image: url("./Assets/bardot-mockup.jpg");
 }
 
 #tile_sa {
-	background-image: url('./Assets/australia-2910680_1920.jpg');
+	background-image: url('./Assets/sa-mockup.jpg');
 }
 
 #tile_schecker {
@@ -923,7 +923,7 @@ h6.CTA-label {
 }
 
 #tile_rr {
-	background-image: url("./Assets/rr-hero.jpg");
+	background-image: url("./Assets/rr-mockup.jpg");
 }
 
 #tile_type-creature {
@@ -962,6 +962,7 @@ h6.CTA-label {
 	color: #0C1826;
 	font-weight: 500;
 	cursor: pointer;
+	text-align: center;
 }
 
 .work-tile:hover .tile-CTA {
@@ -1318,6 +1319,7 @@ footer {
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
+			text-align: center;
 		}
 
 #all-works h2,
@@ -1459,7 +1461,9 @@ section#sa-challenge {
 /* ------------------------------------------- RR --------------------------------------------- */
 
 #rr-hero-img {
-	background-image: url("./Assets/rr-hero.jpg");
+	background-image: url("./Assets/rr-mockup.jpg");
+	background-size: contain;
+	background-color: #F0F0F0;
 }
 
 
@@ -1474,7 +1478,7 @@ section#rr-challenge {
 
 /* ---------------------------------------------- credits ------------------------------------------------ */
 
-section#credits p {
+section#credits {
 	text-align: center;
 }
 
@@ -1654,9 +1658,6 @@ section#credits a {
 		#first-tiles {
 			flex-direction: row-reverse;
 		}
-	#title-tile {
-		order: 1;
-	}
 }
 
 @media screen and (max-width: 1024px) {
