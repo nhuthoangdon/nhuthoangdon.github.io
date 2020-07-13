@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 html,
 body {
 	font-size: 100%;
@@ -335,7 +342,7 @@ section.challenge {
 	align-items: center;
 	justify-content: space-evenly;
 }
-		.challenge h3 {
+		section h3 {
 			margin-bottom: calc(25px + 1%);
 		}
 
@@ -833,9 +840,14 @@ h6.CTA-label {
 
 
 
- .tile-set {
+.tile-set {
+	 display: -webkit-inline-box;
+	 display: -ms-inline-flexbox;
 	 display: inline-flex;
-	 flex-direction: column;
+	 -webkit-box-orient: vertical;
+	 -webkit-box-direction: normal;
+	     -ms-flex-direction: column;
+	         flex-direction: column;
  }
 
 	.work-tiles {
@@ -845,70 +857,86 @@ h6.CTA-label {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-
-		flex-flow: row wrap;
-
-		align-items: center;
-		justify-content: flex-start;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		    -ms-flex-flow: row wrap;
+		        flex-flow: row wrap;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: start;
+		    -ms-flex-pack: start;
+		        justify-content: flex-start;
 	}
 
-		.work-tile {
-			width: auto;
-			min-width: 200px;
-			height: 50vh;
-			margin: 0;
-			display: -webkit-inline-box;
-			display: -ms-inline-flexbox;
-			display: inline-flex;
-			flex-direction: column;
-			-webkit-box-align: center;
-			-ms-flex-align: center;
-			align-items: center;
-			-webkit-box-pack: center;
-			-ms-flex-pack: center;
-			justify-content: center;
-			overflow: hidden;
-			background-color: white;
-		}
+	.work-tile {
+		width: auto;
+		min-width: 200px;
+		height: 50vh;
+		margin: 0;
+		display: -webkit-inline-box;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+						flex-direction: column;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		overflow: hidden;
+		background-color: white;
+	}
 
 		.work-tile:nth-child(2n+0) {
 			background-color: #e1e5eb;
 		}
 
-			.work-tile div {
-				width: 100%;
-				height: 100%;
-				background-size: cover;
-				background-repeat: no-repeat;
-				background-origin: border-box;
-				background-position: center;
-				-webkit-transition: .3s;
-				-o-transition: .3s;
-				transition: .3s;
-			}
-
-					.video-lightbox {
+		.work-tile div {
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-origin: border-box;
+			background-position: center;
+			-webkit-transition: .3s;
+			-o-transition: .3s;
+			transition: .3s;
+		}
+				.video-lightbox {
+					width: 100%;
+					height: 100%;
+					background-color: black;
+					display: -webkit-inline-box;
+					display: -ms-inline-flexbox;
+					display: inline-flex;
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+							-ms-flex-direction: column;
+									flex-direction: column;
+					-webkit-box-align: center;
+							-ms-flex-align: center;
+									align-items: center;
+					-webkit-box-pack: end;
+							-ms-flex-pack: end;
+									justify-content: flex-end;
+					position: absolute;
+					display: none;
+				}
+					.tile-video {
 						width: 100%;
-						height: 100%;
-						background-color: black;
-						display: inline-flex;
-						flex-direction: column;
-						align-items: center;
-						justify-content: flex-end;
-						position: absolute;
-						display: none;
+						height: auto;
 					}
-						.tile-video {
-							width: 100%;
-							height: auto;
-						}
-						.close-video {
-							color: white;
-							position: absolute;
-							top: 20px;
-							cursor: pointer;
-							z-index: 10000;
-						}
+					.close-video {
+						color: white;
+						position: absolute;
+						top: 20px;
+						cursor: pointer;
+						z-index: 10000;
+					}
 
 #tile_bardot {
 	background-image: url("./Assets/bardot-mockup.jpg");
@@ -950,14 +978,27 @@ h6.CTA-label {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	position: absolute;
 	bottom: 0;
-	transform-origin: bottom center;
-	transform: scaleY(0);
+	-webkit-transform-origin: bottom center;
+	    -ms-transform-origin: bottom center;
+	        transform-origin: bottom center;
+	-webkit-transform: scaleY(0);
+	    -ms-transform: scaleY(0);
+	        transform: scaleY(0);
 	opacity: 0;
+	-webkit-transition: all ease-in-out .3s;
+	-o-transition: all ease-in-out .3s;
 	transition: all ease-in-out .3s;
 	color: #0C1826;
 	font-weight: 500;
@@ -1208,7 +1249,6 @@ footer {
 	width: 55%;
 	min-width: 290px;
 	height: auto;
-	margin-top: -3%;
 }
 
 #schecker-intro {
@@ -1227,7 +1267,7 @@ footer {
 }
 
 #schecker-hiw-section h3 {
-	margin-bottom: 0;
+	margin-bottom: calc(25px + 3%);
 }
 
 .ic_schecker-feature {
@@ -1304,23 +1344,38 @@ footer {
 
 
 	#title-tile {
-		flex-grow: 2;
-		display: flex; flex-direction: column;
-		align-items: center; justify-content: center;
-		background-color: white;
-	}
-		#title-tile h1 {
-			margin: 25px;
+			-webkit-box-flex: 2;
+			    -ms-flex-positive: 2;
+			        flex-grow: 2;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column;
+			-webkit-box-align: center;
+			    -ms-flex-align: center;
+			        align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+			background-color: white;
 		}
+			#title-tile h1 {
+				margin: 25px;
+			}
 
-		.tile-desc {
-			width: 100%; height: 100%;
-			display: inline-flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
-		}
+			.tile-desc {
+				width: 100%; height: 100%;
+				display: -webkit-inline-box;
+				display: -ms-inline-flexbox;
+				display: inline-flex;
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				    -ms-flex-direction: column;
+				        flex-direction: column;
+				-webkit-box-align: center;
+				    -ms-flex-align: center;
+				        align-items: center;
+				-webkit-box-pack: center;
+				    -ms-flex-pack: center;
+				        justify-content: center;
+				text-align: center;
+			}
 
 #all-works h2,
 #all-works div {
@@ -1359,53 +1414,6 @@ footer {
 	margin: 25px;
 }
 
-/* .other-works-tiles {
-	width: 100%;
-	height: auto;
-	margin-top: 5%;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-flow: row wrap;
-	flex-flow: row wrap;
-	-webkit-box-align: start;
-	-ms-flex-align: start;
-	align-items: flex-start;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-} */
-
-/* .other-work-tile {
-	width: calc(100vw / 3);
-	height: auto;
-	min-width: 375px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-flow: column;
-	flex-flow: column;
-}
-
-.other-work-tile video,
-.other-work-tile img {
-	width: 100%;
-	height: auto;
-}
-
-#nabulio {
-	margin: 35px 0;
-}
-
-#type-creature {
-	width: 90%;
-	height: auto;
-	margin: 35px auto;
-} */
 
 
 /* ------------------------------------------- Bardot -------------------------------------------- */
@@ -1602,12 +1610,6 @@ section#credits a {
 	overflow: visible;
 }
 
-/* svg.data-marpit-svg {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-} */
-
 .myEye {
 	position: fixed;
 	border-radius: 50%;
@@ -1653,10 +1655,16 @@ section#credits a {
 
 @media screen and (max-width: 1124px) {
 	#first-tile-set {
-		flex-direction: column-reverse;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: reverse;
+		    -ms-flex-direction: column-reverse;
+		        flex-direction: column-reverse;
 	}
 		#first-tiles {
-			flex-direction: row-reverse;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: reverse;
+			    -ms-flex-direction: row-reverse;
+			        flex-direction: row-reverse;
 		}
 }
 
@@ -1722,12 +1730,6 @@ section#credits a {
 	#schecker-draggable-flow {
 		height: 80vh;
 	}
-
-
-
-
-
-
 
 }
 

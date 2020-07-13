@@ -52,6 +52,7 @@ $(window).ready(function() {
 
   TweenMax.from('.project-hero', 1.5, {autoAlpha: 0});
   TweenMax.staggerTo('.project-hero, .project-intro .wrapper div', 1, {y: 0, autoAlpha: 1}, .2);
+  TweenMax.set('#schecker-hero-section, #schecker-hero', {y: 0, autoAlpha: 1});
 
 });
 
@@ -108,23 +109,21 @@ $(document).ready(function() {
   });
 
 
-
 //Schecker scroll animation
-var triggerOffset = document.documentElement.clientHeight / 1.2,
+var triggerOffset = document.documentElement.clientHeight,
     duration = $( window ).height() / 2,
     requestId = null,
 
+    scene_0 = $('#schecker-hero').offset().top,
     scene_1 = $('#schecker-intro').offset().top,
-    scene_2 = $('#schecker-hiw-section').offset().top,
-    scene_2a = $('#schecker-hiw-section .leading-line').offset().top,
-    scene_2b = $('#schecker-features').offset().top,
+    scene_1a = $('#schecker-explain').offset().top,
+    scene_2 = $('#schecker-leading-line_1').offset().top,
+    scene_2a = $('#schecker-hiw-section').offset().top,
+    scene_3 = $('#schecker-leading-line_2').offset().top,
     scene_3a = $('#concept-development').offset().top,
     scene_3b = $('#s_concept-flow').offset().top,
-    scene_3c = $('#s_leading-line-2').offset().top,
     scene_3d = $('#s_wireframe').offset().top,
-    scene_3e = $('#s_leading-line-3').offset().top,
     scene_3f = $('#schecker-draggable-flow').offset().top,
-    scene_3g = $('#s_leading-line-4').offset().top,
     scene_3h = $('#s_ui').offset().top,
     scene_3i = $('#s_leading-line-5').offset().top,
     scene_3j = $('#s_collage').offset().top,
@@ -137,28 +136,27 @@ TweenLite.set('#schecker-intro .block', { autoAlpha: 0, scaleX: 0, transformOrig
 
 // SCROLL MAGIC!!!
 var scheckerTL = new TimelineMax({ paused: true })
-    .to(".mouse_scroll", 600, { y: "+=800", autoAlpha: 0 }, scene_1 - 100)
-    .to("#schecker-hero", 300, { scale: 0, autoAlpha: 0 }, scene_1 - 100)
-    .add("scheckerHeroStarts", scene_1)
-    .from("#schecker-intro", duration, { scale: 0, transformOrigin: "center" }, scene_1)
-    .staggerTo("#schecker-intro .block", duration - 100, { autoAlpha: 1, scaleX: 1 }, 100, scene_1)
-    .from("#schecker-hiw-section h3", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_2)
-    .from("#schecker-hiw-section .leading-line", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_2a)
-    .staggerFrom(".ic_schecker-feature", 300, {autoAlpha: 0, scale: 0, rotation: -90}, 50, scene_2b)
+    .to("#schecker-hero", 500, { scale: 1, autoAlpha: 1, y: 0 }, scene_0)
+    .to(".mouse_scroll", 600, { y: "+=800", autoAlpha: 0 }, scene_0 + vh)
+    .to("#schecker-hero", 500, { scale: 0, autoAlpha: 0, y: "+=500" }, scene_0 + vh)
+    .from("#schecker-intro", duration, { scale: 0, transformOrigin: "center", y: -vh/2 }, scene_1)
+    .staggerTo("#schecker-intro .block", duration - 100, { autoAlpha: 1, scaleX: 1 }, 200, scene_1 + 100)
+    .from('#schecker-explain h4', duration, {y: "-=300", scaleY: 0, autoAlpha: 0}, scene_1a)
+    .from('#schecker-explain .block', duration, {y: vh/2,scaleX: 0, autoAlpha: 0}, scene_1a + 200)
+    .from("#schecker-leading-line_1", duration*2, { scaleY: 0, y: -3/4*vh }, scene_2)
+    .staggerFrom("#schecker-hiw-section h3, .ic_schecker-feature", duration, {autoAlpha: 0, scale: 0, rotation: -90}, 50, scene_2a)
+    .from("#schecker-leading-line_2", duration*2, { scaleY: 0, y: -3/4*vh }, scene_3)
     .from("#concept-development h3", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3a)
     .from("#s_leading-line-1", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3a + 300)
     .from("#s_concept-flow-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3b)
     .from("#s_concept-flow-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3b)
-    .from("#s_leading-line-2", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3c)
     .from("#s_wireframe-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3d)
     .from("#s_wireframe-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3d)
-    .from("#s_leading-line-3", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3e)
     .from("#schecker-draggable-flow h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3f)
     .from("#schecker-userFlow", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3f)
-    .from("#s_leading-line-4", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3g + 200)
     .from("#s_ui h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3h)
     .from("#s_ui img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3h)
-    .from("#s_leading-line-5", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3i + 100)
+    .from("#s_leading-line-5", duration * 2, { scaleY: 0, y: -3/4*vh }, scene_3i)
     .from("#s_collage", duration, { scale: 0, transformOrigin: "top right", rotation: -90}, scene_3j)
     .from("#schecker-viewInvisionCTA", duration, { x: "-=500", autoAlpha: 0 }, scene_4)
     .to("#s_collage", duration, { autoAlpha: .1 }, scene_4a)
@@ -282,8 +280,8 @@ function toggleMenu() {
 
 function floatingMockup() {
   var tl = new TimelineMax({repeat: -1, yoyo: true});
-      tl.set('#schecker-hero img', {y: -10})
-        .to('#schecker-hero img', 2, {y: 10});
+      tl.set('#schecker-hero img', {y: -8})
+        .to('#schecker-hero img', 2, {y: 8, ease: Power0.easeNone});
 }
 
 
