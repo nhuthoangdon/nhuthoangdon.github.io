@@ -562,7 +562,7 @@ a {
 a:hover {
 	color: #ffec21;
 	font-weight: 800;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 section {
@@ -760,6 +760,38 @@ section.project {
 #prj-bardot {
 	background-image: url("./Assets/BardotCampaign(5).jpg");
 }
+
+/* ------------------------------------------ More works section -------------------------------------------------------- */
+
+#more-works a {
+	font-size: 1.8em;
+	letter-spacing: .08em;
+	margin: 5% auto;
+	position: relative;
+}
+	#more-works a:after {
+		content: "";
+		width: 50%;
+		height: 2px;
+		background-color: #a107f9;
+		position: absolute;
+		left: 25%;
+		transform-origin: center;
+		transition: .5s;
+	}
+		#more-works a:hover:after {
+			background-color: #ffec21;
+			width: 100%;
+			left: 0;
+		}
+
+
+
+
+
+
+
+
 
 
 /* ----------------------------------------------------------------------------------------------- */
