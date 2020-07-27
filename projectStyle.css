@@ -1296,15 +1296,15 @@ footer {
 }
 
 #ic_check:after {
-	content: "Symptom Assessment";
+	content: "Assesses Symptom(s)";
 }
 
 #ic_book:after {
-	content: "Appointment Booking";
+	content: "Schedules Appointment(s)";
 }
 
 #ic_manage:after {
-	content: "Symptoms & Medication tracking";
+	content: "Tracks Symptoms & Medication";
 }
 
 #schecker-draggable-flow {
