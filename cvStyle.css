@@ -134,6 +134,7 @@ section {
 
 
 .small-arrow-down {
+  padding: 10px 30px;
 	margin-top: 25px;
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
@@ -365,31 +366,7 @@ section {
 
 
           /* ----------------  svg welcome animation -------------- */
-          #Rectangle-1 {
-            stroke-dasharray: 340;
-            stroke-dashoffset: 340;
-          }
-          #Rectangle-2 {
-            stroke-dasharray: 80;
-            stroke-dashoffset: 80;
-          }
-          #cv-Oval-1, #cv-Oval-2, #Line-1, #Line-2, #Line-3 {
-            stroke-dasharray: 60;
-            stroke-dashoffset: 60;
-          }
-          #Line-4 {
-            stroke-dasharray: 150;
-            stroke-dashoffset: 150;
-          }
 
-          #CTA-btn-stroke {
-            stroke-dasharray: 55;
-            stroke-dashoffset: 98;
-          }
-          #CTA-play {
-            cursor: pointer;
-            visibility: hidden;
-          }
           #wc-text_1 {
             visibility: hidden;
           }
