@@ -528,8 +528,8 @@ h1 {
 
 h2 {
 	font-family: 'Dosis', sans-serif;
-	font-size: 1.8em;
-	letter-spacing: .05em;
+	font-size: calc(1.8em + 1vw);
+	letter-spacing: .03em;
 	font-weight: 800;
 	line-height: 1.6em;
 }
@@ -539,7 +539,7 @@ h2 {
 }
 
 h3 {
-	font-size: 1.25em;
+	font-size: 1.5em;
 	letter-spacing: .1em;
 	line-height: 1.5em;
 	font-weight: 800;

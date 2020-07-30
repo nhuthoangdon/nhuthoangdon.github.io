@@ -116,15 +116,16 @@ var triggerOffset = document.documentElement.clientHeight,
 
     scene_0 = $('#schecker-hero').offset().top,
     scene_1 = $('#schecker-intro').offset().top,
-    scene_1a = $('#schecker-explain').offset().top,
-    scene_2 = $('#schecker-leading-line_1').offset().top,
-    scene_2a = $('#schecker-hiw-section').offset().top,
+    scene_2 = $('#schecker-hiw-section').offset().top,
+    // scene_2 = $('#schecker-leading-line_1').offset().top,
+    scene_2a = $('#hiw-2').offset().top,
+    scene_2b = $('#hiw-3').offset().top,
     scene_3 = $('#schecker-leading-line_2').offset().top,
     scene_3a = $('#concept-development').offset().top,
     scene_3b = $('#s_concept-flow').offset().top,
     scene_3d = $('#s_wireframe').offset().top,
     scene_3f = $('#schecker-draggable-flow').offset().top,
-    scene_3h = $('#s_ui').offset().top,
+
     scene_3i = $('#s_leading-line-5').offset().top,
     scene_3j = $('#s_collage').offset().top,
     scene_4 = $('#s_prototypeCTA').offset().top,
@@ -141,10 +142,16 @@ var scheckerTL = new TimelineMax({ paused: true })
     .to("#schecker-hero", 500, { scale: 0, autoAlpha: 0, y: "+=500" }, scene_0 + vh)
     .from("#schecker-intro", duration, { scale: 0, transformOrigin: "center", y: -vh/2 }, scene_1)
     .staggerTo("#schecker-intro .block", duration - 100, { autoAlpha: 1, scaleX: 1 }, 200, scene_1 + 100)
-    .from('#schecker-explain h4', duration, {y: "-=300", scaleY: 0, autoAlpha: 0}, scene_1a + 100)
-    .from('#schecker-explain .block', duration, {y: vh/2,scaleX: 0, autoAlpha: 0}, scene_1a + 200)
-    .from("#schecker-leading-line_1", duration*2, { scaleY: 0, y: -3/4*vh }, scene_2)
-    .staggerFrom("#schecker-hiw-section h3, .ic_schecker-feature", duration, {autoAlpha: 0, scale: 0, rotation: -90}, 50, scene_2a)
+    .from("#schecker-hiw-section h3", duration, {autoAlpha: 0, scale: 0, rotation: -90}, scene_2)
+    .staggerFrom("#hiw-1 .hiw-feature-heading, #hiw-1 .hiw-feature-desc", duration, {scaleX: 0, autoAlpha: 0}, 100, scene_2)
+    .from('#hiw-1 .hiw-feature-ic', duration/3, {autoAlpha: .2}, scene_2+1/2*vh)
+    .from('#short-line_1', duration*2, {scaleY: 0}, scene_2a - vh/4)
+    .staggerFrom("#hiw-2 .hiw-feature-heading, #hiw-2 .hiw-feature-desc", duration, {scaleX: 0, autoAlpha: 0}, 100, scene_2a)
+    .from('#hiw-2 .hiw-feature-ic', duration/3, {autoAlpha: .2}, scene_2a+1/2*vh)
+    .from('#short-line_2', duration*2, {scaleY: 0}, scene_2b - vh/4)
+    .staggerFrom("#hiw-3 .hiw-feature-heading, #hiw-3 .hiw-feature-desc", duration, {scaleX: 0, autoAlpha: 0}, 100, scene_2b)
+    .from('#hiw-3 .hiw-feature-ic', duration/3, {autoAlpha: .2}, scene_2b+1/2*vh)
+    .from('#short-line_3', duration*2, {scaleY: 0}, scene_3 - vh/4)
     .from("#schecker-leading-line_2", duration*2, { scaleY: 0, y: -3/4*vh }, scene_3)
     .from("#concept-development h3", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3a)
     .from("#s_leading-line-1", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3a + 300)
@@ -154,9 +161,7 @@ var scheckerTL = new TimelineMax({ paused: true })
     .from("#s_wireframe-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3d)
     .from("#schecker-draggable-flow h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3f)
     .from("#schecker-userFlow", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3f)
-    .from("#s_ui h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3h)
-    .from("#s_ui img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3h)
-    .from("#s_leading-line-5", duration * 2, { scaleY: 0, y: -3/4*vh }, scene_3i)
+    .from("#s_leading-line-5", duration * 2, { scaleY: 0, y: -3/4*vh }, scene_3i + vh/2)
     .from("#s_collage", duration, { scale: 0, transformOrigin: "top right", rotation: -90}, scene_3j)
     .from("#schecker-viewInvisionCTA", duration, { x: "-=500", autoAlpha: 0 }, scene_4)
     .to("#s_collage", duration, { autoAlpha: .1 }, scene_4a)

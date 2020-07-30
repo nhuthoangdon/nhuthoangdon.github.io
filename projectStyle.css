@@ -214,18 +214,19 @@ h1 {
 
 h2 {
 	font-family: 'Dosis', sans-serif;
-	font-size: 1.8em;
-	letter-spacing: .05em;
+	font-size: calc(1.8em + 1vw);
+	letter-spacing: .03em;
 	font-weight: 800;
 	line-height: 1.6em;
 }
 
-.centered-text {
-	text-align: center;
-}
+.centered-text { text-align: center; }
+.right-aligned { text-align: right; }
+.left-aligned { text-align: left; }
+
 
 h3 {
-	font-size: 1.25em;
+	font-size: 1.5em;
 	letter-spacing: .1em;
 	line-height: 1.5em;
 	font-weight: 800;
@@ -250,18 +251,21 @@ a:hover {
 	color: #ffec21;
 }
 
-.leading-line {
+.leading-line, .short-leading-line {
 	width: 1px;
 	height: 90vh;
 	background-color: black;
 	margin: 5% auto;
 }
+.short-leading-line {
+	height: 30vh;
+}
 
 h4 {
-	font-size: 1em;
-	letter-spacing: .1rem;
+	font-size: 1.3em;
+	letter-spacing: .12em;
 	line-height: 2rem;
-	font-weight: 700;
+	font-weight: 800;
 	text-transform: uppercase;
 }
 
@@ -270,7 +274,7 @@ h4 {
 }
 
 h5 {
-	font-size: 1em;
+	font-size: 1.2em;
 	font-weight: 800;
 	letter-spacing: .2rem;
 	text-align: center;
@@ -346,6 +350,9 @@ section.challenge {
 			margin-bottom: calc(25px + 1%);
 		}
 
+		.hiw-section h3 {
+			margin-bottom: 5%;
+		}
 
 
 .project-intro {
@@ -639,6 +646,37 @@ a.cta-w-label:hover {
 	background-color: #D2DBE9;
 	margin: 5% auto;
 }
+
+/* wrapper, icons & descriptions */
+.how-it-works {
+	width: 80%; height: auto;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+}
+		.hiw-feature-heading {
+			width: calc(50% - 100px);
+			display: inline-flex;
+		}
+			.justify-end { justify-content: flex-end; }
+			.justify-start { justify-content: flex-start; }
+			.hiw-feature-heading h5 { width: 50%; }
+
+		.hiw-feature-ic {
+			width: 100px;
+			margin: 35px 50px;
+		}
+				.ic-feature img {
+					width: 100%;
+				}
+		.hiw-feature-desc {
+			width: calc(50% - 100px);
+			min-width: 300px;
+		}
+
+
+
 
 .back-to-top {
 	margin: 10% auto;
@@ -1240,6 +1278,11 @@ footer {
 
 /* ---------------------------------------- Schecker ------------------------------------------ */
 
+#schecker-hiw-section {
+	display: flex;
+	flex-direction: column;
+}
+
 #schecker-hero {
 	position: relative;
 	margin-bottom: 0;
@@ -1257,55 +1300,10 @@ footer {
 	padding-bottom: 4%;
 }
 
-#schecker .leading-line {
+#schecker .leading-line, #schecker .short-leading-line {
 	background-color: #1ADD21;
 }
 
-#schecker-features {
-	width: 80%;
-	margin-top: calc(-40px - 5%);
-}
-
-#schecker-hiw-section h3 {
-	margin-bottom: calc(25px + 3%);
-}
-
-.ic_schecker-feature {
-	margin: calc(40px + 5%);
-	position: relative;
-}
-
-.ic_schecker-feature img {
-	height: 80px;
-}
-
-.ic_schecker-feature:after {
-	content: "";
-	position: absolute;
-	font-family: 'Dosis', sans-serif;
-	text-align: center;
-	top: calc(100% + 30px);
-	left: -100%;
-	width: 300%;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: .75rem;
-	font-weight: 700;
-	letter-spacing: .1rem;
-	line-height: 1.5rem;
-}
-
-#ic_check:after {
-	content: "Assesses Symptom(s)";
-}
-
-#ic_book:after {
-	content: "Schedules Appointment(s)";
-}
-
-#ic_manage:after {
-	content: "Tracks Symptoms & Medication";
-}
 
 #schecker-draggable-flow {
 	width: 100%;
@@ -1670,11 +1668,22 @@ section#credits a {
 
 @media screen and (max-width: 1024px) {
 
+	.how-it-works {
+		width: 100%;
+		flex-direction: column;
+	}
+	.hiw-feature-heading {
+		justify-content: center;
+		width: 100%;
+	}
+		.hiw-feature-heading h5 { width: 80%; text-align: center; }
+
 	#schecker-hero {
 		height: auto;
 	}
 	#schecker-hero img {
 		width: 80%;
+		margin-top: 60px;
 	}
 	#schecker-hero:before {
 		height: 100px;
@@ -1758,14 +1767,5 @@ section#credits a {
 	}
 	.block {
 		margin: 10% auto;
-	}
-}
-
-@media screen and (max-width: 320px) {
-	.hiw.input span.text-field {
-		font-size: 1.3em;
-	}
-	.hiw-text-animation {
-		font-size: 1.3em;
 	}
 }
