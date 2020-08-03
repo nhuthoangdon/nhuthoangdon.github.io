@@ -80,6 +80,7 @@ $(document).ready(function() {
   TweenLite.set(".closeMenu .closeBar2", {rotation: -45, transformOrigin: "center", y: 15, x: 4});
 
   TweenLite.set("footer", {opacity: 0, scaleY: 0, transformOrigin: "bottom center"});
+  TweenLite.set("#footer_about-me", {opacity: 1, scaleY: 1});
 
 
   $('.back-to-top').each(function(i, el) {
