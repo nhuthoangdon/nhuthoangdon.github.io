@@ -302,6 +302,7 @@ i {
 a.all-works-link {
 	margin: 5% auto;
 	position: relative;
+	font-weight: 800;
 }
 		a.all-works-link:after {
 			content: "";
