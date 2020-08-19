@@ -825,6 +825,10 @@ section.project {
 /* ----------------------------------------------------------------------------------------------- */
 
 @media screen and (max-width: 1024px) {
+
+	#prj-bardot {
+		background-position: 0 100%;
+	}
 	#prj-schecker {
 		background-position: center -18em;
 	}
@@ -840,11 +844,11 @@ section.project {
 		justify-content: center;
 	}
 	#intro_text {
-		-ms-flex-item-align: auto;
-		-ms-grid-row-align: auto;
-		align-self: auto;
+		-ms-flex-item-align: center;
+		-ms-grid-row-align: center;
+		align-self: center;
 		width: 100%;
-		margin-top: 60px;
+		margin: auto;
 	}
 	#home-CTAarrow {
 		-ms-flex-item-align: auto;
@@ -854,6 +858,10 @@ section.project {
 	#my-lion {
 		width: 100%;
 		margin-left: 0;
+	}
+
+	#prj-bardot {
+		background-position: 70% -12em;
 	}
 }
 
