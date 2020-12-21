@@ -229,7 +229,7 @@ body {
 	color: white;
 	text-decoration: none;
 	font-family: 'Dosis', sans-serif;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: calc(2rem + .7vw);
 	letter-spacing: .14rem;
 	position: relative;
@@ -555,7 +555,7 @@ p {
 a {
 	color: #a107f9;
 	letter-spacing: .12em;
-	font-weight: 600;
+	font-weight: 700;
 	text-decoration: none;
 }
 
