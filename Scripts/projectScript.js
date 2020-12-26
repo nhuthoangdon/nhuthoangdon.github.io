@@ -59,149 +59,144 @@ $(window).ready(function() {
 
 $(document).ready(function() {
 
-  TweenMax.set('.project-hero, .project-intro .wrapper div', {y: 100, autoAlpha: 0});
-  TweenMax.staggerFromTo(".about, .portrait-cover", .8, {y: 100}, {autoAlpha: 1, y: 0}, .2);
+    TweenMax.set('.project-hero, .project-intro .wrapper div', {y: 100, autoAlpha: 0});
+    TweenMax.staggerFromTo(".about, .portrait-cover", .8, {y: 100}, {autoAlpha: 1, y: 0}, .2);
 
 
-  hamburgerHover();
-  toggleMenu();
-  CTAarrowHover();
-  CTAbuttonHover();
+    hamburgerHover();
+    toggleMenu();
+    CTAarrowHover();
+    CTAbuttonHover();
 
 
-  var menuAssembleTL = new TimelineMax();
-      menuAssembleTL.to(".menu .bar1", .2, {rotation: 0, transformOrigin: "top left"})
-                    .to(".menu .bar3", .2, {rotation: 0, x: 24, transformOrigin: "bottom right"})
-                    .to(".menu .bar3", .2, {rotation: 0, y: 10})
-                    .to(".menu .bar2", .2, {rotation: -40, transformOrigin: "top left"});
+    var menuAssembleTL = new TimelineMax();
+        menuAssembleTL.to(".menu .bar1", .2, {rotation: 0, transformOrigin: "top left"})
+                      .to(".menu .bar3", .2, {rotation: 0, x: 24, transformOrigin: "bottom right"})
+                      .to(".menu .bar3", .2, {rotation: 0, y: 10})
+                      .to(".menu .bar2", .2, {rotation: -40, transformOrigin: "top left"});
 
 
-  TweenLite.set(".closeMenu .closeBar1", {rotation: 45, transformOrigin: "center", y: 15, x: 4});
-  TweenLite.set(".closeMenu .closeBar2", {rotation: -45, transformOrigin: "center", y: 15, x: 4});
+    TweenLite.set(".closeMenu .closeBar1", {rotation: 45, transformOrigin: "center", y: 15, x: 4});
+    TweenLite.set(".closeMenu .closeBar2", {rotation: -45, transformOrigin: "center", y: 15, x: 4});
 
-  TweenLite.set("footer", {opacity: 0, scaleY: 0, transformOrigin: "bottom center"});
-  TweenLite.set("#footer_about-me", {opacity: 1, scaleY: 1});
+    TweenLite.set("footer", {opacity: 0, scaleY: 0, transformOrigin: "bottom center"});
+    TweenLite.set("#footer_about-me", {opacity: 1, scaleY: 1});
 
 
-  $('.back-to-top').each(function(i, el) {
-    $(this).click(function() {
-        window.scrollTo(0,0);
+    $('.back-to-top').each(function(i, el) {
+      $(this).click(function() {
+          window.scrollTo(0,0);
+      });
     });
-  });
 
 
-  $(window).on('scroll', function () {
-      var pixs = $(document).scrollTop()
-          pixs = pixs/500;
+    $(window).on('scroll', function () {
+        var pixs = $(document).scrollTop()
+            pixs = pixs/500;
 
-        for (i=0; i <= 1; i++) {
-          $("#sa-hero-img, #bardot-hero-img").css({"opacity": 1-pixs});
+          for (i=0; i <= 1; i++) {
+            $("#sa-hero-img, #bardot-hero-img").css({"opacity": 1-pixs});
+          }
+
+        var scrollHeight = $(document).height(),
+      	    scrollPosition = $(window).height() + $(window).scrollTop();
+        var footerTL = new TimelineMax();
+
+      	if (scrollPosition >= scrollHeight) {
+            footerTL.to("footer", .8, {opacity: 1, scaleY: 1, ease: Back.easeOut.config(1.7)});
+      	} else {
+            footerTL.to("footer", .6, {opacity: 0, scaleY: 0});
         }
 
-      var scrollHeight = $(document).height(),
-    	    scrollPosition = $(window).height() + $(window).scrollTop();
-      var footerTL = new TimelineMax();
 
-    	if (scrollPosition >= scrollHeight) {
-          footerTL.to("footer", .8, {opacity: 1, scaleY: 1, ease: Back.easeOut.config(1.7)});
-    	} else {
-          footerTL.to("footer", .6, {opacity: 0, scaleY: 0});
-      }
-  });
+    });
 
 
-//Schecker scroll animation
-var triggerOffset = document.documentElement.clientHeight,
-    duration = $( window ).height() / 2,
-    requestId = null,
+  //Schecker scroll animation
+  var triggerOffset = document.documentElement.clientHeight,
+      duration = $( window ).height() / 2,
+      requestId = null,
 
-    scene_0 = $('#schecker-hero').offset().top,
-    scene_1 = $('#schecker-intro').offset().top,
-    scene_2 = $('#schecker-hiw-section').offset().top,
-    scene_2a = $('#hiw-2').offset().top,
-    scene_2b = $('#hiw-3').offset().top,
-    scene_3 = $('#schecker-leading-line_2').offset().top,
-    scene_3a = $('#concept-development').offset().top,
-    scene_3b = $('#s_concept-flow').offset().top,
-    scene_3d = $('#s_wireframe').offset().top,
-    scene_3f = $('#schecker-draggable-flow').offset().top,
-    scene_3i = $('#s_leading-line-5').offset().top,
-    scene_3j = $('#s_collage').offset().top,
-    scene_4 = $('#s_prototypeCTA').offset().top,
-    scene_4a = $('#schecker-viewInvision').offset().top;
+      scene_0 = $('#schecker-hero').offset().top,
+      scene_1 = $('#schecker-intro').offset().top,
+      scene_2 = $('#schecker-hiw-section').offset().top,
+      scene_2a = $('#hiw-2').offset().top,
+      scene_2b = $('#hiw-3').offset().top,
+      scene_3 = $('#schecker-leading-line_2').offset().top,
+      scene_3a = $('#concept-development').offset().top,
+      scene_3b = $('#s_concept-flow').offset().top,
+      scene_3d = $('#s_wireframe').offset().top,
+      scene_3f = $('#schecker-draggable-flow').offset().top,
+      scene_3i = $('#s_leading-line-5').offset().top,
+      scene_3j = $('#s_collage').offset().top,
+      scene_4 = $('#s_prototypeCTA').offset().top,
+      scene_4a = $('#schecker-viewInvision').offset().top;
 
 
-TweenLite.set('#schecker-intro .block', { autoAlpha: 0, scaleX: 0, transformOrigin: "top left" });
+  TweenLite.set('#schecker-intro .block', { autoAlpha: 0, scaleX: 0, transformOrigin: "top left" });
+
+
 
 
 // SCROLL MAGIC!!!
-var scheckerTL = new TimelineMax({ paused: true })
-    .to("#schecker-hero", 500, { scale: 1, autoAlpha: 1, y: 0 }, scene_0)
-    .to(".mouse_scroll", 600, { y: "+=800", autoAlpha: 0 }, scene_0 + vh)
-    .to("#schecker-hero", 500, { scale: 0, autoAlpha: 0, y: "+=500" }, scene_0 + vh)
-    .from("#schecker-intro", duration, { scale: 0, transformOrigin: "center", y: -vh/2 }, scene_1)
-    .staggerTo("#schecker-intro .block", duration - 100, { autoAlpha: 1, scaleX: 1 }, 200, scene_1 + 100)
-    .from("#schecker-hiw-section h3", duration, {autoAlpha: 0, scale: 0, rotation: -90}, scene_2)
-    .staggerFrom("#hiw-1 .hiw-feature-heading, #hiw-1 .hiw-feature-desc", duration, {scaleX: 0, autoAlpha: 0}, 100, scene_2)
-    .from('#hiw-1 .hiw-feature-ic', duration/3, {autoAlpha: .2}, scene_2+1/2*vh)
-    .from('#short-line_1', duration*2, {scaleY: 0}, scene_2a - vh/4)
-    .staggerFrom("#hiw-2 .hiw-feature-heading, #hiw-2 .hiw-feature-desc", duration, {scaleX: 0, autoAlpha: 0}, 100, scene_2a)
-    .from('#hiw-2 .hiw-feature-ic', duration/3, {autoAlpha: .2}, scene_2a+1/2*vh)
-    .from('#short-line_2', duration*2, {scaleY: 0}, scene_2b - vh/4)
-    .staggerFrom("#hiw-3 .hiw-feature-heading, #hiw-3 .hiw-feature-desc", duration, {scaleX: 0, autoAlpha: 0}, 100, scene_2b)
-    .from('#hiw-3 .hiw-feature-ic', duration/3, {autoAlpha: .2}, scene_2b+1/2*vh)
-    .from('#short-line_3', duration*2, {scaleY: 0}, scene_3 - vh/4)
-    .from("#schecker-leading-line_2", duration*2, { scaleY: 0, y: -3/4*vh }, scene_3)
-    .from("#concept-development h3", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3a)
-    .from("#s_leading-line-1", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3a + 300)
-    .from("#s_concept-flow-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3b)
-    .from("#s_concept-flow-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3b)
-    .from("#s_wireframe-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3d)
-    .from("#s_wireframe-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3d)
-    .from("#schecker-draggable-flow h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3f)
-    .from("#schecker-userFlow", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3f)
-    .from("#s_leading-line-5", duration * 2, { scaleY: 0, y: -3/4*vh }, scene_3i + vh/2)
-    .from("#s_collage", duration, { scale: 0, transformOrigin: "top right", rotation: -90}, scene_3j)
-    .from("#schecker-viewInvisionCTA", duration, { x: "-=500", autoAlpha: 0 }, scene_4)
-    .to("#s_collage", duration, { autoAlpha: .1 }, scene_4a)
-    .from("#schecker-viewInvision", duration, { x: "-=500", autoAlpha: 0 }, scene_4a);
-
-
+  var scheckerTL = new TimelineMax({ paused: true })
+      .to("#schecker-hero", 500, { scale: 1, autoAlpha: 1, y: 0 }, scene_0)
+      .to(".mouse_scroll", 600, { y: "+=800", autoAlpha: 0 }, scene_0 + vh)
+      .to("#schecker-hero", 500, { scale: 0, autoAlpha: 0, y: "+=500" }, scene_0 + vh)
+      .from("#schecker-intro", duration, { scale: 0, transformOrigin: "center", y: -vh/2 }, scene_1)
+      .staggerTo("#schecker-intro .block", duration - 100, { autoAlpha: 1, scaleX: 1 }, 200, scene_1 + 100)
+      .from("#schecker-hiw-section h3", duration, {autoAlpha: 0, scale: 0, rotation: -90}, scene_2)
+      .staggerFrom("#hiw-1 .hiw-feature-heading, #hiw-1 .hiw-feature-desc", duration, {scaleX: 0, autoAlpha: 0}, 100, scene_2)
+      .from('#hiw-1 .hiw-feature-ic', duration/3, {autoAlpha: .2}, scene_2+1/2*vh)
+      .from('#short-line_1', duration*2, {scaleY: 0}, scene_2a - vh/4)
+      .staggerFrom("#hiw-2 .hiw-feature-heading, #hiw-2 .hiw-feature-desc", duration, {scaleX: 0, autoAlpha: 0}, 100, scene_2a)
+      .from('#hiw-2 .hiw-feature-ic', duration/3, {autoAlpha: .2}, scene_2a+1/2*vh)
+      .from('#short-line_2', duration*2, {scaleY: 0}, scene_2b - vh/4)
+      .staggerFrom("#hiw-3 .hiw-feature-heading, #hiw-3 .hiw-feature-desc", duration, {scaleX: 0, autoAlpha: 0}, 100, scene_2b)
+      .from('#hiw-3 .hiw-feature-ic', duration/3, {autoAlpha: .2}, scene_2b+1/2*vh)
+      .from('#short-line_3', duration*2, {scaleY: 0}, scene_3 - vh/4)
+      .from("#schecker-leading-line_2", duration*2, { scaleY: 0, y: -3/4*vh }, scene_3)
+      .from("#concept-development h3", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3a)
+      .from("#s_leading-line-1", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3a + 300)
+      .from("#s_concept-flow-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3b)
+      .from("#s_concept-flow-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3b)
+      .from("#s_wireframe-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3d)
+      .from("#s_wireframe-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3d)
+      .from("#schecker-draggable-flow h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3f)
+      .from("#schecker-userFlow", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3f)
+      .from("#s_leading-line-5", duration * 2, { scaleY: 0, y: -3/4*vh }, scene_3i + vh/2)
+      .from("#s_collage", duration, { scale: 0, transformOrigin: "top right", rotation: -90}, scene_3j)
+      .from("#schecker-viewInvisionCTA", duration, { x: "-=500", autoAlpha: 0 }, scene_4)
+      .to("#s_collage", duration, { autoAlpha: .1 }, scene_4a)
+      .from("#schecker-viewInvision", duration, { x: "-=500", autoAlpha: 0 }, scene_4a);
 
 
 
 // Only update on animation frames
-window.addEventListener("scroll", function() {
-  if (!requestId) {
-    requestId = requestAnimationFrame(update);
-  }
-});
-
-update();
-
-// Set timeline time to scrollTop
-function update() {
-  scheckerTL.time(window.pageYOffset + triggerOffset);
-  requestId = null;
-}
-
-
-
-
-$(window).scroll(function(event) {
-  $(".block-in").each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("come-in");
+  window.addEventListener("scroll", function() {
+    if (!requestId) {
+      requestId = requestAnimationFrame(update);
     }
   });
-});
+
+    update();
+
+// Set timeline time to scrollTop
+  function update() {
+    scheckerTL.time(window.pageYOffset + triggerOffset);
+    requestId = null;
+  }
 
 
 
-
-
-
+  $(window).scroll(function(event) {
+    $(".block-in").each(function(i, el) {
+      var el = $(el);
+      if (el.visible(true)) {
+        el.addClass("come-in");
+      }
+    });
+  });
 
 
 });
@@ -276,8 +271,6 @@ function toggleMenu() {
     });
   });
 };
-
-
 
 
 
@@ -419,6 +412,10 @@ function toggleVideo() {
     });
   });
 };
+
+
+
+
 
 
 
