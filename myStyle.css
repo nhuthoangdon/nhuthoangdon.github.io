@@ -552,6 +552,10 @@ p {
 	font-weight: 600;
 }
 
+strong {
+	font-weight: 800;
+}
+
 a {
 	color: #a107f9;
 	letter-spacing: .12em;
