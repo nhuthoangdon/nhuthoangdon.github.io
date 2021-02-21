@@ -252,7 +252,7 @@ function CTAbuttonHover() {
      $("#schecker-CTA").hover (
        function() {
          TweenMax.to("#hero-overlay_schecker", .5, {height: "100%", backgroundColor: "white", autoAlpha: .7, delay: .4});
-         TweenMax.to("#prj-des_schecker", .4, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
+         TweenMax.to("#prj-des_schecker", .3, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
        },
        function () {
          TweenMax.to("#hero-overlay_schecker", .5, {height: 0, autoAlpha: 0});
@@ -262,31 +262,26 @@ function CTAbuttonHover() {
      $("#sa-CTA").hover (
        function() {
          TweenMax.to("#hero-overlay_sa", .5, {height: "100%", backgroundColor: "black", autoAlpha: .3, delay: .4});
-         TweenMax.to("#prj-des_sa", .4, {backgroundColor: "rgba(0,0,0,0)", delay: .8});
+         TweenMax.to("#prj-des_sa", .3, {backgroundColor: "rgba(0,0,0,0)", delay: .5});
          TweenMax.to("#prj-des-contents_sa", .5, {color: "white", delay: .5});
-         TweenMax.to("#prj-sa", .8, {backgroundPosition: "0% 0%", ease: Linear.easeNone, delay: 1});
-         TweenMax.to("#sa-homepage", .5, {autoAlpha: 1, translateY: 0, delay: 1.2});
+         // TweenMax.to("#prj-sa", .8, {backgroundPosition: "0% 0%", ease: Linear.easeNone, delay: 1});
        },
        function () {
          TweenMax.to("#hero-overlay_sa", .5, {height: 0, autoAlpha: 0});
          TweenMax.to("#prj-des_sa", .5, {backgroundColor: "rgba(255,255,255,1)"});
          TweenMax.to("#prj-des-contents_sa", .5, {color: "#0C1826"});
-         TweenMax.to("#sa-homepage", .5, {autoAlpha: 0, translateY: "20%"});
-         TweenMax.to("#prj-sa", .3, {backgroundPosition: "0% 100%", ease: Linear.easeNone});
+         // TweenMax.to("#prj-sa", .3, {backgroundPosition: "0% 100%", ease: Linear.easeNone});
        }
      );
      $("#bardot-CTA").hover (
        function() {
          TweenMax.to("#hero-overlay_bardot", .5, {height: "100%", backgroundColor: "white", autoAlpha: .7, delay: .4});
-         TweenMax.to("#prj-des_bardot", .4, {backgroundColor: "rgba(255,255,255,0)", delay: .8});
-         TweenMax.to("#prj-bardot", .8, {backgroundPosition: "0% 0%", ease: Linear.easeNone, delay: 1});
-         TweenMax.to("#bardot-homepage", .5, {autoAlpha: 1, translateY: 0, delay: 1.2});
+         TweenMax.to("#prj-des_bardot", .3, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
        },
        function () {
          TweenMax.to("#bardot-homepage", .5, {autoAlpha: 0, translateY: "20%"});
          TweenMax.to("#hero-overlay_bardot", .5, {height: 0, autoAlpha: 0});
          TweenMax.to("#prj-des_bardot", .5, {backgroundColor: "rgba(255,255,255,1)"});
-         TweenMax.to("#prj-bardot", .3, {backgroundPosition: "0% 60%", ease: Linear.easeNone});
        }
      );
    };
@@ -304,7 +299,7 @@ function CTAbuttonHover() {
 
 
 function smileyFace() {
-  var smileyTL = new TimelineMax({repeat: -1});
+  var smileyTL = new TimelineMax({repeat: -1, repeatDelay: .2});
       smileyTL.add(smileySmile())
               .add(smileyBlink(), "-=2")
               .add(smileyWink(), "+=1");

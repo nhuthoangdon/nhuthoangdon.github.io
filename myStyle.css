@@ -774,10 +774,6 @@ section.project {
 	background-color: black;
 }
 
-#sa-homepage {
-	background-image: url("./Assets/HomePage 1440 Sync SA.jpg");
-	background-position: 0 0;
-}
 
 
 /* ------------------------------------------ Bardot Intro -------------------------------------------------------- */
@@ -787,22 +783,18 @@ section.project {
 	background-position: 0 60%;
 }
 
-#bardot-homepage {
-	background-image: url("./Assets/D 1500 - Home bardot.jpg");
-	background-position: 0 0;
-}
 
 
 /* ------------------------------------------ More works section -------------------------------------------------------- */
 
-#more-works a {
+	.big-link {
 	font-size: 1.8em;
 	letter-spacing: .05em;
 	margin: 5% auto;
 	position: relative;
 	font-weight: 800;
 }
-	#more-works a:after {
+	.big-link:after {
 		content: "";
 		width: 50%;
 		height: 2px;
@@ -812,7 +804,7 @@ section.project {
 		transform-origin: center;
 		transition: .5s;
 	}
-		#more-works a:hover:after {
+		.big-link:hover:after {
 			background-color: #ffec21;
 			width: 100%;
 			left: 0;
