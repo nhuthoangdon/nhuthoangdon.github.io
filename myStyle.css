@@ -770,17 +770,20 @@ section.project {
 
 #prj-sa {
 	background-image: url("./Assets/australia-2910680_1920.jpg");
-	background-position: bottom;
-	background-color: black;
+	background-position: center -16em;
+	background-color: rgb(0,0,0);
 }
-
+	#hero-overlay_sa {
+		background: rgb(0,0,0);
+		background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+	}
 
 
 /* ------------------------------------------ Bardot Intro -------------------------------------------------------- */
 
 #prj-bardot {
 	background-image: url("./Assets/BardotCampaign(5).jpg");
-	background-position: 0 60%;
+	background-position: center -22em;
 }
 
 
@@ -821,16 +824,26 @@ section.project {
 
 /* ----------------------------------------------------------------------------------------------- */
 
+@media screen and (min-width: 1600px) {
+	#prj-bardot {
+		background-position: center -30em;
+	}
+	#prj-sa {
+		background-position: center -23em;
+	}
+}
+
+
 @media screen and (max-width: 1024px) {
 
 	#prj-bardot {
-		background-position: 0 100%;
+		background-position: center -14em;
 	}
 	#prj-schecker {
 		background-position: center -18em;
 	}
 	#prj-sa {
-		background-position: center -15em;
+		background-position: -3em -15em;
 	}
 }
 

@@ -261,16 +261,17 @@ function CTAbuttonHover() {
      );
      $("#sa-CTA").hover (
        function() {
-         TweenMax.to("#hero-overlay_sa", .5, {height: "100%", backgroundColor: "black", autoAlpha: .3, delay: .4});
+         TweenMax.to("#hero-overlay_sa", .5, {height: "100%", autoAlpha: 1, delay: .4});
          TweenMax.to("#prj-des_sa", .3, {backgroundColor: "rgba(0,0,0,0)", delay: .5});
+
+         // TweenMax.to("#hero-overlay_sa", .2, {backgroundColor: "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 13%, rgba(255,255,255,0) 100%)"})
+
          TweenMax.to("#prj-des-contents_sa", .5, {color: "white", delay: .5});
-         // TweenMax.to("#prj-sa", .8, {backgroundPosition: "0% 0%", ease: Linear.easeNone, delay: 1});
        },
        function () {
          TweenMax.to("#hero-overlay_sa", .5, {height: 0, autoAlpha: 0});
          TweenMax.to("#prj-des_sa", .5, {backgroundColor: "rgba(255,255,255,1)"});
          TweenMax.to("#prj-des-contents_sa", .5, {color: "#0C1826"});
-         // TweenMax.to("#prj-sa", .3, {backgroundPosition: "0% 100%", ease: Linear.easeNone});
        }
      );
      $("#bardot-CTA").hover (
