@@ -124,8 +124,8 @@ $(document).ready(function() {
       scene_2b = $('#hiw-3').offset().top,
       scene_3 = $('#schecker-leading-line_2').offset().top,
       scene_3a = $('#concept-development').offset().top,
-      scene_3b = $('#s_concept-flow').offset().top,
-      scene_3d = $('#s_wireframe').offset().top,
+      // scene_3b = $('#s_concept-flow').offset().top,
+      // scene_3d = $('#s_wireframe').offset().top,
       scene_3f = $('#schecker-draggable-flow').offset().top,
       scene_3i = $('#s_leading-line-5').offset().top,
       scene_3j = $('#s_collage').offset().top,
@@ -158,10 +158,10 @@ $(document).ready(function() {
       .from("#schecker-leading-line_2", duration*2, { scaleY: 0, y: -3/4*vh }, scene_3)
       .from("#concept-development h3", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3a)
       .from("#s_leading-line-1", duration * 2, { scaleY: 0, transformOrigin: "top left" }, scene_3a + 300)
-      .from("#s_concept-flow-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3b)
-      .from("#s_concept-flow-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3b)
-      .from("#s_wireframe-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3d)
-      .from("#s_wireframe-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3d)
+      // .from("#s_concept-flow-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3b)
+      // .from("#s_concept-flow-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3b)
+      // .from("#s_wireframe-h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3d)
+      // .from("#s_wireframe-img", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3d)
       .from("#schecker-draggable-flow h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3f)
       .from("#schecker-userFlow", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3f)
       .from("#s_leading-line-5", duration * 2, { scaleY: 0, y: -3/4*vh }, scene_3i + vh/2)

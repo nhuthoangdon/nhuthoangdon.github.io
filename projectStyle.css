@@ -1012,6 +1012,11 @@ h6.CTA-label {
 	background-size: contain;
 	background-color: white;
 }
+#tile_Danias {
+	background-image: url("./Assets/Danias-Homepage.jpg");
+	background-size: cover;
+	background-position: top;
+}
 
 .tile-CTA {
 	width: 100%;
