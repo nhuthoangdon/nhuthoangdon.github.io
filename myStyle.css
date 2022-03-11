@@ -743,9 +743,8 @@ section.project {
 }
 
 #home-intro_2 {
-	-webkit-box-pack: space-evenly;
-	-ms-flex-pack: space-evenly;
-	justify-content: space-evenly;
+	width: 65%;
+	margin: auto;
 }
 
 
