@@ -631,10 +631,7 @@ section.project {
 	-webkit-box-pack: start;
 	-ms-flex-pack: start;
 	justify-content: flex-start;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
+	flex-flow: row wrap;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
@@ -674,8 +671,8 @@ section.project {
 }
 
 .project-description {
-	width: 100%;
-	height: 60%;
+	width: 50%;
+	height: 100%;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -683,9 +680,7 @@ section.project {
 	-webkit-box-direction: normal;
 	-ms-flex-flow: column wrap;
 	flex-flow: column wrap;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
+	align-items: flex-start;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
@@ -694,7 +689,7 @@ section.project {
 }
 
 .prj-des-contents {
-	width: 50%;
+	width: 75%;
 	height: 100%;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -703,14 +698,15 @@ section.project {
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	-webkit-box-pack: space-evenly;
-	-ms-flex-pack: space-evenly;
-	justify-content: space-evenly;
-	margin: 40px auto;
+	justify-content: center;
+	margin: auto 5vw;
 }
 
 
-
+.project .prj-hero_img {
+	width: 50%; height: 100%;
+	background-color: blue;
+}
 
 
 /* ----------------------------------- Customised contents ----------------------------------------- */
@@ -758,10 +754,12 @@ section.project {
 
 /* ------------------------------------------ Schecker Intro-------------------------------------------------------- */
 
-#prj-schecker {
+#prj-schecker .prj-hero_img {
 	background-image: url("./Assets/home-schecker-mockups.png");
-	visibility: hidden;
 	background-color: #E0DFDF;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 

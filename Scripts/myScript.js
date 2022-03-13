@@ -18,9 +18,6 @@ $(window).ready(function() {
 
 $( document ).ready(function() {
 
-
-
-
   TweenMax.staggerFrom("#leftEye, #rightEye, #mouth", .25, {scaleY: 0, immediateRender: false}, .3);
   TweenLite.set(lionEl, {strokeDashOffset: strokeDashOffset});
 
@@ -246,17 +243,14 @@ function CTAbuttonHover() {
 
 
 
-
-
    function customisedCTAHover() {
      $("#schecker-CTA").hover (
        function() {
-         TweenMax.to("#hero-overlay_schecker", .5, {height: "100%", backgroundColor: "white", autoAlpha: .7, delay: .4});
-         TweenMax.to("#prj-des_schecker", .3, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
+         TweenMax.fromTo("#prj-schecker .prj-hero_img", {backgroundSize: "100%"}, {backgroundSize: "120%", duration: 1, ease: Back.easeOut.config(1.7)});
+         // TweenMax.to("#prj-des_schecker", .3, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
        },
        function () {
-         TweenMax.to("#hero-overlay_schecker", .5, {height: 0, autoAlpha: 0});
-         TweenMax.to("#prj-des_schecker", .5, {backgroundColor: "rgba(255,255,255,1)"});
+         TweenMax.to("#prj-schecker .prj-hero_img", .5, {backgroundSize: "100%"});
        }
      );
      $("#sa-CTA").hover (
