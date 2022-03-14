@@ -625,6 +625,7 @@ section.project {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	flex-flow: row wrap;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -648,11 +649,6 @@ section.project {
 	height: 0;
 	position: absolute;
 	bottom: 0;
-}
-
-.hero-img {
-	width: 100%;
-	height: 40%;
 }
 
 .full-prj-img {
@@ -765,22 +761,22 @@ section.project {
 
 /* ------------------------------------------ SA Intro -------------------------------------------------------- */
 
-#prj-sa {
+#prj-sa .prj-hero_img {
 	background-image: url("./Assets/australia-2910680_1920.jpg");
-	background-position: center -16em;
+	background-position: center;
+	background-repeat: no-repeat;
 	background-color: rgb(0,0,0);
+	background-size: 100%;
 }
-	#hero-overlay_sa {
-		background: rgb(0,0,0);
-		background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
-	}
 
 
 /* ------------------------------------------ Bardot Intro -------------------------------------------------------- */
 
-#prj-bardot {
+#prj-bardot .prj-hero_img {
 	background-image: url("./Assets/BardotCampaign(5).jpg");
-	background-position: center -22em;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 
@@ -821,28 +817,22 @@ section.project {
 
 /* ----------------------------------------------------------------------------------------------- */
 
-@media screen and (min-width: 1600px) {
-	#prj-bardot {
-		background-position: center -30em;
+@media screen and (max-width: 480px) {
+	section.project {
+		flex-flow: column;
 	}
-	#prj-sa {
-		background-position: center -23em;
-	}
+		.project .prj-hero_img {
+			width: 100%;
+		}
+		.project-description {
+			width: 100%;
+			height: auto;
+		}
+			.prj-des-contents {
+				width: 80%;
+			}
 }
 
-
-@media screen and (max-width: 1024px) {
-
-	#prj-bardot {
-		background-position: center -14em;
-	}
-	#prj-schecker {
-		background-position: center -18em;
-	}
-	#prj-sa {
-		background-position: -3em -15em;
-	}
-}
 
 @media screen and (max-width: 780px) {
 	section.flex-row {
@@ -865,15 +855,5 @@ section.project {
 	#my-lion {
 		width: 100%;
 		margin-left: 0;
-	}
-
-	#prj-bardot {
-		background-position: 70% -12em;
-	}
-}
-
-@media screen and (max-width: 480px) {
-	.prj-des-contents {
-		width: 80%;
 	}
 }

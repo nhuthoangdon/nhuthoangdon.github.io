@@ -241,45 +241,47 @@ function CTAbuttonHover() {
 };
 
 
-
-
    function customisedCTAHover() {
-     $("#schecker-CTA").hover (
-       function() {
-         TweenMax.fromTo("#prj-schecker .prj-hero_img", {backgroundSize: "100%"}, {backgroundSize: "120%", duration: 1, ease: Back.easeOut.config(1.7)});
-         // TweenMax.to("#prj-des_schecker", .3, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
-       },
-       function () {
-         TweenMax.to("#prj-schecker .prj-hero_img", .5, {backgroundSize: "100%"});
-       }
-     );
-     $("#sa-CTA").hover (
-       function() {
-         TweenMax.to("#hero-overlay_sa", .5, {height: "100%", autoAlpha: 1, delay: .4});
-         TweenMax.to("#prj-des_sa", .3, {backgroundColor: "rgba(0,0,0,0)", delay: .5});
-
-         // TweenMax.to("#hero-overlay_sa", .2, {backgroundColor: "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 13%, rgba(255,255,255,0) 100%)"})
-
-         TweenMax.to("#prj-des-contents_sa", .5, {color: "white", delay: .5});
-       },
-       function () {
-         TweenMax.to("#hero-overlay_sa", .5, {height: 0, autoAlpha: 0});
-         TweenMax.to("#prj-des_sa", .5, {backgroundColor: "rgba(255,255,255,1)"});
-         TweenMax.to("#prj-des-contents_sa", .5, {color: "#0C1826"});
-       }
-     );
-     $("#bardot-CTA").hover (
-       function() {
-         TweenMax.to("#hero-overlay_bardot", .5, {height: "100%", backgroundColor: "white", autoAlpha: .7, delay: .4});
-         TweenMax.to("#prj-des_bardot", .3, {backgroundColor: "rgba(255,255,255,0)", delay: .5});
-       },
-       function () {
-         TweenMax.to("#bardot-homepage", .5, {autoAlpha: 0, translateY: "20%"});
-         TweenMax.to("#hero-overlay_bardot", .5, {height: 0, autoAlpha: 0});
-         TweenMax.to("#prj-des_bardot", .5, {backgroundColor: "rgba(255,255,255,1)"});
-       }
-     );
+     $('.project').each(function (i, el) {
+       var $prjCTA = $(this).find('.prj-CTA'),
+           $prjHero = $(this).find('.prj-hero_img');
+       $prjCTA.hover (
+         function() {
+           TweenMax.fromTo($prjHero, {backgroundSize: "100%"}, {backgroundSize: "110%", duration: 1, ease: Back.easeOut.config(1.7)});
+         },
+         function() {
+           TweenMax.to($prjHero, .5, {backgroundSize: "100%"});
+         }
+       )
+     })
    };
+
+   // function customisedCTAHover() {
+   //   $("#schecker-CTA").hover (
+   //     function() {
+   //       TweenMax.fromTo("#prj-schecker .prj-hero_img", {backgroundSize: "100%"}, {backgroundSize: "120%", duration: 1, ease: Back.easeOut.config(1.7)});
+   //     },
+   //     function () {
+   //       TweenMax.to("#prj-schecker .prj-hero_img", .5, {backgroundSize: "100%"});
+   //     }
+   //   );
+   //   $("#sa-CTA").hover (
+   //     function() {
+   //       TweenMax.fromTo("#prj-sa .prj-hero_img", {backgroundSize: "100%"}, {backgroundSize: "120%", duration: 1, ease: Back.easeOut.config(1.7)});
+   //     },
+   //     function () {
+   //       TweenMax.to("#prj-sa .prj-hero_img", .5, {backgroundSize: "100%"});
+   //     }
+   //   );
+   //   $("#bardot-CTA").hover (
+   //     function() {
+   //       TweenMax.fromTo("#prj-bardot .prj-hero_img", {backgroundSize: "100%"}, {backgroundSize: "120%", duration: 1, ease: Back.easeOut.config(1.7)});
+   //     },
+   //     function () {
+   //       TweenMax.to("#prj-bardot .prj-hero_img", .5, {backgroundSize: "100%"});
+   //     }
+   //   );
+   // };
 
 
 
@@ -359,7 +361,7 @@ function toggleMenu() {
 
   var openOverlay = new TimelineMax();
       openOverlay
-                 .to($('.overlay'), .5, {scaleY: 1, opacity: .999, transformOrigin: "bottom center",
+                 .to($('.overlay'), .5, {scaleY: 1, opacity: 1, transformOrigin: "bottom center",
                                          ease: Power4.easeOut})
                  .to('.overlay', .7, {borderRadius: 0}, "-=.3")
                  .staggerFromTo(".overlay .menu-items ul li", .5, {scaleY: 0, y: 50, autoAlpha: 0,
