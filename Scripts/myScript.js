@@ -359,7 +359,7 @@ function toggleMenu() {
 
   var openOverlay = new TimelineMax();
       openOverlay
-                 .to($('.overlay'), .5, {scaleY: 1, autoAlpha: .99, transformOrigin: "bottom center",
+                 .to($('.overlay'), .5, {scaleY: 1, opacity: .999, transformOrigin: "bottom center",
                                          ease: Power4.easeOut})
                  .to('.overlay', .7, {borderRadius: 0}, "-=.3")
                  .staggerFromTo(".overlay .menu-items ul li", .5, {scaleY: 0, y: 50, autoAlpha: 0,
