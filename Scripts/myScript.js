@@ -556,150 +556,57 @@ function preloadingAnimation() {
 
 
 
-
-
-
-function homeElOut() {
-  var tl = new TimelineMax();
-      tl.staggerTo("#intro_text, #home-CTAarrow", .2, {y: -100, autoAlpha: 0}, .1)
-        // .to(".background", .1, {autoAlpha: 1});
-  return tl;
-};
-
-function homeElIn() {
-  var tl = new TimelineMax();
-      tl.staggerTo("#intro_text, #home-CTAarrow", .5, {y: 0, autoAlpha: 1}, .1)
-        .to(".background", .1, {autoAlpha: 1});
-  return tl;
-};
-
-function intro2In() {
-  var tl = new TimelineMax();
-      tl.staggerFromTo(".intro2-in-out", .5, {y: 100}, {autoAlpha: 1, y: 0}, .1)
-        .to(".background", .1, {autoAlpha: 1});
-  return tl;
+function ElIn() {
+  $('section').each(function (i, el) {
+    var $inOut = $(this).find('.in-out-el');
+    var tl = new TimelineMax();
+        tl.to(this, .6, {autoAlpha: 1})
+          .staggerFromTo($inOut, .4, {y: 100, autoAlpha: 0, immediateRender:false}, {autoAlpha: 1, y: 0}, .1, "-=.2");
+        return tl;
+  })
 }
 
-function intro2Out() {
-  var tl = new TimelineMax();
-      tl.staggerTo(".intro2-in-out", .2, {y: -100, autoAlpha: 0}, .1)
-        .to(".background", .1, {autoAlpha: 0});
-  return tl;
+function ElOut() {
+  $('section').each(function (i, el) {
+    var $inOut = $(this).find('.in-out-el');
+    var tl = new TimelineMax();
+        tl.staggerTo($inOut, .1, {y: -100, autoAlpha: 0}, .1)
+          .to(this, .2, {autoAlpha: 0});
+   return tl;
+ })
 }
-
-function scheckerIn() {
-  var tl = new TimelineMax();
-      tl.to("#prj-schecker", .6, {autoAlpha: 1})
-        .staggerFromTo(".schecker-in-out", .4, {y: 100}, {autoAlpha: 1, y: 0}, .1, "-=.1");
-  return tl;
-}
-
-function scheckerOut() {
-  var tl = new TimelineMax();
-      tl.staggerTo(".schecker-in-out", .1, {y: -100, autoAlpha: 0}, .1)
-        .to("#prj-schecker", .2, {autoAlpha: 0});
-  return tl;
-}
-
-
-function bardotIn() {
-  var tl = new TimelineMax();
-      tl.to("#prj-bardot", .6, {autoAlpha: 1})
-        .staggerFromTo(".bardot-in-out", .4, {y: 100}, {autoAlpha: 1, y: 0}, .1, "-=.1");
-  return tl;
-}
-
-function bardotOut() {
-  var tl = new TimelineMax();
-      tl.staggerTo(".bardot-in-out", .1, {y: -100, autoAlpha: 0}, .1)
-        .to("#prj-bardot", .2, {autoAlpha: 0});
-  return tl;
-}
-
-
-function saIn() {
-  var tl = new TimelineMax();
-      tl.to("#prj-sa", .6, {autoAlpha: 1})
-        .staggerFromTo(".sa-in-out", .4, {y: 100}, {autoAlpha: 1, y: 0}, .1, "-=.1");
-  return tl;
-}
-
-function saOut() {
-  var tl = new TimelineMax();
-      tl.staggerTo(".sa-in-out", .1, {y: -100, autoAlpha: 0}, .1)
-        .to("#prj-sa", .2, {autoAlpha: 0});
-  return tl;
-}
-
-function contactIn() {
-  var tl = new TimelineMax();
-      tl.staggerFromTo(".contact-in-out", .4, {y: 100}, {autoAlpha: 1, y: 0}, .1, "-=.1");
-  return tl;
-}
-
-function contactOut() {
-  var tl = new TimelineMax();
-      tl.staggerTo(".contact-in-out", .1, {y: -100, autoAlpha: 0}, .1);
-  return tl;
-}
-
 
 
 
 // ------------------------------- Malihu's PageScrolltoId Full page scroll sniplet -------------------------------------
 
+  (function($){
+        $(window).on("load",function(){
+            $("a[rel='m_PageScroll2id']").mPageScroll2id({
+                highlightSelector: "#bullets a",
+                keepHighlightUntilNext: true,
+                appendHash: true,
+                scrollEasing:"easeInOutQuint",
+                scrollSpeed:1000,
+                onStart: function() {
+                  $('section').each(function (i, el) {
+                    if ($(this).visible(false)) {
+                      ElOut();
+                    };
+                  })
 
-(function($){
-      $(window).on("load",function(){
-          $("a[rel='m_PageScroll2id']").mPageScroll2id({
-              highlightSelector: "#bullets a",
-              keepHighlightUntilNext: true,
-              appendHash: true,
-              scrollEasing:"easeInOutQuint",
-              scrollSpeed:1000,
-              onStart: function() {
-                if ($("#home-intro").visible(false)) {
-                  homeElOut();
-                };
-                if ($(".intro2-in-out").visible(false)) {
-                  intro2Out();
-                };
-                if ($(".schecker-in-out").visible(false)) {
-                  scheckerOut();
-                };
-                if ($(".bardot-in-out").visible(false)) {
-                  bardotOut();
-                };
-                if ($(".sa-in-out").visible(false)) {
-                  saOut();
-                };
-                if ($(".contact-in-out").visible(false)) {
-                  contactOut();
-                };
-              },
-              onComplete: function() {
-                if ($("#home-intro").visible(true)) {
-                  homeElIn();
-                };
-                if ($(".intro2-in-out").visible(true)) {
-                  intro2In();
-                };
-                if ($(".schecker-in-out").visible(true)) {
-                  scheckerIn();
-                };
-                if ($(".bardot-in-out").visible(true)) {
-                  bardotIn();
-                };
-                if ($(".sa-in-out").visible(true)) {
-                  saIn();
-                };
-                if ($(".contact-in-out").visible(true)) {
-                  contactIn();
-                };
-              }
-          });
-      });
-  })(jQuery);
+                },
+                onComplete: function() {
+                  $('section').each(function (i, el) {
+                    if ($(this).visible(true)) {
+                      ElIn();
+                    };
+                  })
+
+                }
+            });
+        });
+    })(jQuery);
 
 
 

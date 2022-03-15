@@ -636,7 +636,7 @@ section.project {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	background-color: #e0dfdf;
+	background-color: white;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -707,16 +707,12 @@ section.project {
 
 /* ----------------------------------- Customised contents ----------------------------------------- */
 
-.intro2-in-out,
-.schecker-in-out,
-.bardot-in-out,
-.sa-in-out,
-.contact-in-out {
+.in-out-el {
 	visibility: hidden;
 }
 
 
-/* Intro Section */
+/* ----------------------------------------Intro Section--------------------------------------------- */
 
 #intro_text {
 	font-size: calc(3em + 6vw);
@@ -774,6 +770,15 @@ section.project {
 
 #prj-bardot .prj-hero_img {
 	background-image: url("./Assets/BardotCampaign(5).jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+/* ------------------------------------------ Radio Rentals Intro -------------------------------------------------------- */
+
+#prj-rr .prj-hero_img {
+	background-image: url("./Assets/rr-hero.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100%;
