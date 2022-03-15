@@ -831,6 +831,9 @@ section.project {
 			.prj-des-contents {
 				width: 80%;
 			}
+		.overlay {
+			border-radius: 5em 5em 0 0;
+		}
 }
 
 
