@@ -40,10 +40,10 @@ $( document ).ready(function() {
     TweenLite.set(".closeMenu .closeBar2", {rotation: -45, transformOrigin: "center", y: 15, x: 4});
 
 
-  var scheckerPos = $("#prj-schecker").offset().top;
+  var firstPrjOffset = $("#prj-heineken").offset().top;
   $(window).scroll(function() {
     var currentScroll = $(window).scrollTop();
-    if (currentScroll < scheckerPos) {
+    if (currentScroll < firstPrjOffset) {
       $(".background").css ({
         position: 'fixed'
       });

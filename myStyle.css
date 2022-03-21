@@ -743,6 +743,15 @@ section.project {
 }
 
 
+/* ------------------------------------------ Heineken Intro-------------------------------------------------------- */
+#prj-heineken .prj-hero_img {
+	background-image: url("./Assets/Heineken_HomeMockup.png");
+	background-color: #c2e5cf;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
 /* ------------------------------------------ Schecker Intro-------------------------------------------------------- */
 
 #prj-schecker .prj-hero_img {
@@ -757,10 +766,10 @@ section.project {
 /* ------------------------------------------ SA Intro -------------------------------------------------------- */
 
 #prj-sa .prj-hero_img {
-	background-image: url("./Assets/australia-2910680_1920.jpg");
+	background-image: url("./Assets/SA_HomeMockup.png");
 	background-position: center;
 	background-repeat: no-repeat;
-	background-color: rgb(0,0,0);
+	background-color: #ecb42a;
 	background-size: 100%;
 }
 
