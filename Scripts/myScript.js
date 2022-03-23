@@ -12,7 +12,7 @@ function getRandom(min, max) {
 
 
 $(window).ready(function() {
-    customisedCTAHover();
+    projectCTAHover();
 });
 
 
@@ -241,11 +241,11 @@ function CTAbuttonHover() {
 };
 
 
-   function customisedCTAHover() {
+   function projectCTAHover() {
      $('.project').each(function (i, el) {
-       var $prjCTA = $(this).find('.prj-CTA'),
+       let $prjCTA = $(this).find('.prj-CTA'),
            $prjHero = $(this).find('.prj-hero_img');
-       $prjCTA.hover (
+        $.merge($prjCTA, $prjHero).hover (
          function() {
            TweenMax.fromTo($prjHero, {backgroundSize: "100%"}, {backgroundSize: "110%", duration: 1, ease: Back.easeOut.config(1.7)});
          },
@@ -255,41 +255,6 @@ function CTAbuttonHover() {
        )
      })
    };
-
-   // function customisedCTAHover() {
-   //   $("#schecker-CTA").hover (
-   //     function() {
-   //       TweenMax.fromTo("#prj-schecker .prj-hero_img", {backgroundSize: "100%"}, {backgroundSize: "120%", duration: 1, ease: Back.easeOut.config(1.7)});
-   //     },
-   //     function () {
-   //       TweenMax.to("#prj-schecker .prj-hero_img", .5, {backgroundSize: "100%"});
-   //     }
-   //   );
-   //   $("#sa-CTA").hover (
-   //     function() {
-   //       TweenMax.fromTo("#prj-sa .prj-hero_img", {backgroundSize: "100%"}, {backgroundSize: "120%", duration: 1, ease: Back.easeOut.config(1.7)});
-   //     },
-   //     function () {
-   //       TweenMax.to("#prj-sa .prj-hero_img", .5, {backgroundSize: "100%"});
-   //     }
-   //   );
-   //   $("#bardot-CTA").hover (
-   //     function() {
-   //       TweenMax.fromTo("#prj-bardot .prj-hero_img", {backgroundSize: "100%"}, {backgroundSize: "120%", duration: 1, ease: Back.easeOut.config(1.7)});
-   //     },
-   //     function () {
-   //       TweenMax.to("#prj-bardot .prj-hero_img", .5, {backgroundSize: "100%"});
-   //     }
-   //   );
-   // };
-
-
-
-
-
-
-
-
 
 
 
