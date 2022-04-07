@@ -25,20 +25,20 @@ $(window).ready(function() {
 //footer - Other works tiles
   var workTiles = $(".work-tile");
       workTiles.toArray();
-  var tileWidth = vw/workTiles.length;
-  let tileMql1 = window.matchMedia('(max-width: 1124px)');
-  let tileMql2 = window.matchMedia('(max-width: 750px)');
-  if (workTiles.length > 3) {
-    tileWidth = vw / 3;
-  };
-  if (tileMql1.matches) {
-    tileWidth = vw / 2;
-  }
+  var tileOuterWidth = vw/workTiles.length;
+  var tileWidth = tileOuterWidth - 50;
+  // let tileMql1 = window.matchMedia('(min-width: 1124px)');
+  let tileMql2 = window.matchMedia('(max-width: 768px)');
+  // if (workTiles.length > 3) {
+  //   tileWidth = vw / 3;
+  // };
+  // if (tileMql1.matches) {
+  //   tileWidth = vw / 2;
+  // }
   if (tileMql2.matches) {
-    tileWidth = vw;
+    tileOuterWidth = vw;
   }
   workTiles.css("width", tileWidth);
-
 
   TweenMax.staggerFromTo('#all-works .work-tile', .8, {y: 100}, {y: 0, autoAlpha: 1, immediateRender: false}, .2);
 

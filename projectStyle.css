@@ -218,6 +218,9 @@ h2 {
 	letter-spacing: .03em;
 	font-weight: 800;
 }
+	.wrapper h2 {
+		margin-bottom: 0;
+	}
 
 .centered-text { text-align: center; }
 .right-aligned { text-align: right; }
@@ -230,6 +233,7 @@ h3 {
 	line-height: 1.5em;
 	font-weight: 800;
 	text-transform: uppercase;
+	margin: 0 auto;
 }
 
 p {
@@ -271,11 +275,9 @@ h4 {
 	line-height: 2rem;
 	font-weight: 800;
 	text-transform: uppercase;
+	margin-bottom: 0;
 }
 
-.block h4 {
-	text-align: left;
-}
 
 h5 {
 	font-size: 1.2em;
@@ -327,7 +329,6 @@ a.all-works-link {
 
 section {
 	width: 100%;
-	margin: calc(20px + 1%) auto;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -344,7 +345,7 @@ section {
 }
 
 section.challenge {
-	margin-top: 0;
+	margin: 0 auto 25px;
 	padding: 3% 20px;
 	display: flex;
 	flex-direction: column;
@@ -401,7 +402,8 @@ section.challenge {
 		justify-content: center;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
-		padding: 0 25px;
+		padding: calc(2% + 25px) 25px;
+		margin: 0 auto;
 	}
 
 	.wrapper.odd {
@@ -419,8 +421,6 @@ section.challenge {
 	-ms-flex-direction: column;
 	flex-direction: column;
 	width: 100%;
-	margin: 3% auto;
-	margin-top: 0;
 }
 
 
@@ -428,14 +428,12 @@ section.challenge {
 .big-col video {
 	width: 90%;
 	height: auto;
-	margin-bottom: 25px;
+	margin-top: 25px;
 }
 
 .light-bg-f9f9f9 {
 	background-color: #F9F9F9;
 	width: 100%;
-	padding-top: 3%;
-	padding-bottom: 3%;
 }
 
 
@@ -449,7 +447,7 @@ section.challenge {
 	flex-direction: column;
 	width: 40%;
 	height: auto;
-	margin: 2% auto;
+	margin: 0 auto;
 }
 .challenge .block {
 	margin: auto;
@@ -463,8 +461,13 @@ section.challenge {
 	width: 30%;
 }
 
-.small-block h4 {
+.screenCollage {
+	width: 100vw;
+}
+
+.block h4 {
 	text-align: center;
+	margin: 0 auto;
 }
 
 .small-block p {
@@ -868,6 +871,12 @@ h6.CTA-label {
 
 
 
+.other-works {
+	background-color: #2A2F36;
+	color: white;
+	padding: calc(2% + 25px) 0;
+}
+
 .tile-set {
 	 display: -webkit-inline-box;
 	 display: -ms-inline-flexbox;
@@ -879,9 +888,9 @@ h6.CTA-label {
  }
 
 	.work-tiles {
-		width: 100%;
+		width: 100vw;
 		height: auto;
-		margin-top: 5%;
+		margin: 0 auto;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -892,16 +901,13 @@ h6.CTA-label {
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
-		-webkit-box-pack: start;
-		    -ms-flex-pack: start;
-		        justify-content: flex-start;
+		        justify-content: space-evenly;
 	}
 
 	.work-tile {
 		width: auto;
 		min-width: 200px;
 		height: 50vh;
-		margin: 0;
 		display: -webkit-inline-box;
 		display: -ms-inline-flexbox;
 		display: inline-flex;
@@ -916,7 +922,7 @@ h6.CTA-label {
 		-ms-flex-pack: center;
 		justify-content: center;
 		overflow: hidden;
-		background-color: white;
+		background-color: #2A2F36;
 	}
 
 		.work-tile:nth-child(2n+0) {
@@ -1444,10 +1450,6 @@ img#bardot-findStore-img {
 	box-shadow: none;
 }
 
-section#bardot-screenCollage img {
-	width: 100%;
-	height: auto;
-}
 
 
 /* ------------------------------------------- Standards Australia --------------------------------------------- */
@@ -1725,6 +1727,9 @@ section#credits a {
 	}
 	.mouse_scroll {
 		margin-top: 20%;
+	}
+	.work-tiles {
+		flex-direction: column;
 	}
 	footer {
 		-webkit-box-orient: vertical;
