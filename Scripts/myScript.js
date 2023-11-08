@@ -97,7 +97,7 @@ var lionTl = anime.timeline({loop: true, direction: 'alternate'}),
         //blink
         .add ({
           targets: lionEl,
-          opacity: [1, 0.4],
+          opacity: [1, 0.2],
           easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
           delay: anime.stagger(80, {from: 'center'})
         })
@@ -111,7 +111,7 @@ var lionTl = anime.timeline({loop: true, direction: 'alternate'}),
         //repeat blink
         .add ({
           targets: lionEl,
-          opacity: [1, 0.4],
+          opacity: [1, 0.2],
           easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
           delay: anime.stagger(50, {from: 'center'})
         }, '-=200')
@@ -191,7 +191,7 @@ function homeload() {
                   .call(preloadingAnimation())
                   .to('.loading-wrapper', .3, {scaleY: 0, autoAlpha: 0, transformOrigin: 'top', delay: 5.8})
                   .set('.loading-wrapper', {display: 'none'})
-                  .staggerFrom("#intro_text, #home-CTAarrow, #bullets", .8,
+                  .staggerFrom("#intro_text, #intro_sub_text, #home-CTAarrow, #bullets", .8,
                               {y: 100, autoAlpha: 0}, .3)
                   // .call(animatedBg());
 
@@ -305,9 +305,9 @@ function hamburgerHover() {
       },
       function() {
         hamburgerTL
-                   .to($(".bar2", this), 0.3, {rotation: -40, x: 0, yPercent: 0, backgroundColor: "#0e83ea"})
-                   .to($(".bar1", this), 0.2, {rotation: 0, backgroundColor: "#0e83ea"}, "-=.2")
-                   .to($(".bar3", this), 0.1, {y: 10, x: 24, rotation: 0, backgroundColor: "#0e83ea"});
+                   .to($(".bar2", this), 0.3, {rotation: -40, x: 0, yPercent: 0, backgroundColor: "#191F33"})
+                   .to($(".bar1", this), 0.2, {rotation: 0, backgroundColor: "#191F33"}, "-=.2")
+                   .to($(".bar3", this), 0.1, {y: 10, x: 24, rotation: 0, backgroundColor: "#191F33"});
       }
     );
   });

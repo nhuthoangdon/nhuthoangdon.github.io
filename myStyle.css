@@ -69,7 +69,7 @@ body {
 .bar3 {
 	width: 2px;
 	position: absolute;
-	background-color: #0e83ea;
+	background-color: #191F33;
 }
 
 .menu .bar1,
@@ -142,8 +142,8 @@ body {
 
 #my-lion {
 	height: auto;
-	width: 40%;
-	opacity: .7;
+	width: auto;
+	opacity: 1;
 	overflow: visible;
 }
 
@@ -539,10 +539,10 @@ h2 {
 
 h3 {
 	font-size: 1.5em;
-	letter-spacing: .1em;
+	letter-spacing: .05em;
 	line-height: 1.5em;
-	font-weight: 800;
-	text-transform: uppercase;
+	font-weight: 600;
+/*	text-transform: uppercase;*/
 }
 
 p {
@@ -613,9 +613,35 @@ section.flex-column {
 	justify-content: center;
 }
 
+.scroll-icon {
+	width: 1.3em;
+	height: 2.2em;
+	border: 2px solid #30374E;
+	display: inline-block;
+	border-radius: 1em;
+	overflow: hidden;
+}
+	.scroll-icon .scroll-wheel {
+		width: .4em;
+		height: .4em;
+		background-color: #A922A7;
+		border-radius: 100%;
+		display: inherit;
+		animation: scroll_1 2.5s ease-in-out infinite;
+	}
 
 
 
+@keyframes scroll_1 {
+  0%   { transform: translateY(0); opacity: 1}
+/*  25%  { transform: translateY(0.6em); opacity: 1}*/
+  50%  { transform: translateY(0.6em); opacity: 1; background-color: #3794EB}
+  75%  { transform: translateY(0); opacity: 0; background-color: #A922A7}
+  100% { transform: translateY(0); opacity: 1}
+ /* 0% { transform: translateY(0); opacity: 1}
+  50% { transform: translateY(0.6em); opacity: 1 }
+  100% {transform: translateY(0); opacity: 0}*/
+}
 
 
 section.project {
@@ -713,15 +739,25 @@ section.project {
 
 /* ----------------------------------------Intro Section--------------------------------------------- */
 
-#intro_text {
-	font-size: calc(3em + 6vw);
+.opening_line {
 	margin: 10px;
 	padding: 10px;
 	-ms-flex-item-align: end;
 	align-self: flex-end;
-	line-height: 1.2em;
 	cursor: default;
 }
+
+	#intro_text {
+		font-size: calc(3em + 6vw);
+		line-height: 1em;
+		margin-bottom: 0;
+	}
+	#intro_sub_text {
+		font-size: calc(1.5em + 2vw);
+		margin-top: 0;
+		font-family: 'Lilita One', cursive;
+		color: #3B4A65;
+	}
 
 #home-CTAarrow {
 	margin: 10% 10% 60px 60px;
@@ -739,7 +775,7 @@ section.project {
 
 #smiley-face {
 	overflow: visible;
-	margin-top: 60px;
+	margin-top: 30px;
 }
 
 
@@ -801,7 +837,7 @@ section.project {
 	.big-link {
 	font-size: 1.8em;
 	letter-spacing: .05em;
-	margin: 5% auto;
+	margin: 4% auto;
 	position: relative;
 	font-weight: 800;
 }
