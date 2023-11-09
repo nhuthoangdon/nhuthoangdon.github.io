@@ -23,7 +23,7 @@ $(window).ready(function() {
   });
 
 //footer - Other works tiles
-  var workTiles = $(".work-tile");
+  var workTiles = $(".other-works .work-tile");
       workTiles.toArray();
   var tileOuterWidth = vw/workTiles.length;
   var tileWidth = tileOuterWidth - 50;

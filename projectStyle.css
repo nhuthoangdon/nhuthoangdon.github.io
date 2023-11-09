@@ -905,7 +905,7 @@ h6.CTA-label {
 	}
 
 	.work-tile {
-		width: auto;
+		width: 50%;
 		min-width: 200px;
 		height: 50vh;
 		display: -webkit-inline-box;
@@ -1731,6 +1731,9 @@ section#credits a {
 	.work-tiles {
 		flex-direction: column;
 	}
+		.work-tile {
+			width: 100%;
+		}
 	footer {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: reverse;
