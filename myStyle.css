@@ -832,7 +832,7 @@ section.project {
 
 
 
-/* ------------------------------------------ More works section -------------------------------------------------------- */
+/* ------------------------------------------ More works & About section -------------------------------------------------------- */
 
 	.big-link {
 	font-size: 1.8em;
@@ -854,11 +854,29 @@ section.project {
 		.big-link:hover:after {
 			background-color: #ffec21;
 			width: 100%;
+			height: 2px;
 			left: 0;
+			border: 0;
 		}
 
 
+@keyframes dynamicGradientText {
+	0% { background-size: 200% 100%;
+		 background-position: 0% 0; }
+	25% { background-size: 200% 100%;
+		 background-position: 100% 0; }
+	50% { background-size: 200% 100%;
+		  background-position: 0% 0; }
+	75% { background-size: 200% 100%;
+		  background-position: 100% 0; }
+	100% { background-size: 200% 100%;
+		   background-position: 0% 0; }
+}
 
+
+	.colorful-link h1 {
+		animation: dynamicGradientText 8s linear infinite;
+	}
 
 
 
