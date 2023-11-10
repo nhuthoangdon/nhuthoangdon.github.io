@@ -922,10 +922,11 @@ h6.CTA-label {
 		-ms-flex-pack: center;
 		justify-content: center;
 		overflow: hidden;
-		background-color: #2A2F36;
+/*		background-color: #2A2F36;*/
 	}
 
-		.work-tile:nth-child(2n+0) {
+		.work-tile:nth-child(4n + 2),
+		.work-tile:nth-child(4n + 3) {
 			background-color: #e1e5eb;
 		}
 
@@ -1734,6 +1735,18 @@ section#credits a {
 		.work-tile {
 			width: 100%;
 		}
+		#title-tile {
+			order: -1;
+		}		
+		.work-tile:nth-child(4n + 2),
+		.work-tile:nth-child(4n + 3) {
+			background-color: white;
+		}
+		.work-tile:nth-child(odd) {
+			background-color: #e1e5eb;
+		}
+
+	
 	footer {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: reverse;

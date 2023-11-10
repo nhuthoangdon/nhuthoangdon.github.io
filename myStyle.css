@@ -633,14 +633,11 @@ section.flex-column {
 
 
 @keyframes scroll_1 {
-  0%   { transform: translateY(0); opacity: 1}
-/*  25%  { transform: translateY(0.6em); opacity: 1}*/
-  50%  { transform: translateY(0.6em); opacity: 1; background-color: #3794EB}
-  75%  { transform: translateY(0); opacity: 0; background-color: #A922A7}
-  100% { transform: translateY(0); opacity: 1}
- /* 0% { transform: translateY(0); opacity: 1}
-  50% { transform: translateY(0.6em); opacity: 1 }
-  100% {transform: translateY(0); opacity: 0}*/
+  0%   { transform: translateY(0); opacity: 1; background-color: #197FCD}
+  25%  { background-color: #C00897}
+  50%  { transform: translateY(0.6em); background-color: #FEB507}
+  75%  { transform: translateY(0); opacity: 0; background-color: #C00897}
+  100% { transform: translateY(0); opacity: 1; background-color: #197FCD}
 }
 
 
@@ -745,6 +742,9 @@ section.project {
 	-ms-flex-item-align: end;
 	align-self: flex-end;
 	cursor: default;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 	#intro_text {
