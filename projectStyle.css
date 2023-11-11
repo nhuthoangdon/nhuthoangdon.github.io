@@ -1181,54 +1181,56 @@ footer {
 	display: block;
 	margin: 0 auto;
 	width: 24px;
-	height: 100px;
+/*	height: 100px;*/
 	z-index: 9000;
+	margin-top: 5em;
 }
 
-.mouse {
-	height: 42px;
-	width: 26px;
-	border-radius: 18px;
-	-webkit-transform: none;
-	-ms-transform: none;
-	transform: none;
-	border: 2px solid #8C9BAF;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
 
-.wheel {
-	height: 5px;
-	width: 2px;
-	display: block;
-	margin: 5px auto;
-	background: white;
-	position: relative;
-	height: 4px;
-	width: 4px;
-	border: 2px solid black;
-	border-radius: 8px;
-}
-
-.wheel {
-	-webkit-animation: mouse-wheel 0.6s linear infinite;
-	animation: mouse-wheel 0.6s linear infinite;
-}
-
-@-webkit-keyframes mouse-wheel {
-	0% {
-		opacity: 1;
-		-webkit-transform: translateY(0);
-		-ms-transform: translateY(0);
-		transform: translateY(0);
+	.mouse {
+		height: 42px;
+		width: 26px;
+		border-radius: 18px;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		border: 2px solid #8C9BAF;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
 	}
-	100% {
-		opacity: 0;
-		-webkit-transform: translateY(6px);
-		-ms-transform: translateY(6px);
-		transform: translateY(6px);
-	}
-}
+
+		.wheel {
+			height: 5px;
+			width: 2px;
+			display: block;
+			margin: 5px auto;
+			background: white;
+			position: relative;
+			height: 4px;
+			width: 4px;
+			border: 2px solid black;
+			border-radius: 8px;
+		}
+
+		.wheel {
+			-webkit-animation: mouse-wheel 0.6s linear infinite;
+			animation: mouse-wheel 0.6s linear infinite;
+		}
+
+		@-webkit-keyframes mouse-wheel {
+			0% {
+				opacity: 1;
+				-webkit-transform: translateY(0);
+				-ms-transform: translateY(0);
+				transform: translateY(0);
+			}
+			100% {
+				opacity: 0;
+				-webkit-transform: translateY(6px);
+				-ms-transform: translateY(6px);
+				transform: translateY(6px);
+			}
+		}
 
 @keyframes mouse-wheel {
 	0% {
@@ -1284,11 +1286,15 @@ footer {
 #schecker-hiw-section {
 	display: flex;
 	flex-direction: column;
+	margin-top: 10%;
 }
 
 #schecker-hero {
 	position: relative;
 	margin-bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 #schecker-hero img {
@@ -1709,6 +1715,9 @@ section#credits a {
 	.hero-img {
 		height: 30vh;
 	}
+	#schecker-hero-section {
+		height: 100vh;
+	}
 	/* .project-hero {
 		height: 30vh;
 	}
@@ -1797,6 +1806,7 @@ section#credits a {
 		justify-content: center;
 		-ms-flex-item-align: center;
 		align-self: center;
+		position: absolute;
 	}
 	/* .block {
 		margin: 10% auto;

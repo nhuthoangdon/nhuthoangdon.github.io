@@ -614,12 +614,13 @@ section.flex-column {
 }
 
 .scroll-icon {
-	width: 1.3em;
-	height: 2.2em;
-	border: 2px solid #30374E;
+	width: 1.7em;
+	height: 2.6em;
+	border: 2px solid #8C9BAF;
 	display: inline-block;
 	border-radius: 1em;
 	overflow: hidden;
+	box-sizing: border-box;
 }
 	.scroll-icon .scroll-wheel {
 		width: .4em;
@@ -635,8 +636,8 @@ section.flex-column {
 @keyframes scroll_1 {
   0%   { transform: translateY(0); opacity: 1; background-color: #197FCD}
   25%  { background-color: #C00897}
-  50%  { transform: translateY(0.6em); background-color: #FEB507}
-  75%  { transform: translateY(0); opacity: 0; background-color: #C00897}
+  50%  { transform: translateY(0.7em); background-color: #FEB507}
+  75%  { background-color: #FEB507}
   100% { transform: translateY(0); opacity: 1; background-color: #197FCD}
 }
 
