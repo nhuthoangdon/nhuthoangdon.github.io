@@ -346,7 +346,7 @@ section {
 
 section.challenge {
 	margin: 0 auto 25px;
-	padding: 3% 20px;
+	padding: 5% 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -371,7 +371,7 @@ section.challenge {
 	.hero-img {
 		width: 100vw;
 		height: 80%;
-		background-size: contain;
+		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-attachment: fixed;
@@ -872,10 +872,14 @@ h6.CTA-label {
 
 
 .other-works {
-	background-color: #2A2F36;
-	color: white;
-	padding: calc(2% + 25px) 0;
+	margin-top: 5%;
+/*	background-color: #2A2F36;*/
+/*	color: white;*/
+/*	padding: calc(2% + 25px) 0;*/
 }
+	.other-works .work-tiles {
+		margin-top: 5%;
+	}
 
 .tile-set {
 	 display: -webkit-inline-box;
@@ -1713,10 +1717,14 @@ section#credits a {
 		height: auto;
 	}
 	.hero-img {
-		height: 30vh;
+		height: 40vh;
+		background-position: center bottom;
 	}
 	#schecker-hero-section {
 		height: 100vh;
+	}
+	#bardot-hero-img {
+		background-position: center -10em;
 	}
 	/* .project-hero {
 		height: 30vh;
@@ -1788,6 +1796,10 @@ section#credits a {
 /* ------------------------------------------------------------------------------------ */
 
 @media screen and (max-width: 414px) {
+	section.challenge {
+		padding-top: 10%;
+	}
+
 	#schecker-viewInvision {
 		display: none;
 	}

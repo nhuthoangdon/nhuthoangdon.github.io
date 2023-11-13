@@ -15,7 +15,7 @@ function is_touch_enabled() {
 
 
 
-$(window).ready(function() {
+$(document).ready(function() {
 
   $('.myEye').css({
     left: 4,
@@ -99,16 +99,17 @@ $(document).ready(function() {
           }
 
         var scrollHeight = $(document).height(),
-      	    scrollPosition = $(window).height() + $(window).scrollTop();
+      	    scrollPosition = window.innerHeight + $(window).scrollTop();
         var footerTL = new TimelineMax();
 
-      	if (scrollPosition >= scrollHeight) {
+        console.log('Scroll Position:', scrollPosition);
+        console.log('Document Height:', scrollHeight);
+
+      	if (scrollPosition >= scrollHeight - 1) {
             footerTL.to("footer", .8, {opacity: 1, scaleY: 1, ease: Back.easeOut.config(1.7)});
       	} else {
             footerTL.to("footer", .6, {opacity: 0, scaleY: 0});
         }
-
-
     });
 
 
