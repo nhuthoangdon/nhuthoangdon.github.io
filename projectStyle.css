@@ -44,7 +44,7 @@ body {
 .bar3 {
 	width: 2px;
 	position: absolute;
-	background-color: #0e83ea;
+	background-color: #2B334F;
 }
 
 .menu .bar1,
@@ -370,12 +370,12 @@ section.challenge {
 
 	.hero-img {
 		width: 100vw;
-		height: 80%;
+		height: 80vh;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-attachment: fixed;
-		background-color: #c2e5cf;
+		background-color: #0B0B0B;
 	}
 
 
@@ -993,6 +993,10 @@ h6.CTA-label {
 	background-image: url("./Assets/rr-mockup.jpg");
 }
 
+#tile_heineken {
+	background-image: url("./Assets/Heineken_TileMockup.jpg");
+}
+
 #tile_type-creature {
 	background-image: url("./Assets/TypeCreature.png");
 	background-size: contain;
@@ -1427,6 +1431,9 @@ footer {
 /* ------------------------------------------- Heineken -------------------------------------------- */
 #heineken-hero-img {
 	background-image: url("./Assets/Heineken_PD_Hero.png");
+	background-color: #A7EDC6;
+	background-size: contain;
+	background-position: center 30%;
 }
 
 section#heineken-challenge {
@@ -1467,7 +1474,7 @@ img#bardot-findStore-img {
 
 #sa-hero-img {
 	background-image: url("./Assets/australia-2910680_1920.jpg");
-	background-position: bottom;
+	background-position: center -10em;
 }
 
 section#sa-challenge {
@@ -1619,6 +1626,7 @@ section#credits a {
 	justify-content: center;
 	border: 1px dashed #f907d9;
 	visibility: hidden;
+	padding: 20px;
 }
 
 #svg-portrait {
@@ -1640,10 +1648,10 @@ section#credits a {
 .myEye:after {
 	position: absolute;
 	top: 4px;
-	left: 6px;
-	width: 5px;
-	height: 5px;
-	background-color: rgba(255, 255, 255, .7);
+	left: 5px;
+	width: 6px;
+	height: 6px;
+	background-color: rgba(255, 255, 255, .6);
 	border-radius: 50%;
 	content: " ";
 }
@@ -1651,9 +1659,9 @@ section#credits a {
 .myEye:before {
 	position: absolute;
 	top: 4px;
-	left: 4px;
-	width: 11px;
-	height: 11px;
+	left: 3px;
+	width: 12px;
+	height: 12px;
 	border: 1px solid rgba(255, 255, 255, .2);
 	background-color: rgba(0, 0, 0, .9);
 	border-radius: 50%;
@@ -1726,6 +1734,13 @@ section#credits a {
 	#bardot-hero-img {
 		background-position: center -10em;
 	}
+	#sa-hero-img {
+		background-position: center -15em;
+	}
+	#rr-hero-img {
+		background-position: center top;
+	}
+
 	/* .project-hero {
 		height: 30vh;
 	}

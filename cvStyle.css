@@ -95,7 +95,7 @@ h4 {
 	font-size: 1em;
 	letter-spacing: .1rem;
 	line-height: 2rem;
-	font-weight: 700;
+	font-weight: 800;
 	text-transform: uppercase;
 }
 
@@ -110,12 +110,12 @@ h5 small {
 	font-weight: 400;
 }
 
-i {
+/*i {
 	font-size: .9em;
-	font-weight: 200;
+	font-weight: 400;
 	letter-spacing: .1em;
 	line-height: 2em;
-}
+}*/
 
 
 section {
@@ -257,9 +257,9 @@ section {
 
 
 
-#languages {
+/*#languages {
   width: calc(80% + 50px);
-}
+}*/
 
 
 

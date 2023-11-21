@@ -95,7 +95,8 @@ $(document).ready(function() {
             pixs = pixs/500;
 
           for (i=0; i <= 1; i++) {
-            $("#sa-hero-img, #bardot-hero-img").css({"opacity": 1-pixs});
+            // $("#sa-hero-img, #bardot-hero-img").css({"opacity": 1-pixs});
+            $(".hero-img").css({"opacity": 1-pixs});
           }
 
         var scrollHeight = $(document).height(),
@@ -221,9 +222,9 @@ function hamburgerHover() {
       },
       function() {
         hamburgerTL
-                   .to($(".bar2", this), 0.3, {rotation: -40, x: 0, yPercent: 0, backgroundColor: "#0e83ea"})
-                   .to($(".bar1", this), 0.2, {rotation: 0, backgroundColor: "#0e83ea"}, "-=.2")
-                   .to($(".bar3", this), 0.1, {y: 10, x: 24, rotation: 0, backgroundColor: "#0e83ea"});
+                   .to($(".bar2", this), 0.3, {rotation: -40, x: 0, yPercent: 0, backgroundColor: "#2B334F"})
+                   .to($(".bar1", this), 0.2, {rotation: 0, backgroundColor: "#2B334F"}, "-=.2")
+                   .to($(".bar3", this), 0.1, {y: 10, x: 24, rotation: 0, backgroundColor: "#2B334F"});
       }
     );
   });
@@ -355,7 +356,7 @@ function myFancyEyes() {
     var y = (eye.offset().top) + (eye.height() / 2);
     var rad = Math.atan2(event.pageX - x, event.pageY - y);
     var rot = (rad * (180 / Math.PI) * -1) + 180;
-
+    
       eye.css({
         left: event.pageX / (x * 1/4),
         top: event.pageY / (y * 2),
