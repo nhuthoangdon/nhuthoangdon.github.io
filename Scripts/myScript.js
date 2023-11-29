@@ -1,4 +1,4 @@
-var vh = window.innerHeight,
+var vh = window.innerHeight * 0.01,
     vw = window.innerWidth;
 
 window.onbeforeunload = function () {
@@ -20,9 +20,10 @@ window.addEventListener('load', setFullscreenHeight);
 window.addEventListener('resize', setFullscreenHeight);
 
 function setFullscreenHeight() {
-    document.querySelector('.project').style.height = viewportHeight + 'px';
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
+setFullscreenHeight();
 
 $( document ).ready(function() {
 
