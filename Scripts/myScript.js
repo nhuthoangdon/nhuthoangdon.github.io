@@ -1,4 +1,4 @@
-var vh = window.innerHeight * 0.01,
+var vh = window.innerHeight,
     vw = window.innerWidth;
 
 window.onbeforeunload = function () {
@@ -16,14 +16,7 @@ $(window).ready(function() {
 });
 
 
-window.addEventListener('load', setFullscreenHeight);
-window.addEventListener('resize', setFullscreenHeight);
 
-function setFullscreenHeight() {
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-setFullscreenHeight();
 
 $( document ).ready(function() {
 
