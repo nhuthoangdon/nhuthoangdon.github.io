@@ -919,6 +919,11 @@ section.project {
 
 
 @media screen and (max-width: 480px) {
+	
+	.in-out-el {
+	visibility: visible;
+}
+
 	section.project {
 		flex-flow: column;
 		overflow-y: auto;
