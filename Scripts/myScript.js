@@ -16,6 +16,14 @@ $(window).ready(function() {
 });
 
 
+window.addEventListener('load', setFullscreenHeight);
+window.addEventListener('resize', setFullscreenHeight);
+
+function setFullscreenHeight() {
+    document.querySelector('.project').style.height = viewportHeight + 'px';
+}
+
+
 $( document ).ready(function() {
 
   TweenMax.staggerFrom("#leftEye, #rightEye, #mouth", .25, {scaleY: 0, immediateRender: false}, .3);
@@ -576,8 +584,6 @@ function ElOut() {
 
 
 // ------------------- scroll with mousewheel -----------------------
-
-
 
   (function($){
     $(window).on("load",function(){
