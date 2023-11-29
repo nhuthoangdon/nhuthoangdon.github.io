@@ -894,10 +894,6 @@ section.project {
 
 @media screen and (max-width: 780px) {
 
-	.project {
-		height: 100vh;
-	}
-
 	section.flex-row {
 		-webkit-box-pack: center;
 		-ms-flex-pack: center;

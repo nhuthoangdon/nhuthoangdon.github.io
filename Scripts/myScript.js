@@ -556,20 +556,24 @@ function ElOut() {
                 scrollEasing:"easeInOutQuint",
                 scrollSpeed:1000,
                 onStart: function() {
-                  $('section').each(function (i, el) {
+                  const largerThan480px = window.matchMedia('(min-width: 480px)').matches;
+                  if (largerThan480px) {
+                    $('section').each(function (i, el) {
                     if ($(this).visible(false)) {
                       ElOut();
-                    };
-                  })
-
+                     };
+                   })
+                 }      
                 },
                 onComplete: function() {
-                  $('section').each(function (i, el) {
+                  const largerThan480px = window.matchMedia('(min-width: 480px)').matches;
+                  if (largerThan480px) {
+                    $('section').each(function (i, el) {
                     if ($(this).visible(true)) {
                       ElIn();
-                    };
-                  })
-
+                     };
+                    })
+                  } 
                 }
             });
         });
