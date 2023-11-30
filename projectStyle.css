@@ -276,6 +276,7 @@ h4 {
 	font-weight: 800;
 	text-transform: uppercase;
 	margin-bottom: 0;
+	text-align: center;
 }
 
 
@@ -462,8 +463,13 @@ section.challenge {
 }
 
 .screenCollage {
-	width: 100vw;
+	width: 100%;
+	height: auto;
 }
+	/*.screenCollage img {
+		width: 100%;
+	}*/
+
 
 .block h4 {
 	text-align: center;
@@ -1444,7 +1450,6 @@ section#heineken-challenge {
 	}
 
 
-
 /* ------------------------------------------- Bardot -------------------------------------------- */
 
 #bardot-hero-img {
@@ -1717,6 +1722,17 @@ section#credits a {
 	#schecker-hero:before {
 		height: 100px;
 	}
+
+/*	Schecker How it works section orders*/
+	#hiw-2 .hiw-feature-heading {
+		order: 1;
+	}
+	#hiw-2 .hiw-feature-ic {
+		order: 2;
+	}
+	#hiw-2 .hiw-feature-desc {
+		order: 3;
+	}	
 }
 
 @media screen and (max-width: 768px) {
