@@ -11,7 +11,7 @@
 html,
 body {
 	font-size: 100%;
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Titillium Web', sans-serif;
 	color: #0C1826;
 	height: auto;
 	width: 100vw;
@@ -119,8 +119,10 @@ body {
 .background {
 	width: 100vw;
 	height: 100vh;
+	max-width: 100%;
+	max-height: 100%;
 	z-index: -1000;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -140,11 +142,20 @@ body {
 	align-items: center;
 }
 
-#my-lion {
+.whales {
 	height: auto;
-	width: auto;
+	width: 50%;
 	opacity: 1;
 	overflow: visible;
+	position: absolute;
+}
+#myWhale_1 {
+	top: 0;
+	left: 0;
+}
+#myWhale_2 {
+	bottom: 0;
+	right: 0;
 }
 
 
@@ -228,10 +239,10 @@ body {
 .overlay .menu-items ul li a {
 	color: white;
 	text-decoration: none;
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Titillium Web', sans-serif;
 	font-weight: 700;
 	font-size: calc(2rem + .7vw);
-	letter-spacing: .14rem;
+/*	letter-spacing: .14rem;*/
 	position: relative;
 	-webkit-transition: .7s;
 	-o-transition: .7s;
@@ -513,7 +524,7 @@ h6.CTA-label {
 }
 
 h1 {
-	font-family: 'Lilita One', cursive;
+	font-family: 'Playfair Display', serif;
 	font-size: calc(1.8em + 1.8vw);
 	letter-spacing: 0.06em;
 	line-height: 1.5em;
@@ -526,11 +537,11 @@ h1 {
 }
 
 h2 {
-	font-family: 'Dosis', sans-serif;
-	font-size: calc(1.8em + 1vw);
-	letter-spacing: .03em;
-	font-weight: 800;
-	line-height: 1.6em;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: calc(1.8em + 2vw);
+/*	letter-spacing: .03em;*/
+	font-weight: 900;
+	line-height: 1.2em;
 }
 
 .centered-text {
@@ -538,22 +549,22 @@ h2 {
 }
 
 h3 {
-	font-size: 1.5em;
-	letter-spacing: .05em;
+	font-size: 1.3em;
+	letter-spacing: .5em;
 	line-height: 1.5em;
-	font-weight: 600;
-/*	text-transform: uppercase;*/
+	font-weight: 200;
+	text-transform: uppercase;
 }
 
 p {
 	font-size: 1.125em;
 	letter-spacing: .06em;
 	line-height: 1.6em;
-	font-weight: 600;
+	font-weight: 400;
 }
 
 strong {
-	font-weight: 800;
+	font-weight: 900;
 }
 
 a {
@@ -565,9 +576,12 @@ a {
 
 a:hover {
 	color: #ffec21;
-	font-weight: 800;
+	font-weight: 900;
 	text-decoration: none;
 }
+
+
+
 
 section {
 	width: 100vw;
@@ -741,6 +755,12 @@ section.project {
 
 /* ----------------------------------------Intro Section--------------------------------------------- */
 
+#home-intro {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+
 .opening_line {
 	margin: 10px;
 	padding: 10px;
@@ -754,13 +774,16 @@ section.project {
 
 	#intro_text {
 		font-size: calc(3em + 6vw);
-		line-height: 1em;
+/*		line-height: 1em;*/
 		margin-bottom: 0;
 	}
 	#intro_sub_text {
-		font-size: calc(1.5em + 2vw);
+		font-size: calc(1em + 1.2vw);
 		margin-top: 0;
-		font-family: 'Lilita One', cursive;
+		font-weight: 200;
+		letter-spacing: 1em;
+		line-height: 1.5em;
+		text-transform: uppercase;
 		color: #3B4A65;
 	}
 
@@ -840,11 +863,10 @@ section.project {
 /* ------------------------------------------ More works & About section -------------------------------------------------------- */
 
 	.big-link {
-	font-size: 1.8em;
-	letter-spacing: .05em;
-	margin: 4% auto;
-	position: relative;
-	font-weight: 800;
+		max-width: 90%;
+		text-align: center;
+		margin: 4% auto;
+		position: relative;
 }
 	.big-link:after {
 		content: "";
@@ -897,6 +919,7 @@ section.project {
 	section.flex-row {
 		-webkit-box-pack: center;
 		-ms-flex-pack: center;
+		flex-direction: column;
 		justify-content: center;
 	}
 	#intro_text {
@@ -911,7 +934,7 @@ section.project {
 		-ms-grid-row-align: auto;
 		align-self: auto;
 	}
-	#my-lion {
+	.whales {
 		width: 100%;
 		margin-left: 0;
 	}

@@ -21,7 +21,7 @@ $(window).ready(function() {
 $( document ).ready(function() {
 
   TweenMax.staggerFrom("#leftEye, #rightEye, #mouth", .25, {scaleY: 0, immediateRender: false}, .3);
-  TweenLite.set(lionEl, {strokeDashOffset: strokeDashOffset});
+  TweenLite.set(whales_el, {strokeDashOffset: strokeDashOffset});
 
 
     hamburgerHover();
@@ -42,19 +42,28 @@ $( document ).ready(function() {
     TweenLite.set(".closeMenu .closeBar2", {rotation: -45, transformOrigin: "center", y: 15, x: 4});
 
 
+
+// ------------------------------Background play pause---------------------------------------
+
   var firstPrjOffset = $("#prj-heineken").offset().top;
+  var lastPagesOffset = $("#more-works").offset().top;
+  
   $(window).scroll(function() {
+    
     var currentScroll = $(window).scrollTop();
-    if (currentScroll < firstPrjOffset) {
+    
+    if ((currentScroll < firstPrjOffset) || (currentScroll >= lastPagesOffset)) {
       $(".background").css ({
         position: 'fixed'
       });
         lionTl.play();
+        whale2Tl.play();
     } else {
       $(".background").css ({
         position: 'absolute'
       });
       lionTl.pause();
+      whale2Tl.pause();
     }
   });
 
@@ -74,121 +83,151 @@ $( document ).ready(function() {
 
 
 
-
-
-var lionTl = anime.timeline({loop: true, direction: 'alternate'}),
-    lionEl = document.querySelectorAll('#my-lion .st0'),
+var lionTl = anime.timeline({loop: true}),
+    whale2Tl = anime.timeline({loop: true}),
+    whale_1_el = document.querySelectorAll('#myWhale_1 .cls-1'),
+    whale_2_el = document.querySelectorAll('#myWhale_2 .cls-1'),
+    whales = document.querySelectorAll('.whales'),
+    whales_el = document.querySelectorAll('.whales .cls-1'),
+    whale_1 = document.querySelectorAll('.whale_1'),
+    whale_2 = document.querySelectorAll('.whale_2'),
     strokeDashOffset = anime.strokeDashoffset;
 
+
+
   function animatedBg() {
-    // animated background stuff
-        lionTl
+      lionTl
         .add ({
-          targets: lionEl,
+          targets: whale_1_el,
             translateX: [function(el, i) {
-              return 30 + (-10 / i);
+              return -100 - (100 / i);
             }, 0],
             translateY: [function(el, i) {
-              return 30 + (-10 / i);
+              return -10 + (-10 / i);
             }, 0],
+            scale: [.9, 1],           
             fill: '#e2e9ed',
             opacity: [0,1],
-            easing: 'spring(30, 30, 60, 5)',
-            delay: anime.stagger(100, {direction: 'reverse'})
-        }, '+=300')
-        //blink
-        .add ({
-          targets: lionEl,
-          opacity: [1, 0.2],
-          easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
-          delay: anime.stagger(80, {from: 'center'})
+            easing: 'spring(40, 90, 70, 0)',
+            delay: anime.stagger(50)
         })
-        //blink back
         .add ({
-          targets: lionEl,
-          opacity: 1,
-          easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
-          delay: anime.stagger(80, {from: 'center'})
-        }, '-=200')
-        //repeat blink
-        .add ({
-          targets: lionEl,
-          opacity: [1, 0.2],
-          easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
-          delay: anime.stagger(50, {from: 'center'})
-        }, '-=200')
-        //repeat blink back
-        .add ({
-          targets: lionEl,
-          opacity: 1,
-          easing: 'cubicBezier(0.355, 1.650, 0.865, -0.600)',
-          delay: anime.stagger(50, {from: 'center'}),
-        }, '-=200')
-        //scatter
-        .add ({
-          targets: lionEl,
-          translateX: function(el, i) {
-            return anime.random(0,vw) + (-20 * i);
-          },
-          translateY: function(el, i) {
-            return anime.random(0,vh) + (-10 * i);
-          },
-          rotate: function() { return anime.random(-360, 360); },
-          easing: 'easeInOutBack',
-          delay: function() { return anime.random(0, 400); },
-          duration: 5000
-        }, '+=2000')
-        //disappear & pseudo disappearance with 0 alpha
-        .add ({
-          targets: lionEl,
-          opacity: 0,
-          fill: 'rgba(0,0,0,0)',
-          easing: 'cubicBezier(0.645, -0.005, 0.000, 0.860)',
-          delay: anime.stagger(50),
-          duration: 2000
-        }, '+=500')
-        //background change of position and opacity
-        .add ({
-          targets: lionEl,
-          rotate: anime.random(-10, 90),
-          opacity: 1,
-          duration: 200
-        })
-        //draw lines
-        .add ({
-          targets: lionEl,
-          strokeDashoffset: [anime.setDashoffset, 0],
-          stroke: ['#f907d9','#c3cfe2'],
+          targets: whale_1_el,
+          translateX: '50%',
+          translateY: '20%',
+          scale: 1.1,
+          duration: 11000,
+          delay: anime.stagger(20),
           easing: 'easeInOutSine',
-          duration: 600,
-          delay: function(el, i) { return i * 250 }
         })
-        //reasemble
         .add ({
-          targets: lionEl,
-          translateX: 0,
-          translateY: 0,
-          rotate: 0,
-          easing: 'cubicBezier(1.000, -0.050, 0.000, 1.070)',
-          duration: 5000
+          targets: whale_1_el,
+          rotateZ: -20,
+          duration: 7000,
+          delay: anime.stagger(40),
+          easing: 'easeOutElastic(1, .7)'
         })
-        //erase
         .add ({
-          targets: lionEl,
-          stroke: '#0760f9',
-          strokeDashoffset: [0, anime.setDashoffset],
+          targets: whale_1_el,
+          translateX: '200%',
+          translateY: '-50%',
+          scale: 1,
+          duration: 8000,
+          delay: anime.stagger(20),
+          easing: 'easeInSine'
+        }, '-=2000')
+
+        //2nd round
+        .add ({
+          targets: whale_1_el,
+            translateX: [function(el, i) {
+              return -40 - (40 / i);
+            }, 0],
+            translateY: [function(el, i) {
+              return 20 + (5 * i);
+            }, 0],
+            rotateZ: -5,
+            scale: [.9, 1],           
+            opacity: [0,1],
+            easing: 'spring(40, 90, 70, 0)',
+            delay: anime.stagger(50)
+        })
+        .add ({
+          targets: whale_1_el,
+          translateX: '200%',
+          translateY: '20%',
+          scale: 1,
+          duration: 17000,
+          delay: anime.stagger(20),
+          // easing: 'spring(100, 90, 60, 0)',
           easing: 'easeInOutSine',
-          duration: 500,
-          delay: function(el, i) { return i * 250 }
-        }, '+=2000')
+          // easing: 'easeOutElastic(1, .8)'
+        })
   };
 
+
+   function whale2play() {
+        whale2Tl
+        .add ({
+          targets: whale_2_el,
+            translateX: [function(el, i) {
+              return 10 + (10 * i);
+            }, 0],
+            translateY: [function(el, i) {
+              return 20 + (20 * i);
+            }, 0],
+            scale: [.9, 1],           
+            fill: '#e2e9ed',
+            opacity: [0,1],
+            easing: 'spring(50, 100, 70, 0)',
+            delay: anime.stagger(30)
+        }, '+=2000')
+        .add ({
+          targets: whale_2_el,
+          rotateZ: -20,
+          duration: 8000,
+          delay: anime.stagger(30),
+          easing: 'spring(30, 50, 30, 0)',
+        })
+        .add ({
+          targets: whale_2_el,
+          translateX: '-200%',
+          translateY: '200%',
+          rotateZ: -25,
+          scale: 1.2,
+          duration: 7000,
+          delay: anime.stagger(8),
+          easing: 'easeOutSine',
+        })  
+        .add ({
+          targets: whale_2_el,
+          translateX: '30%',
+          translateY: '-10%',
+          rotate: 90,
+          scale: 1,
+          duration: 10000,
+          delay: anime.stagger(20),
+          easing: 'easeOutElastic(1, .7)',
+        }, '-=1000')
+        .add ({
+          targets: whale_2_el,
+          translateX: '-150%',
+          translateY: '-300%',
+          scale: 1,
+          duration: 10000,
+          delay: anime.stagger(10),
+          easing: 'easeInOutSine',
+        })
+   }
 
 
 // Initial Home Animation
 function homeload() {
-  var homeTimeline = new TimelineMax({onComplete:animatedBg});
-      homeTimeline
+    var homeTimeline = new TimelineMax({onComplete: function() {
+      animatedBg();
+      whale2play();
+    }})
+        homeTimeline
         // .add(preloadingAnimation())
                   .call(preloadingAnimation())
                   .to('.loading-wrapper', .3, {scaleY: 0, autoAlpha: 0, transformOrigin: 'top', delay: 5.8})
@@ -344,9 +383,11 @@ function toggleMenu() {
           openOverlay.play();
           hamburgerState.play();
           lionTl.pause();
+          whale2Tl.pause();
       } else {
         openOverlay.reverse();
         lionTl.play();
+        whale2Tl.play();
         hamburgerState.reverse();
       }
     });
