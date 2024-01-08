@@ -8,7 +8,7 @@
 html,
 body {
 	font-size: 100%;
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Titillium Web', sans-serif;
 	color: #0C1826;
 	width: 100vw;
 	margin: 0;
@@ -133,7 +133,7 @@ body {
 .overlay .menu-items ul li a {
 	color: white;
 	text-decoration: none;
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Titillium Web', sans-serif;
 	font-weight: 700;
 	font-size: calc(2rem + .7vw);
 	letter-spacing: .14rem;
@@ -195,12 +195,12 @@ body {
 	letter-spacing: .14rem;
 	color: #F3425E;
 	opacity: 1;
-	font-weight: 800;
+	font-weight: 900;
 	cursor: default;
 }
 
 h1 {
-	font-family: 'Lilita One', cursive;
+	font-family: 'Playfair Display', serif;
 	font-size: calc(1.8em + 1.8vw);
 	letter-spacing: 0.06em;
 	line-height: 1.5em;
@@ -213,10 +213,10 @@ h1 {
 }
 
 h2 {
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Titillium Web', sans-serif;
 	font-size: calc(1.8em + 1vw);
 	letter-spacing: .03em;
-	font-weight: 800;
+	font-weight: 900;
 }
 	.wrapper h2 {
 		margin-bottom: 0;
@@ -231,7 +231,7 @@ h3 {
 	font-size: 1.5em;
 	letter-spacing: .1em;
 	line-height: 1.5em;
-	font-weight: 800;
+	font-weight: 900;
 	text-transform: uppercase;
 	margin: 0 auto;
 }
@@ -240,11 +240,11 @@ p {
 	font-size: 1.125em;
 	letter-spacing: .06em;
 	line-height: 1.6em;
-	font-weight: 600;
+	font-weight: 400;
 }
 
 strong {
-	font-weight: 800;
+	font-weight: 700;
 }
 
 a {
@@ -273,7 +273,7 @@ h4 {
 	font-size: 1.3em;
 	letter-spacing: .12em;
 	line-height: 2rem;
-	font-weight: 800;
+	font-weight: 900;
 	text-transform: uppercase;
 	margin-bottom: 0;
 	text-align: center;
@@ -282,7 +282,7 @@ h4 {
 
 h5 {
 	font-size: 1.2em;
-	font-weight: 800;
+	font-weight: 900;
 	letter-spacing: .2rem;
 	text-align: center;
 }
@@ -309,7 +309,7 @@ i {
 a.all-works-link {
 	margin: 5% auto;
 	position: relative;
-	font-weight: 800;
+	font-weight: 900;
 }
 		a.all-works-link:after {
 			content: "";
@@ -786,7 +786,7 @@ svg.button-outline {
 
 h6.CTA-label {
 	display: inline;
-	font-weight: 800;
+	font-weight: 900;
 	letter-spacing: .25em;
 	text-transform: uppercase;
 	color: #0e83ea;
@@ -1055,7 +1055,7 @@ h6.CTA-label {
 	-o-transition: all ease-in-out .3s;
 	transition: all ease-in-out .3s;
 	color: #0C1826;
-	font-weight: 500;
+	font-weight: 600;
 	cursor: pointer;
 	text-align: center;
 }
@@ -1063,7 +1063,7 @@ h6.CTA-label {
 .work-tile:hover .tile-CTA {
 	transform: scaleY(1);
 	opacity: 1;
-	font-weight: 500;
+	font-weight: 600;
 	color: #0C1826;
 }
 
@@ -1405,7 +1405,7 @@ footer {
 
 				.i-innovative {
 					font-style: normal;
-					font-weight: 800;
+					font-weight: 900;
 					color: #a107f9;
 					text-transform: uppercase;
 				}

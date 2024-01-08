@@ -105,7 +105,7 @@ var lionTl = anime.timeline({loop: true}),
             translateY: [function(el, i) {
               return -10 + (-10 / i);
             }, 0],
-            scale: [.9, 1],           
+            scale: [.7, .8],           
             fill: '#e2e9ed',
             opacity: [0,1],
             easing: 'spring(40, 90, 70, 0)',
@@ -115,23 +115,23 @@ var lionTl = anime.timeline({loop: true}),
           targets: whale_1_el,
           translateX: '50%',
           translateY: '20%',
-          scale: 1.1,
+          scale: 1,
           duration: 11000,
-          delay: anime.stagger(20),
+          delay: anime.stagger(30),
           easing: 'easeInOutSine',
         })
         .add ({
           targets: whale_1_el,
           rotateZ: -20,
           duration: 7000,
-          delay: anime.stagger(40),
+          delay: anime.stagger(50),
           easing: 'easeOutElastic(1, .7)'
         })
         .add ({
           targets: whale_1_el,
           translateX: '200%',
-          translateY: '-50%',
-          scale: 1,
+          translateY: '-70%',
+          scale: .8,
           duration: 8000,
           delay: anime.stagger(20),
           easing: 'easeInSine'
@@ -147,7 +147,7 @@ var lionTl = anime.timeline({loop: true}),
               return 20 + (5 * i);
             }, 0],
             rotateZ: -5,
-            scale: [.9, 1],           
+            scale: [.7, .8],           
             opacity: [0,1],
             easing: 'spring(40, 90, 70, 0)',
             delay: anime.stagger(50)
@@ -159,9 +159,7 @@ var lionTl = anime.timeline({loop: true}),
           scale: 1,
           duration: 17000,
           delay: anime.stagger(20),
-          // easing: 'spring(100, 90, 60, 0)',
           easing: 'easeInOutSine',
-          // easing: 'easeOutElastic(1, .8)'
         })
   };
 
@@ -181,7 +179,7 @@ var lionTl = anime.timeline({loop: true}),
             opacity: [0,1],
             easing: 'spring(50, 100, 70, 0)',
             delay: anime.stagger(30)
-        }, '+=2000')
+        }, '+=3000')
         .add ({
           targets: whale_2_el,
           rotateZ: -20,
@@ -211,9 +209,9 @@ var lionTl = anime.timeline({loop: true}),
         }, '-=1000')
         .add ({
           targets: whale_2_el,
-          translateX: '-150%',
+          translateX: '-130%',
           translateY: '-300%',
-          scale: 1,
+          scale: .7,
           duration: 10000,
           delay: anime.stagger(10),
           easing: 'easeInOutSine',
