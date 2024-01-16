@@ -167,7 +167,7 @@ $(document).ready(function() {
       .from("#schecker-draggable-flow h5", duration, { rotation: 90, scaleX: 0, autoAlpha: 0 }, scene_3f)
       .from("#schecker-userFlow", duration, { scale: 0, transformOrigin: "top right", rotation: -90 }, scene_3f)
       .from("#s_leading-line-5", duration * 2, { scaleY: 0, y: -3/4*vh }, scene_3i + vh/2)
-      .from("#s_collage", duration, { autoAlpha: 1, scale: 0, transformOrigin: "top right", rotation: -90}, scene_3j)
+      .from("#s_collage", duration, { autoAlpha: .7, scale: 0, transformOrigin: "top right", rotation: -90}, scene_3j)
       .from("#schecker-viewInvisionCTA", duration, { x: "-=500", autoAlpha: 0 }, scene_4)
       .to("#s_collage", duration, { autoAlpha: .2 }, scene_4a)
       .from("#schecker-viewInvision", duration, { x: "-=500", autoAlpha: 0 }, scene_4a);
