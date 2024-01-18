@@ -171,7 +171,10 @@ $(document).ready(function() {
       .from("#schecker-viewInvisionCTA", duration, { x: "-=500", autoAlpha: 0 }, scene_4)
       .to("#s_collage", duration, { autoAlpha: .2 }, scene_4a)
       .from("#schecker-viewInvision", duration, { x: "-=500", autoAlpha: 0 }, scene_4a);
-
+      
+      if ($(window).width() < 430) {
+        scheckerTL.to("#s_collage", duration, { autoAlpha: .2 }, scene_4);
+      }
 
 
 // Only update on animation frames
