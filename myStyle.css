@@ -556,6 +556,13 @@ h3 {
 	text-transform: uppercase;
 }
 
+h5 {
+	font-size: 1.2em;
+	font-weight: 900;
+	letter-spacing: .2rem;
+	text-align: center;
+}
+
 p {
 	font-size: 1.125em;
 	letter-spacing: .06em;
@@ -885,6 +892,22 @@ section.project {
 			left: 0;
 			border: 0;
 		}
+
+		.logos {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-flow: row wrap;
+			align-items: center;
+			justify-content: center;
+		}
+			.logo {
+				width: 10%;
+				max-width: 150px;
+				height: auto;
+				max-height: 150px;
+				margin: 20px;
+			}
 
 
 @keyframes dynamicGradientText {
