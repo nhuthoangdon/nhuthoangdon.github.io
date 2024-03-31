@@ -899,6 +899,7 @@ section.project {
 			display: flex;
 			flex-flow: row wrap;
 			align-items: center;
+			align-content: center;
 			justify-content: center;
 		}
 			.logo {
@@ -906,7 +907,7 @@ section.project {
 				max-width: 150px;
 				height: auto;
 				max-height: 150px;
-				margin: 20px;
+				margin: 2%;
 			}
 
 
