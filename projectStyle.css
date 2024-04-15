@@ -434,7 +434,7 @@ section.challenge {
 	height: auto;
 	margin-top: 25px;
 	opacity: 1;
-	transition: opacity 0.2s ease-out;
+	transition: opacity 0.4s ease-out;
 }
 
 .light-bg-f9f9f9 {
@@ -461,15 +461,16 @@ section.challenge {
 	font-style: italic;
 	opacity: 0;
     pointer-events: none;
+    transition: .4s ease-in;
 }
-	.big-col img:hover + span, .tooltip:hover {
+	/*.big-col img:hover + span, .tooltip:hover {
 	        visibility: visible;
 	        pointer-events: auto;
 	        opacity: 1;
-	    }
-	/*.big-col img:hover {
-		opacity: .5;
-	}*/
+	    }*/
+	.big-col img:hover {
+		opacity: .5 !important;
+	}
 
 .block {
 	display: -webkit-box;

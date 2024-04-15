@@ -321,29 +321,28 @@ function CTAbuttonHover() {
 };
 
 
-//Tooltip effect
-    var imgContainers = document.querySelectorAll('.big-col img');
 
-    imgContainers.forEach(function(container) {
-        var img = container.querySelector('img');
-        var tooltip = container.querySelector('.tooltip');
+$(document).ready(function() {
+    $('.big-col img').each(function() {
+        // var $img = $(this);
+        var $tooltip = $(this).siblings('.tooltip');
 
-        img.addEventListener('mouseover', function() {
-            tooltip.style.visibility = 'visible';
-            tooltip.style.opacity = '1';
-            img.style.opacity = '.5';
-        });
+        $(this).hover(function() {
+            // Show tooltip
+            $tooltip.css({
+                visibility: 'visible',
+                opacity: '1'
+            });
 
-        img.addEventListener('mouseout', function() {
-            tooltip.style.opacity = '0';
-            img.style.opacity = '1';
-            setTimeout(function() {
-                tooltip.style.visibility = 'hidden';
-            }, 300);
+        }, function() {
+            // Hide tooltip
+            $tooltip.css({
+                visibility: 'hidden',
+                opacity: '0'
+            });
         });
     });
-
-
+});
 
 
 function revealMe() {
