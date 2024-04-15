@@ -321,6 +321,27 @@ function CTAbuttonHover() {
 };
 
 
+//Tooltip effect
+    var imgContainers = document.querySelectorAll('.big-col img');
+
+    imgContainers.forEach(function(container) {
+        var img = container.querySelector('img');
+        var tooltip = container.querySelector('.tooltip');
+
+        img.addEventListener('mouseover', function() {
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+            img.style.opacity = '.5';
+        });
+
+        img.addEventListener('mouseout', function() {
+            tooltip.style.opacity = '0';
+            img.style.opacity = '1';
+            setTimeout(function() {
+                tooltip.style.visibility = 'hidden';
+            }, 300);
+        });
+    });
 
 
 

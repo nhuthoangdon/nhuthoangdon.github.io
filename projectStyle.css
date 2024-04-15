@@ -420,6 +420,9 @@ section.challenge {
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	flex-direction: column;
 	width: 100%;
 }
@@ -430,6 +433,8 @@ section.challenge {
 	width: 90%;
 	height: auto;
 	margin-top: 25px;
+	opacity: 1;
+	transition: opacity 0.2s ease-out;
 }
 
 .light-bg-f9f9f9 {
@@ -437,6 +442,34 @@ section.challenge {
 	width: 100%;
 }
 
+
+.tooltip {
+	position: absolute;
+	display: inline-block;
+	visibility: hidden;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	padding: 20px;
+	margin: auto;
+	border: 2px solid #9B00FD;
+	background-color: black;
+	text-align: center;
+	color: white;
+	font-size: .9em;
+	letter-spacing: .1em;
+	font-style: italic;
+	opacity: 0;
+    pointer-events: none;
+}
+	.big-col img:hover + span, .tooltip:hover {
+	        visibility: visible;
+	        pointer-events: auto;
+	        opacity: 1;
+	    }
+	/*.big-col img:hover {
+		opacity: .5;
+	}*/
 
 .block {
 	display: -webkit-box;
