@@ -443,7 +443,7 @@ section.challenge {
 }
 
 
-.tooltip {
+/*.tooltip {
 	position: absolute;
 	display: inline-block;
 	visibility: hidden;
@@ -462,15 +462,15 @@ section.challenge {
 	opacity: 0;
     pointer-events: none;
     transition: .4s ease-in;
-}
+}*/
 	/*.big-col img:hover + span, .tooltip:hover {
 	        visibility: visible;
 	        pointer-events: auto;
 	        opacity: 1;
 	    }*/
-	.big-col img:hover {
+	/*.big-col img:hover {
 		opacity: .5 !important;
-	}
+	}*/
 
 .block {
 	display: -webkit-box;

@@ -322,27 +322,27 @@ function CTAbuttonHover() {
 
 
 
-$(document).ready(function() {
-    $('.big-col img').each(function() {
-        // var $img = $(this);
-        var $tooltip = $(this).siblings('.tooltip');
+// $(document).ready(function() {
+//     $('.big-col img').each(function() {
+//         // var $img = $(this);
+//         var $tooltip = $(this).siblings('.tooltip');
 
-        $(this).hover(function() {
-            // Show tooltip
-            $tooltip.css({
-                visibility: 'visible',
-                opacity: '1'
-            });
+//         $(this).hover(function() {
+//             // Show tooltip
+//             $tooltip.css({
+//                 visibility: 'visible',
+//                 opacity: '1'
+//             });
 
-        }, function() {
-            // Hide tooltip
-            $tooltip.css({
-                visibility: 'hidden',
-                opacity: '0'
-            });
-        });
-    });
-});
+//         }, function() {
+//             // Hide tooltip
+//             $tooltip.css({
+//                 visibility: 'hidden',
+//                 opacity: '0'
+//             });
+//         });
+//     });
+// });
 
 
 function revealMe() {
