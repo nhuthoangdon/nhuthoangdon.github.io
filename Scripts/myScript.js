@@ -566,8 +566,7 @@ function ElIn() {
   $('section').each(function (i, el) {
     var $inOut = $(this).find('.in-out-el');
     var tl = new TimelineMax();
-        tl.to(this, .6, {autoAlpha: 1})
-          .staggerFromTo($inOut, .4, {y: 100, autoAlpha: 0, immediateRender:false}, {autoAlpha: 1, y: 0}, .1, "-=.2");
+          tl.staggerFromTo($inOut, .4, {y: 100, autoAlpha: 0, immediateRender:false}, {autoAlpha: 1, y: 0}, .1);
         return tl;
   })
 }
@@ -577,7 +576,6 @@ function ElOut() {
     var $inOut = $(this).find('.in-out-el');
     var tl = new TimelineMax();
         tl.staggerTo($inOut, .1, {y: -100, autoAlpha: 0}, .1)
-          .to(this, .2, {autoAlpha: 0});
    return tl;
  })
 }
@@ -597,21 +595,24 @@ function ElOut() {
                 onStart: function() {
                   const largerThan480px = window.matchMedia('(min-width: 480px)').matches;
                   if (largerThan480px) {
-                    $('section').each(function (i, el) {
-                    if ($(this).visible(false)) {
-                      ElOut();
-                     };
-                   })
+                    ElOut();
+                   //  $('section').each(function (i, el) {
+                   //  if ($(this).visible(true)) {
+                   //    ElIn();
+                   //    // ElOut();
+                   //   }
+                   // })
                  }      
                 },
                 onComplete: function() {
                   const largerThan480px = window.matchMedia('(min-width: 480px)').matches;
                   if (largerThan480px) {
-                    $('section').each(function (i, el) {
-                    if ($(this).visible(true)) {
-                      ElIn();
-                     };
-                    })
+                    ElIn();
+                    // $('section').each(function (i, el) {                      
+                    // if ($(this).visible(true)) {
+                    //   ElIn();
+                    //  };
+                    // })
                   } 
                 }
             });
