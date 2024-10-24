@@ -35,7 +35,7 @@ body {
 	z-index: 10005;
 	width: 100vw;
 	height: 100vh;
-	background-color: #2A2F36;
+	background-color: #E7EBEE;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -49,6 +49,7 @@ body {
 
 .loading-wrapper .animated-icon svg {
 	overflow: visible;
+	filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.3));
 }
 
 
@@ -64,22 +65,24 @@ body {
 	z-index: 10000;
 }
 
-.menu .bar1,
-.bar2,
-.bar3 {
-	width: 2px;
-	position: absolute;
-	background-color: #2B334F;
+	.menu 
+		.bar1,
+		.bar2,
+		.bar3 {
+			width: 2px;
+			position: absolute;
+			background-color: #8C9BAF;
 }
 
-.menu .bar1,
-.bar3 {
-	height: 20px;
-}
+	.menu 
+		.bar1,
+		.bar3 {
+			height: 20px;
+		}
 
-.menu .bar2 {
-	height: 37px;
-}
+		.menu .bar2 {
+			height: 37px;
+		}
 
 .closeMenu {
 	position: absolute;
@@ -140,12 +143,12 @@ body {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	background-color: #090909;
 }
 
 .whales {
 	height: auto;
 	width: 50%;
-	opacity: 1;
 	overflow: visible;
 	position: absolute;
 }
@@ -212,7 +215,7 @@ body {
 	z-index: 10001;
 	bottom: 0;
 	overflow-x: hidden;
-	background-color: #2A2F36;
+	background-color: #E7EBEE;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;

@@ -9,7 +9,10 @@ function getRandom(min, max) {
  return Math.floor(Math.random() * (max - min)) + min;
 };
 
-
+ // use a script tag or an external JS file - NO effect, just for experimentation
+ document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(Flip,ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin,EaselPlugin,PixiPlugin,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase)
+ });
 
 $(window).ready(function() {
     projectCTAHover();
@@ -22,6 +25,9 @@ $( document ).ready(function() {
 
   TweenMax.staggerFrom("#leftEye, #rightEye, #mouth", .25, {scaleY: 0, immediateRender: false}, .3);
   TweenLite.set(whales_el, {strokeDashOffset: strokeDashOffset});
+  TweenLite.set([whale_1_el, whale_2_el], {opacity: 0, fill: '#284960'});
+  whales_eyes_inner.css({'fill': '#000000', 'stroke': '#22406D'});
+  whales_eyes_outer.css({'fill': '#0D2440'});
 
 
     hamburgerHover();
@@ -45,44 +51,38 @@ $( document ).ready(function() {
 
 // ------------------------------Background play pause---------------------------------------
 
-  var firstPrjOffset = $("#prj-heineken").offset().top;
-  var lastPagesOffset = $("#more-works").offset().top;
-  
-  $(window).scroll(function() {
+    var firstPrjOffset = $("#prj-heineken").offset().top;
+    var lastPagesOffset = $("#more-works").offset().top;
     
-    var currentScroll = $(window).scrollTop();
-    
-    if ((currentScroll < firstPrjOffset) || (currentScroll >= lastPagesOffset)) {
-      $(".background").css ({
-        position: 'fixed'
-      });
-        lionTl.play();
-        whale2Tl.play();
-    } else {
-      $(".background").css ({
-        position: 'absolute'
-      });
-      lionTl.pause();
-      whale2Tl.pause();
-    }
-  });
+    $(window).scroll(function() {
+      
+      var currentScroll = $(window).scrollTop();
+      
+      if ((currentScroll < firstPrjOffset) || (currentScroll >= lastPagesOffset)) {
+        $(".background").css ({
+          position: 'fixed'
+        });
+          lionTl.play();
+          whale2Tl.play();
+      } else {
+        $(".background").css ({
+          position: 'absolute'
+        });
+        lionTl.pause();
+        whale2Tl.pause();
+      }
+    });
 
 
 
 
-});
-
-
-
-
-
-
-
+}); //closing of document.ready
 
 
 
 
 
+//Global vars
 var lionTl = anime.timeline({loop: true}),
     whale2Tl = anime.timeline({loop: true}),
     whale_1_el = document.querySelectorAll('#myWhale_1 .cls-1'),
@@ -91,80 +91,107 @@ var lionTl = anime.timeline({loop: true}),
     whales_el = document.querySelectorAll('.whales .cls-1'),
     whale_1 = document.querySelectorAll('.whale_1'),
     whale_2 = document.querySelectorAll('.whale_2'),
+    whales_eyes_inner = $('#whale_1_eye, #whale_2_eye'),
+    whales_eyes_outer = $('#whale_1_eye_outer, #whale_2_eye_outer'),
     strokeDashOffset = anime.strokeDashoffset;
 
 
 
-  function animatedBg() {
+//Whale 1 animation
+  function whale1Play() {
       lionTl
-        .add ({
-          targets: whale_1_el,
-            translateX: [function(el, i) {
-              return -100 - (100 / i);
-            }, 0],
-            translateY: [function(el, i) {
-              return -10 + (-10 / i);
-            }, 0],
-            scale: [.7, .8],           
-            fill: '#e2e9ed',
-            opacity: [0,1],
-            easing: 'spring(40, 90, 70, 0)',
-            delay: anime.stagger(50)
-        })
-        .add ({
-          targets: whale_1_el,
-          translateX: '50%',
-          translateY: '20%',
-          scale: 1,
-          duration: 11000,
-          delay: anime.stagger(30),
-          easing: 'easeInOutSine',
-        })
-        .add ({
-          targets: whale_1_el,
-          rotateZ: -20,
-          duration: 7000,
-          delay: anime.stagger(50),
-          easing: 'easeOutElastic(1, .7)'
-        })
-        .add ({
-          targets: whale_1_el,
-          translateX: '200%',
-          translateY: '-70%',
-          scale: .8,
-          duration: 8000,
-          delay: anime.stagger(20),
-          easing: 'easeInSine'
-        }, '-=2000')
+        // 1st round
+        // .add ({
+        //   targets: whale_1_el,
+        //     translateX: [function(el, i) {
+        //       return -50 - (50 * i);
+        //     }, 0],
+        //     translateY: [function(el, i) {
+        //       return -30 - (30 * i);
+        //     }, 0],
+        //     scale: [.7, .8],
+        //     opacity: .5,
+        //     // easing: 'easeOutElastic(2, 0.8)',
+        //     easing: 'spring(20, 60, 35, 1)',
+        //     duration: 9000
+        // }, '-=2000')
+        // .add ({
+        //   targets: whale_1_el,
+        //   translateX: '50%',
+        //   translateY: '20%',
+        //   scale: 1,
+        //   opacity: 1,
+        //   duration: 8000,
+        //   delay: anime.stagger(10),
+        //   // easing: 'spring(20, 60, 35, 1)',
+        //   easing: 'easeInOutElastic(1, 1)',
+        // })
+        // .add ({
+        //   targets: whale_1_el,
+        //   rotateZ: -20,
+        //   duration: 5000,
+        //   delay: anime.stagger(30),
+        //   easing: 'spring(20, 60, 35, 1)'
+        // })
+        // .add ({
+        //   targets: whale_1_el,
+        //   translateX: '200%',
+        //   // translateY: '-70%',
+        //   scale: .8,
+        //   opacity: 0,
+        //   duration: 14000,
+        //   delay: anime.stagger(5),
+        //   easing: 'easeInElastic(2, 1)'
+        // })
 
         //2nd round
-        .add ({
+        .add({
           targets: whale_1_el,
-            translateX: [function(el, i) {
-              return -40 - (40 / i);
-            }, 0],
-            translateY: [function(el, i) {
-              return 20 + (5 * i);
-            }, 0],
+
+        })
+        // .add ({  //prepare: goes off screen, flips - to the right
+        //   targets: whale_1_el,
+        //     scale: 1,
+        //     // scaleX: -1,
+        //     translateX: ['-100%', '-300%'],
+        //     translateY: '40%',
+        // })
+        .add ({ //moves to centre
+          targets: whale_1_el,
+            scale: [1, 1.2],
+            translateX: ['-100%', '10%'],
+            translateY: '10%',
             rotateZ: -5,
-            scale: [.7, .8],           
-            opacity: [0,1],
-            easing: 'spring(40, 90, 70, 0)',
-            delay: anime.stagger(50)
+            opacity: [.5, 1],
+            easing: 'spring(100, 20, 60, 0)', //Mass | Stiffness | Damping | Velocity
+            delay: anime.stagger(10),
         })
-        .add ({
+        .add ({ //moves to left and disappear
           targets: whale_1_el,
-          translateX: '200%',
-          translateY: '20%',
-          scale: 1,
-          duration: 17000,
-          delay: anime.stagger(20),
-          easing: 'easeInOutSine',
+            scale: 1,
+            translateX: '200%',
+            translateY: '20%',
+            rotateZ: -10,
+            opacity: .5,
+            duration: 16000,
+            easing: 'easeInCubic',
+            delay: anime.stagger(10),
         })
+        // .add ({ //moves to left and disappear
+        //   targets: whale_1_el,
+        //     scale: .9,
+        //     translateX: '300%',
+        //     // translateY: '90%',
+        //     rotateZ: -30,
+        //     opacity: .5,
+        //     duration: 9000,
+        //     delay: anime.stagger(10),
+        //     easing: "easeOutCubic",
+        // })
   };
 
-
-   function whale2play() {
+  //whale 2 animation
+   function whale2Play() {
         whale2Tl
         .add ({
           targets: whale_2_el,
@@ -222,8 +249,8 @@ var lionTl = anime.timeline({loop: true}),
 // Initial Home Animation
 function homeload() {
     var homeTimeline = new TimelineMax({onComplete: function() {
-      animatedBg();
-      whale2play();
+      whale1Play();
+      whale2Play();
     }})
         homeTimeline
         // .add(preloadingAnimation())
@@ -337,16 +364,16 @@ function hamburgerHover() {
     $(this).hover (
       function() {
         hamburgerTL
-                  .to($(".bar1", this), .08, {rotation: -90, backgroundColor: "#F3425E", transformOrigin: "top left"})
+                   .to($(".bar1", this), .08, {rotation: -90, backgroundColor: "#F3425E", transformOrigin: "top left"})
                    .to($(".bar3", this), 0.08, {rotation: 90})
                    .to($(".bar3", this), 0.08, {x: 0, backgroundColor: "#F3425E"})
                    .to($(".bar2", this), .08, {rotation: -90, x: 0, yPercent: 40, backgroundColor: "#F3425E"});
       },
       function() {
         hamburgerTL
-                   .to($(".bar2", this), 0.3, {rotation: -40, x: 0, yPercent: 0, backgroundColor: "#191F33"})
-                   .to($(".bar1", this), 0.2, {rotation: 0, backgroundColor: "#191F33"}, "-=.2")
-                   .to($(".bar3", this), 0.1, {y: 10, x: 24, rotation: 0, backgroundColor: "#191F33"});
+                   .to($(".bar2", this), 0.3, {rotation: -40, x: 0, yPercent: 0, backgroundColor: "#8C9BAF"})
+                   .to($(".bar1", this), 0.2, {rotation: 0, backgroundColor: "#8C9BAF"}, "-=.2")
+                   .to($(".bar3", this), 0.1, {y: 10, x: 24, rotation: 0, backgroundColor: "#8C9BAF"});
       }
     );
   });
