@@ -14,21 +14,31 @@ function getRandom(min, max) {
   gsap.registerPlugin(Flip,ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin,EaselPlugin,PixiPlugin,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase)
  });
 
+
 $(window).ready(function() {
     projectCTAHover();
 });
 
+    var menuAssembleTL = new TimelineMax();
+        menuAssembleTL.to(".menu .bar1", .2, {rotation: 0, transformOrigin: "top left"})
+                      .to(".menu .bar3", .2, {rotation: 0, x: 24, transformOrigin: "bottom right"})
+                      .to(".menu .bar3", .2, {rotation: 0, y: 10})
+                      .to(".menu .bar2", .2, {rotation: -40, transformOrigin: "top left"});
 
+    gsap.set(".closeMenu .closeBar1", {rotation: 45, transformOrigin: "center", y: 15, x: 4});
+    gsap.set(".closeMenu .closeBar2", {rotation: -45, transformOrigin: "center", y: 15, x: 4});
 
 
 $( document ).ready(function() {
 
   TweenMax.staggerFrom("#leftEye, #rightEye, #mouth", .25, {scaleY: 0, immediateRender: false}, .3);
   TweenLite.set(whales_el, {strokeDashOffset: strokeDashOffset});
-  TweenLite.set([whale_1_el, whale_2_el], {opacity: 0, fill: '#284960'});
+  TweenLite.set([whale_1_el, whale_2_el], {opacity: 0});
+  TweenLite.set(whale_1_el, {fill: '#0E1924'});
+  TweenLite.set(whale_2_el, {fill: '#172B40'});
   whales_eyes_inner.css({'fill': '#000000', 'stroke': '#22406D'});
   whales_eyes_outer.css({'fill': '#0D2440'});
-
+  
 
     hamburgerHover();
     toggleMenu();
@@ -38,14 +48,6 @@ $( document ).ready(function() {
     smileyFace();
 
 
-    var menuAssembleTL = new TimelineMax();
-        menuAssembleTL.to(".menu .bar1", .2, {rotation: 0, transformOrigin: "top left"})
-                      .to(".menu .bar3", .2, {rotation: 0, x: 24, transformOrigin: "bottom right"})
-                      .to(".menu .bar3", .2, {rotation: 0, y: 10})
-                      .to(".menu .bar2", .2, {rotation: -40, transformOrigin: "top left"});
-
-    TweenLite.set(".closeMenu .closeBar1", {rotation: 45, transformOrigin: "center", y: 15, x: 4});
-    TweenLite.set(".closeMenu .closeBar2", {rotation: -45, transformOrigin: "center", y: 15, x: 4});
 
 
 
@@ -72,9 +74,6 @@ $( document ).ready(function() {
         whale2Tl.pause();
       }
     });
-
-
-
 
 }); //closing of document.ready
 
@@ -144,50 +143,28 @@ var lionTl = anime.timeline({loop: true}),
         //   easing: 'easeInElastic(2, 1)'
         // })
 
-        //2nd round
-        .add({
+        //Simplified animation
+        .add ({ //moves to centre from left
           targets: whale_1_el,
-
-        })
-        // .add ({  //prepare: goes off screen, flips - to the right
-        //   targets: whale_1_el,
-        //     scale: 1,
-        //     // scaleX: -1,
-        //     translateX: ['-100%', '-300%'],
-        //     translateY: '40%',
-        // })
-        .add ({ //moves to centre
-          targets: whale_1_el,
-            scale: [1, 1.2],
+            scale: [.5, .8],
             translateX: ['-100%', '10%'],
             translateY: '10%',
             rotateZ: -5,
             opacity: [.5, 1],
-            easing: 'spring(100, 20, 60, 0)', //Mass | Stiffness | Damping | Velocity
+            easing: 'spring(80, 30, 50, 0)', //Mass | Stiffness | Damping | Velocity
             delay: anime.stagger(10),
         })
-        .add ({ //moves to left and disappear
+        .add ({ //moves offscreen to right
           targets: whale_1_el,
-            scale: 1,
-            translateX: '200%',
+            scale: .7,
+            translateX: '300%',
             translateY: '20%',
             rotateZ: -10,
-            opacity: .5,
-            duration: 16000,
+            opacity: .3,
+            duration: 12000,
             easing: 'easeInCubic',
             delay: anime.stagger(10),
         })
-        // .add ({ //moves to left and disappear
-        //   targets: whale_1_el,
-        //     scale: .9,
-        //     translateX: '300%',
-        //     // translateY: '90%',
-        //     rotateZ: -30,
-        //     opacity: .5,
-        //     duration: 9000,
-        //     delay: anime.stagger(10),
-        //     easing: "easeOutCubic",
-        // })
   };
 
   //whale 2 animation
@@ -201,12 +178,12 @@ var lionTl = anime.timeline({loop: true}),
             translateY: [function(el, i) {
               return 20 + (20 * i);
             }, 0],
-            scale: [.9, 1],           
-            fill: '#e2e9ed',
+            scale: [.8, 1],           
+            // fill: '#e2e9ed',
             opacity: [0,1],
             easing: 'spring(50, 100, 70, 0)',
             delay: anime.stagger(30)
-        }, '+=3000')
+        }, '+=16000')
         .add ({
           targets: whale_2_el,
           rotateZ: -20,
@@ -357,6 +334,7 @@ function smileyFace() {
 
 
 
+
 // Hamburger menu
 function hamburgerHover() {
   $('.menu').each(function (i, el) {
@@ -383,14 +361,14 @@ function hamburgerHover() {
 
 
 function toggleMenu() {
-  var hamburgerState = new TimelineMax();
-      hamburgerState.from(".closeMenu", .6, {height: 0})
-                    .from(".closeBar1, .closeBar2", .3, {width: 0, rotation: 0})
-                    .to(".closeBar1", .2, {rotation: 45})
-                    .to(".closeBar2", .2, {rotation: -45}, "-=.2");
-      hamburgerState.reverse();
+  var hamburgerState = new TimelineMax({reverse: true, paused: true});
+      hamburgerState.fromTo(".closeMenu", .4, {height: 0}, {height: 32, delay: .5})
+                    .fromTo(".closeBar1", .2, {width: 0}, {width: 24})
+                    .fromTo(".closeBar1", .2, {rotation: 0}, {rotation: 45})
+                    .fromTo(".closeBar2", .2, {width: 0}, {width: 24}, '-=.4')
+                    .fromTo(".closeBar2", .2, {rotation: 0}, {rotation: -45}, '-=.2')
 
-  var openOverlay = new TimelineMax();
+  var openOverlay = new TimelineMax({reverse: true, paused: true});
       openOverlay
                  .to($('.overlay'), .5, {scaleY: 1, opacity: 1, transformOrigin: "bottom center",
                                          ease: Power4.easeOut})

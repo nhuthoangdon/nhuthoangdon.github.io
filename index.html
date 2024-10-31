@@ -135,13 +135,13 @@
 
 <section class="flex-column" id="home-intro_2">
   <!-- <div id="home-intro_2"> -->
-  <div class="centered-text in-out-el">
-    <h2>
+  <div class="centered-text">
+    <h2 class="in-out-el">
         I am a multidisciplinary product enthusiast<br />
     </h2>
-      <h3> I believe in <span style="color: #197FCD"><b>Science</b></span>, revere <span style="color: #C00897;"><b>Technology</b></span>, and take joy in the <span style="color: #FEB507"><b>Aesthetic</b></span> </h3>
+      <h3 class="in-out-el"> I believe in <span style="color: #197FCD"><b>Science</b></span>, revere <span style="color: #C00897;"><b>Technology</b></span>, and take joy in the <span style="color: #FEB507"><b>Aesthetic</b></span> </h3>
 
-      <span class="scroll-icon">
+      <span class="scroll-icon in-out-el">
         <span class="scroll-wheel"></span>
       </span>
   </div>
@@ -285,7 +285,7 @@
 
 <section class="flex-column" id="more-works">
   <!-- <h2 class="in-out-el" style="text-align: center;">A bit more to see, if you fancy</h2> -->
-  <h2 class="in-out-el">Other Projects</h2>
+  <h3 class="in-out-el">Other Projects</h3>
   <div class="logos">
     <img class="in-out-el logo" src="Assets/logo_my7.png">
     <img class="in-out-el logo" src="Assets/logo_shavershop.png">
@@ -320,9 +320,9 @@
            version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
           <g id="smiley" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <circle id="leftEye" fill="#cad3d9" cx="13.4997052" cy="10.5" r="10.5"></circle>
-              <ellipse id="rightEye" fill="#cad3d9" cx="50.9997052" cy="10.5" rx="11" ry="10.5"></ellipse>
-              <path d="M0.792168941,40.4100891 C2.0554771,38.8065749 4.38116939,38.5294666 5.98674805,39.7911504 C15.1867404,47.0206195 24.0783917,50.5812525 32.7067171,50.6109828 C41.3186967,50.6406569 50.0589898,47.1538175 58.9878424,40.0097906 C60.58227,38.7340798 62.9103082,38.9907889 64.1876614,40.5831663 C65.4650146,42.1755437 65.207975,44.5005886 63.6135475,45.7762994 C53.4423598,53.9143258 43.1114927,58.0357063 32.6811922,57.999767 C22.2672374,57.9638839 11.8291364,53.7839801 1.4119045,45.597989 C-0.193674162,44.3363052 -0.471139222,42.0136033 0.792168941,40.4100891 Z" id="mouth" fill="#cad3d9" fill-rule="nonzero"></path>
+              <circle id="leftEye" fill="#FEB507" cx="13.4997052" cy="10.5" r="10.5"></circle>
+              <ellipse id="rightEye" fill="#FEB507" cx="50.9997052" cy="10.5" rx="11" ry="10.5"></ellipse>
+              <path d="M0.792168941,40.4100891 C2.0554771,38.8065749 4.38116939,38.5294666 5.98674805,39.7911504 C15.1867404,47.0206195 24.0783917,50.5812525 32.7067171,50.6109828 C41.3186967,50.6406569 50.0589898,47.1538175 58.9878424,40.0097906 C60.58227,38.7340798 62.9103082,38.9907889 64.1876614,40.5831663 C65.4650146,42.1755437 65.207975,44.5005886 63.6135475,45.7762994 C53.4423598,53.9143258 43.1114927,58.0357063 32.6811922,57.999767 C22.2672374,57.9638839 11.8291364,53.7839801 1.4119045,45.597989 C-0.193674162,44.3363052 -0.471139222,42.0136033 0.792168941,40.4100891 Z" id="mouth" fill="#FEB507" fill-rule="nonzero"></path>
           </g>
       </svg>
     </a>
@@ -432,18 +432,16 @@
 
 <!-- ______________________________________________________________________________ -->
 
-<script src="https://cdn.jsdelivr.net/combine/npm/gsap@2,npm/jquery@3,npm/animejs@3,npm/page-scroll-to-id@1"></script>
+<!-- <script src="https://cdn.jsdelivr.net/combine/npm/gsap@2,npm/jquery@3,npm/animejs@3,npm/page-scroll-to-id@1"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="./Scripts/anime.min.js"></script>
 
 <script src="./Scripts/jquery.malihu.PageScroll2id.min.js"></script>
 
-<script type="text/javascript" src="./Scripts/myScript.js"></script>
-
 <!-- LATEST GSAP -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<!-- GSAP Plugins (not all used) -->
+<!-- GSAP Plugins (not all used, include for future experimentation) -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
@@ -455,15 +453,16 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
 
 
-<!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
+<!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file (include for future experimentation) -->    
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
 
 
-<!-- Backup Load from local files -->
-<script src="./Scripts/gsap-public/minified/gsap.min.js"></script>
-<script src="./Scripts/jquery.gsap.min.js"></script>
+<!-- Backup Load from local file -->
+<!-- <script src="./Scripts/gsap-public/minified/gsap.min.js"></script>
+<script src="./Scripts/jquery.gsap.min.js"></script> -->
 
+<script type="text/javascript" src="./Scripts/myScript.js"></script>
 </body>
 
 
