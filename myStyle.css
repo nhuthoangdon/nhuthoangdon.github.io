@@ -47,10 +47,24 @@ body {
 	justify-content: center;
 }
 
-.loading-wrapper .animated-icon svg {
-	overflow: visible;
-	filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.3));
-}
+
+	.loading-wrapper .animated-icon svg {
+		overflow: visible;
+		filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.3));
+	}
+
+		#skip_loadingAnimation {
+				margin: auto;
+				margin-top: 60px;
+				cursor: pointer;
+				transition: .1s;
+			}
+				#skip_loadingAnimation:hover {
+					color: #F3425E;
+				}
+				#skip_loadingAnimation:active {
+					color: #a107f9;
+				}
 
 
 /* Hamburger menu styling */
@@ -412,6 +426,9 @@ a.CTAarrow {
 	transform: scaleY(.6);
 	background-color: #f90760;
 }
+	.CTAarrow.arrow-down:active .arrow {
+		background-color: #a107f9;
+	}
 
 .CTAarrow.arrow-down:hover .arrow:after {
 	-webkit-transform: rotate(45deg);
@@ -420,6 +437,9 @@ a.CTAarrow {
 	opacity: 1;
 	background-color: #f90760;
 }
+	.CTAarrow.arrow-down:active .arrow:after {
+		background-color: #a107f9;
+	}
 
 .CTAarrow.arrow-down:hover .arrow:before {
 	-webkit-transform: rotate(-45deg);
@@ -427,6 +447,9 @@ a.CTAarrow {
 	transform: rotate(-45deg);
 	background-color: #f90760;
 }
+	.CTAarrow.arrow-down:active .arrow:before {
+		background-color: #a107f9;;
+	}
 
 .CTA-button {
 	width: 188px;
@@ -564,16 +587,23 @@ h2 {
 	line-height: 1.2em;
 }
 
-.centered-text {
-	text-align: center;
-}
+			.centered-text {
+				text-align: center;
+			}
 
 h3 {
-	font-size: 1.3em;
-	letter-spacing: .5em;
+	font-size: calc(1.8em + 1vw);
+	letter-spacing: .02em;
+	font-weight: 900;
+	line-height: 1.2em;
+}
+
+h4 {
+	font-size: calc(1em + 1vw);
+	letter-spacing: .05em;
 	line-height: 1.5em;
 	font-weight: 200;
-	text-transform: uppercase;
+/*	text-transform: uppercase;*/
 	color: #556B87;
 }
 
@@ -964,7 +994,7 @@ section.project {
 /* ----------------------------------------------------------------------------------------------- */
 
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 768px) {
 
 	section.flex-row {
 		-webkit-box-pack: center;
@@ -989,6 +1019,21 @@ section.project {
 		margin-left: 0;
 	}
 }
+
+/*@media screen and (max-width: 548px) {
+
+		/*#home-intro {
+			height: 100vh;
+		}*/
+		.opening_line {
+			width: 80%;
+		}
+			#intro_text {
+				font-size: calc(1.2em + 1.5vw);
+			}
+
+}*/
+
 
 
 @media screen and (max-width: 480px) {

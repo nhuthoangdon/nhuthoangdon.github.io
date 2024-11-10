@@ -80,7 +80,7 @@ $( document ).ready(function() {
 
 
 
-
+//Whales animation
 //Global vars
 var lionTl = anime.timeline({loop: true}),
     whale2Tl = anime.timeline({loop: true}),
@@ -223,6 +223,129 @@ var lionTl = anime.timeline({loop: true}),
    }
 
 
+
+
+// Loading animation
+function preloadingAnimation() {
+  var $el1 = document.getElementById('ic-component-1'),
+      $el2 = document.getElementById('ic-component-2'),
+      $el3 = document.getElementById('ic-component-3'),
+      $el4 = document.getElementById('ic-component-4'),
+      $el5 = document.getElementById('ic-component-5'),
+      $el6 = document.getElementById('ic-component-6'),
+      $el7 = document.getElementById('ic-component-7'),
+
+      loadingTL = anime.timeline ({
+        direction: 'reverse', easing: 'easeInOutSine', duration: 700,
+        update: function(scale) {
+          anime({
+            targets: '#animated-icon svg',
+            scale: .4,
+            delay: 1300,
+            duration: 3500,
+          })
+        },
+        complete: function(morph) {
+                    anime({
+                      targets: $el1,
+                      keyframes: [
+                        {points: '1041 277 1077 277 1077 305 1041 305', duration: 400},
+                        {points: '1057.61274 289 1069 299 1054 299 964 299', delay: 1100}
+                          ],
+                      easing: 'easeOutQuad',
+                    })
+                    anime({
+                      targets: $el3,
+                      keyframes: [
+                        {points: '1083 277 1119 277 1119 347 1083 347', duration: 400},
+                        {points: '1083 277 1119 277 1119 305 1083 305'},
+                        {points: '1062 287 1095 255 1126 287 1095 319', delay: 1000}
+                      ],
+                      easing: 'easeOutQuad',
+                   })
+                    anime({
+                      targets: $el2,
+                      keyframes: [
+                        {points: '1041 311 1119 311 1119 347 1041 347', duration: 400, delay: 400},
+                        {points: '1099 322 1129 291 1233 447 1195 401', delay: 700}
+                      ],
+                      easing: 'easeOutQuad',
+                  })
+                    anime({
+                      targets: $el4,
+                      keyframes: [
+                        {points: '1041 353 1063 353 1063 371 1041 371', duration: 400},
+                        {points: '1227 267 1241 171 1236 277 1148 312', delay: 1000}
+                      ],
+                      easing: 'easeOutQuad',
+                  })
+                    anime({
+                      targets: $el6,
+                      keyframes: [
+                        {points: '1069 353 1091 353 1091 371 1069 371', duration: 400},
+                        {points: '1244 134 1223 263 1145 310 1204 258', delay: 1000}
+                      ],
+                      easing: 'easeOutQuad',
+                  })
+                    anime({
+                      targets: $el7,
+                      keyframes: [
+                        {points: '1097 353 1119 353 1119 371 1097 371', duration: 400},
+                        {points: '1255 93 1200 254 1144 305 1133 288', delay: 1000}
+                      ],
+                      easing: 'easeOutQuad',
+                  })
+                    anime({
+                      targets: $el5,
+                      keyframes: [
+                        {points: '1041 377 1119 377 1119 399 1041 399', duration: 400},
+                        {points: '1207 450 1195 408 1228 450 1222 507', delay: 1000}
+                      ],
+                      easing: 'easeOutQuad',
+                  })
+        }
+    });
+
+      loadingTL.add ({
+                  targets: $el6,
+                  translateY: 40,
+                  opacity: 0,
+                })
+                .add ({
+                  targets: $el7,
+                  translateX: 40,
+                  opacity: 0,
+                }, '-=700')
+                .add ({
+                  targets: $el5,
+                  translateX: -40,
+                  opacity: 0,
+                }, '-=700')
+                .add ({
+                  targets: $el4,
+                  translateY: 40,
+                  opacity: 0,
+                }, '-=400')
+                .add ({
+                  targets: $el3,
+                  translateX: 50,
+                  opacity: 0,
+                }, '-=400')
+                .add ({
+                  targets: $el2,
+                  translateX: -50,
+                  opacity: 0,
+                }, '-=700')
+                .add ({
+                  targets: $el1,
+                  translateY: 80,
+                  opacity: 0,
+                });               
+};
+
+
+
+
 // Initial Home Animation
 function homeload() {
     var homeTimeline = new TimelineMax({onComplete: function() {
@@ -237,6 +360,11 @@ function homeload() {
                   .staggerFrom("#intro_text, #intro_sub_text, #home-CTAarrow, #bullets", .8,
                               {y: 100, autoAlpha: 0}, .3)
                   // .call(animatedBg());
+      
+      $('#skip_loadingAnimation').click(() => {
+        const skipPoint = 6.1;
+        homeTimeline.seek(skipPoint);
+      });
 
 };
 
@@ -408,127 +536,6 @@ function toggleMenu() {
 
 
 
-
-
-
-
-// Loading animation
-function preloadingAnimation() {
-  var $el1 = document.getElementById('ic-component-1'),
-      $el2 = document.getElementById('ic-component-2'),
-      $el3 = document.getElementById('ic-component-3'),
-      $el4 = document.getElementById('ic-component-4'),
-      $el5 = document.getElementById('ic-component-5'),
-      $el6 = document.getElementById('ic-component-6'),
-      $el7 = document.getElementById('ic-component-7'),
-
-      loadingTL = anime.timeline ({
-        direction: 'reverse', easing: 'easeInOutSine', duration: 700,
-        update: function(scale) {
-          anime({
-            targets: '#animated-icon svg',
-            scale: .4,
-            delay: 1300,
-            duration: 3500,
-          })
-        },
-        complete: function(morph) {
-                    anime({
-                      targets: $el1,
-                      keyframes: [
-                        {points: '1041 277 1077 277 1077 305 1041 305', duration: 400},
-                        {points: '1057.61274 289 1069 299 1054 299 964 299', delay: 1100}
-                          ],
-                      easing: 'easeOutQuad',
-                    })
-                    anime({
-                      targets: $el3,
-                      keyframes: [
-                        {points: '1083 277 1119 277 1119 347 1083 347', duration: 400},
-                        {points: '1083 277 1119 277 1119 305 1083 305'},
-                        {points: '1062 287 1095 255 1126 287 1095 319', delay: 1000}
-                      ],
-                      easing: 'easeOutQuad',
-                   })
-                    anime({
-                      targets: $el2,
-                      keyframes: [
-                        {points: '1041 311 1119 311 1119 347 1041 347', duration: 400, delay: 400},
-                        {points: '1099 322 1129 291 1233 447 1195 401', delay: 700}
-                      ],
-                      easing: 'easeOutQuad',
-                  })
-                    anime({
-                      targets: $el4,
-                      keyframes: [
-                        {points: '1041 353 1063 353 1063 371 1041 371', duration: 400},
-                        {points: '1227 267 1241 171 1236 277 1148 312', delay: 1000}
-                      ],
-                      easing: 'easeOutQuad',
-                  })
-                    anime({
-                      targets: $el6,
-                      keyframes: [
-                        {points: '1069 353 1091 353 1091 371 1069 371', duration: 400},
-                        {points: '1244 134 1223 263 1145 310 1204 258', delay: 1000}
-                      ],
-                      easing: 'easeOutQuad',
-                  })
-                    anime({
-                      targets: $el7,
-                      keyframes: [
-                        {points: '1097 353 1119 353 1119 371 1097 371', duration: 400},
-                        {points: '1255 93 1200 254 1144 305 1133 288', delay: 1000}
-                      ],
-                      easing: 'easeOutQuad',
-                  })
-                    anime({
-                      targets: $el5,
-                      keyframes: [
-                        {points: '1041 377 1119 377 1119 399 1041 399', duration: 400},
-                        {points: '1207 450 1195 408 1228 450 1222 507', delay: 1000}
-                      ],
-                      easing: 'easeOutQuad',
-                  })
-        }
-    });
-
-      loadingTL.add ({
-                  targets: $el6,
-                  translateY: 40,
-                  opacity: 0,
-                })
-                .add ({
-                  targets: $el7,
-                  translateX: 40,
-                  opacity: 0,
-                }, '-=700')
-                .add ({
-                  targets: $el5,
-                  translateX: -40,
-                  opacity: 0,
-                }, '-=700')
-                .add ({
-                  targets: $el4,
-                  translateY: 40,
-                  opacity: 0,
-                }, '-=400')
-                .add ({
-                  targets: $el3,
-                  translateX: 50,
-                  opacity: 0,
-                }, '-=400')
-                .add ({
-                  targets: $el2,
-                  translateX: -50,
-                  opacity: 0,
-                }, '-=700')
-                .add ({
-                  targets: $el1,
-                  translateY: 80,
-                  opacity: 0,
-                });
-};
 
 
 
