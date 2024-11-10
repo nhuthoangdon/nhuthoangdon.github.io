@@ -1022,9 +1022,9 @@ section.project {
 
 /*@media screen and (max-width: 548px) {
 
-		/*#home-intro {
-			height: 100vh;
-		}*/
+		#home-intro {
+			
+		}
 		.opening_line {
 			width: 80%;
 		}
