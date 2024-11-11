@@ -1003,11 +1003,11 @@ section.project {
 		justify-content: center;
 	}
 	#intro_text {
-		-ms-flex-item-align: center;
-		-ms-grid-row-align: center;
-		align-self: center;
-		width: 100%;
-		margin: auto;
+		/*-ms-flex-item-align: center;
+		-ms-grid-row-align: center;*/
+/*		align-self: center;*/
+/*		width: 100%;*/
+/*		margin: auto;*/
 	}
 	#home-CTAarrow {
 		-ms-flex-item-align: auto;
@@ -1020,19 +1020,15 @@ section.project {
 	}
 }
 
-/*@media screen and (max-width: 548px) {
 
-		#home-intro {
-			
-		}
-		.opening_line {
-			width: 80%;
-		}
-			#intro_text {
-				font-size: calc(1.2em + 1.5vw);
-			}
-
-}*/
+@media screen and (max-width: 548px) {
+	
+	#intro_text {
+		font-size: calc(2em + 6vw);
+	}
+	#intro_sub_text {
+		font-size: calc(.5em + 1.5vw);
+}
 
 
 
@@ -1059,4 +1055,11 @@ section.project {
 		.overlay {
 			border-radius: 5em 5em 0 0;
 		}
+}
+
+
+@media screen and (max-width: 320px) {
+	section {
+		padding: 0;
+	}
 }
