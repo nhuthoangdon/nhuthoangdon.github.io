@@ -225,9 +225,9 @@ function hamburgerHover() {
       },
       function() {
         hamburgerTL
-                   .to($(".bar2", this), 0.3, {rotation: -40, x: 0, yPercent: 0, backgroundColor: "#2B334F"})
-                   .to($(".bar1", this), 0.2, {rotation: 0, backgroundColor: "#2B334F"}, "-=.2")
-                   .to($(".bar3", this), 0.1, {y: 10, x: 24, rotation: 0, backgroundColor: "#2B334F"});
+                   .to($(".bar2", this), 0.3, {rotation: -40, x: 0, yPercent: 0, backgroundColor: "#8C9BAF"})
+                   .to($(".bar1", this), 0.2, {rotation: 0, backgroundColor: "#8C9BAF"}, "-=.2")
+                   .to($(".bar3", this), 0.1, {y: 10, x: 24, rotation: 0, backgroundColor: "#8C9BAF"});
       }
     );
   });
@@ -246,7 +246,7 @@ function toggleMenu() {
 
   var openOverlay = new TimelineMax();
       openOverlay
-                 .to($('.overlay'), .5, {scaleY: 1, autoAlpha: .98, transformOrigin: "bottom center",
+                 .to($('.overlay'), .5, {scaleY: 1, autoAlpha: .94, transformOrigin: "bottom center",
                                          ease: Power4.easeOut})
                  .to('.overlay', .7, {borderRadius: 0}, "-=.3")
                  .staggerFromTo(".overlay .menu-items ul li", .5, {scaleY: 0, y: 50, autoAlpha: 0,
