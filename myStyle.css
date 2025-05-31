@@ -600,9 +600,9 @@ h3 {
 
 h4 {
 	font-size: calc(1em + 1vw);
-	letter-spacing: .05em;
+	/*letter-spacing: .05em;*/
 	line-height: 1.5em;
-	font-weight: 200;
+	font-weight: 300;
 /*	text-transform: uppercase;*/
 	color: #556B87;
 }
@@ -650,7 +650,8 @@ section {
 }
 
 section.flex-row {
-	width: 100%;
+	width: auto;
+	max-width: 100vw;
 	height: 100vh;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -822,16 +823,14 @@ section.project {
 .opening_line {
 	margin: 10px;
 	padding: 10px;
+	max-width: 80%;
 	-ms-flex-item-align: end;
 	align-self: flex-end;
 	cursor: default;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
 }
 
 	#intro_text {
-		font-size: calc(3em + 6vw);
+		font-size: calc(3em + 3vw);
 /*		line-height: 1em;*/
 		margin-bottom: 0;
 	}
@@ -839,9 +838,9 @@ section.project {
 		font-size: calc(1em + 1.2vw);
 		margin-top: 0;
 		font-weight: 200;
-		letter-spacing: 1em;
+		/*letter-spacing: 1em;*/
 		line-height: 1.5em;
-		text-transform: uppercase;
+		/*text-transform: uppercase;*/
 		color: #556B87;
 	}
 
@@ -858,6 +857,14 @@ section.project {
 
 
 /* ------------------------- */
+
+#contact-me h5 {
+	width: 64%;
+	font-weight: 400;
+	font-size: 1.4em;
+	letter-spacing: .02em;
+}
+
 
 #smiley-face {
 	overflow: visible;
